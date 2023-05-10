@@ -1,70 +1,202 @@
-# Getting Started with Create React App
+# Glendalough 2023
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### React notes
 
-In the project directory, you can run:
+```
+// https://github.com/facebook/create-react-app
+// https://github.com/facebook/create-react-app/issues/13080
+// https://egghead.io/lessons/react-migrate-a-react-class-component-to-a-function-component
 
-### `npm start`
+npx create-react-app prebuild
+cd my-app
+npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+// additional dependencies
+// eslint-config-wesbos = not working as of May 2023
+npm i -D @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-plugin-styled-components eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier typescript 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm i bootstrap dotenv normalize.css prop-types react-bootstrap react-helmet react-router-dom styled-components@5.3.10 web-vitals
 
-### `npm test`
+npm i -D styled-components@5.3.10
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// add to package.json:
+  "overrides" : {
+    "typescript": "^5.0.2"
+  }
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Fonts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- priori sans
+- f37 wicklow
+```
+<link rel="stylesheet" href="https://use.typekit.net/dsw2zbx.css">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+BLACK
+font-family: 'priori-sans',sans-serif;
+font-weight: 900;
+font-style: 'normal';
 
-### `npm run eject`
+Priori Sans OT Bold
+font-family: 'priori-sans', sans-serif;
+font-weight: 700;
+font-style: 'normal';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Priori Sans OT Italic
+font-family: 'priori-sans', sans-serif;
+font-weight: 400;
+font-style: 'italic';
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Priori Sans OT Regular
+font-family: 'priori-sans', sans-serif;
+font-weight: 400;
+font-style: 'normal';
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### COLORS
+```
+// Master palette
+$offwhite: #FDFDFC;
+$warmwhite: #F6F5EF;
+$beige: #D3CBC1;
+$white: #FFFFFF;
+$darkgreen: #262F2B;
+$black: #000000;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+// Wild Botanical Gin Palette
+$wbgreen: #163029;
+$wblightgreen: #A9B89E;
+$wboffwhite: #EFEDE6;
 
-## Learn More
+// Wild Rose Gin Palette
+$wrrose: #633B35;
+$wrdarkpink: #875C5A;
+$wrpink: #D4B6B4;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+// Whisky Palette
+background: #474938;
+background: #8E8982;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+### Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Home
+* OurStory
+* Gin
+* Whiskey
+* Cocktails
+* Features
+* Ethos
+* Contact
+* Tours
+* Privacy
+* Terms
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Components
 
-### Making a Progressive Web App
+* Home
+    - Nav
+    - Hero
+    - SubHero
+    - Drinks (Gin|Whiskey)
+    - OurStory
+    - Cocktails
+    - News
+    - Footer
+    - ModalEmail PopUp (why)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Tertiary
+    - Heading
+    - Body
+    - BodyImage
+    - News *
+    - Footer
 
-### Advanced Configuration
+* Gin 
+    - Nav *
+    - Hero *?
+    - Slider
+    - Thumbs + detail
+    - ModalVideo
+    - Story
+    - Awards
+    - News *
+    - Footer *
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Product (gin/Whiskey)
+    - Nav *
+    - ProductHero
+    - Notes
+    - Impact (Story)
+    - Thumbs
+    - Connect
+    - Footer *
 
-### Deployment
+- Story
+    - Nav *
+    - Hero
+    - Panel1
+    - Panel2
+    - Panel3
+    - Panel4
+    - News *
+    - Footer *
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Article
+    - Nav *
+    - Heading
+    - Panel1
+    - Panel2
+    - Panel3
+    - Panel4
+    - News *
+    - Footer *
 
-### `npm run build` fails to minify
+- Whiskey
+    - Nav *
+    - Hero *?
+    - Slider
+    - Thumbs + detail
+    - ModalVideo
+    - Story
+    - Awards
+    - News *
+    - Footer *
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+- Features
+    - Nav *
+    - Heading
+    - Filter
+    - Thumbs
+    - News *
+    - Footer *
+
+- Feature (blog post)
+    - Nav *
+    - Heading
+    - HeroImage
+    - Article
+    - Gallery
+    - News *
+    - Footer *
+
+- Cocktails
+    - Nav *
+    - Heading
+    - Thumbs (Gin/Whiskey/Occasion)
+    - Thumbs (Bar Drinks)
+    - News *
+    - Footer *
+
+- Cocktail
+    - Nav *
+    - Heading
+    - Hero
+    - Recipe
+    - News *
+    - Footer *
