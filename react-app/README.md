@@ -1,29 +1,37 @@
 # Glendalough 2023
 
+* React with Gatsby & Prismic
+
+
+## Links
+
+* [Figma Designs](https://www.figma.com/file/kH8OFcucThVuKTew8G3wBv/Glendalough-Full-Site-Handover)
+* [Google Drive](https://drive.google.com/drive/folders/1Ng_lhuPck25QXB4ILrceMZlwrvQMiE2E)
 
 ### React notes
 
-```
-// https://github.com/facebook/create-react-app
-// https://github.com/facebook/create-react-app/issues/13080
-// https://egghead.io/lessons/react-migrate-a-react-class-component-to-a-function-component
-// https://www.robinwieruch.de/react-hooks-migration/
-// https://www.npmjs.com/package/@fullpage/react-fullpage ($40/year - no thanks)
-// https://www.npmjs.com/package/react-page-scroll (free)
+* [Create React App](https://github.com/facebook/create-react-app)
+* [React Typescript issue](https://github.com/facebook/create-react-app/issues/13080)
+* [React Class deprecation](https://www.robinwieruch.de/react-hooks-migration)
+* [Fullpage paid plugin](https://www.npmjs.com/package/@fullpage/react-fullpage)
+* [Fullpage free plugin](https://www.npmjs.com/package/react-page-scroll)
 
-npx create-react-app prebuild
+```
+# React from scratch
+
+npx create-react-app my-app
 cd my-app
 npm start
 
-// additional dependencies
-// eslint-config-wesbos = not working as of May 2023
+# additional dependencies
+# eslint-config-wesbos = not working as of May 2023
 npm i -D @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-plugin-styled-components eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier typescript 
 
 npm i bootstrap dotenv normalize.css prop-types react-bootstrap react-helmet react-router-dom styled-components@5.3.10 web-vitals  
 
 npm i -D styled-components@5.3.10
 
-// add to package.json:
+# add to package.json:
   "overrides" : {
     "typescript": "^5.0.2"
   }
@@ -84,7 +92,7 @@ background: #8E8982;
 
 ```
 
-### Pages
+### Glendalough Pages
 
 * Home
 * OurStory
@@ -99,7 +107,7 @@ background: #8E8982;
 * Terms
 
 
-### Components
+### Glendalough Components
 
 * Home
     - Nav

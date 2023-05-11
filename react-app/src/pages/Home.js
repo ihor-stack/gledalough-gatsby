@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import HeroVideo from '../components/HeroVideo';
 import DualPanel from '../components/DualPanel';
 import SliderPanel from '../components/SliderPanel';
+import Footer  from '../components/Footer';
 // import image from '../assets/placeholder.png';
 
 const Home = () => (
@@ -16,6 +17,7 @@ const Home = () => (
         <SliderPanel className='page' />
         <CocktailsPanel className='page' />
         <NewsPanel className='page' />
+        <Footer className='page' />
       </PageScroll>
 );
 
