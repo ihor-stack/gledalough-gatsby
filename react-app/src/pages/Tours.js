@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Tours extends Component {
-  render() {
-    return (
-      <>
-        <h1>Tours</h1>
-        <hr />
-      </>
-    );
-  }
-}
+const Tours = () => (
+  <>
+    <h1>Tours</h1>
+    <hr />
+  </>
+);
 
 export default Tours;

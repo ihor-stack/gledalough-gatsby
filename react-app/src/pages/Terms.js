@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Terms extends Component {
-  render() {
-    return (
-      <>
-        <h1>Terms</h1>
-        <hr />
-      </>
-    );
-  }
-}
+const Terms = () => (
+  <>
+    <h1>Terms</h1>
+    <hr />
+  </>
+);
 
 export default Terms;
