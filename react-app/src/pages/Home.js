@@ -16,7 +16,7 @@ const Home = () => {
   return (
       <PageScroll width="100vw" height="100vh">
         <HeroVideo className='page' title="Handcrafted" />
-        <Hero className='page' title={homeContent.home_intro} />
+        { homeContent && <Hero className='page' title={homeContent.home_intro} />}
         <DualPanel className='page' />
         <SliderPanel className='page' />
         <CocktailsPanel className='page' />

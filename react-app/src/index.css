@@ -1,3 +1,20 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --offwhite: #FDFDFC;
+  --warmwhite: #F6F5EF;
+  --beige: #D3CBC1;
+  --darkgreen: #262F2B;
+  --wbgreen: #163029;
+  --wblightgreen: #A9B89E;
+  --wboffwhite: #EFEDE6;
+  --wrrose: #633B35;
+  --wrdarkpink: #875C5A;
+  --wrpink: #D4B6B4;
+  --wgreen: #474938;
+  --wgrey: #8E8982;
+}
+
 body {
   margin: 0;
   font-weight: 700;
@@ -8,28 +25,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--warmwhite);
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 .page {
   width: 100vw;
   height: 100vh;
-}
-
-#page1 {
-  background-color: brown;
-}
-
-#page2 {
-  background-color: blueviolet;
-
-}
-
-#page3 {
-  background-color: blue;
 }

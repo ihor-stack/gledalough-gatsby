@@ -22,11 +22,11 @@ export default function useLatestData() {
         // TODO: check for errors
         // set the data to state
         setHomeContent(res);
-        console.log('useLatestData debug:');
+        console.log('DEBUG: useLatestData()');
         console.log(res);
       })
       .catch((err) => {
-        console.log('useLatestData failed.');
+        console.log('ERROR: useLatestData() Failed.');
         console.log(err);
       });
   }, []);
