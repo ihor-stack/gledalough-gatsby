@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
+  display: flex;
   min-height: 220px;
 `;
 const ThumbContainer = styled.div`

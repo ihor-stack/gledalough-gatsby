@@ -23,8 +23,8 @@ const NavItem = styled.li`
   }
 `;
 
-const ProductNav = ({ items, activeUrl }) => (
-  <NavContainer>
+const ProductNav = ({className, items, activeUrl }) => (
+  <NavContainer className={className}>
     <NavList>
       {items.map((item, i) => (
         <NavItem key={i} className={item.url === activeUrl ? 'active' : ''}>

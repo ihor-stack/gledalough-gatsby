@@ -5,15 +5,15 @@ import styled from 'styled-components';
 import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
-  min-height: 380px;
+  display: flex;
   //background-image: url(${placeholder});
   background-color: #efefef;
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
-const Hero = ({ title }) => (
-  <PanelContainer>
+const Hero = ({ className, title }) => (
+  <PanelContainer className={className}>
     <div className="text-center">
       <h2>{title}</h2>
     </div>

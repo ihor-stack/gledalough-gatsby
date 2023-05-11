@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-export default function Header() {
-  return (
-    <>
+const PanelContainer = styled.div`
+  display: flex;
+`;
+
+const Header = ({ className }) => (
+  <PanelContainer className={className}>
       <div className="text-center">
         <h1>Glendalough Distillery</h1>
       </div>
@@ -41,6 +45,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-    </>
-  );
-}
+    </PanelContainer>
+);
+
+export default Header;

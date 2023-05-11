@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
-  min-height: 220px;
+  display: flex;
 `;
 const ThumbContainer = styled.div`
   display: flex;
@@ -22,10 +22,8 @@ const Thumbnail = styled.div`
     padding-top: 100%;
   }
 `;
-
-export default function CocktailsPanel() {
-  return (
-    <PanelContainer>
+const CocktailsPanel = ({ className }) => (
+    <PanelContainer className={className}>
       <div className="text-center">
         <h2>Cocktails</h2>
       </div>
@@ -40,4 +38,6 @@ export default function CocktailsPanel() {
       </div>
     </PanelContainer>
   );
-}
+
+  export default CocktailsPanel;
+

@@ -27,12 +27,12 @@ const Title = styled.div`
   font-size: 1.4em;
 `;
 
-export default function SliderPanel() {
-  return (
-    <PanelContainer>
+const SliderPanel = ({className, items, activeUrl }) => (
+  <PanelContainer className={className}> 
       <Panel>
         <Title>Slider</Title>
       </Panel>
     </PanelContainer>
   );
-}
+
+  export default SliderPanel;

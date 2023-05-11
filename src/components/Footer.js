@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-export default function Footer() {
-  return (
-    <>
+const PanelContainer = styled.div`
+  display: flex;
+`;
+
+const Footer = ({ className }) => (
+  <PanelContainer className={className}>
       <nav>
         <ul className="nav justify-content-center">
           <li className="nav-item">
@@ -47,6 +51,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-    </>
-  );
-}
+    </PanelContainer>
+);
+
+export default Footer;

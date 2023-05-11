@@ -27,9 +27,8 @@ const Title = styled.div`
   font-size: 1.4em;
 `;
 
-export default function DualPanel() {
-  return (
-    <PanelContainer>
+const DualPanel = ({ className }) => (
+    <PanelContainer className={className}>
       <Panel>
         <Title>One</Title>
       </Panel>
@@ -37,5 +36,6 @@ export default function DualPanel() {
         <Title>Two</Title>
       </Panel>
     </PanelContainer>
-  );
-}
+);
+
+export default DualPanel;

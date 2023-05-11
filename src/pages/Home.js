@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PageScroll from 'react-page-scroll';
 import NewsPanel from '../components/NewsPanel';
 import CocktailsPanel from '../components/CocktailsPanel';
 import Hero from '../components/Hero';
@@ -7,25 +8,16 @@ import DualPanel from '../components/DualPanel';
 import SliderPanel from '../components/SliderPanel';
 // import image from '../assets/placeholder.png';
 
-class Home extends Component {
-  render() {
-    return (
-      <>
-        <h1>Home</h1>
-        <hr />
-        {/* <div className="image">
-          <img width="90" height="60" alt="" src={image} />
-        </div> */}
-        <HeroVideo title="Handcrafted" />
-        <Hero title="Home hero panel" />
-        <DualPanel />
-        <SliderPanel />
-        <CocktailsPanel />
-        <NewsPanel />
-      </>
-    );
-  }
-}
+const Home = () => (
+      <PageScroll width="100vw" height="100vh">
+        <HeroVideo className='page' title="Handcrafted" />
+        <Hero className='page' title="Home hero panel" />
+        <DualPanel className='page' />
+        <SliderPanel className='page' />
+        <CocktailsPanel className='page' />
+        <NewsPanel className='page' />
+      </PageScroll>
+);
 
 export default Home;
 

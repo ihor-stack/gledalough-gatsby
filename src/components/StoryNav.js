@@ -5,14 +5,14 @@ import styled from 'styled-components';
 // import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
-  min-height: 380px;
+  display: flex;
   background-color: #efefef;
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
-const StoryNavigation = ({ active }) => (
-  <PanelContainer>
+const StoryNavigation = ({ className, active }) => (
+  <PanelContainer className={className}> 
     <div className="text-center">
       <ul>
         <li>

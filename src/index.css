@@ -14,3 +14,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.page {
+  width: 100vw;
+  height: 100vh;
+}
+
+#page1 {
+  background-color: brown;
+}
+
+#page2 {
+  background-color: blueviolet;
+
+}
+
+#page3 {
+  background-color: blue;
+}

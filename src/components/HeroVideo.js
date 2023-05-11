@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
-  min-height: 380px;
+  display: flex;
   background-image: url(${placeholder});
   background-attachment: fixed;
   background-position: center;
@@ -13,8 +13,8 @@ const PanelContainer = styled.div`
   background-size: cover;
 `;
 
-const HeroVideo = ({ title }) => (
-  <PanelContainer>
+const HeroVideo = ({ className, title }) => (
+  <PanelContainer className={className}>
     <div className="text-center">
       <h2>{title}</h2>
     </div>
