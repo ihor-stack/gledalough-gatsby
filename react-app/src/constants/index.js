@@ -1,3 +1,6 @@
+
+export const apiEndpoint = 'http://localhost:3001/api'
+
 export const LANGUAGES = [
     { label: "English - North America", code: "en-us" },
     { label: "English - Canada", code: "en-ca" },

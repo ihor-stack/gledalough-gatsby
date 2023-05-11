@@ -19,4 +19,15 @@ npm i -g nodemon
 # run / build
 npm start
 npm build
+
+```
+
+
+```
+    // CORS example config for Hapi
+    "cors": {
+        "origin": ["http://localhost:3000"],
+        "headers": ["Accept", "Content-Type"],
+        "additionalHeaders": ["X-Requested-With"]
+    }
 ```
