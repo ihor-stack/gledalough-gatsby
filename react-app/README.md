@@ -6,6 +6,7 @@
 ## Links
 
 * [Figma Designs](https://www.figma.com/file/kH8OFcucThVuKTew8G3wBv/Glendalough-Full-Site-Handover)
+* [Figma Design - homepage](https://www.figma.com/proto/3pHR6oYG0klbdcxsBXNS3N/030223-Glendalough-Homepage)
 * [Google Drive](https://drive.google.com/drive/folders/1Ng_lhuPck25QXB4ILrceMZlwrvQMiE2E)
 
 ### React notes
@@ -15,7 +16,10 @@
 * [React Class deprecation](https://www.robinwieruch.de/react-hooks-migration)
 * [Fullpage paid plugin](https://www.npmjs.com/package/@fullpage/react-fullpage)
 * [Fullpage free plugin](https://www.npmjs.com/package/react-page-scroll)
-
+* [React spring](https://www.react-spring.dev/docs/getting-started)
+* [React waypoint](https://www.npmjs.com/package/react-waypoint)
+* [React Map-GL](https://visgl.github.io/react-map-gl/docs/get-started/get-started)
+* [React hooks tips](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)
 ```
 # React from scratch
 
@@ -27,7 +31,7 @@ npm start
 # eslint-config-wesbos = not working as of May 2023
 npm i -D @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-plugin-styled-components eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier typescript 
 
-npm i bootstrap dotenv normalize.css prop-types react-bootstrap react-helmet react-router-dom styled-components@5.3.10 web-vitals  
+npm i bootstrap dotenv normalize.css prop-types react-bootstrap react-helmet react-router-dom styled-components@5.3.10 web-vitals react-page-scroll @react-spring/web
 
 npm i -D styled-components@5.3.10
 

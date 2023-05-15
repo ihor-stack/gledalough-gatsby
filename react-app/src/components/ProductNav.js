@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import placeholder from '../assets/placeholder.png';
 
 const NavContainer = styled.div`
   display: flex;
@@ -36,6 +35,7 @@ const ProductNav = ({className, items, activeUrl }) => (
 );
 
 ProductNav.propTypes = {
+  className: PropTypes.string,
   items: PropTypes.array,
   activeUrl: PropTypes.string,
 };

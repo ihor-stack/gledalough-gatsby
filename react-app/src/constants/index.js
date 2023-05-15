@@ -7,6 +7,11 @@ export const LANGUAGES = [
     { label: "English - Europe", code: "en-eu" },
 ];
 
+export const FONT = {
+    heading: "'priori-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    body: "'Spectral', Georgia, Cambria, 'Times New Roman', Times, serif",
+};
+
 export const COLOR = {
     white: '#FFFFFF',
     black: '#000000',

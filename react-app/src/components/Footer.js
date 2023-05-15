@@ -1,57 +1,143 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { COLOR, FONT } from '../constants';
+import footer_logo from '../assets/footer_logo.png';
+
+
 
 const PanelContainer = styled.div`
   display: flex;
+  background-color: ${COLOR.darkgreen};
+  color: ${COLOR.white};
+  padding: 0 10vw;
 `;
+
+const Col = styled.div`
+  &.col-left {
+    width: 45vw;
+  }
+  &.col-center {
+    width: 15vw;
+
+  }
+  &.col-right {
+    width: 15vw;
+  }
+`;
+
+const FormMessage = styled.p`
+  font-size: 1.6rem;
+  font-family: ${FONT.heading};
+  font-weight: 300;
+  font-style: 'normal';
+`;
+
+const NewsContainer = styled.div`
+  width: 100%;
+`
+
+const Nav = styled.nav`
+  width: 100%;
+  &.nav-footer a{
+    color: ${COLOR.white};
+    font-family: ${FONT.heading};
+    font-weight: 700;
+    font-style: 'normal';
+    text-transform: uppercase;
+    &:first-of-type {
+      padding-left:0;
+    }
+  }
+`
+
+const InputEmail = styled.input`
+  width: 60%;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  border-radius: 1rem 0 0 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+`
+const Button = styled.button`
+  background: none;
+  border: 1px solid white;
+  color: white;
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.5rem;
+`
+
 
 const Footer = ({ className }) => (
   <PanelContainer className={className}>
-      <nav>
-        <ul className="nav justify-content-center">
-          <li className="nav-item">
-            <Link to="/our-ethos" className="nav-link">
-              Our ethos
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact-us" className="nav-link">
-              Contact us
-            </Link>
-          </li>
-          <li>[image]</li>
-          <li className="nav-item">
-            <Link to="/tours" className="nav-link">
-              Tours
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/privacy" className="nav-link">
-              Privacy
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/terms-and-conditions" className="nav-link">
-              T&amp;CS
-            </Link>
-          </li>
+    <Col className='col-left d-flex flex-column'>
+
+        <NewsContainer className="text-left">
+          <h2>Distillery News</h2>
+          <InputEmail placeholder={`Email`}/><Button>Sign-up</Button>
+          <FormMessage>Get the latest news and cocktails straight to your inbox</FormMessage>
+        </NewsContainer>
+        <Nav>
+        <ul className="nav justify-content-start">
+          <li>[IG]</li>
+          <li>[FB]</li>
+          <li>[TW]</li>
         </ul>
-      </nav>
-      <hr />
-      <div className="row align-items-start">
-        <div className="col text-left">
-          <p>&copy; Glendalough Distillery 2022</p>
-        </div>
-        <div className="col text-right">
-          <ul className="d-flex justify-content-end list-unstyled">
-            <li>[IG]</li>
-            <li>[FB]</li>
-            <li>[TW]</li>
+        </Nav>
+        <Nav className='nav-footer'>
+          <ul className="nav justify-content-start">
+            <li className="nav-item">
+              <Link to="/our-ethos" className="nav-link">
+                Our ethos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact-us" className="nav-link">
+                Contact us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/nutritional-info" className="nav-link">
+                Nutritional Info
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/enjoy-responsibly" className="nav-link">
+              Enjoy Responsibly
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/privacy" className="nav-link">
+                Privacy
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/terms-and-conditions" className="nav-link">
+                T&amp;CS
+              </Link>
+            </li>
           </ul>
-        </div>
+        </Nav>
+
+    </Col>
+
+    <Col className='col-center d-flex flex-column'>
+      <img src={footer_logo} className="cross-logo img-fluid" alt="Glendalough cross logo" />
+    </Col>
+
+    <Col className='col-right d-flex   align-items-end'>
+      <div>
+        <p>&copy; Glendalough Distillery 2023</p>
       </div>
-    </PanelContainer>
+    </Col>
+
+  </PanelContainer>
 );
+
+Footer.propTypes = {
+  className: PropTypes.string,
+};
 
 export default Footer;

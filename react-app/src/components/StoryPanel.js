@@ -1,8 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -16,11 +14,12 @@ const StoryPanel = ({ className, title }) => (
   <PanelContainer className={className}> 
     <div className="text-center">
       <h2>{title}</h2>
-    </div>
+    </div> 
   </PanelContainer>
 );
 
 StoryPanel.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
 };
 

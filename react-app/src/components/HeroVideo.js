@@ -1,8 +1,7 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-//import placeholder from '../assets/placeholder.png';
+import logo from '../assets/ic_glendalough.svg';
 import bg_home_main from '../assets/bg_home_main.jpg';
 
 const PanelContainer = styled.div`
@@ -12,17 +11,23 @@ const PanelContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  > div {
+    width: 100%;
 `;
 
 const HeroVideo = ({ className, title }) => (
   <PanelContainer className={className}>
-    <div className="text-center">
+    <div className="d-flex justify-content-center align-items-center">
       <h1 className="hidden" hidden>{title}</h1>
+      <div>
+        <img src={logo} className="nav-logo" alt="Glendalough logo" />
+      </div>
     </div>
   </PanelContainer>
 );
 
 HeroVideo.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
 };
 

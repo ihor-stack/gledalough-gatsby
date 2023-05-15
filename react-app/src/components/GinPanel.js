@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -17,17 +16,13 @@ const Panel = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
-  min-height: 380px;
-  background-image: url(${placeholder});
-  background-size: cover;
-  background-repeat: no-repeat;
 `;
 
 const Title = styled.div`
   font-size: 1.4em;
 `;
 
-const DualPanel = ({ className }) => (
+const GinPanel = ({ className }) => (
     <PanelContainer className={className}>
       <Panel>
         <Title>One</Title>
@@ -38,8 +33,8 @@ const DualPanel = ({ className }) => (
     </PanelContainer>
 );
 
-DualPanel.propTypes = {
+GinPanel.propTypes = {
   className: PropTypes.string,
 };
 
-export default DualPanel;
+export default GinPanel;

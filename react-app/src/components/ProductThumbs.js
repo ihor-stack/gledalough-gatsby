@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import placeholder from '../assets/placeholder.png';
@@ -29,8 +28,8 @@ const Thumbnail = styled.div`
   }
 `;
 
-const ProductThumbs = ({ items }) => (
-  <PanelContainer>
+const ProductThumbs = ({ className, items }) => (
+  <PanelContainer className={className}>
     <ThumbContainer>
       <Thumbnail />
       <Thumbnail />
@@ -43,6 +42,7 @@ const ProductThumbs = ({ items }) => (
 );
 
 ProductThumbs.propTypes = {
+  className: PropTypes.string,
   items: PropTypes.array,
 };
 

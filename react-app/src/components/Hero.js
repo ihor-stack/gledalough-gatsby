@@ -1,26 +1,32 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import placeholder from '../assets/placeholder.png';
+
 
 const PanelContainer = styled.div`
   display: flex;
-  //background-image: url(${placeholder});
   background-color: #efefef;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
+  > div {
+    margin: 0 20vw;
+  }
+  h2 {
+    text-align: center;
+  }
+`; 
 
-const Hero = ({ className, title }) => (
-  <PanelContainer className={className}>
-    <div className="text-center">
-      <h2>{title}</h2>
-    </div>
-  </PanelContainer>
-);
+const Hero = ({ className, title }) => {
+ 
+  return (
+    <PanelContainer className={className}>
+      <div className="d-flex justify-content-center align-items-center">
+          <h2>{title}</h2>
+      </div>
+    </PanelContainer>
+  )
+};
 
 Hero.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
 };
 

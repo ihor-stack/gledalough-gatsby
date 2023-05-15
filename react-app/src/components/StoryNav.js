@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import placeholder from '../assets/placeholder.png';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -36,6 +35,7 @@ const StoryNavigation = ({ className, active }) => (
 );
 
 StoryNavigation.propTypes = {
+  className: PropTypes.string,
   active: PropTypes.string,
 };
 
