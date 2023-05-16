@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import logo from '../assets/ic_glendalough.svg';
 import bg_home_main from '../assets/bg_home_main.jpg';
+import bg_our_story from '../assets/bg_our_story.jpg';
+
+// !!! TODO: validate 'page' propType
+const bg = { 
+  'home' : bg_home_main,
+  'our_story' : bg_our_story,
+}
 
 const PanelContainer = styled.div`
   display: flex;
-  background-image: url(${bg_home_main});
+  //background-image: url(${bg_home_main});
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,8 +22,8 @@ const PanelContainer = styled.div`
     width: 100%;
 `;
 
-const HeroVideo = ({ className, title }) => (
-  <PanelContainer className={className}>
+const HeroVideo = ({ className, title, page }) => (
+  <PanelContainer className={className} style={{backgroundImage: `url(${bg[page]})`}}>
     <div className="d-flex justify-content-center align-items-center">
       <h1 className="hidden" hidden>{title}</h1>
       <div>
@@ -29,6 +36,7 @@ const HeroVideo = ({ className, title }) => (
 HeroVideo.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
+  page: PropTypes.string,
 };
 
 export default HeroVideo;

@@ -13,7 +13,7 @@ const NavList = styled.ul`
 `;
 const NavItem = styled.li`
   display: flex;
-  margin-right: 1em;
+  margin-right: 1rem;
   a {
     text-decoration: none;
   }

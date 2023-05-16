@@ -7,18 +7,19 @@ import DrinksPanel from '../components/DrinksPanel';
 import SliderPanel from '../components/SliderPanel';
 import NavPanel  from '../components/NavPanel';
 import Footer  from '../components/Footer';
-import useLatestData from '../utils/useLatestData';
+import { CONTENT } from '../constants';
+//import useLatestData from '../utils/useLatestData'; // use when API is available
 
 const Home = () => {
-  const { homeContent } = useLatestData();
+  //const { homeContent } = useLatestData(); // use when API is available
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
     <>
-    <NavPanel currentPage={currentPage}/>
+    <NavPanel currentPage={`home-page-${currentPage}`}/>
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' title="Glendalough Distillery" />
-        { homeContent && <Hero className='page' title={homeContent.home_intro} />}
+        <HeroVideo className='page' page='home' title="Glendalough Distillery" />
+        <Hero className='page' title={CONTENT.home_intro} />
         <DrinksPanel className='page' />
         <SliderPanel className='page' />
         <CocktailsPanel className='page' />
@@ -28,14 +29,3 @@ const Home = () => {
 )};
 
 export default Home;
-
-/*
-Nav
-Hero
-SubHero
-Drinks (Gin|Whiskey)
-OurStory
-Cocktails
-News
-Footer
- */

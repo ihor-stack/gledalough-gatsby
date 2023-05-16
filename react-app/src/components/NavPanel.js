@@ -34,7 +34,7 @@ margin-left: 2vw;
   pointer-events: all;
   color: ${COLOR.black};
   border-bottom: 1px dotted transparent;
-  font-family: ${FONT.heading};
+  font-family: ${FONT.sans};
   font-weight: 700;
   font-style: 'normal';
   text-transform: uppercase;
@@ -43,7 +43,8 @@ margin-left: 2vw;
   color: ${COLOR.black};
   border-bottom: 1px dotted ${COLOR.black};
  }
- &.page-0, &.page-3 {
+ &.home-page-0, &.home-page-3, &.home-page-5,
+ &.story-page-0, &.story-page-4 {
     a {
       color: ${COLOR.white};
     }
@@ -64,7 +65,8 @@ img{
   -webkit-filter: invert(1); 
   filter: invert(1);
 }
-&.page-0, &.page-3 {
+&.home-page-0, &.home-page-3, &.home-page-5,
+&.story-page-0, &.story-page-4 {
   img{
     -webkit-filter: none; 
     filter: none;
@@ -76,7 +78,7 @@ const NavPanel = ({ className, currentPage }) => {
 
 return(
   <NavContainer className={[className, `d-flex justify-content-between align-items-center` ]}>
-      <NavPrimary className={`page-${currentPage}`}>
+      <NavPrimary className={`${currentPage}`}>
         <ul className="nav flex-column">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -110,10 +112,10 @@ return(
           </li>
         </ul>
       </NavPrimary>
-      <LogoContainer className={`page-${currentPage}`} hidden>
+      <LogoContainer className={`${currentPage}`} hidden>
         <img src={logo} className="nav-logo" alt="Glendalough logo" />
       </LogoContainer>
-      <ShopLogoContainer className={[`page-${currentPage}`, `d-flex align-items-center`]}>
+      <ShopLogoContainer className={`d-flex align-items-center ${currentPage}`}>
         <img src={shop_logo} className="nav-logo-shop" alt="Glendalough shop logo" />
       </ShopLogoContainer>
     </NavContainer>
@@ -121,7 +123,7 @@ return(
 
 NavPanel.propTypes = {
   className: PropTypes.string,
-  currentPage: PropTypes.number,
+  currentPage: PropTypes.string,
 };
 
 export default NavPanel;

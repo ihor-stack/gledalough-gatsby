@@ -1,3 +1,5 @@
+import temp_data from './content';
+export const CONTENT = temp_data;
 
 export const apiEndpoint = 'http://localhost:3001/api'
 
@@ -8,8 +10,8 @@ export const LANGUAGES = [
 ];
 
 export const FONT = {
-    heading: "'priori-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-    body: "'Spectral', Georgia, Cambria, 'Times New Roman', Times, serif",
+    sans: "'priori-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    serif: "'Spectral', Georgia, Cambria, 'Times New Roman', Times, serif",
 };
 
 export const COLOR = {
@@ -17,6 +19,7 @@ export const COLOR = {
     black: '#000000',
     offwhite: '#FDFDFC',
     warmwhite: '#F6F5EF',
+    cream: '#E8E6DC',
     beige: '#D3CBC1',
     darkgreen: '#262F2B',
     wbgreen: '#163029',
@@ -28,3 +31,5 @@ export const COLOR = {
     wgreen: '#474938',
     wgrey: '#8E8982',
 };
+
+

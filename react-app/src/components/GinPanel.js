@@ -19,7 +19,7 @@ const Panel = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 1.4em;
+  font-size: 1.4rem;
 `;
 
 const GinPanel = ({ className }) => (

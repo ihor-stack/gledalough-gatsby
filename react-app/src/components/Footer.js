@@ -20,29 +20,29 @@ const Col = styled.div`
   }
   &.col-center {
     width: 15vw;
-
   }
   &.col-right {
     width: 15vw;
+    padding-top: 15vw;
   }
 `;
 
 const FormMessage = styled.p`
   font-size: 1.6rem;
-  font-family: ${FONT.heading};
+  font-family: ${FONT.sans};
   font-weight: 300;
   font-style: 'normal';
 `;
 
 const NewsContainer = styled.div`
   width: 100%;
-`
+` 
 
 const Nav = styled.nav`
   width: 100%;
   &.nav-footer a{
     color: ${COLOR.white};
-    font-family: ${FONT.heading};
+    font-family: ${FONT.sans};
     font-weight: 700;
     font-style: 'normal';
     text-transform: uppercase;
@@ -127,7 +127,7 @@ const Footer = ({ className }) => (
       <img src={footer_logo} className="cross-logo img-fluid" alt="Glendalough cross logo" />
     </Col>
 
-    <Col className='col-right d-flex   align-items-end'>
+    <Col className='col-right d-flex flex-column align-items-end'>
       <div>
         <p>&copy; Glendalough Distillery 2023</p>
       </div>

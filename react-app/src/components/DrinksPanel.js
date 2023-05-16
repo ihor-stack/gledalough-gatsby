@@ -20,7 +20,7 @@ const Panel = styled.div`
 const Button = styled.button`
   background: none;
   border: none; 
-  font-family: ${FONT.heading};
+  font-family: ${FONT.sans};
   font-weight: 700;
   font-style: 'normal';
   text-transform: uppercase;

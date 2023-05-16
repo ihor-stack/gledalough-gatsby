@@ -25,10 +25,10 @@ const Panel = styled.div`
 `;
 
 const Nav = styled.nav`
-  font-size: 1.4em;
+  font-size: 1.4rem;
   li {
     margin-right: 1rem;
-    font-family: ${FONT.heading};
+    font-family: ${FONT.sans};
     font-weight: 700;
     font-style: 'normal';
     text-transform: uppercase;
