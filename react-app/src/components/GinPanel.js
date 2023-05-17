@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { COLOR, FONT } from '../constants';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  padding: 0 10vw;
 `;
 
 const Panel = styled.div`
@@ -18,23 +20,52 @@ const Panel = styled.div`
   align-items: center;
 `;
 
-const Title = styled.div`
-  font-size: 1.4rem;
+const Heading = styled.h3`
+  width: 100%;
+  text-align: end;
+  padding-right: 5vw;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-family: ${FONT.sans};
+  font-weight: 600;
+  font-style: 'normal';
+  text-transform: uppercase;
 `;
 
-const GinPanel = ({ className }) => (
-    <PanelContainer className={className}>
+const Title = styled.h2`
+  width: 100%;
+  text-align: start;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-family: ${FONT.serif};
+  font-weight: 600;
+  font-style: 'normal';
+`;
+
+const Paragraph = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-family: ${FONT.sans};
+  font-weight: 400;
+  font-style: 'normal';
+`;
+
+const GinPanel = ({ className, content, bgColor }) => (
+    <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
       <Panel>
-        <Title>One</Title>
+        <Heading>{content.heading}</Heading>
       </Panel>
       <Panel>
-        <Title>Two</Title>
+        <Title>{content.title}</Title>
+        <Paragraph>{content.p1}</Paragraph>
       </Panel>
     </PanelContainer>
 );
 
 GinPanel.propTypes = {
   className: PropTypes.string,
+  bgColor: PropTypes.string,
+  content: PropTypes.object, 
 };
 
 export default GinPanel;

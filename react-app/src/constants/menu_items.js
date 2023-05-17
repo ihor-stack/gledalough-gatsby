@@ -11,9 +11,19 @@ const features = [
 ];
 
 const gins = [
-  { title: 'First Gin', url: '/gin/first-gin' },
-  { title: 'Second Gin', url: '/gin/second-gin' },
-  { title: 'Third Gin', url: '/gin/third-gin' },
+  { title: 'Rose Gin', url: '/gin/first-gin' },
+  { title: 'Wild Botanical Gin', url: '/gin/second-gin' },
+  { title: 'Winter Gin', url: '/gin/third-gin' },
+  { title: 'Autumn Gin', url: '/gin/fourth-gin' },
+];
+
+const botanicals = [
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
+  { title: 'Foraging Botanicals', url: '/gin/foraging-botanicals' },
 ];
 
 const stories = [
@@ -28,4 +38,4 @@ const whiskeys = [
   { title: 'Third Whiskey', url: '/whiskey/third-whiskey' },
 ];
 
-export { cocktails, features, gins, stories, whiskeys };
+export { cocktails, features, gins, botanicals, stories, whiskeys };

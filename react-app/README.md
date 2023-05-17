@@ -8,8 +8,9 @@
 * [Figma Designs](https://www.figma.com/file/kH8OFcucThVuKTew8G3wBv/Glendalough-Full-Site-Handover)
 * [Figma Design - homepage](https://www.figma.com/proto/3pHR6oYG0klbdcxsBXNS3N/030223-Glendalough-Homepage)
 * [Google Drive](https://drive.google.com/drive/folders/1Ng_lhuPck25QXB4ILrceMZlwrvQMiE2E)
+* [Clickup](https://app.clickup.com/4637827/v/l/4dh43-8093)
 
-### React notes
+### React notes 
 
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Typescript issue](https://github.com/facebook/create-react-app/issues/13080)
@@ -20,6 +21,9 @@
 * [React waypoint](https://www.npmjs.com/package/react-waypoint)
 * [React Map-GL](https://visgl.github.io/react-map-gl/docs/get-started/get-started)
 * [React hooks tips](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)
+* [React swiper candidates](https://alvarotrigo.com/blog/react-carousels/)
+* [Old useState example by Seón](https://codesandbox.io/s/n3jjpo805j)
+
 ```
 # React from scratch
 
@@ -221,3 +225,5 @@ background: #8E8982;
 * Our story - images cannot overlap if using fullpage scroll
 * very different hex values - e.g. warmwhite bg
 * f37 / updated fonts? using google webfont 'Spectral' as placeholder
+* very different heights for fullpage panels - e.g. Gin home (supposed to be square or 2 panels?)
+* slider 'dot navigation' doesnt really make sense when a (variable) number of slides are visible at once

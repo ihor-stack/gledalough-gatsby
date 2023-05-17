@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import logo from '../assets/ic_glendalough.svg';
 import bg_home_main from '../assets/bg_home_main.jpg';
 import bg_our_story from '../assets/bg_our_story.jpg';
+import bg_gin_home from '../assets/bg_gin_home.jpg';
 
 // !!! TODO: validate 'page' propType
 const bg = { 
   'home' : bg_home_main,
   'our_story' : bg_our_story,
+  'gin_home' : bg_gin_home,
 }
 
 const PanelContainer = styled.div`

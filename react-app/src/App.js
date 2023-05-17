@@ -8,7 +8,7 @@ import ContactUs from './pages/ContactUs';
 import Feature from './pages/Feature';
 import Features from './pages/Features';
 import Gin from './pages/Gin';
-import Gins from './pages/Gins';
+import GinHome from './pages/GinHome';
 import Home from './pages/Home';
 import Layout from './templates/Layout';
 import NotFound from './pages/NotFound';
@@ -35,7 +35,7 @@ const App = () => (
           <Route path="feature/:slug" element={<Feature />} />
           <Route path="features" element={<Features />} />
           <Route path="gin/:slug" element={<Gin />} />
-          <Route path="gin" element={<Gins />} />
+          <Route path="gin" element={<GinHome />} />
           <Route path="our-ethos" element={<OurEthos />} />
           <Route path="our-story" element={<OurStory />} />
           <Route path="privacy" element={<Privacy />} />

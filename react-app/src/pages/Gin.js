@@ -4,7 +4,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import ProductNav from '../components/ProductNav';
 import ProductThumbs from '../components/ProductThumbs';
 import NewsPanel from '../components/NewsPanel';
-import { gins as menuItems } from '../utils/MenuItems';
+import { gins as menuItems } from '../constants/menu_items';
 
 const Gin = () => {
   const { slug } = useParams('slug');

@@ -16,6 +16,7 @@ const NavContainer = styled.div`
   z-index 1001;
   pointer-events: none;
 `;
+// LogoContainer = deprecated
 const LogoContainer = styled.div`
 img{
   -webkit-filter: invert(1); 
@@ -44,7 +45,8 @@ margin-left: 2vw;
   border-bottom: 1px dotted ${COLOR.black};
  }
  &.home-page-0, &.home-page-3, &.home-page-5,
- &.story-page-0, &.story-page-4 {
+ &.story-page-0, &.story-page-4,
+ &.gin-page-0,  &.gin-page-4, &.gin-page-5 {
     a {
       color: ${COLOR.white};
     }
@@ -66,7 +68,8 @@ img{
   filter: invert(1);
 }
 &.home-page-0, &.home-page-3, &.home-page-5,
-&.story-page-0, &.story-page-4 {
+&.story-page-0, &.story-page-4,
+&.gin-page-0,  &.gin-page-5  {
   img{
     -webkit-filter: none; 
     filter: none;

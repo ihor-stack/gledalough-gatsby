@@ -4,7 +4,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import ProductNav from '../components/ProductNav';
 import ProductThumbs from '../components/ProductThumbs';
 import NewsPanel from '../components/NewsPanel';
-import { features as menuItems } from '../utils/MenuItems';
+import { features as menuItems } from '../constants/menu_items';
 
 const Feature = () => {
   const { slug } = useParams('slug');

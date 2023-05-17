@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 

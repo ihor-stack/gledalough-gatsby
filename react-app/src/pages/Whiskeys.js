@@ -3,7 +3,7 @@ import HeroVideo from '../components/HeroVideo';
 import ProductNav from '../components/ProductNav';
 import ProductThumbs from '../components/ProductThumbs';
 import NewsPanel from '../components/NewsPanel';
-import { whiskeys as menuItems } from '../utils/MenuItems';
+import { whiskeys as menuItems } from '../constants/menu_items';
 
 const Whiskeys = () => (
   <>

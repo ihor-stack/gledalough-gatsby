@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { COLOR } from '../constants';
 
-const NavContainer = styled.div`
+const PanelContainer = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 10vw;
 `;
 const NavList = styled.ul`
   display: flex;
@@ -22,8 +27,9 @@ const NavItem = styled.li`
   }
 `;
 
-const ProductNav = ({className, items, activeUrl }) => (
-  <NavContainer className={className}>
+const ProductNav = ({className, items, activeUrl, bgColor}) => (
+  <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
+    <div className="d-flex justify-content-center align-items-center">
     <NavList>
       {items.map((item, i) => (
         <NavItem key={i} className={item.url === activeUrl ? 'active' : ''}>
@@ -31,11 +37,13 @@ const ProductNav = ({className, items, activeUrl }) => (
         </NavItem>
       ))}
     </NavList>
-  </NavContainer>
+    </div>
+  </PanelContainer>
 );
 
 ProductNav.propTypes = {
   className: PropTypes.string,
+  bgColor: PropTypes.string,
   items: PropTypes.array,
   activeUrl: PropTypes.string,
 };
