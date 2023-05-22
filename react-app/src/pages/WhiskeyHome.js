@@ -8,9 +8,9 @@ import FeaturesPanel  from '../components/FeaturesPanel';
 import DualPanelStory  from '../components/DualPanelStory';
 import Footer  from '../components/Footer';
 import { CONTENT } from '../constants';
-import { gins as productItems } from '../constants/menu_items';
-import { botanicals as featureItems } from '../constants/menu_items';
-import photo_gin_article from '../assets/photo_gin_article.jpg';
+import { whiskeys as productItems } from '../constants/menu_items';
+import { oaks as featureItems } from '../constants/menu_items';
+import photo_whiskey_article from '../assets/photo_whiskey_article.jpg';
 // import useLatestData from '../utils/useLatestData'; // use when API is available
 
 const GinHome = () => {
@@ -21,11 +21,11 @@ const GinHome = () => {
     <>
     <NavPanel currentPage={`gin-page-${currentPage}`}/>
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='gin_home' title='Glendalough Distillery' />
-        <ProductIntro className='page' content={CONTENT.gin_intro} bgColor='cream' />
-        <ProductSlider className='page' product='gin' items={productItems} activeUrl='/gin' bgColor='cream' />
-        <FeaturesPanel className='page' content={CONTENT.gin_botanicals_intro} items={featureItems} bgColor='beige' subcontent={CONTENT.gin_features} />
-        <DualPanelStory className='page' bgColor='cream' content={CONTENT.gin_article} photo={photo_gin_article} />
+        <HeroVideo className='page' page='whiskey_home' title='Glendalough Distillery' />
+        <ProductIntro className='page' content={CONTENT.whiskey_intro} bgColor='cream' />
+        <ProductSlider className='page' product='whiskey' items={productItems} activeUrl='/whiskey' bgColor='cream' />
+        <FeaturesPanel className='page' content={CONTENT.whiskey_oaks_intro} items={featureItems} bgColor='beige' subcontent={CONTENT.whiskey_features} />
+        <DualPanelStory className='page' bgColor='cream' content={CONTENT.whiskey_article} photo={photo_whiskey_article} />
         <Footer className='page' />
       </PageScroll>
     </>

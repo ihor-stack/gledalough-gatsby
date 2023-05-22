@@ -218,11 +218,11 @@ background: #8E8982;
     - Recipe
     - News *
     - Footer *
-
+ 
 ### Questions
 
 * Home / all - What would be used for a 'loading ...' state
-* Our story - images cannot overlap if using fullpage scroll
+* Our story - images cannot overlap  if using fullpage scroll
 * very different hex values - e.g. warmwhite bg
 * f37 / updated fonts? using google webfont 'Spectral' as placeholder
 * very different heights for fullpage panels - e.g. Gin home (supposed to be square or 2 panels?)

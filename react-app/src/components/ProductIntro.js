@@ -50,7 +50,7 @@ const Paragraph = styled.p`
   font-style: 'normal';
 `;
 
-const GinPanel = ({ className, content, bgColor }) => (
+const ProductIntro = ({ className, content, bgColor }) => (
     <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
       <Panel>
         <Heading>{content.heading}</Heading>
@@ -62,10 +62,10 @@ const GinPanel = ({ className, content, bgColor }) => (
     </PanelContainer>
 );
 
-GinPanel.propTypes = {
+ProductIntro.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string,
   content: PropTypes.object, 
 };
 
-export default GinPanel;
+export default ProductIntro;

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 //import { useRef, useEffect } from 'react';
-import product_gin01 from '../assets/product_gin01.jpg'
 import { COLOR, FONT } from '../constants';
 
 const PanelContainer = styled.div`
@@ -82,12 +81,12 @@ const responsive = {
   },
 };
 
-const ProductNav = ({ className, items, activeUrl, bgColor }) => {
+const ProductNav = ({ className, product, items, activeUrl, bgColor }) => {
   const handleDragStart = (e) => e.preventDefault();
 
   const slides = items.map((item, i) => (
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
-      <SliderImage><img src={product_gin01} className="img-fluid" alt="alt placeholder" /></SliderImage>
+      <SliderImage><img src={item.image} className="img-fluid" alt="alt placeholder" /></SliderImage>
       <SliderTitle>{item.title}</SliderTitle>
       <LinkButton><button>Learn more</button></LinkButton>
       <ShopButton><button>Buy now</button></ShopButton>
@@ -106,6 +105,7 @@ const ProductNav = ({ className, items, activeUrl, bgColor }) => {
 ProductNav.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string,
+  product: PropTypes.string,
   items: PropTypes.array,
   activeUrl: PropTypes.string,
 };

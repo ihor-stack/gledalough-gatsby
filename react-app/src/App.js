@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import { Container } from 'react-bootstrap';
 
 import Cocktail from './pages/Cocktail';
 import Cocktails from './pages/Cocktails';
@@ -19,12 +18,10 @@ import StoryArticle from './pages/StoryArticle';
 import Terms from './pages/Terms';
 import Tours from './pages/Tours';
 import Whiskey from './pages/Whiskey';
-import Whiskeys from './pages/Whiskeys';
-//import Fullpage from './pages/Fullpage';
+import WhiskeyHome from './pages/WhiskeyHome';
 
 const App = () => (
   <Router>
-    {/* <Container> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -43,10 +40,9 @@ const App = () => (
           <Route path="terms-and-conditions" element={<Terms />} />
           <Route path="tours" element={<Tours />} />
           <Route path="whiskey/:slug" element={<Whiskey />} />
-          <Route path="whiskey" element={<Whiskeys />} />
+          <Route path="whiskey" element={<WhiskeyHome />} />
         </Route>
       </Routes>
-    {/* </Container> */}
   </Router>
 );
 

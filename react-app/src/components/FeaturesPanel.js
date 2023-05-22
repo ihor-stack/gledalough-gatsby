@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
 import DualPanelFeature  from '../components/DualPanelFeature';
 import useGinFeatureState from '../utils/useGinFeatureState';
-import botanical_01 from '../assets/botanical_01.jpg';
 import foraging_feature_01 from '../assets/foraging_feature_01.jpg';
 
 const PanelContainer = styled.div`
@@ -43,6 +42,7 @@ const Feature = styled.div`
   display: flex;
   flex-grow: 1;
   width: 30%;
+  max-width: 30%;
   margin-right: 3%;
   height: 25vh;
   position: relative;
@@ -78,7 +78,7 @@ const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
   const { feature, loadFeature } = useGinFeatureState();
   
   const features = items.map((item, i) => (
-    <Feature key={i} style={{backgroundImage: `url(${botanical_01})`}} onClick={() => loadFeature(1)}>
+    <Feature key={i} style={{backgroundImage: `url(${item.image})`}} onClick={() => loadFeature(1)}>
       <FeatureTitle>{item.title}</FeatureTitle>
     </Feature>
   ))

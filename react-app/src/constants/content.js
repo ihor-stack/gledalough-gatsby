@@ -38,13 +38,47 @@ const gin_botanicals_intro = {
     p2: 'In a way each batch is like the first one we\'ve ever made. Hand-foraged,  wild ingredients. Each day, we venture into the surrounding mountains. The wild native plants we forage are fresh-distilled to capture the intrinsic nature, the essence of those mountains.',
 }
 
-const gin_foraging = {
+const gin_article = {
     title: 'Meet Irelands only Fulltime forager',
     p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
     p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
 }
 
 const gin_features = [{
+    title: 'Wood Sorrel',
+    intro: 'Wood sorrel is a pretty, shamrock-like plant that grows in the woods and shady places of Ireland. It is one of the wild foods that was widely eaten in Ireland.',
+    p1heading: 'Wood Sorrel',
+    p1: 'Wood sorrel has sharp, tangy notes, just like lemon. In former times when lemons were only available in winter, wood sorrel was used to make sauces, soups and as a garnish for fish including salmon and trout.',
+    p2heading: 'Folklore',
+    p2: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.',
+}];
+    
+const whiskey_intro = {
+    heading: 'Whiskey & wood, a love story',
+    title: 'Discover Our Whiskeys',
+    p1: 'Using purposeful & sustainable methods to protect the limited resources of the mountains, we forage from around late February to early November. What we pick is brought fresh to the distillery every day as quickly as possible to capture the plants essential oils before they wilt. We believe this is the truest taste of our mountain home and what adds the complex layers of flavor to our gins.',
+}
+
+const whiskey_botanicals_intro = {
+    title: 'Relentless Persuit of Flavour',
+    p1: 'We don\'t say this lightly, and we don\'t find it easily. Our wood program is a testament to our relentless persuit of flavour. We\'ve ventured deep into the oldest parts of the mountains - of wicklow and beyond to find these through provoking tastes.',
+    p2: 'While american white oak forms the backbone of our maturaion, Irish, Jananese, french and spanish oak are used to finish our various whsikeys. Each impart discernable unique and exquiste flavours.',
+}
+
+const whiskey_oaks_intro = {
+    title: 'The Worlds Best Oak',
+    p1: 'A key influence on the flavour of our whiskey comes from the wood it has spent time in. There are countless nuances in how that wood effects and injects flavour; the straightness of the tree, the fineness of the grain, the size of the barrel or the depth of the char. Our wood program is a testament to our relentless pursuit of flavour.',
+    p2: 'American white oak forms the backbone of our maturation and where we venture off the beaten track is by finishing all of our whiskeys in a second (and sometimes third) very different cask. Irish, Japanese, French and Spanish oak are used to finish some of our various whiskeys. Each impart discernible, unique and exquisite flavours.',
+}
+
+//
+const whiskey_article = {
+    title: 'Meet Rowdy',
+    p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+    p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+}
+
+const whiskey_features = [{
     title: 'Wood Sorrel',
     intro: 'Wood sorrel is a pretty, shamrock-like plant that grows in the woods and shady places of Ireland. It is one of the wild foods that was widely eaten in Ireland.',
     p1heading: 'Wood Sorrel',
@@ -61,8 +95,15 @@ const CONTENT = {
     story4,
     gin_intro,
     gin_botanicals_intro,
-    gin_foraging,
+    gin_article,
     gin_features,
+    whiskey_intro,
+    whiskey_botanicals_intro, // not used anymore ?
+    whiskey_oaks_intro,
+    whiskey_article,
+    whiskey_features,
+
+
 }
 
 export default CONTENT;
