@@ -25,28 +25,63 @@ import oak_french_oak from '../assets/oak_french_oak.jpg';
 import oak_japanese_mizunara from '../assets/oak_japanese_mizunara.jpg';
 import oak_irish_oak from '../assets/oak_irish_oak.jpg';
 
+// Feature images
+import thumb_feature_01 from '../assets/thumb_feature_01.jpg';
+import thumb_feature_02 from '../assets/thumb_feature_02.jpg';
+import thumb_feature_03 from '../assets/thumb_feature_03.jpg';
+import thumb_feature_04 from '../assets/thumb_feature_04.jpg';
 
-const cocktails = [
-  { title: 'Irish Mule', url: '/cocktail/irish-mule' },
-  { title: 'A Long Way', url: '/cocktail/a-long-way' },
-  { title: 'Tom Collins', url: '/cocktail/tom-collins' },
-];
+// Cocktail images
+import thumb_cocktail_01 from '../assets/thumb_cocktail_01.jpg';
+import thumb_cocktail_02 from '../assets/thumb_cocktail_02.jpg';
+import thumb_cocktail_03 from '../assets/thumb_cocktail_03.jpg';
+import thumb_cocktail_04 from '../assets/thumb_cocktail_04.jpg';
+
+// const cocktails = [
+//   { title: 'Irish Mule', url: '/cocktail/irish-mule' },
+//   { title: 'A Long Way', url: '/cocktail/a-long-way' },
+//   { title: 'Tom Collins', url: '/cocktail/tom-collins' },
+// ];
 
 const features = {
-  'Foraging': [
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
+  'foraging': [
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_01 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_02 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_03 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_04 },
   ],
-  'Glendalough': [
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
+  'glendalough': [
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_01 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_02 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_03 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_04 },
   ],
-  'Sustainability': [
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
-    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals' },
+  'sustainability': [
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_01 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_02 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_03 },
+    { date: '22 March 2022', title: 'Foraging Botanicals', url: '/feature/foraging-botanicals', image: thumb_feature_04 },
+  ],
+};
+
+const cocktails = {
+  'gin': [
+    { title: 'Irish Mule', url: '/cocktail/irish-mule', image: thumb_cocktail_01 },
+    { title: 'A Long Way', url: '/cocktail/a-long-way', image: thumb_cocktail_02 },
+    { title: 'Tom Collins', url: '/cocktail/tom-collins', image: thumb_cocktail_03 },
+    { title: 'Foraging Botanicals', url: '/cocktail/foraging-botanicals', image: thumb_cocktail_04 },
+  ],
+  'whiskey': [
+    { title: 'Irish Mule', url: '/cocktail/irish-mule', image: thumb_cocktail_01 },
+    { title: 'A Long Way', url: '/cocktail/a-long-way', image: thumb_cocktail_02 },
+    { title: 'Tom Collins', url: '/cocktail/tom-collins', image: thumb_cocktail_03 },
+    { title: 'Foraging Botanicals', url: '/cocktail/foraging-botanicals', image: thumb_cocktail_04 },
+  ],
+  'occasion': [
+    { title: 'Irish Mule', url: '/cocktail/irish-mule', image: thumb_cocktail_01 },
+    { title: 'A Long Way', url: '/cocktail/a-long-way', image: thumb_cocktail_02 },
+    { title: 'Tom Collins', url: '/cocktail/tom-collins', image: thumb_cocktail_03 },
+    { title: 'Foraging Botanicals', url: '/cocktail/foraging-botanicals', image: thumb_cocktail_04 },
   ],
 };
 

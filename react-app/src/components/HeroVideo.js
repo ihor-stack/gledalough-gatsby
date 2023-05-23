@@ -2,22 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import logo from '../assets/ic_glendalough.svg';
-import bg_home_main from '../assets/bg_home_main.jpg';
-import bg_our_story from '../assets/bg_our_story.jpg';
-import bg_gin_home from '../assets/bg_gin_home.jpg';
-import bg_whiskey_home from '../assets/bg_whiskey_home.jpg';
+import bg_hero_home from '../assets/bg_hero_home.jpg';
+import bg_hero_our_story from '../assets/bg_hero_our_story.jpg';
+import bg_hero_gin_home from '../assets/bg_hero_gin_home.jpg';
+import bg_hero_whiskey_home from '../assets/bg_hero_whiskey_home.jpg';
+import bg_hero_features from '../assets/bg_hero_features.jpg';
+import bg_hero_cocktails from '../assets/bg_hero_cocktails.jpg';
+import bg_hero_stories from '../assets/bg_hero_stories.jpg';
 
 // !!! TODO: validate 'page' propType
 const bg = { 
-  'home' : bg_home_main,
-  'our_story' : bg_our_story,
-  'gin_home' : bg_gin_home,
-  'whiskey_home' : bg_whiskey_home,
+  'home' : bg_hero_home,
+  'our_story' : bg_hero_our_story,
+  'gin_home' : bg_hero_gin_home,
+  'whiskey_home' : bg_hero_whiskey_home,
+  'features' : bg_hero_features,
+  'cocktails' : bg_hero_cocktails,
+  'stories' : bg_hero_stories,
 }
 
 const PanelContainer = styled.div`
   display: flex;
-  //background-image: url(${bg_home_main});
+  //background-image: url(${bg_hero_home});
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

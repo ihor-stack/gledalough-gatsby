@@ -1,3 +1,10 @@
+// Gin feature images (6)
+import gin_feature_image_01 from '../assets/foraging_feature_01.jpg';
+
+// Whiskey feature images (5)
+import whiskey_feature_image_01 from '../assets/oak_us_bourbon_barrels-large.jpg';
+
+
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
 
 const story1 = {
@@ -45,6 +52,7 @@ const gin_article = {
 }
 
 const gin_features = [{
+    image: gin_feature_image_01,
     title: 'Wood Sorrel',
     intro: 'Wood sorrel is a pretty, shamrock-like plant that grows in the woods and shady places of Ireland. It is one of the wild foods that was widely eaten in Ireland.',
     p1heading: 'Wood Sorrel',
@@ -79,13 +87,14 @@ const whiskey_article = {
 }
 
 const whiskey_features = [{
-    title: 'Wood Sorrel',
-    intro: 'Wood sorrel is a pretty, shamrock-like plant that grows in the woods and shady places of Ireland. It is one of the wild foods that was widely eaten in Ireland.',
-    p1heading: 'Wood Sorrel',
-    p1: 'Wood sorrel has sharp, tangy notes, just like lemon. In former times when lemons were only available in winter, wood sorrel was used to make sauces, soups and as a garnish for fish including salmon and trout.',
-    p2heading: 'Folklore',
-    p2: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.',
+    image: whiskey_feature_image_01,
+    title: 'US Bourbon Barrels', 
+    intro: 'Donec pharetra imperdiet dolor, ut cursus enim dictum vitae. L orem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor vestibulum nibh nec ullamcorper. Aliquam orci ante, condimentum ac auctor vel, eleifend sit amet elit. Aliquam erat volutpat. Praesent sed urna non elit interdum porta.',
+    p1heading: 'Folklore',
+    p1: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.'
 }];
+
+
 
 const CONTENT = {
     home_intro,

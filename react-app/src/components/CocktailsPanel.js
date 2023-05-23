@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
 import img_bg_texture from '../assets/bg_textured_paper.jpg';
-import img_cocktail1 from '../assets/cocktail_irish_mule.jpg';
-import img_cocktail2 from '../assets/cocktail_a_long_way.jpg';
-import img_cocktail3 from '../assets/cocktail_tom_collins.jpg';
-
 
 const PanelContainer = styled.div`
   width: 100%;
@@ -44,28 +40,26 @@ const Image = styled.img`
   -moz-border-radius: 50% 50% 0 0;
 `;
 
-const CocktailsPanel = ({ className }) => (
+const CocktailsPanel = ({ className, items }) => {
+
+  const cocktails = items.map((item, i) => (
+    <Panel key={i}>
+        <Image src={item.image} alt={item.title} />
+        <Title>{item.title}</Title>
+        <Button>View Recipe</Button>
+    </Panel>
+  ))
+
+  return (
     <PanelContainer className={[className, `d-flex justify-content-between align-items-center`]}>
-      <Panel>
-        <Image src={img_cocktail1} alt="Irish Mule" />
-        <Title>Irish Mule</Title>
-        <Button>View Recipe</Button>
-      </Panel>
-      <Panel>
-        <Image src={img_cocktail2} alt="A Long Way" />
-        <Title>A Long Way</Title>
-        <Button>View Recipe</Button>
-      </Panel>
-      <Panel>
-        <Image src={img_cocktail3} alt="Tom Collins" />
-        <Title>Tom Collins</Title>
-        <Button>View Recipe</Button>
-      </Panel>
+      { cocktails }
     </PanelContainer>
-);
+  )
+};
 
 CocktailsPanel.propTypes = {
   className: PropTypes.string,
+  items: PropTypes.array,
 };
 
 export default CocktailsPanel;

@@ -2,7 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FONT } from '../constants';
-import bg_image from '../assets/bg_river_tower.jpg';
+//
+import slider_home_01 from '../assets/slider_home_01.jpg';
+import slider_features_01 from '../assets/slider_features_01.jpg';
+import slider_cocktails_01 from '../assets/slider_cocktails_01.jpg';
+
+const slides = {
+  home: [{'image': slider_home_01}],
+  features: [{'image': slider_features_01}],
+  cocktails: [{'image': slider_cocktails_01}],
+}
 
 const PanelContainer = styled.div`
   display: flex;
@@ -19,7 +28,6 @@ const Panel = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 380px;
-  background-image: url(${bg_image});
   background-size: cover;
   background-repeat: no-repeat;
 `;
@@ -35,9 +43,9 @@ const Nav = styled.nav`
   }
 `;
 
-const SliderPanel = ({ className, items, activeUrl }) => (
+const SliderPanel = ({ className, page, items, activeUrl }) => (
   <PanelContainer className={className}>
-    <Panel>
+    <Panel style={{backgroundImage: `url(${slides[page][0].image})`}} >
       <Nav>
         <ul className="nav flex-row">
           <li className="nav-item">01</li>

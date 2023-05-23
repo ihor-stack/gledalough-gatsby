@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Cocktail from './pages/Cocktail';
-import Cocktails from './pages/Cocktails';
+import CocktailsHome from './pages/CocktailsHome';
 import ContactUs from './pages/ContactUs';
 import Feature from './pages/Feature';
-import Features from './pages/Features';
+import Features from './pages/FeaturesHome';
 import Gin from './pages/Gin';
 import GinHome from './pages/GinHome';
 import Home from './pages/Home';
@@ -27,7 +27,7 @@ const App = () => (
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="cocktail/:slug" element={<Cocktail />} />
-          <Route path="cocktails" element={<Cocktails />} />
+          <Route path="cocktails" element={<CocktailsHome />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="feature/:slug" element={<Feature />} />
           <Route path="features" element={<Features />} />

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
 import DualPanelFeature  from '../components/DualPanelFeature';
 import useGinFeatureState from '../utils/useGinFeatureState';
-import foraging_feature_01 from '../assets/foraging_feature_01.jpg';
 
 const PanelContainer = styled.div`
   padding: 0 10vw;
@@ -95,7 +94,7 @@ const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
         </HalfColumn>
       </Row>
       { !feature  && <Features>{features}</Features> }
-      { feature > 0 && <DualPanelFeature className='feature' bgColor='cream' content={subcontent} photo={foraging_feature_01} close={loadFeature} /> }
+      { feature > 0 && <DualPanelFeature className='feature' bgColor='cream' content={subcontent} close={loadFeature} /> }
     </PanelContainer>
 )};
 

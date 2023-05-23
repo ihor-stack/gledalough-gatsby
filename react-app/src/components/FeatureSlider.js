@@ -24,48 +24,35 @@ const SliderItem = styled.div`
   width: 100%;
   height: 100vh;
   flex-shrink: 0;
+  justify-content: start;
+  align-items: start;
 `;
-const SlideImage = styled.div`
+
+const FeatureHeading = styled.h2`
+  margin-top: 4rem;
+  width: 100%;
+  text-align: left;
+  text-transform: capitalize;
+`;
+const ItemDate = styled.h3`
+  width: 100%;
+  text-align: left;
+`;
+const ItemImage = styled.div`
+  position: relative;
   text-align: center;
-  margin-top: 10vh;
-  img{
-     height: 60vh;
-  }
+  height: 25vw;
+  margin-right: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
-const SlideTitle = styled.h3`
+const ItemTitle = styled.h3`
+  position: absolute;
+  bottom:0;
   width: 100%;
   text-align: center;
-`;
-const LinkButton = styled.div`
-  width: 100%;
-  text-align: center;
-  button {
-    margin: 0 auto;
-    background: none;
-    border: none; 
-    font-family: ${FONT.sans};
-    font-weight: 700;
-    font-style: 'normal';
-    text-transform: uppercase;
-    border-bottom: 1px solid ${COLOR.black};
-  }
-`;
-const ShopButton = styled.div`
-  width: 100%;
-  text-align: center;
-  margin-top: 1rem;
-  button {
-    margin: 0 auto;
-    padding: 0.5rem 1.6rem;
-    background: none;
-    border: none; 
-    font-family: ${FONT.sans};
-    font-weight: 700;
-    font-style: 'normal';
-    text-transform: uppercase;
-    border: 1px solid ${COLOR.black};
-    border-radius: 1.6rem;
-  }
+  background: rgba(35, 31, 32, 0.6);
+  color: ${COLOR.white}
 `;
 
 const responsive = {
@@ -81,20 +68,21 @@ const responsive = {
   },
 };
 
-const ProductSlider = ({ className, product, items, activeUrl, bgColor }) => {
+const FeatureSlider = ({ className, category, items, activeUrl, bgColor }) => {
   const handleDragStart = (e) => e.preventDefault();
 
   const slides = items.map((item, i) => (
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
-      <SlideImage><img src={item.image} className="img-fluid" alt="alt placeholder" /></SlideImage>
-      <SlideTitle>{item.title}</SlideTitle>
-      <LinkButton><button>Learn more</button></LinkButton>
-      <ShopButton><button>Buy now</button></ShopButton>
+      <ItemDate>{item.date}</ItemDate>
+      <ItemImage style={{backgroundImage: `url(${item.image})`}}>
+        <ItemTitle>{item.title}</ItemTitle>
+      </ItemImage>
     </SliderItem>
   ))
 
   return (
     <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
+      <FeatureHeading>{category}</FeatureHeading>
       <SliderContainer>
         <AliceCarousel mouseTracking items={slides} responsive={responsive} />
       </SliderContainer>
@@ -102,7 +90,7 @@ const ProductSlider = ({ className, product, items, activeUrl, bgColor }) => {
   )
 };
 
-ProductSlider.propTypes = {
+FeatureSlider.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string,
   product: PropTypes.string,
@@ -110,4 +98,4 @@ ProductSlider.propTypes = {
   activeUrl: PropTypes.string,
 };
 
-export default ProductSlider;
+export default FeatureSlider;

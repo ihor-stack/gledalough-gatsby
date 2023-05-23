@@ -14,7 +14,7 @@ import photo_gin_article from '../assets/photo_gin_article.jpg';
 // import useLatestData from '../utils/useLatestData'; // use when API is available
 
 const GinHome = () => {
-  // const { homeContent } = useLatestData(); // use when API is available
+  // const { homeContent } = useLatestData(); // use when API is available 
   const [currentPage, setCurrentPage] = useState(0);
 
   return (

@@ -8,6 +8,8 @@ import SliderPanel from '../components/SliderPanel';
 import NavPanel  from '../components/NavPanel';
 import Footer  from '../components/Footer';
 import { CONTENT } from '../constants';
+import { cocktails } from '../constants/menu_items';
+
 //import useLatestData from '../utils/useLatestData'; // use when API is available
 
 const Home = () => {
@@ -21,8 +23,8 @@ const Home = () => {
         <HeroVideo className='page' page='home' title="Glendalough Distillery" />
         <Hero className='page' title={CONTENT.home_intro} />
         <DrinksPanel className='page' />
-        <SliderPanel className='page' />
-        <CocktailsPanel className='page' />
+        <SliderPanel className='page' page='home' />
+        <CocktailsPanel className='page' items={cocktails.gin.slice(0,3)} />
         <Footer className='page' />
       </PageScroll>
     </>

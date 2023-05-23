@@ -47,7 +47,7 @@ const ParagraphIntro = styled.p`
 
 const Paragraph = styled.p`
   font-size: 1.2rem;
-  font-family: ${FONT.sans};
+  font-family: ${FONT.sans}; 
   font-weight: 500;
   font-style: 'normal';
   margin: 2rem 4rem 0 4rem;
@@ -55,7 +55,7 @@ const Paragraph = styled.p`
 
 const DualPanelFeature = ({ className, bgColor, photo, content, close}) => (
     <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
-      <Panel className='photo' style={{backgroundImage: `url(${photo})`}} onClick={() => close(0) }/>
+      <Panel className='photo' style={{backgroundImage: `url(${content[0].image})`}} onClick={() => close(0) }/>
       <Panel className='text' >
         <Title>{content[0].title}</Title>
         <ParagraphIntro>{content[0].p1}</ParagraphIntro>
