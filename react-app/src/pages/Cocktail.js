@@ -1,28 +1,30 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-import { useParams, useLocation } from 'react-router-dom';
-import ProductNav from '../components/ProductNav';
-import ProductThumbs from '../components/ProductThumbs';
-import NewsPanel from '../components/NewsPanel';
-import { cocktails as menuItems } from '../constants/menu_items';
+import React, { useState }  from 'react';
+import PageScroll from 'react-page-scroll';
+import NavPanel  from '../components/NavPanel';
+import HeroVideo from '../components/HeroVideo';
+import FeatureSlider from '../components/FeatureSlider';
+import DualPanelCocktail from '../components/DualPanelCocktail';
+import Footer  from '../components/Footer';
 
-const Cocktail = () => {
-  const { slug } = useParams('slug');
-  const location = useLocation();
+// import { CONTENT } from '../constants';
+// import { gins as productItems } from '../constants/menu_items';
+import { cocktails, slider_items } from '../constants/menu_items';
+// import useLatestData from '../utils/useLatestData'; // use when API is available
+
+const CocktailsHome = () => {
+  // const { homeContent } = useLatestData(); // use when API is available 
+  const [currentPage, setCurrentPage] = useState(0);
+
   return (
     <>
-      <h1>Cocktail: {slug}</h1>
-      <hr />
-      <ProductNav items={menuItems} activeUrl={location.pathname} />
-      <ProductThumbs />
-      <hr />
-      <NewsPanel />
+    <NavPanel currentPage={`cocktails-page-${currentPage}`}/>
+      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+        <HeroVideo className='page' page='cocktails' title='Glendalough Distillery' />
+        <DualPanelCocktail className='page' content={cocktails} />
+        <FeatureSlider className='page' category='occasion' items={cocktails.occasion} bgColor='offwhite' />
+        <Footer className='page' />
+      </PageScroll>
     </>
-  );
-};
+)}; 
 
-// Product.propTypes = {
-//   slug: PropTypes.string,
-// };
-
-export default Cocktail;
+export default CocktailsHome;

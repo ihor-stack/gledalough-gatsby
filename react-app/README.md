@@ -23,6 +23,7 @@
 * [React hooks tips](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)
 * [React swiper candidates](https://alvarotrigo.com/blog/react-carousels/)
 * [Old useState example by Seón](https://codesandbox.io/s/n3jjpo805j)
+* [Grain filter (svg)](https://css-tricks.com/grainy-gradients/)
 
 ```
 # React from scratch

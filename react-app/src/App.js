@@ -13,7 +13,7 @@ import Layout from './templates/Layout';
 import NotFound from './pages/NotFound';
 import OurEthos from './pages/OurEthos';
 import OurStory from './pages/OurStory';
-import Privacy from './pages/Privacy';
+import Privacy from './pages/PrivacyPage';
 import StoryArticle from './pages/StoryArticle';
 import Terms from './pages/Terms';
 import Tours from './pages/Tours';

@@ -22,12 +22,7 @@ img{
   -webkit-filter: invert(1); 
   filter: invert(1);
 }
-&.page-0 {
-  img{
-    -webkit-filter: none; 
-    filter: none;
-  }
-}
+
 `;
 const NavPrimary = styled.nav`
 margin-left: 2vw;
@@ -44,9 +39,21 @@ margin-left: 2vw;
   color: ${COLOR.black};
   border-bottom: 1px dotted ${COLOR.black};
  }
+ .nav-link img {
+  -webkit-filter: none; 
+  filter: none;
+ }
  &.home-page-0, &.home-page-3, &.home-page-5,
  &.story-page-0, &.story-page-4,
- &.gin-page-0,  &.gin-page-4, &.gin-page-5 {
+ &.gins-page-0, &.gins-page-4, &.gins-page-5,
+ &.gin-page-5,
+ &.whiskeys-page-0, &.whiskeys-page-4, &.whiskeys-page-5,
+ &.whiskey-page-0,
+ &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
+ &.cocktail-page-0,
+ &.features-page-0, &.features-page-4, &.features-page-5,
+ &.feature-page-0,
+  {
     a {
       color: ${COLOR.white};
     }
@@ -69,7 +76,14 @@ img{
 }
 &.home-page-0, &.home-page-3, &.home-page-5,
 &.story-page-0, &.story-page-4,
-&.gin-page-0,  &.gin-page-5  {
+&.gins-page-0, &.gins-page-5,
+&.gin-page-2,
+&.whiskeys-page-0, &.whiskeys-page-5,
+&.whiskey-page-0,
+&.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
+&.cocktail-page-0,
+&.features-page-0, &.features-page-4, &.features-page-5,
+&.feature-page-0 {
   img{
     -webkit-filter: none; 
     filter: none;
@@ -80,7 +94,7 @@ img{
 const NavPanel = ({ className, currentPage }) => {
 
 return(
-  <NavContainer className={[className, `d-flex justify-content-between align-items-center` ]}>
+  <NavContainer className={`${className} d-flex justify-content-between align-items-center`}>
       <NavPrimary className={`${currentPage}`}>
         <ul className="nav flex-column">
           <li className="nav-item">

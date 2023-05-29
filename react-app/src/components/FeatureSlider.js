@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
@@ -41,7 +41,7 @@ const ItemDate = styled.h3`
 const ItemImage = styled.div`
   position: relative;
   text-align: center;
-  height: 25vw;
+  height: 25vw; 
   margin-right: 2rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,14 +70,18 @@ const responsive = {
 
 const FeatureSlider = ({ className, category, items, activeUrl, bgColor }) => {
   const handleDragStart = (e) => e.preventDefault();
+  // const { slug } = useParams('slug');
+  // const location = useLocation();
+  const navigate = useNavigate();
 
   const slides = items.map((item, i) => (
-    <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
+     <SliderItem key={i} onDragStart={handleDragStart} onClick={() => navigate('/cocktail/cocktail-one')} role="presentation">
       <ItemDate>{item.date}</ItemDate>
       <ItemImage style={{backgroundImage: `url(${item.image})`}}>
         <ItemTitle>{item.title}</ItemTitle>
       </ItemImage>
     </SliderItem>
+ 
   ))
 
   return (

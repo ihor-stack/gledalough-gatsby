@@ -38,7 +38,7 @@ const Image = styled.img`
 `;
 
 const DrinksPanel = ({ className }) => (
-    <PanelContainer className={[className, `d-flex justify-content-between align-items-center`]}>
+    <PanelContainer className={`${className} d-flex justify-content-between align-items-center`}>
       <Panel>
         <Image src={img_gin} alt="Irish Gin" />
         <Title>Irish Gin</Title>

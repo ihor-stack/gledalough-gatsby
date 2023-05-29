@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import SocialNav from './SocialNav';
 import { COLOR, FONT } from '../constants';
 import footer_logo from '../assets/footer_logo.png';
 
@@ -22,7 +23,7 @@ const Col = styled.div`
     width: 15vw;
   }
   &.col-right {
-    width: 15vw;
+    width: auto;
     padding-top: 15vw;
   }
 `;
@@ -80,11 +81,7 @@ const Footer = ({ className }) => (
           <FormMessage>Get the latest news and cocktails straight to your inbox</FormMessage>
         </NewsContainer>
         <Nav>
-        <ul className="nav justify-content-start">
-          <li>[IG]</li>
-          <li>[FB]</li>
-          <li>[TW]</li>
-        </ul>
+        <SocialNav className="nav justify-content-start" />
         </Nav>
         <Nav className='nav-footer'>
           <ul className="nav justify-content-start">

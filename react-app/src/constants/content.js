@@ -4,6 +4,8 @@ import gin_feature_image_01 from '../assets/foraging_feature_01.jpg';
 // Whiskey feature images (5)
 import whiskey_feature_image_01 from '../assets/oak_us_bourbon_barrels-large.jpg';
 
+// Gin products
+import product_gin_01 from '../assets/gin_wild_rose-large.png';
 
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
 
@@ -51,6 +53,13 @@ const gin_article = {
     p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
 }
 
+const gin_shop = {
+    title: 'Purchase Our Irish Gins',
+    p1: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.',
+    image_01: product_gin_01,
+    image_02: product_gin_01,
+}
+
 const gin_features = [{
     image: gin_feature_image_01,
     title: 'Wood Sorrel',
@@ -94,6 +103,30 @@ const whiskey_features = [{
     p1: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.'
 }];
 
+const gins = [{
+    image: product_gin_01,
+    heading: 'Made with depth and meaning',
+    title: 'Wild Rose Gin',
+    p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+    p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+    notes_title: 'Tasting Notes',
+    note_p1_heading: 'The Nose',
+    note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+    note_p2_heading: 'The Taste',
+    note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+    note_p3_heading: 'The Finish',
+    note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+    summary_heading: 'Impact',
+    summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+    summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+}];
+
+
+
+
+
+
+
 
 
 const CONTENT = {
@@ -102,17 +135,17 @@ const CONTENT = {
     story2,
     story3,
     story4,
+    gins,
     gin_intro,
     gin_botanicals_intro,
     gin_article,
     gin_features,
+    gin_shop,
     whiskey_intro,
     whiskey_botanicals_intro, // not used anymore ?
     whiskey_oaks_intro,
     whiskey_article,
     whiskey_features,
-
-
 }
 
 export default CONTENT;

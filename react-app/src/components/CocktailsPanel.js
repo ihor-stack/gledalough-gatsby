@@ -5,8 +5,8 @@ import { COLOR, FONT } from '../constants';
 import img_bg_texture from '../assets/bg_textured_paper.jpg';
 
 const PanelContainer = styled.div`
+  position: relative;
   width: 100%;
-  padding: 0 10vw;
   display: flex;
   background-image: url(${img_bg_texture});
   background-attachment: fixed;
@@ -14,10 +14,17 @@ const PanelContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `;
+const ItemsContainer = styled.div`
+  width: 100%;
+  padding: 0 12.5vw;
+  display: flex;
+`;
 
-const Panel = styled.div`
+const Item = styled.div`
   text-align: center;
   width: 25vw;
+  padding: 2vw;
+ 
 `;
 
 const Button = styled.button`
@@ -32,6 +39,22 @@ const Button = styled.button`
 
 const Title = styled.h3`
   margin-top: 1rem;
+  flex-grow: 1;
+`;
+
+const PanelHeader = styled.h3`
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  text-align: center;
+  width: 100%;
+  padding-top: 4rem;
+  font-family: ${FONT.serif};
+  font-weight: 600;
+  font-style: 'normal';
+  font-size: 2rem;
+  line-height: 2.2rem;
 `;
 
 const Image = styled.img`
@@ -43,16 +66,17 @@ const Image = styled.img`
 const CocktailsPanel = ({ className, items }) => {
 
   const cocktails = items.map((item, i) => (
-    <Panel key={i}>
-        <Image src={item.image} alt={item.title} />
+    <Item key={i}>
+        <Image className='img-fluid' src={item.image} alt={item.title} />
         <Title>{item.title}</Title>
         <Button>View Recipe</Button>
-    </Panel>
+    </Item>
   ))
 
   return (
-    <PanelContainer className={[className, `d-flex justify-content-between align-items-center`]}>
-      { cocktails }
+    <PanelContainer className={`${className} d-flex justify-content-between align-items-center`}>
+      <PanelHeader>Gin Cocktails</PanelHeader>
+      <ItemsContainer>{ cocktails }</ItemsContainer>
     </PanelContainer>
   )
 };

@@ -123,5 +123,20 @@ const whiskeys = [
   { title: 'Triple Barrel', url: '/whiskey/triple-barrel', image: whiskey_triple_barrel },
 ];
 
-export { cocktails, features, gins, botanicals, stories, whiskeys, oaks };
- 
+
+const slider_items =  [
+  {title: '01', url: '/'},
+  {title: '02', url: '/'},
+  {title: '03', url: '/'},
+  {title: '04', url: '/'},
+];
+
+const locations = [
+  { title: 'Main Street Wine & Spirits', address1: '5425 S La Grange rd', address2: 'La Grange, IL 60525', phone: '(708) 354-0355',  url: '', lat: 37.8, lng: -122.4},
+  { title: 'Sav Way Fine Wines & Spirits', address1: '3821 York rd Oak Brook', address2: 'IL 60523', phone: '(708) 354-6550', url: '',  lat: 38, lng: -121},
+  { title: 'Prestige Liquors', address1: '1423 W 55th St', address2: 'La Grange, IL 60525', phone: '(708) 354-6969', url: '',  lat: 39, lng: -121},
+  { title: 'Binnys Beverage Depot', address1: '5425 S La Grange rd', address2: 'La Grange, IL 60525', phone: '(708) 354-0355', url: '',  lat: 40, lng: -122},
+  { title: 'Binnys Beverage Depot', address1: '7714 Madison St', address2: 'Forest Park, IL 60130', phone: '(708) 366-2500', url: '',  lat: 38, lng: -122},
+]
+
+export { cocktails, features, gins, botanicals, stories, whiskeys, oaks, slider_items, locations };

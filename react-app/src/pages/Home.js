@@ -8,7 +8,7 @@ import SliderPanel from '../components/SliderPanel';
 import NavPanel  from '../components/NavPanel';
 import Footer  from '../components/Footer';
 import { CONTENT } from '../constants';
-import { cocktails } from '../constants/menu_items';
+import { cocktails, slider_items } from '../constants/menu_items';
 
 //import useLatestData from '../utils/useLatestData'; // use when API is available
 
@@ -18,12 +18,12 @@ const Home = () => {
 
   return (
     <>
-    <NavPanel currentPage={`home-page-${currentPage}`}/>
+    <NavPanel currentPage={`home-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='home' title="Glendalough Distillery" />
         <Hero className='page' title={CONTENT.home_intro} />
         <DrinksPanel className='page' />
-        <SliderPanel className='page' page='home' />
+        <SliderPanel className='page' page='home' items={slider_items} /> 
         <CocktailsPanel className='page' items={cocktails.gin.slice(0,3)} />
         <Footer className='page' />
       </PageScroll>

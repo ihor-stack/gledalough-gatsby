@@ -44,3 +44,9 @@ body {
 .alice-carousel__dots {
   display: none !important;
 }
+
+.mapboxgl-ctrl,
+.mapboxgl-ctrl-attrib,
+.mapboxgl-compact {
+  display: none !important;
+}

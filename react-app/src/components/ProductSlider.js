@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
@@ -39,7 +39,9 @@ const SlideTitle = styled.h3`
 const LinkButton = styled.div`
   width: 100%;
   text-align: center;
-  button {
+  a {
+    color: ${COLOR.black};
+    padding: 0.5rem 1rem;
     margin: 0 auto;
     background: none;
     border: none; 
@@ -47,6 +49,7 @@ const LinkButton = styled.div`
     font-weight: 700;
     font-style: 'normal';
     text-transform: uppercase;
+    text-decoration: none;
     border-bottom: 1px solid ${COLOR.black};
   }
 `;
@@ -88,7 +91,7 @@ const ProductSlider = ({ className, product, items, activeUrl, bgColor }) => {
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
       <SlideImage><img src={item.image} className="img-fluid" alt="alt placeholder" /></SlideImage>
       <SlideTitle>{item.title}</SlideTitle>
-      <LinkButton><button>Learn more</button></LinkButton>
+      <LinkButton><Link to={item.url}>Learn more</Link></LinkButton>
       <ShopButton><button>Buy now</button></ShopButton>
     </SliderItem>
   ))
