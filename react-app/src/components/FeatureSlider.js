@@ -1,10 +1,10 @@
 import React from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // useParams, useLocation 
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 //import { useRef, useEffect } from 'react';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -48,7 +48,8 @@ const ItemImage = styled.div`
 `;
 const ItemTitle = styled.h3`
   position: absolute;
-  bottom:0;
+  bottom: 0;
+  margin: 0;
   width: 100%;
   text-align: center;
   background: rgba(35, 31, 32, 0.6);
@@ -75,7 +76,7 @@ const FeatureSlider = ({ className, category, items, activeUrl, bgColor }) => {
   const navigate = useNavigate();
 
   const slides = items.map((item, i) => (
-     <SliderItem key={i} onDragStart={handleDragStart} onClick={() => navigate('/cocktail/cocktail-one')} role="presentation">
+     <SliderItem key={i} onDragStart={handleDragStart} onClick={() => navigate(item.url)} role="presentation">
       <ItemDate>{item.date}</ItemDate>
       <ItemImage style={{backgroundImage: `url(${item.image})`}}>
         <ItemTitle>{item.title}</ItemTitle>

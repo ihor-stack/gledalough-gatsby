@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { capitilize } from '../utils/filters';
 import img_bg_texture from '../assets/bg_textured_paper.jpg';
 
 const PanelContainer = styled.div`
@@ -34,7 +36,16 @@ const Button = styled.button`
   font-weight: 700;
   font-style: 'normal';
   text-transform: uppercase;
-  border-bottom: 1px solid ${COLOR.black};
+  a, a:active {
+    color: ${COLOR.black};
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid ${COLOR.black};
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    //border-bottom: none;
+  }
 `;
 
 const Title = styled.h3`
@@ -63,19 +74,19 @@ const Image = styled.img`
   -moz-border-radius: 50% 50% 0 0;
 `;
 
-const CocktailsPanel = ({ className, items }) => {
+const CocktailsPanel = ({ className, theme, items }) => {
 
   const cocktails = items.map((item, i) => (
     <Item key={i}>
         <Image className='img-fluid' src={item.image} alt={item.title} />
         <Title>{item.title}</Title>
-        <Button>View Recipe</Button>
+        <Button><Link to={item.url}>View Recipe</Link></Button>
     </Item>
   ))
 
   return (
     <PanelContainer className={`${className} d-flex justify-content-between align-items-center`}>
-      <PanelHeader>Gin Cocktails</PanelHeader>
+      <PanelHeader>{capitilize(theme)} Cocktails</PanelHeader>
       <ItemsContainer>{ cocktails }</ItemsContainer>
     </PanelContainer>
   )
@@ -83,6 +94,7 @@ const CocktailsPanel = ({ className, items }) => {
 
 CocktailsPanel.propTypes = {
   className: PropTypes.string,
+  theme: PropTypes.string,
   items: PropTypes.array,
 };
 

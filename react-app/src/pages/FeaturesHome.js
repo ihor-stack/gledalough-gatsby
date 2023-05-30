@@ -28,4 +28,4 @@ const FeaturesHome = () => {
     </>
 )};
 
-export default FeaturesHome;
+export default FeaturesHome; 

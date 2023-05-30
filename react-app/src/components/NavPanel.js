@@ -52,8 +52,7 @@ margin-left: 2vw;
  &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
  &.cocktail-page-0,
  &.features-page-0, &.features-page-4, &.features-page-5,
- &.feature-page-0,
-  {
+ &.feature-page-2, &.feature-page-3 {
     a {
       color: ${COLOR.white};
     }
@@ -83,7 +82,7 @@ img{
 &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
 &.cocktail-page-0,
 &.features-page-0, &.features-page-4, &.features-page-5,
-&.feature-page-0 {
+&.feature-page-2, &.feature-page-3 {
   img{
     -webkit-filter: none; 
     filter: none;

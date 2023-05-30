@@ -6,16 +6,26 @@ import whiskey_feature_image_01 from '../assets/oak_us_bourbon_barrels-large.jpg
 
 // Gin products
 import product_gin_01 from '../assets/gin_wild_rose-large.png';
+import product_whiskey_01 from '../assets/product_whiskey_01.png';
+
+//
+import feature_01_photo_01 from '../assets/feature_01_photo_01.jpg';
+import feature_01_photo_02 from '../assets/feature_01_photo_02.jpg';
+import feature_01_photo_03 from '../assets/feature_01_photo_03.jpg';
+import feature_01_photo_04 from '../assets/feature_01_photo_04.jpg';
+
 
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
 
 const story1 = {
+    url: '/story/story-one',
     bg: 'beige',
     heading: 'Chapter 1',
     title: 'This place',
     p1: 'The story of St Kevin is where we draw our inspiration. He abandoned safety and comfort to follow his passion and create something more meaningful in the mountains.',
 }
 const story2 = {
+    url: '/story/story-two',
     heading: 'Chapter 2',
     title: 'Our Craft',
     p1_title: 'Botanicals',
@@ -24,11 +34,13 @@ const story2 = {
     p2: 'A key influence on the flavour of our whiskey comes from the wood it has spent time in. There are countless nuances in how that wood effects and injects flavour, from the straightness of the tree or fineness of the grain to the size of the barrel or depth of the char.'
 }
 const story3 = {
+    url: '/story/story-three',
     heading: 'Chapter 3',
     title: 'Our Process',
     p1: 'After many an evening\'s banter and debate over why there weren\'t more craft distilleries in the birthplace of distilling, the friends convinced each other to leave the safety of their day jobs, head into the mountains and take a chance on something more meaningful (much like the man on the bottle, St Kevin). Together they built a craft distillery near their favourite spot in those mountains, Glendalough.',
 }
 const story4 = {
+    url: '/story/story-four',
     bg: 'beige',
     heading: 'Chapter 4',
     title: 'Our People',
@@ -103,6 +115,13 @@ const whiskey_features = [{
     p1: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.'
 }];
 
+const whiskey_shop = {
+    title: 'Purchase Our Irish Gins',
+    p1: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.',
+    image_01: product_gin_01,
+    image_02: product_gin_01,
+}
+
 const gins = [{
     image: product_gin_01,
     heading: 'Made with depth and meaning',
@@ -120,6 +139,53 @@ const gins = [{
     summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
     summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
 }];
+
+const whiskeys = [{
+    image: product_whiskey_01,
+    heading: 'Irish whiskey aged in two barrels',
+    title: 'Double Barrel',
+    p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+    p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+    notes_title: 'Tasting Notes',
+    note_p1_heading: 'The Nose',
+    note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+    note_p2_heading: 'The Taste',
+    note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+    note_p3_heading: 'The Finish',
+    note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+    summary_heading: 'Impact',
+    summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+    summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+}];
+
+
+const features = [
+    {
+        date: '22 March 2022',
+        heading: 'Glendalough Distillery features',
+        title: 'Foraging Botanicals',
+        url: '/feature/foraging-botanicals',
+        summary: '“All the plants are sustainably picked by our full time forager, every day we distil. We take a lot of care that we don\'t adversely affect the areas we find them in.”',
+        primary_ps: [
+            'All the plants are sustainably picked by our full time forager, every day we distil. We take a lot of care that we don\'t adversely affect the areas we find them in. That means sometimes using scissors rather than picking to make sure roots aren\'t pulled, or maybe skipping a few before picking the next one, or finding different patches of the same plant, to make sure an area isn\'t over-foraged.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend lorem ipsum, sed ornare ante convallis vitae. Praesent in varius odio. Nam vel tempor diam. Ut condimentum efficitur sapien ac tincidunt. Ut tincidunt, augue sed rutrum fermentum, tellus massa lacinia urna, nec condimentum orci arcu non ante. Aliquam tempus dui vitae erat pretium pretium. Curabitur vel mollis leo.',
+            'Aenean rhoncus nibh eleifend, luctus nunc nec, malesuada eros. Ut eu ipsum semper lacus varius euismod a sit amet mauris. Donec sit amet iaculis velit, nec consequat ligula. Nunc feugiat erat ac magna faucibus cursus. Ut diam ex, rhoncus vitae lorem quis, interdum facilisis nibh. Cras eu dolor nisl. Mauris hendrerit maximus ante nec maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Nullam eleifend lorem ipsum, sed ornare ante convallis vitae. Praesent in varius odio. Nam vel tempor diam. Ut condimentum efficitur sapien ac tincidunt. Ut tincidunt, augue sed rutrum fermentum, tellus massa lacinia urna, nec condimentum orci arcu non ante. Aliquam tempus dui vitae erat pretium pretium. Curabitur vel mollis leo.',
+            'Aenean rhoncus nibh eleifend, luctus nunc nec, malesuada eros. Ut eu ipsum semper lacus varius euismod a sit amet mauris. Donec sit amet iaculis velit, nec consequat ligula. Nunc feugiat erat ac magna faucibus cursus. Ut diam ex, rhoncus vitae lorem quis, interdum facilisis nibh. Cras eu dolor nisl. Mauris hendrerit maximus ante nec maximus.',
+        ],
+        photo_1: feature_01_photo_01,
+        photo_2: feature_01_photo_02,
+        photo_3: feature_01_photo_03,
+        photo_4: feature_01_photo_04,
+        secondary_title: 'Lorem Ipsum sit dalor, eaque quae abill inventore quasi dicta',
+        secondary_p1: ' Nullam eleifend lorem ipsum, sed ornare ante convallis vitae. Praesent in varius odio. Nam vel tempor diam. Ut condimentum efficitur sapien ac tincidunt. Ut tincidunt, augue sed rutrum fermentum, tellus massa lacinia urna, nec condimentum orci arcu non ante. Aliquam tempus dui vitae erat pretium pretium. Curabitur vel mollis leo.',
+        secondary_p2: 'Aenean rhoncus nibh eleifend, luctus nunc nec, malesuada eros. Ut eu ipsum semper lacus varius euismod a sit amet mauris. Donec sit amet iaculis velit, nec consequat ligula. Nunc feugiat erat ac magna faucibus cursus. Ut diam ex, rhoncus vitae lorem quis, interdum facilisis nibh. Cras eu dolor nisl. Mauris hendrerit maximus ante nec maximus.',
+    },
+]
+
+
+
+
 
 
 
@@ -141,11 +207,14 @@ const CONTENT = {
     gin_article,
     gin_features,
     gin_shop,
+    whiskeys,
     whiskey_intro,
     whiskey_botanicals_intro, // not used anymore ?
     whiskey_oaks_intro,
     whiskey_article,
     whiskey_features,
+    whiskey_shop,
+    features
 }
 
 export default CONTENT;

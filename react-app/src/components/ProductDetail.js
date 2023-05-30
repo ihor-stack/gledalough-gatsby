@@ -91,9 +91,9 @@ const HeadingRight = styled.h3`
   font-weight: 700;
   text-transform: uppercase;
 `;
- 
+  
 
-const ProductDetail = ({ className, product }) => (
+const ProductDetail = ({ className, product, bgColor }) => (
     <PanelContainer className={className}>
       <ProductHeader>
         <h3>{product.heading}</h3>
@@ -103,7 +103,7 @@ const ProductDetail = ({ className, product }) => (
          <img src={product.image} className="img-fluid" alt="alt placeholder" />
       </ProductImage>
 
-      <Panel style={{ backgroundColor: `${COLOR['wrpink']}`}}>
+      <Panel style={{ backgroundColor: `${COLOR[bgColor]}`}}>
         <ParagraphLeft>{product.p1}</ParagraphLeft>
         <ParagraphLeft>{product.p2}</ParagraphLeft>
       </Panel>
@@ -120,6 +120,7 @@ const ProductDetail = ({ className, product }) => (
 ); 
 
 ProductDetail.propTypes = {
+  bgColor: PropTypes.string,
   className: PropTypes.string,
   product: PropTypes.object,
 };

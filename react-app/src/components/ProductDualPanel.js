@@ -37,12 +37,18 @@ const Paragraph = styled.p`
   font-style: 'normal';
   margin: 2rem 0 0 0;
   text-align: center;
+  &.gin {
+    color: ${COLOR.white}; 
+  };
+  &.whiskey {
+    color: ${COLOR.black}; 
+  }
 `;
 
-const ProductDualPanel = ({ className, bgColor, photo, content }) => (
+const ProductDualPanel = ({ className, theme, bgColor, photo, content }) => (
     <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
       <Panel className='text' >
-        <Paragraph>{content.p1}</Paragraph>
+        <Paragraph className={`${theme}`}>{content.p1}</Paragraph>
       </Panel>
       <Panel className='photo' style={{backgroundImage: `url(${photo})`}} />
     </PanelContainer>
@@ -50,6 +56,7 @@ const ProductDualPanel = ({ className, bgColor, photo, content }) => (
 
 ProductDualPanel.propTypes = {
   className: PropTypes.string,
+  theme: PropTypes.string,
   bgColor: PropTypes.string,
   content: PropTypes.object,
   photo: PropTypes.string,

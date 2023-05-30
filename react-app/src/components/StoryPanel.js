@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
 
@@ -70,32 +71,42 @@ const Button = styled.button`
   font-weight: 700;
   font-style: 'normal';
   text-transform: uppercase;
-  border-bottom: 1px solid ${COLOR.black};
+  padding: 0;
+  a, a:active {
+    color: ${COLOR.black};
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid ${COLOR.black};
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    //border-bottom: none;
+  }
 `;
 
-const StoryPanel = ({ className, panelLeft, panelRight, imgLeft=false, imgRight=false }) => (
-  <PanelContainer className={className}> 
-      <Panel style={{ backgroundColor: `${COLOR[panelLeft.bg]}`}}>
-        {imgLeft && <img src={imgLeft} className="img-fluid" alt="alt placeholder" />}
-        <Heading>{panelLeft.heading}</Heading>
-        <Title>{panelLeft.title}</Title>
-        {panelLeft.p1_title && <Subtitle>{panelLeft.p1_title}</Subtitle>}
-        {panelLeft.p1 && <Paragraph>{panelLeft.p1}</Paragraph>}
-        {panelLeft.p2_title && <Subtitle>{panelLeft.p2_title}</Subtitle>}
-        {panelLeft.p2 && <Paragraph>{panelLeft.p2}</Paragraph>}
-        <Button>Learn more</Button>
-      </Panel>
-      <Panel style={{ backgroundColor: `${COLOR[panelRight.bg]}`}}>
-        {imgRight && <img src={imgRight} className="img-fluid" alt="alt placeholder" />}
-        <Heading>{panelRight.heading}</Heading>
-        <Title>{panelRight.title}</Title>
-        {panelRight.p1_title && <Subtitle>{panelRight.p1_title}</Subtitle>}
-        {panelRight.p1 && <Paragraph>{panelRight.p1}</Paragraph>}
-        {panelRight.p2_title && <Subtitle>{panelRight.p2_title}</Subtitle>}
-        {panelRight.p2 && <Paragraph>{panelRight.p2}</Paragraph>}
-        <Button>Learn more</Button>
+const StoryPanel = ({ className, panelLeft, panelRight, imgLeft = false, imgRight = false }) => (
+  <PanelContainer className={className}>
+    <Panel style={{ backgroundColor: `${COLOR[panelLeft.bg]}` }}>
+      {imgLeft && <img src={imgLeft} className="img-fluid" alt="alt placeholder" />}
+      <Heading>{panelLeft.heading}</Heading>
+      <Title>{panelLeft.title}</Title>
+      {panelLeft.p1_title && <Subtitle>{panelLeft.p1_title}</Subtitle>}
+      {panelLeft.p1 && <Paragraph>{panelLeft.p1}</Paragraph>}
+      {panelLeft.p2_title && <Subtitle>{panelLeft.p2_title}</Subtitle>}
+      {panelLeft.p2 && <Paragraph>{panelLeft.p2}</Paragraph>}
+      <Button><Link to={panelLeft.url}>Learn more</Link></Button>
+    </Panel>
+    <Panel style={{ backgroundColor: `${COLOR[panelRight.bg]}` }}>
+      {imgRight && <img src={imgRight} className="img-fluid" alt="alt placeholder" />}
+      <Heading>{panelRight.heading}</Heading>
+      <Title>{panelRight.title}</Title>
+      {panelRight.p1_title && <Subtitle>{panelRight.p1_title}</Subtitle>}
+      {panelRight.p1 && <Paragraph>{panelRight.p1}</Paragraph>}
+      {panelRight.p2_title && <Subtitle>{panelRight.p2_title}</Subtitle>}
+      {panelRight.p2 && <Paragraph>{panelRight.p2}</Paragraph>}
+      <Button><Link to={panelRight.url}>Learn more</Link></Button>
 
-      </Panel>
+    </Panel>
   </PanelContainer>
 );
 

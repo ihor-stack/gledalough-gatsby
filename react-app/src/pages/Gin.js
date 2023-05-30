@@ -23,10 +23,10 @@ const Gin = () => {
     <>
     <NavPanel currentPage={`gin-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <ProductDetail className='page' product={CONTENT.gins[0]} />
+        <ProductDetail className='page' bgColor='wrpink' product={CONTENT.gins[0]} />
         <ProductSummary className='page' product={CONTENT.gins[0]} bgColor='cream' />
-        <ProductDualPanel className='page' bgColor='wrpink' content={CONTENT.gin_article} photo={photo_gin_summary} />
-        <CocktailsPanel className='page' items={cocktails.gin.slice(0,3)} />
+        <ProductDualPanel className='page' bgColor='wrpink' theme='gin' content={CONTENT.gin_article} photo={photo_gin_summary} />
+        <CocktailsPanel className='page' theme='gin' items={cocktails.gin.slice(0,3)} />
         <ShopDualPanel className='page' bgColor='warmwhite' content={CONTENT.gin_shop} photo={photo_gin_summary} />
 
         <Footer className='page' />
