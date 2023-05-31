@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { COLOR, FONT } from '../constants';
+
 import logo from '../assets/ic_glendalough.svg';
 import bg_hero_home from '../assets/bg_hero_home.jpg';
 import bg_hero_our_story from '../assets/bg_hero_our_story.jpg';
@@ -11,14 +13,14 @@ import bg_hero_cocktails from '../assets/bg_hero_cocktails.jpg';
 import bg_hero_stories from '../assets/bg_hero_stories.jpg';
 
 // !!! TODO: validate 'page' propType
-const bg = { 
-  'home' : bg_hero_home,
-  'our_story' : bg_hero_our_story,
-  'gin_home' : bg_hero_gin_home,
-  'whiskey_home' : bg_hero_whiskey_home,
-  'features' : bg_hero_features,
-  'cocktails' : bg_hero_cocktails,
-  'stories' : bg_hero_stories,
+const bg = {
+  'home': bg_hero_home,
+  'our_story': bg_hero_our_story,
+  'gin_home': bg_hero_gin_home,
+  'whiskey_home': bg_hero_whiskey_home,
+  'features': bg_hero_features,
+  'cocktails': bg_hero_cocktails,
+  'stories': bg_hero_stories,
 }
 
 const PanelContainer = styled.div`
@@ -30,15 +32,38 @@ const PanelContainer = styled.div`
   background-size: cover;
   > div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-const HeroVideo = ({ className, title, page }) => (
-  <PanelContainer className={className} style={{backgroundImage: `url(${bg[page]})`}}>
-    <div className="d-flex justify-content-center align-items-center">
-      <h1 className="hidden" hidden>{title}</h1>
-      <div>
+const Heading = styled.h1`
+  color: ${COLOR.white};
+  font-family: ${FONT.sans};
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: 'normal';
+  text-transform: uppercase;
+`;
+const Title = styled.h2`
+  color: ${COLOR.white};
+  font-family: ${FONT.serif};
+  font-size: 3.6rem;
+  font-weight: 700;
+  font-style: 'normal';
+`;
+
+const HeroVideo = ({ className, page, heading='Glendalough Distillery', title = '' }) => (
+  <PanelContainer className={className} style={{ backgroundImage: `url(${bg[page]})` }}>
+    <div>
+      {'home' !== page && <Heading>{heading}</Heading>}
+      {'home' !== page && <Title>{title}</Title>}
+      {'home' === page && <div>
         <img src={logo} className="nav-logo" alt="Glendalough logo" />
-      </div>
+      </div>}
     </div>
   </PanelContainer>
 );

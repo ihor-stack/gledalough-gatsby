@@ -6,7 +6,7 @@ import DualPanelFeature  from '../components/DualPanelFeature';
 import useGinFeatureState from '../utils/useGinFeatureState';
 
 const PanelContainer = styled.div`
-  padding: 0 10vw;
+  padding: 0 12.5vw;
 `;
 const Title = styled.h3`
   width: 100%;

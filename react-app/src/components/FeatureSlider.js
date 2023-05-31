@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // useParams, useLocation 
+import { useNavigate } from 'react-router-dom'; // useParams, useLocation  
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
@@ -11,7 +11,7 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 10vw;
+  padding: 0 12.5vw;
 `;
 const SliderContainer = styled.div`
   width: 100%;
@@ -26,6 +26,7 @@ const SliderItem = styled.div`
   flex-shrink: 0;
   justify-content: start;
   align-items: start;
+  cursor: pointer;
 `;
 
 const FeatureHeading = styled.h2`
@@ -57,15 +58,15 @@ const ItemTitle = styled.h3`
 `;
 
 const responsive = {
-  0: { 
-      items: 1
+  0: {
+    items: 1
   },
-  568: { 
-      items: 2
+  568: {
+    items: 2
   },
   1024: {
-      items: 3, 
-      itemsFit: 'fill'
+    items: 3,
+    itemsFit: 'fill'
   },
 };
 
@@ -73,16 +74,46 @@ const FeatureSlider = ({ className, category, items, activeUrl, bgColor }) => {
   const handleDragStart = (e) => e.preventDefault();
   // const { slug } = useParams('slug');
   // const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // onClick={() => navigate(item.url)} 
+
+  const COORDS = {
+    xDown: null,
+    xUp: null
+  }
+
+  const handleOnMouseDown = e => {
+    e.preventDefault()
+    COORDS.xUp = null
+    COORDS.xDown = null
+    COORDS.xDown = e.clientX
+  }
+
+  const handleMouseUp = e => {
+    e.preventDefault()
+    COORDS.xUp = e.clientX
+  }
+
+  const handleOnClick = (e, url) => {
+    if (COORDS.xDown !== COORDS.xUp) {
+      e.preventDefault()
+    } else {
+      navigate(url);
+    }
+  }
 
   const slides = items.map((item, i) => (
-     <SliderItem key={i} onDragStart={handleDragStart} onClick={() => navigate(item.url)} role="presentation">
+    <SliderItem key={i} role="presentation"
+      onDragStart={handleDragStart}
+      onMouseDown={handleOnMouseDown}
+      onMouseUp={handleMouseUp}
+      onClick={(e) => handleOnClick(e, item.url)}
+    >
       <ItemDate>{item.date}</ItemDate>
-      <ItemImage style={{backgroundImage: `url(${item.image})`}}>
+      <ItemImage style={{ backgroundImage: `url(${item.image})` }}>
         <ItemTitle>{item.title}</ItemTitle>
       </ItemImage>
     </SliderItem>
- 
+
   ))
 
   return (

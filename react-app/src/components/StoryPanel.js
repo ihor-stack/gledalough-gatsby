@@ -9,7 +9,7 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 10vw;
+  padding: 0 12.5vw;
 `;
 
 const Panel = styled.div`

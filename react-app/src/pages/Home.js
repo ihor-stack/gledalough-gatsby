@@ -24,7 +24,7 @@ const Home = () => {
         <Hero className='page' title={CONTENT.home_intro} />
         <DrinksPanel className='page' />
         <SliderPanel className='page' page='home' items={slider_items} /> 
-        <CocktailsPanel className='page' items={cocktails.gin.slice(0,3)} />
+        <CocktailsPanel className='page' theme='gin' items={cocktails.gin.slice(0,3)} />
         <Footer className='page' />
       </PageScroll>
     </>

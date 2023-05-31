@@ -18,7 +18,7 @@ const CocktailsHome = () => {
     <>
     <NavPanel currentPage={`cocktails-page-${currentPage}`}/>
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='cocktails' title='Glendalough Distillery' />
+        <HeroVideo className='page' page='cocktails' title='Cocktails' />
         <FeatureSlider className='page' category='gin' items={cocktails.gin} bgColor='beige' />
         <FeatureSlider className='page' category='whiskey' items={cocktails.whiskey} bgColor='cream' />
         <FeatureSlider className='page' category='occasion' items={cocktails.occasion}  bgColor='offwhite' />

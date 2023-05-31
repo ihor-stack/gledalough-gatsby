@@ -6,13 +6,28 @@ import whiskey_feature_image_01 from '../assets/oak_us_bourbon_barrels-large.jpg
 
 // Gin products
 import product_gin_01 from '../assets/gin_wild_rose-large.png';
-import product_whiskey_01 from '../assets/product_whiskey_01.png';
 
-//
+// Whiskey products
+import whiskey_7_year_mizunara from '../assets/whiskey_7_year_mizunara.png';
+import whiskey_double_barrel from '../assets/whiskey_double_barrel.png';
+import whiskey_pot_still from '../assets/whiskey_pot_still.png';
+import whiskey_triple_barrel from '../assets/whiskey_triple_barrel.png';
+
+// Features photos
 import feature_01_photo_01 from '../assets/feature_01_photo_01.jpg';
 import feature_01_photo_02 from '../assets/feature_01_photo_02.jpg';
 import feature_01_photo_03 from '../assets/feature_01_photo_03.jpg';
 import feature_01_photo_04 from '../assets/feature_01_photo_04.jpg';
+
+// Story photos
+import story_01_photo_01 from '../assets/story_01_photo_01.jpg';
+import story_01_photo_02 from '../assets/story_01_photo_02.jpg';
+import story_01_photo_03 from '../assets/story_01_photo_03.jpg';
+import story_01_photo_04 from '../assets/story_01_photo_04.jpg';
+import story_01_photo_05 from '../assets/story_01_photo_05.jpg';
+
+// Cocktails photos
+import photo_cocktail_01 from '../assets/photo_cocktail_01.jpg';
 
 
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
@@ -81,7 +96,7 @@ const gin_features = [{
     p2heading: 'Folklore',
     p2: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.',
 }];
-    
+
 const whiskey_intro = {
     heading: 'Whiskey & wood, a love story',
     title: 'Discover Our Whiskeys',
@@ -109,17 +124,17 @@ const whiskey_article = {
 
 const whiskey_features = [{
     image: whiskey_feature_image_01,
-    title: 'US Bourbon Barrels', 
+    title: 'US Bourbon Barrels',
     intro: 'Donec pharetra imperdiet dolor, ut cursus enim dictum vitae. L orem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor vestibulum nibh nec ullamcorper. Aliquam orci ante, condimentum ac auctor vel, eleifend sit amet elit. Aliquam erat volutpat. Praesent sed urna non elit interdum porta.',
     p1heading: 'Folklore',
     p1: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.'
 }];
 
 const whiskey_shop = {
-    title: 'Purchase Our Irish Gins',
+    title: 'Purchase Our Irish Whiskeys',
     p1: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.',
-    image_01: product_gin_01,
-    image_02: product_gin_01,
+    image_01: whiskey_7_year_mizunara,
+    image_02: whiskey_double_barrel,
 }
 
 const gins = [{
@@ -140,23 +155,76 @@ const gins = [{
     summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
 }];
 
-const whiskeys = [{
-    image: product_whiskey_01,
-    heading: 'Irish whiskey aged in two barrels',
-    title: 'Double Barrel',
-    p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
-    p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
-    notes_title: 'Tasting Notes',
-    note_p1_heading: 'The Nose',
-    note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
-    note_p2_heading: 'The Taste',
-    note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
-    note_p3_heading: 'The Finish',
-    note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
-    summary_heading: 'Impact',
-    summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
-    summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
-}];
+const whiskeys = {
+    '7-year-mizunara': {
+        image: whiskey_7_year_mizunara,
+        heading: 'Irish whiskey aged in two barrels',
+        title: '7 Year Mizunara',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'pot-still': {
+        image: whiskey_pot_still,
+        heading: 'Irish whiskey aged in two barrels',
+        title: 'Pot Still',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'double-barrel': {
+        image: whiskey_double_barrel,
+        heading: 'Irish whiskey aged in two barrels',
+        title: 'Double Barrel',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'triple-barrel': {
+        image: whiskey_triple_barrel,
+        heading: 'Irish whiskey aged in two barrels',
+        title: 'Triple Barrel',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+};
 
 
 const features = [
@@ -181,19 +249,75 @@ const features = [
         secondary_p1: ' Nullam eleifend lorem ipsum, sed ornare ante convallis vitae. Praesent in varius odio. Nam vel tempor diam. Ut condimentum efficitur sapien ac tincidunt. Ut tincidunt, augue sed rutrum fermentum, tellus massa lacinia urna, nec condimentum orci arcu non ante. Aliquam tempus dui vitae erat pretium pretium. Curabitur vel mollis leo.',
         secondary_p2: 'Aenean rhoncus nibh eleifend, luctus nunc nec, malesuada eros. Ut eu ipsum semper lacus varius euismod a sit amet mauris. Donec sit amet iaculis velit, nec consequat ligula. Nunc feugiat erat ac magna faucibus cursus. Ut diam ex, rhoncus vitae lorem quis, interdum facilisis nibh. Cras eu dolor nisl. Mauris hendrerit maximus ante nec maximus.',
     },
-]
+];
 
+const stories = [
+    {
+        date: '22 March 2022',
+        heading: 'Chapter 1',
+        title: 'This place',
+        url: '/story/this-place',
+        ps: [{ title: 'The Valley', photo: story_01_photo_01, photo2: story_01_photo_02, body: 'Glendalough, or the Glen of two Lakes, is one of the most beautiful, and visited valleys in Ireland. Just south of Dublin, the Wicklow Mountains are renowned for their natural, scenic beauty. The area known as “the garden of Ireland” - a name it lives up to with ease.' },
+        { title: 'The Ruins', photo: story_01_photo_03, body: 'St Kevin\'s legacy still stands in stone by the lower lake. What remains of the monastic settlement, parts of it 14 centuries old, are remarkably intact, and truly awe-inspiring to walk amongst. People have been drawn here for thousands of years. The spectacular scenery and ancient ruins are soul-stirring and inspirational. And their effect never fades no matter how many times you go back.' },
+        { title: 'St. Kevin', photo: story_01_photo_04, summary: 'Monks would distill an eau de vie sometimes using medicinal plants, not unlike today\'s gin', body: 'Glendalough is also renowned for its 6th century monastic settlement founded by St Kevin, the man on our bottle. Monasteries like Glendalough around the time of St Kevin, were the birthplace of distilled drinks. Monks would distill an eau de vie sometimes using medicinal plants, not unlike today\'s gin, and often storing it in oak which lead to the invention of whiskey.' },
+        { title: 'Seven Churches', photo: story_01_photo_05, body: 'He was so at one with nature, she felt safe enough to lay her eggs. This he took as a sign, as a test of his resolve. So he stood day and night until the eggs hatched and the chicks fledged. One of many stories that  spread around Ireland and inspired people to seek out this holy man and his deep, hidden valley. He eventually built his "City of 7 Churches" by the lower lake that still stands 14 centuries later.' }],
+    }
+];
 
-
-
-
-
-
-
-
-
-
-
+const cocktails = {
+    'irish-mule': {
+        title: 'Irish Mule',
+        image: photo_cocktail_01,
+        ingredients: [
+            '2 oz Wild Botanical Gin',
+            '3/4 oz Fresh Lime Juice',
+            '3/4 oz Simple Syrup'],
+        instructions: ['Garnish with Fresh mint'],
+        preperations: [
+            'Shake up all three ingredients in a cocktail shaker and strain into a chilled coup.',
+            'Or for a longer version, this can be built over ice in a highball glass and topped with soda water.'
+        ]
+    },
+    'a-long-way': {
+        title: 'A Long Way',
+        image: photo_cocktail_01,
+        ingredients: [
+            '2 oz Wild Botanical Gin',
+            '3/4 oz Fresh Lime Juice',
+            '3/4 oz Simple Syrup'],
+        instructions: ['Garnish with Fresh mint'],
+        preperations: [
+            'Shake up all three ingredients in a cocktail shaker and strain into a chilled coup.',
+            'Or for a longer version, this can be built over ice in a highball glass and topped with soda water.'
+        ]
+    },
+    'tom-collins': {
+        title: 'Tom Collins',
+        image: photo_cocktail_01,
+        ingredients: [
+            '2 oz Wild Botanical Gin',
+            '3/4 oz Fresh Lime Juice',
+            '3/4 oz Simple Syrup'],
+        instructions: ['Garnish with Fresh mint'],
+        preperations: [
+            'Shake up all three ingredients in a cocktail shaker and strain into a chilled coup.',
+            'Or for a longer version, this can be built over ice in a highball glass and topped with soda water.'
+        ]
+    },
+    'cocktail-four': {
+        title: 'Cocktail Four',
+        image: photo_cocktail_01,
+        ingredients: [
+            '2 oz Wild Botanical Gin',
+            '3/4 oz Fresh Lime Juice',
+            '3/4 oz Simple Syrup'],
+        instructions: ['Garnish with Fresh mint'],
+        preperations: [
+            'Shake up all three ingredients in a cocktail shaker and strain into a chilled coup.',
+            'Or for a longer version, this can be built over ice in a highball glass and topped with soda water.'
+        ]
+    },
+}
 
 const CONTENT = {
     home_intro,
@@ -214,7 +338,9 @@ const CONTENT = {
     whiskey_article,
     whiskey_features,
     whiskey_shop,
-    features
+    features,
+    stories,
+    cocktails
 }
 
 export default CONTENT;

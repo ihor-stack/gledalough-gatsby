@@ -2,21 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import photo_cocktail_01 from '../assets/photo_cocktail_01.jpg';
 
 const PanelContainer = styled.div`
   display: flex;
   align-items: stretch;
   width: 100%;
 `;
-
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   &.photo {
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,36 +25,60 @@ const Panel = styled.div`
     padding: 0 0 0 12.5vw;
   }
 `;
-
 const Title = styled.h3`
-  width: 100%;
-  text-align: left;
-  font-size: 1.4rem;
-`;
-
-const Paragraph = styled.p`
   width: 100%;
   text-align: left;
   font-size: 1.2rem;
   font-family: ${FONT.sans}; 
+  font-weight: 700;
+  font-style: 'normal';
+  text-transform: uppercase;
+`;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-family: ${FONT.sans}; 
   font-weight: 500;
   font-style: 'normal';
-  margin: 2rem 0;
 `;
+ 
+const DualPanelCocktail = ({ className, bgColor, cocktail }) => {
 
-const DualPanelCocktail = ({ className, bgColor, photo, content }) => {
+  const ingredients = cocktail['ingredients'].map((ingredient, i) => (
+    <li key={i}>
+      { ingredient }
+    </li>
+  ))  
+  const instructions = cocktail['instructions'].map((instruction, i) => (
+    <li key={i}>
+      { instruction }
+    </li>
+  ))  
+  const preperations = cocktail['preperations'].map((preperation, i) => (
+    <li key={i}>
+      { preperation }
+    </li>
+  ))  
+
   return (
     <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
-      <Panel className='text' >
+      <Panel className='text'>
         <Title>Ingredients</Title>
-        <Paragraph>2 oz Wild Botanical Gin<br />
-          3/4 oz Fresh Lime Juice<br />
-          3/4 oz Simple Syrup<br /> <br /> Garnish with Fresh mint</Paragraph>
+        <List>
+          { ingredients }
+        </List>
+        <List>
+          { instructions }
+        </List>
         <Title>Preperation</Title>
-        <Paragraph>Shake up all three ingredients in a cocktail shaker and strain into a chilled coup.<br />
-          Or for a longer version, this can be built over ice in a highball glass and topped with soda water.</Paragraph>
+        <List>
+          { preperations }
+        </List>
       </Panel>
-      <Panel className='photo' style={{ backgroundImage: `url(${photo_cocktail_01})` }} />
+      <Panel className='photo' style={{ backgroundImage: `url(${cocktail.image})` }} />
     </PanelContainer>
   )
 };
@@ -64,7 +86,7 @@ const DualPanelCocktail = ({ className, bgColor, photo, content }) => {
 DualPanelCocktail.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string,
-  content: PropTypes.array,
+  cocktail: PropTypes.object,
   photo: PropTypes.string,
 };
 

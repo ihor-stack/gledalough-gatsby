@@ -44,11 +44,12 @@ margin-left: 2vw;
   filter: none;
  }
  &.home-page-0, &.home-page-3, &.home-page-5,
- &.story-page-0, &.story-page-4,
+ &.stories-page-0, &.stories-page-4,
+ &.story-page-4,
  &.gins-page-0, &.gins-page-4, &.gins-page-5,
  &.gin-page-5,
  &.whiskeys-page-0, &.whiskeys-page-4, &.whiskeys-page-5,
- &.whiskey-page-0,
+ &.whiskey-page-0, &.whiskey-page-4, &.whiskey-page-5,
  &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
  &.cocktail-page-0,
  &.features-page-0, &.features-page-4, &.features-page-5,
@@ -74,11 +75,12 @@ img{
   filter: invert(1);
 }
 &.home-page-0, &.home-page-3, &.home-page-5,
-&.story-page-0, &.story-page-4,
+&.stories-page-0, &.stories-page-4,
+&.story-page-4,
 &.gins-page-0, &.gins-page-5,
 &.gin-page-2,
 &.whiskeys-page-0, &.whiskeys-page-5,
-&.whiskey-page-0,
+&.whiskey-page-4, &.whiskey-page-5,
 &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
 &.cocktail-page-0,
 &.features-page-0, &.features-page-4, &.features-page-5,

@@ -18,7 +18,7 @@ const FeaturesHome = () => {
     <>
     <NavPanel currentPage={`features-page-${currentPage}`}/>
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='features' title='Glendalough Distillery' />
+        <HeroVideo className='page' page='features' title='Features' />
         <FeatureSlider className='page' category='foraging' items={features.foraging} bgColor='beige' />
         <FeatureSlider className='page' category='glendalough' items={features.glendalough} bgColor='cream' />
         <FeatureSlider className='page' category='sustainability' items={features.sustainability}  bgColor='offwhite' />

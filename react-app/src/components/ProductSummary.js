@@ -22,7 +22,7 @@ const Panel = styled.div`
 const Heading = styled.h3`
   width: 100%;
   text-align: left;
-  padding: 0 10vw;
+  padding: 0 12.5vw;
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};
@@ -31,20 +31,11 @@ const Heading = styled.h3`
   text-transform: uppercase;
 `;
 
-const Title = styled.h2`
-  width: 100%;
-  text-align: start;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  font-family: ${FONT.serif};
-  font-weight: 600;
-  font-style: 'normal';
-`;
 
 const Paragraph = styled.p`
   width: 100%;
   text-align: left;
-  padding: 0 10vw;
+  padding: 0 12.5vw;
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};

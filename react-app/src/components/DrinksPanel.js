@@ -9,7 +9,7 @@ import img_poitin from '../assets/home_irish_poitin.jpg';
 
 const PanelContainer = styled.div`
   width: 100%;
-  padding: 0 10vw;
+  padding: 0 12.5vw;
 `;
 
 const Panel = styled.div`

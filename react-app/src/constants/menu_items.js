@@ -69,7 +69,7 @@ const cocktails = {
     { title: 'Irish Mule', url: '/cocktail/irish-mule', image: thumb_cocktail_01 },
     { title: 'A Long Way', url: '/cocktail/a-long-way', image: thumb_cocktail_02 },
     { title: 'Tom Collins', url: '/cocktail/tom-collins', image: thumb_cocktail_03 },
-    { title: 'Foraging Botanicals', url: '/cocktail/foraging-botanicals', image: thumb_cocktail_04 },
+    { title: 'Fourth Cocktail', url: '/cocktail/cocktail-four', image: thumb_cocktail_04 },
   ],
   'whiskey': [
     { title: 'Irish Mule', url: '/cocktail/irish-mule', image: thumb_cocktail_01 },

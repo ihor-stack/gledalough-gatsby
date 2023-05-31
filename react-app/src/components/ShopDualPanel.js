@@ -8,6 +8,22 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  &.gin {
+    color: ${COLOR.black};
+    background-color: ${COLOR.cream};
+    button {
+      color: ${COLOR.black};
+      border: 1px solid ${COLOR.black};
+    }
+  }
+  &.whiskey {
+    color: ${COLOR.white};
+    background-color: ${COLOR.wgreen};
+    button {
+      color: ${COLOR.white};
+      border: 1px solid ${COLOR.white};
+    }
+  }
 `;
 
 const Panel = styled.div`
@@ -30,7 +46,6 @@ const Panel = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${COLOR.black}; 
   font-size: 2.4rem;
   line-height: 2.6rem;
   font-family: ${FONT.serif};
@@ -42,7 +57,6 @@ const Title = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  color: ${COLOR.black}; 
   font-size: 1.8rem;
   line-height: 1.9rem;
   font-family: ${FONT.sans};
@@ -65,7 +79,6 @@ const ShopButton = styled.div`
     font-weight: 700;
     font-style: 'normal';
     text-transform: uppercase;
-    border: 1px solid ${COLOR.black};
     border-radius: 1.6rem;
   }
 `;
@@ -79,8 +92,10 @@ const ProductImage = styled.div`
   }
 `;
 
-const ShopDualPanel = ({ className, bgColor, photo, content }) => (
-    <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
+const ShopDualPanel = ({ className, theme, content }) => {
+ 
+  return (
+    <PanelContainer className={`${className} ${theme}`}>
       <Panel className='text'>
         <Title>{content.title}</Title>
         <Paragraph>{content.p1}</Paragraph>
@@ -91,7 +106,8 @@ const ShopDualPanel = ({ className, bgColor, photo, content }) => (
         <ProductImage><img src={content.image_02} className="img-fluid" alt="alt placeholder" /></ProductImage>
       </Panel>
     </PanelContainer>
-);
+  )
+};
 
 ShopDualPanel.propTypes = {
   className: PropTypes.string,

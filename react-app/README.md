@@ -15,6 +15,7 @@
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Typescript issue](https://github.com/facebook/create-react-app/issues/13080)
 * [React Class deprecation](https://www.robinwieruch.de/react-hooks-migration)
+* [React Hooks utils](https://usehooks.com/)
 * [Fullpage paid plugin](https://www.npmjs.com/package/@fullpage/react-fullpage)
 * [Fullpage free plugin](https://www.npmjs.com/package/react-page-scroll)
 * [React spring](https://www.react-spring.dev/docs/getting-started)

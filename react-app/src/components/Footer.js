@@ -12,7 +12,8 @@ const PanelContainer = styled.div`
   display: flex;
   background-color: ${COLOR.darkgreen};
   color: ${COLOR.white};
-  padding: 0 10vw;
+  padding: 0 12.5vw;
+  padding-top: 4rem;
 `;
 
 const Col = styled.div`

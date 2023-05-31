@@ -20,9 +20,9 @@ const OurStory = () => {
 
   return (
     <>
-    <NavPanel currentPage={`story-page-${currentPage}`} />
+    <NavPanel currentPage={`stories-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='our_story' title="Glendalough Distillery" />
+        <HeroVideo className='page' page='our_story' title='Our Story' />
         <Hero className='page' bgColor='cream' title={CONTENT.home_intro} />
         <StoryPanel className='page' panelLeft={CONTENT.story1} panelRight={CONTENT.story2} imgLeft={img_story_1} />
         <StoryPanel className='page' panelLeft={CONTENT.story3} panelRight={CONTENT.story4} imgRight={img_story_4} />
