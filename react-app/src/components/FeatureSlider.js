@@ -113,7 +113,6 @@ const FeatureSlider = ({ className, category, items, activeUrl, bgColor }) => {
         <ItemTitle>{item.title}</ItemTitle>
       </ItemImage>
     </SliderItem>
-
   ))
 
   return (

@@ -31,7 +31,6 @@ const Heading = styled.h3`
   text-transform: uppercase;
 `;
 
-
 const Paragraph = styled.p`
   width: 100%;
   text-align: left;

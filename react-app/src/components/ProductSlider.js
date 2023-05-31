@@ -56,7 +56,7 @@ const LinkButton = styled.div`
 const ShopButton = styled.div`
   width: 100%;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   button {
     margin: 0 auto;
     padding: 0.5rem 1.6rem;

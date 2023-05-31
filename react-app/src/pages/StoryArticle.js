@@ -7,7 +7,7 @@ import Footer  from '../components/Footer';
 
 import { CONTENT } from '../constants';
 // import { gins as productItems } from '../constants/menu_items';
-import { slider_items} from '../constants/menu_items'; // features as menuItems, 
+// import { slider_items} from '../constants/menu_items'; // features as menuItems, 
 // import useLatestData from '../utils/useLatestData'; // use when API is available
 
 const Story = () => {

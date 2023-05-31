@@ -19,6 +19,7 @@ const Panel = styled.div`
   justify-content: center;
   align-items: center;
   &.photo {
+    cursor: pointer;
     background-size: cover;
     background-repeat: no-repeat;
   }

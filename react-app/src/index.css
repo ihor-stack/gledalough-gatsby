@@ -17,6 +17,13 @@
   --font-body: 'Spectral', Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
+html {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
   margin: 0;
   font-weight: 300;

@@ -38,6 +38,7 @@ const Features = styled.div`
   width: 100%;
 `;
 const Feature = styled.div`
+  cursor: pointer;
   display: flex;
   flex-grow: 1;
   width: 30%;
@@ -62,7 +63,6 @@ const FeatureTitle = styled.h3`
   background: rgba(0,0,0,0.6);
   color: ${COLOR.white};
 `;
-
 const Paragraph = styled.p`
   font-size: 1.2rem;
   font-family: ${FONT.sans};
