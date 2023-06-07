@@ -5,21 +5,20 @@ import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 //import { useRef, useEffect } from 'react';
 import { COLOR } from '../constants';
+import { gutter, titleMedium, titleLargest, titleMono } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 const SliderContainer = styled.div`
   width: 100%;
   max-width: 100%;
   height: 100vh;
-  //padding-top: 20vh;
 `;
-
 const SliderItem = styled.div`
   width: 100%;
   height: 100vh;
@@ -28,14 +27,16 @@ const SliderItem = styled.div`
   align-items: start;
   cursor: pointer;
 `;
-
 const FeatureHeading = styled.h2`
   margin-top: 4rem;
+  margin-bottom: 2rem;
   width: 100%;
   text-align: left;
   text-transform: capitalize;
+  ${titleLargest}
 `;
 const ItemDate = styled.h3`
+  ${titleMono}
   width: 100%;
   text-align: left;
 `;
@@ -54,7 +55,9 @@ const ItemTitle = styled.h3`
   width: 100%;
   text-align: center;
   background: rgba(35, 31, 32, 0.6);
-  color: ${COLOR.white}
+  ${titleMedium}
+  color: ${COLOR.white};
+  padding: 1rem;
 `;
 
 const responsive = {

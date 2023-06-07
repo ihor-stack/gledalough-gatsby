@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter } from '../constants/styles';
 import DualPanelFeature  from '../components/DualPanelFeature';
 import useGinFeatureState from '../utils/useGinFeatureState';
 
 const PanelContainer = styled.div`
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 const Title = styled.h3`
   width: 100%;

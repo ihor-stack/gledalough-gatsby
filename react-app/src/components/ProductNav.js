@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
+import { gutter } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 const NavList = styled.ul`
   display: flex;

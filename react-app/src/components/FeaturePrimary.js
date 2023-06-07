@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { gutter, titleMono, sansNormal, headingLarge, titleLarge, titleMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
 `;
+
 const Row = styled.div`
-  display: flex;
+  display: flex; 
   width: 100%;
 `;
+ 
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,10 +20,12 @@ const Panel = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 3rem;
-  padding: 0 2.5vw 0 12.5vw;
   width: 50%;
+  ${gutter}
+  padding-right: 2.5vw;
   &:last-child {
-    padding: 0 12.5vw 0 2.5vw;
+    ${gutter}
+    padding-left: 2.5vw;
   }
 `;
 
@@ -29,47 +34,40 @@ const PanelHeader = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  padding-top: 3rem;
+  padding: 3rem 0;
 `;
+
 const Heading = styled.div`
   width: 100%;
   text-align: center;
+  ${headingLarge}
   font-size: 1.2rem;
-  font-family: ${FONT.sans};
-  font-weight: 700;
-  text-transform: uppercase;
 `;
+
 const Title = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 2.4rem;
-  font-family: ${FONT.serif};
-  font-weight: 500;
-
+  ${titleLarge}
+  margin-top: 1rem;
 `;
 
 const Date = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 1rem;
-  font-family: ${FONT.sans};
-  font-weight: 700;
-  text-transform: uppercase;
+  margin-top: 1.2rem;
+  ${titleMono}
+  font-size: 1.2rem;
+  line-height: 1.2rem;
 `;
 
 const Summary = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 1.8rem;
-  font-family: ${FONT.serif};
+  ${titleMedium}
 `;
  
 const Paragraph = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
 `;
 
 const ImageHolder = styled.div`

@@ -2,70 +2,56 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { FONT } from '../constants';
+import { gutter, titleMedium, buttonBlank, linkUnderlined } from '../constants/styles';
 import { capitilize } from '../utils/filters';
 import img_bg_texture from '../assets/bg_textured_paper.jpg';
 
 const PanelContainer = styled.div`
-  position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   background-image: url(${img_bg_texture});
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 `;
-const ItemsContainer = styled.div`
+
+const PanelHeader = styled.h3`
+  text-align: center;
   width: 100%;
-  padding: 0 12.5vw;
+  padding-top: 4rem;
+  font-family: ${FONT.serif};
+  font-style: 'normal';
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.2rem;
+`;
+
+const ItemsContainer = styled.div`
+  ${gutter}
+  width: 100%;
   display: flex;
+  flex: 1;
 `;
 
 const Item = styled.div`
   text-align: center;
   width: 25vw;
   padding: 2vw;
- 
 `;
 
-const Button = styled.button`
-  background: none;
-  border: none; 
-  font-family: ${FONT.sans};
-  font-weight: 700;
-  font-style: 'normal';
-  text-transform: uppercase;
-  a, a:active {
-    color: ${COLOR.black};
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-bottom: 1px solid ${COLOR.black};
-  }
-  a:hover, a:focus {
-    text-decoration: none;
-    //border-bottom: none;
+const Button = styled.button` 
+  ${buttonBlank}
+  > a {
+    ${linkUnderlined}
   }
 `;
 
 const Title = styled.h3`
   margin-top: 1rem;
-  flex-grow: 1;
-`;
-
-const PanelHeader = styled.h3`
-  position: absolute;
-  top: 0;
-  left:0;
-  right:0;
-  text-align: center;
-  width: 100%;
-  padding-top: 4rem;
-  font-family: ${FONT.serif};
-  font-weight: 600;
-  font-style: 'normal';
-  font-size: 2rem;
-  line-height: 2.2rem;
+  ${titleMedium}
 `;
 
 const Image = styled.img`
@@ -74,7 +60,7 @@ const Image = styled.img`
   -moz-border-radius: 50% 50% 0 0;
 `;
 
-const CocktailsPanel = ({ className, theme, items }) => {
+const CocktailsPanel = ({ className, theme='', items }) => {
 
   const cocktails = items.map((item, i) => (
     <Item key={i}>
@@ -85,7 +71,7 @@ const CocktailsPanel = ({ className, theme, items }) => {
   ))
 
   return (
-    <PanelContainer className={`${className} d-flex justify-content-between align-items-center`}>
+    <PanelContainer className={className}>
       <PanelHeader>{capitilize(theme)} Cocktails</PanelHeader>
       <ItemsContainer>{ cocktails }</ItemsContainer>
     </PanelContainer>

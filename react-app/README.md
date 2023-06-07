@@ -7,22 +7,25 @@
 
 * [Figma Designs](https://www.figma.com/file/kH8OFcucThVuKTew8G3wBv/Glendalough-Full-Site-Handover)
 * [Figma Design - homepage](https://www.figma.com/proto/3pHR6oYG0klbdcxsBXNS3N/030223-Glendalough-Homepage)
+* [Figma Design - microsite](https://www.figma.com/file/hniwg9WoHeTpDLwzsXb1qD/Glendalough_Microsite_Handover)
+* [Glendalough Youtube video](https://www.youtube.com/watch?v=m-LhahusNvE)
 * [Google Drive](https://drive.google.com/drive/folders/1Ng_lhuPck25QXB4ILrceMZlwrvQMiE2E)
 * [Clickup](https://app.clickup.com/4637827/v/l/4dh43-8093)
-
+* [Inspiration](http://cellierdeschartreux.fr/fr/les-vins/domaine-saint-ayme)
 ### React notes 
 
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Typescript issue](https://github.com/facebook/create-react-app/issues/13080)
 * [React Class deprecation](https://www.robinwieruch.de/react-hooks-migration)
 * [React Hooks utils](https://usehooks.com/)
+* [React SC Mixins](https://maddev.netlify.app/development/styled_components_mixins/)
 * [React Query](https://tanstack.com/query/v3/docs/react/quick-start)
 * [Fullpage paid plugin](https://www.npmjs.com/package/@fullpage/react-fullpage)
 * [Fullpage free plugin](https://www.npmjs.com/package/react-page-scroll)
 * [React spring](https://www.react-spring.dev/docs/getting-started)
 * [React waypoint](https://www.npmjs.com/package/react-waypoint)
 * [React Map-GL](https://visgl.github.io/react-map-gl/docs/get-started/get-started)
-* [React hooks tips](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)
+* [React Hooks tips](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)
 * [React swiper candidates](https://alvarotrigo.com/blog/react-carousels/)
 * [Old useState example by Seón](https://codesandbox.io/s/n3jjpo805j)
 * [Grain filter (svg)](https://css-tricks.com/grainy-gradients/)

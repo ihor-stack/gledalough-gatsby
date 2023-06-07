@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 //import { useRef, useEffect } from 'react';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { gutter } from '../constants/styles';
+import { buttonRounded, linkUnderlined, titleMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 const SliderContainer = styled.div`
   width: 100%;
@@ -35,39 +37,24 @@ const SlideImage = styled.div`
 const SlideTitle = styled.h3`
   width: 100%;
   text-align: center;
+  margin-top: 1rem;
+  ${titleMedium}
 `;
-const LinkButton = styled.div`
+const SlideLink = styled.div`
   width: 100%;
   text-align: center;
+  margin-top: 1rem;
   a {
-    color: ${COLOR.black};
-    padding: 0.5rem 1rem;
-    margin: 0 auto;
-    background: none;
-    border: none; 
-    font-family: ${FONT.sans};
-    font-weight: 700;
-    font-style: 'normal';
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 1px solid ${COLOR.black};
+    ${linkUnderlined}
   }
 `;
-const ShopButton = styled.div`
+const SlideButton = styled.div`
   width: 100%;
   text-align: center;
   margin-top: 2rem;
   button {
+    ${buttonRounded}
     margin: 0 auto;
-    padding: 0.5rem 1.6rem;
-    background: none;
-    border: none; 
-    font-family: ${FONT.sans};
-    font-weight: 700;
-    font-style: 'normal';
-    text-transform: uppercase;
-    border: 1px solid ${COLOR.black};
-    border-radius: 1.6rem;
   }
 `;
 
@@ -91,8 +78,8 @@ const ProductSlider = ({ className, product, items, activeUrl, bgColor }) => {
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
       <SlideImage><img src={item.image} className="img-fluid" alt="alt placeholder" /></SlideImage>
       <SlideTitle>{item.title}</SlideTitle>
-      <LinkButton><Link to={item.url}>Learn more</Link></LinkButton>
-      <ShopButton><button>Buy now</button></ShopButton>
+      <SlideLink><Link to={item.url}>Learn more</Link></SlideLink>
+      <SlideButton><button>Buy now</button></SlideButton>
     </SliderItem>
   ))
 

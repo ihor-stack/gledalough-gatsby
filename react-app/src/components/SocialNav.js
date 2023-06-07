@@ -16,11 +16,11 @@ const SocialList = styled.ul`
 const SocialItem = styled.li`
   display: flex;
   margin-right: 1rem;
-  a, a:active {
+  a {
     text-decoration: none;
     border-bottom: none;
   }
-  a:hover, a:focus {
+  a:hover, a:focus, a:active {
     text-decoration: none;
     border-bottom: none;
   }

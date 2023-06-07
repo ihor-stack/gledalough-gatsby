@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { gutter, sansNormal, titleMedium, headingLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-
 `;
 
 const Panel = styled.div`
@@ -27,32 +27,25 @@ const Panel = styled.div`
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 0 12.5vw;
+    ${gutter}
   }
 `;
 
 const Title = styled.div`
+  ${headingLarge}
   font-size: 1.4rem;
-  font-family: ${FONT.sans};
-  text-align: center;
-  text-transform: uppercase;
+  line-height: 1.4rem;
+  letter-spacing: 0.2rem;
 `;
 
 const ParagraphIntro = styled.p`
-  font-size: 1.8rem;
-  line-height: 2rem;
-  font-weight: 500;
-  font-style: 'normal';
+  ${titleMedium}
   margin: 2rem 0 0 0;
   text-align: center;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
   margin: 2rem 4rem 0 10rem;
 `;
 

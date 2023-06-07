@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { gutter, sansNormal, titleLarge, headingLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 
 const Panel = styled.div`
@@ -16,38 +17,31 @@ const Panel = styled.div`
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  margin-top: 30vh;
 `;
 
 const Heading = styled.h3`
   width: 100%;
   text-align: end;
   padding-right: 5vw;
+  ${headingLarge}
   font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-family: ${FONT.sans};
-  font-weight: 600;
-  font-style: 'normal';
-  text-transform: uppercase;
+  line-height: 1.2rem;
+  letter-spacing: 0.2rem;
 `;
 
 const Title = styled.h2`
   width: 100%;
   text-align: start;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  font-family: ${FONT.serif};
-  font-weight: 600;
-  font-style: 'normal';
+  ${titleLarge}
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-family: ${FONT.sans};
-  font-weight: 400;
-  font-style: 'normal';
+  ${sansNormal}
+
+  margin-top: 2rem;
 `;
 
 const ProductIntro = ({ className, content, bgColor }) => (

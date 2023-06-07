@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const Panel = styled.div`
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 0 12.5vw;
+    ${gutter}
   }
 `;
 

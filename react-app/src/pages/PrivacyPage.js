@@ -24,7 +24,7 @@ const Heading = styled.div`
   text-align: center;
   font-size: 1.2rem;
   font-family: ${FONT.sans};
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 `;
 const Title = styled.div`

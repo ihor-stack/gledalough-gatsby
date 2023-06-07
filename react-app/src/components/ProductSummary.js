@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -22,11 +23,10 @@ const Panel = styled.div`
 const Heading = styled.h3`
   width: 100%;
   text-align: left;
-  padding: 0 12.5vw;
+  ${gutter}
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};
-  font-weight: 600;
   font-style: 'normal';
   text-transform: uppercase;
 `;
@@ -34,7 +34,7 @@ const Heading = styled.h3`
 const Paragraph = styled.p`
   width: 100%;
   text-align: left;
-  padding: 0 12.5vw;
+  ${gutter}
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};

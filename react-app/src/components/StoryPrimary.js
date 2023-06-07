@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter, sansNormal, headingLarge, titleLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
 `;
+
 const Row = styled.div`
   display: flex;
   width: 100%;
 `;
+
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,10 +20,12 @@ const Panel = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 3rem;
-  padding: 0 2.5vw 0 12.5vw;
+  ${gutter}
+  padding-right: 2.5vw;
   width: 50%;
   &:last-child {
-    padding: 0 12.5vw 0 2.5vw;
+    ${gutter}
+    padding-left: 2.5vw;
   }
 `;
 
@@ -31,22 +36,23 @@ const PanelHeader = styled.div`
   width: 100%;
   padding-top: 3rem;
 `;
+
 const Heading = styled.div`
   width: 100%;
   text-align: center;
+  ${headingLarge}
   font-size: 1.2rem;
-  font-family: ${FONT.sans};
-  font-weight: 700;
-  text-transform: uppercase;
 `;
+
 const Title = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 2.4rem;
-  font-family: ${FONT.serif};
-  font-weight: 500;
+  ${titleLarge}
+  margin-top: 1rem;
   &.left{
-    text-align:left;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    text-align: left;
   }
 `;
  
@@ -58,18 +64,14 @@ const Summary = styled.div`
 `;
  
 const Paragraph = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
 `;
 
 const ImageHolder = styled.div`
   text-align: center;
   width: 100%;
-  margin-top: 3rem;
-`;
+  margin-top: 0.5rem;
+`; 
 
 const StoryPrimary = ({ className, bgColor, content }) => {
   // const index = 0; // !!! TODO: nav / state change

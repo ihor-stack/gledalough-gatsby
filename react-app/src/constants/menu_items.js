@@ -1,8 +1,8 @@
 // Gin images
-import gin_rose_gin from '../assets/gin_rose_gin.jpg';
-import gin_wild_botanical_gin from '../assets/gin_rose_gin.jpg';
-import gin_winter_gin from '../assets/gin_rose_gin.jpg';
-import gin_autumn_gin from '../assets/gin_rose_gin.jpg';
+import gin_wild_rose_gin from '../assets/gin_wild_rose.jpg';
+import gin_wild_botanical_gin from '../assets/gin_wild_botanical.jpg';
+import gin_winter_gin from '../assets/gin_wild_rose.jpg';
+import gin_autumn_gin from '../assets/gin_wild_rose.jpg';
 
 // Gin botanical images
 import botanical_wood_sorrel from '../assets/botanical_wood_sorrel.jpg';
@@ -36,6 +36,12 @@ import thumb_cocktail_01 from '../assets/thumb_cocktail_01.jpg';
 import thumb_cocktail_02 from '../assets/thumb_cocktail_02.jpg';
 import thumb_cocktail_03 from '../assets/thumb_cocktail_03.jpg';
 import thumb_cocktail_04 from '../assets/thumb_cocktail_04.jpg';
+
+// Retailer images
+import logo_drizly from '../assets/logo_drizly.png';
+import logo_minibar from '../assets/logo_minibar.png';
+import logo_reserve_bar from '../assets/logo_reserve_bar.png';
+
 
 // const cocktails = [
 //   { title: 'Irish Mule', url: '/cocktail/irish-mule' },
@@ -86,7 +92,7 @@ const cocktails = {
 };
 
 const gins = [
-  { title: 'Rose Gin', url: '/gin/rose-gin', image: gin_rose_gin },
+  { title: 'Rose Gin', url: '/gin/rose-gin', image: gin_wild_rose_gin },
   { title: 'Wild Botanical Gin', url: '/gin/wild-botanical-gin', image: gin_wild_botanical_gin },
   { title: 'Winter Gin', url: '/gin/winter-gin', image: gin_winter_gin },
   { title: 'Autumn Gin', url: '/gin/autumn-gin', image: gin_autumn_gin },
@@ -137,6 +143,29 @@ const locations = [
   { title: 'Prestige Liquors', address1: '1423 W 55th St', address2: 'La Grange, IL 60525', phone: '(708) 354-6969', url: '',  lat: 39, lng: -121},
   { title: 'Binnys Beverage Depot', address1: '5425 S La Grange rd', address2: 'La Grange, IL 60525', phone: '(708) 354-0355', url: '',  lat: 40, lng: -122},
   { title: 'Binnys Beverage Depot', address1: '7714 Madison St', address2: 'Forest Park, IL 60130', phone: '(708) 366-2500', url: '',  lat: 38, lng: -122},
-]
+];
 
-export { cocktails, features, gins, botanicals, stories, whiskeys, oaks, slider_items, locations };
+const retailers = [
+  {title: 'Drizly.com', url:'https://www.drizley.com', image: logo_drizly },
+  {title: 'MinibarDelivery.com', url:'https://www.minibardelivery.com', image: logo_minibar },
+  {title: 'Reservebar.com', url:'https://www.reservebar.com', image: logo_reserve_bar },
+];
+
+const nav_items = [
+  { title: 'Our Story', url: '/our-story' },
+  { title: 'Gin', url: '/gin' },
+  { title: 'Whiskey', url: '/whiskey' },
+  { title: 'Cocktails', url: '/cocktails' },
+  { title: 'Features', url: '/features' },
+];
+
+const footer_items = [
+  { title: 'Our Ethos', url: '/our-ethos' },
+  { title: 'Contact Us', url: '/contact-us' },
+  { title: 'Nutritional Info', url: '/nutritional-info' },
+  { title: 'Enjoy Responsibly', url: '/enjoy-responsibly' },
+  { title: 'Privacy', url: '/privacy' },
+  { title: 'T&CS', url: '/terms-and-conditions' }
+];
+
+export { cocktails, features, gins, botanicals, stories, whiskeys, oaks, slider_items, locations, retailers, nav_items, footer_items };

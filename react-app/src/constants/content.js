@@ -5,7 +5,8 @@ import gin_feature_image_01 from '../assets/foraging_feature_01.jpg';
 import whiskey_feature_image_01 from '../assets/oak_us_bourbon_barrels-large.jpg';
 
 // Gin products
-import product_gin_01 from '../assets/gin_wild_rose-large.png';
+import gin_wild_rose from '../assets/gin_wild_rose-large.png';
+import gin_wild_botanical from '../assets/gin_wild_botanical-large.png';
 
 // Whiskey products
 import whiskey_7_year_mizunara from '../assets/whiskey_7_year_mizunara.png';
@@ -28,7 +29,6 @@ import story_01_photo_05 from '../assets/story_01_photo_05.jpg';
 
 // Cocktails photos
 import photo_cocktail_01 from '../assets/photo_cocktail_01.jpg';
-
 
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
 
@@ -83,8 +83,8 @@ const gin_article = {
 const gin_shop = {
     title: 'Purchase Our Irish Gins',
     p1: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.',
-    image_01: product_gin_01,
-    image_02: product_gin_01,
+    image_01: gin_wild_rose,
+    image_02: gin_wild_botanical,
 }
 
 const gin_features = [{
@@ -96,6 +96,79 @@ const gin_features = [{
     p2heading: 'Folklore',
     p2: 'The Irish for sorrel is seamsóg, or seamróg coille, shamrock of the woods. Sorrel was sometimes used in place of shamrock to pin on dresses and jackets as our national symbol on St. Patrick\'s Day.',
 }];
+
+
+const gins = {
+    'rose-gin': {
+        image: gin_wild_rose,
+        heading: 'Made with depth and meaning',
+        title: 'Rose Gin',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'wild-botanical-gin': {
+        image: gin_wild_botanical,
+        heading: 'Made with depth and meaning',
+        title: 'Wild Botanical Gin',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'winter-gin': {
+        image: gin_wild_botanical,
+        heading: 'Made with depth and meaning',
+        title: 'Winter Gin',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+    'autumn-gin': {
+        image: gin_wild_botanical,
+        heading: 'Made with depth and meaning',
+        title: 'Autumn Gin',
+        p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
+        p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
+        notes_title: 'Tasting Notes',
+        note_p1_heading: 'The Nose',
+        note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
+        note_p2_heading: 'The Taste',
+        note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
+        note_p3_heading: 'The Finish',
+        note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
+        summary_heading: 'Impact',
+        summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
+        summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
+    },
+};
+
 
 const whiskey_intro = {
     heading: 'Whiskey & wood, a love story',
@@ -115,7 +188,6 @@ const whiskey_oaks_intro = {
     p2: 'American white oak forms the backbone of our maturation and where we venture off the beaten track is by finishing all of our whiskeys in a second (and sometimes third) very different cask. Irish, Japanese, French and Spanish oak are used to finish some of our various whiskeys. Each impart discernible, unique and exquisite flavours.',
 }
 
-//
 const whiskey_article = {
     title: 'Meet Rowdy',
     p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
@@ -136,24 +208,6 @@ const whiskey_shop = {
     image_01: whiskey_7_year_mizunara,
     image_02: whiskey_double_barrel,
 }
-
-const gins = [{
-    image: product_gin_01,
-    heading: 'Made with depth and meaning',
-    title: 'Wild Rose Gin',
-    p1: 'This fresh, rose-petal gin was first made to honour our head distiller\'s mum, Rose, at his little brother\'s wedding. Rose had recently passed away, and this was his way to have her there in spirit - literally.',
-    p2: 'Carefully-tended flowers, from her rose garden are slowly vapor distilled with wild roses and plants from the mountains around the distillery to make this an intensely floral gin.',
-    notes_title: 'Tasting Notes',
-    note_p1_heading: 'The Nose',
-    note_p1: 'Bright lemon and blood orange, soft juniper notes, deep aromatic notes, perfumed with fresh rose.',
-    note_p2_heading: 'The Taste',
-    note_p2: 'Distinct Rose Petal, turkish delight, bright berries, with a nectar sweetness.',
-    note_p3_heading: 'The Finish',
-    note_p3: 'Flower and notes linger with pink peppercorn and earthy spices.',
-    summary_heading: 'Impact',
-    summary_p1: 'Our aim is to leave no trace that we were ever there. It\'s harder work but worth it to keep the mountains beautiful and wild.',
-    summary_p2: 'Then these wild botanicals are painstakingly slow-distilled to tease out delicate flavours, in very small batches of less than 250 liters. Some go in the pot, and some are hung in a basket to let vapours extract their essential oils. The cut-points are decided batch by batch, by smell and taste (never timed or automated) as if each batch is the first.',
-}];
 
 const whiskeys = {
     '7-year-mizunara': {

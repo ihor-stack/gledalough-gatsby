@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { headingLarge, titleLargest } from '../constants/styles';
 
 import logo from '../assets/ic_glendalough.svg';
 import bg_hero_home from '../assets/bg_hero_home.jpg';
@@ -14,6 +15,7 @@ import bg_hero_stories from '../assets/bg_hero_stories.jpg';
 
 // !!! TODO: validate 'page' propType
 const bg = {
+  'notfound': bg_hero_stories,
   'home': bg_hero_home,
   'our_story': bg_hero_our_story,
   'gin_home': bg_hero_gin_home,
@@ -37,23 +39,16 @@ const PanelContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
+  } 
 `;
 
 const Heading = styled.h1`
+  ${headingLarge}
   color: ${COLOR.white};
-  font-family: ${FONT.sans};
-  font-size: 1.6rem;
-  font-weight: 600;
-  font-style: 'normal';
-  text-transform: uppercase;
 `;
 const Title = styled.h2`
+  ${titleLargest}
   color: ${COLOR.white};
-  font-family: ${FONT.serif};
-  font-size: 3.6rem;
-  font-weight: 700;
-  font-style: 'normal';
 `;
 
 const HeroVideo = ({ className, page, heading='Glendalough Distillery', title = '' }) => (

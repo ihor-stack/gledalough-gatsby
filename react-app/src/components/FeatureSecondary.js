@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
+import { gutter, sansNormal, titleMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
 `;
+
 const Row = styled.div`
-  display: flex;
+  display: flex; 
   width: 100%;
 `;
+
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,28 +20,26 @@ const Panel = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 3rem;
-  padding: 0 2.5vw 0 12.5vw;
   width: 50%;
+  ${gutter}
+  padding-right: 2.5vw;
   &:last-child {
-    padding: 0 12.5vw 0 2.5vw;
+    ${gutter}
+    padding-left: 2.5vw;
   }
 `;
+
 const Title = styled.div`
   width: 100%;
   text-align: left;
-  font-size: 2.4rem;
-  line-height: 2.6rem;
-  font-family: ${FONT.serif};
-  font-weight: 500;
-  margin-top: 3rem;
+  ${titleMedium}
+  margin-top: 4rem;
 `;
+
 const Paragraph = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
 `;
+
 const ImageHolder = styled.div`
   text-align: center;
   width: 100%;

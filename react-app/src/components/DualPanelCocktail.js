@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutterLeft, gutterRight } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -18,11 +19,12 @@ const Panel = styled.div`
   &.photo {
     background-size: cover;
     background-repeat: no-repeat;
+    ${gutterRight}
   }
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 0 0 0 12.5vw;
+    ${gutterLeft}
   }
 `;
 const Title = styled.h3`
@@ -30,7 +32,7 @@ const Title = styled.h3`
   text-align: left;
   font-size: 1.2rem;
   font-family: ${FONT.sans}; 
-  font-weight: 700;
+  font-weight: 500;
   font-style: 'normal';
   text-transform: uppercase;
 `;

@@ -10,13 +10,15 @@ export const LANGUAGES = [
 ];
 
 export const FONT = {
-    sans: "'priori-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-    serif: "'Spectral', Georgia, Cambria, 'Times New Roman', Times, serif",
+    sans: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    serif: "'F37Wicklow', Georgia, Cambria, 'Times New Roman', Times, serif",
+    monospace: "'DM Mono', ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro','Fira Mono', 'Droid Sans Mono', 'Courier New', monospace"
 };
 
 export const COLOR = {
     white: '#FFFFFF',
     black: '#000000',
+    grey: '#646464',
     offwhite: '#FDFDFC',
     warmwhite: '#F6F5EF',
     cream: '#E8E6DC',
@@ -31,5 +33,3 @@ export const COLOR = {
     wgreen: '#474938',
     wgrey: '#8E8982',
 };
-
-

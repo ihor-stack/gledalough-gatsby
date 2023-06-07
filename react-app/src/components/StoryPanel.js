@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter, buttonBlank, linkUnderlined, titleLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12.5vw;
+  ${gutter}
 `;
 
 const Panel = styled.div`
@@ -31,7 +32,7 @@ const Heading = styled.h3`
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};
-  font-weight: 600;
+  //font-weight: 600;
   font-style: 'normal';
   text-transform: uppercase;
 `;
@@ -39,11 +40,7 @@ const Heading = styled.h3`
 const Title = styled.h2`
   width: 100%;
   text-align: start;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  font-family: ${FONT.serif};
-  font-weight: 600;
-  font-style: 'normal';
+  ${titleLarge}
 `;
 
 const Subtitle = styled.h3`
@@ -52,7 +49,7 @@ const Subtitle = styled.h3`
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-family: ${FONT.sans};
-  font-weight: 700;
+  font-weight: 500;
   font-style: 'normal';
 `;
 
@@ -62,25 +59,14 @@ const Paragraph = styled.p`
   font-family: ${FONT.sans};
   font-weight: 400;
   font-style: 'normal';
-`;
+`; 
 
-const Button = styled.button`
-  background: none;
-  border: none; 
-  font-family: ${FONT.sans};
-  font-weight: 700;
-  font-style: 'normal';
-  text-transform: uppercase;
-  padding: 0;
-  a, a:active {
-    color: ${COLOR.black};
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-bottom: 1px solid ${COLOR.black};
-  }
-  a:hover, a:focus {
-    text-decoration: none;
-    //border-bottom: none;
+const Button = styled.button` 
+  ${buttonBlank}
+  margin-right: auto;
+  padding-left: 0;
+  > a {
+    ${linkUnderlined}
   }
 `;
 
@@ -105,7 +91,6 @@ const StoryPanel = ({ className, panelLeft, panelRight, imgLeft = false, imgRigh
       {panelRight.p2_title && <Subtitle>{panelRight.p2_title}</Subtitle>}
       {panelRight.p2 && <Paragraph>{panelRight.p2}</Paragraph>}
       <Button><Link to={panelRight.url}>Learn more</Link></Button>
-
     </Panel>
   </PanelContainer>
 );

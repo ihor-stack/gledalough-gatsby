@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { buttonRounded } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -71,15 +72,8 @@ const ShopButton = styled.div`
   text-align: left;
   margin-top: 1rem;
   button {
+    ${buttonRounded}
     margin: 0 auto;
-    padding: 0.5rem 1.6rem;
-    background: none;
-    border: none; 
-    font-family: ${FONT.sans};
-    font-weight: 700;
-    font-style: 'normal';
-    text-transform: uppercase;
-    border-radius: 1.6rem;
   }
 `;
 

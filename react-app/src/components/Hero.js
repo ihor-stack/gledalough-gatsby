@@ -2,26 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
+import { heroText } from '../constants/styles';
 
 
 const PanelContainer = styled.div`
   display: flex;
   background-color: #efefef;
-  > div {
-    margin: 0 20vw;
-  }
-  h2 {
-    text-align: center;
-  }
-`; 
+`;
+const TextContainer = styled.div`
+  margin: 0 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const HeroText = styled.h2`
+  ${heroText}
+  text-align: center;
+`;
 
 const Hero = ({ className, title, bgColor }) => {
  
   return (
     <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
-      <div className="d-flex justify-content-center align-items-center">
-          <h2>{title}</h2>
-      </div>
+      <TextContainer>
+          <HeroText>{title}</HeroText>
+      </TextContainer>
     </PanelContainer>
   )
 };

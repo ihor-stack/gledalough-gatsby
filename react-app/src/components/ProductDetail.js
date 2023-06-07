@@ -30,13 +30,13 @@ const ProductHeader = styled.div`
   h3 {
     font-size: 1.4rem;
     font-family: ${FONT.sans};
-    font-weight: 700;
+    //font-weight: 700;
     text-transform: uppercase;
   }
   h2 {
     font-size: 3.4rem;
     font-family: ${FONT.serif};
-    font-weight: 600;
+    //font-weight: 600;
   }
 `;
  
@@ -78,7 +78,7 @@ const TitleRight = styled.h2`
   width: 100%;
   font-size: 2rem;
   font-family: ${FONT.serif};
-  font-weight: 600;
+  //font-weight: 600;
 `;
    
 
@@ -88,7 +88,7 @@ const HeadingRight = styled.h3`
   width: 100%;
   font-size: 1.4rem;
   font-family: ${FONT.sans};
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 `;
   

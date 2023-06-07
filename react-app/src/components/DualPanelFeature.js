@@ -26,7 +26,6 @@ const Panel = styled.div`
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    //padding: 0 12.5vw;
   }
 `;
 
