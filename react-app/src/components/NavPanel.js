@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { respondTo} from '../constants/styles';
 import { nav_items } from '../constants/menu_items';
 import logo from '../assets/ic_glendalough.svg';
 import shop_logo from '../assets/ic_shop.svg';
@@ -16,6 +17,12 @@ const NavContainer = styled.div`
   bottom: 0;
   z-index 1001;
   pointer-events: none;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+  ${respondTo.sm`
+    display:flex;
+  `}
 `;
 // LogoContainer = deprecated
 const LogoContainer = styled.div`
@@ -25,7 +32,7 @@ const LogoContainer = styled.div`
   }
 `;
 const NavPrimary = styled.nav`
-  margin-left: 2vw;
+  padding-left: 2vw;
   a {
     pointer-events: all;
     color: ${COLOR.black};
@@ -52,7 +59,7 @@ const NavPrimary = styled.nav`
   &.whiskeys-page-0, &.whiskeys-page-4, &.whiskeys-page-5,
   &.whiskey-page-0, &.whiskey-page-4, &.whiskey-page-5,
   &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
-  &.cocktail-page-0,
+  &.cocktail-page-0, &.cocktail-page-3,
   &.features-page-0, &.features-page-4, &.features-page-5,
   &.feature-page-2, &.feature-page-3 {
       a {
@@ -83,7 +90,7 @@ const ShopLogoContainer = styled.div`
   &.whiskeys-page-0, &.whiskeys-page-5,
   &.whiskey-page-4, &.whiskey-page-5,
   &.cocktails-page-0, &.cocktails-page-4, &.cocktails-page-5,
-  &.cocktail-page-0,
+  &.cocktail-page-0, &.cocktail-page-3,
   &.features-page-0, &.features-page-4, &.features-page-5,
   &.feature-page-2, &.feature-page-3 {
     img{
@@ -104,7 +111,7 @@ const NavPanel = ({ className, currentPage }) => {
   ));
  
   return (
-    <NavContainer className={`${className} d-flex justify-content-between align-items-center`}>
+    <NavContainer className={className}>
       <NavPrimary className={`${currentPage}`}>
         <ul className="nav flex-column">
           <li className="nav-item">

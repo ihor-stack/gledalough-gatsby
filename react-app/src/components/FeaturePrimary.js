@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
-import { gutter, titleMono, sansNormal, headingLarge, titleLarge, titleMedium } from '../constants/styles';
+import { gutter, respondTo, titleMono, sansNormal, headingLarge, titleLarge, titleMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
@@ -11,6 +11,10 @@ const PanelContainer = styled.div`
 const Row = styled.div`
   display: flex; 
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
  
 const Panel = styled.div`
@@ -20,13 +24,15 @@ const Panel = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 3rem;
-  width: 50%;
-  ${gutter}
-  padding-right: 2.5vw;
-  &:last-child {
+  padding: 0 10vw;
+  ${respondTo.md`
     ${gutter}
-    padding-left: 2.5vw;
-  }
+    padding-right: 2.5vw;
+    &:last-child {
+      ${gutter}
+      padding-left: 2.5vw;
+    }
+  `}
 `;
 
 const PanelHeader = styled.div`
@@ -42,6 +48,10 @@ const Heading = styled.div`
   text-align: center;
   ${headingLarge}
   font-size: 1.2rem;
+  margin-top: 2rem;
+  ${respondTo.md`
+    margin-top: 0;
+  `}
 `;
 
 const Title = styled.div`
@@ -79,7 +89,7 @@ const ImageHolder = styled.div`
 const FeaturePrimary = ({ className, bgColor, content }) => {
   
   // const index = 0; // !!! TODO: nav / state change
-
+ 
   const paragraphs = content[0].primary_ps.map((paragraph, pi) => (
       <Paragraph key={pi}>{paragraph}</Paragraph>
   ));

@@ -1,8 +1,10 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+//import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import NavPanel from '../components/NavPanel';
+import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import ProductDetail from '../components/ProductDetail';
 import ProductSummary from '../components/ProductSummary';
 import ProductDualPanel from '../components/ProductDualPanel';
@@ -23,6 +25,7 @@ const Gin = () => {
   return ( 
     <>
     <NavPanel currentPage={`gin-page-${currentPage}`} />
+    <NavMobile currentPage={`gin-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <ProductDetail className='page' bgColor='wrpink' product={gin} />
         <ProductSummary className='page' product={gin} bgColor='cream' />

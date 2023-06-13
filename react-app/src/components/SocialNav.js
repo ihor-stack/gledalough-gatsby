@@ -16,7 +16,9 @@ const SocialList = styled.ul`
 const SocialItem = styled.li`
   display: flex;
   margin-right: 1rem;
+  cursor: pointer;
   a {
+
     text-decoration: none;
     border-bottom: none;
   }

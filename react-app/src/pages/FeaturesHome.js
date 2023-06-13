@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+// import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import HeroVideo from '../components/HeroVideo';
 import FeatureSlider from '../components/FeatureSlider';
 import SliderPanel from '../components/SliderPanel';
@@ -16,7 +18,8 @@ const FeaturesHome = () => {
 
   return (
     <>
-    <NavPanel currentPage={`features-page-${currentPage}`}/>
+    <NavPanel currentPage={`features-page-${currentPage}`} />
+    <NavMobile currentPage={`features-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='features' title='Features' />
         <FeatureSlider className='page' category='foraging' items={features.foraging} bgColor='beige' />

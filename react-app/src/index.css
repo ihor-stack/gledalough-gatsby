@@ -50,14 +50,39 @@ body {
 
 .page {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  height: auto;
+  max-width: 100%;
+  /*max-height: 100vh;*/
+  /* overflow: hidden; */
 }
 
 .alice-carousel__prev-btn,
 .alice-carousel__next-btn,
 .alice-carousel__dots {
   display: none !important;
+}
+
+.gins-page .alice-carousel__prev-btn,
+.gins-page .alice-carousel__next-btn {
+  display: inline-block !important;
+  font-size: 2rem;
+  line-height: 2rem;
+  transform: translateY(-3rem);
+  color: var(--black);
+}
+
+.gins-page .alice-carousel__prev-btn {
+  text-align: left;
+}
+
+.gins-page .alice-carousel__next-btn {
+  text-align: right;
+}
+
+.gins-page .alice-carousel__dots {
+  display: block !important;
+
 }
 
 .mapboxgl-ctrl,

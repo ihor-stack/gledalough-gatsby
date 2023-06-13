@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+// import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import FeaturePrimary from '../components/FeaturePrimary';
 import FeatureSecondary from '../components/FeatureSecondary';
 import SliderPanel from '../components/SliderPanel';
@@ -17,7 +19,8 @@ const Feature = () => {
 
   return (
     <>
-    <NavPanel currentPage={`feature-page-${currentPage}`}/>
+    <NavPanel currentPage={`feature-page-${currentPage}`} />
+    <NavMobile currentPage={`feature-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <FeaturePrimary className='page' bgColor='cream' content={CONTENT.features} />
         <FeatureSecondary className='page' bgColor='cream' content={CONTENT.features} />
@@ -25,6 +28,6 @@ const Feature = () => {
         <Footer className='page' />
       </PageScroll>
     </>
-)};  
+)}; 
 
 export default Feature; 

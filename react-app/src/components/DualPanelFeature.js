@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
+import { COLOR, } from '../constants';
+import {  sansNormal, titleLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   margin-top: 4rem;
@@ -10,7 +11,7 @@ const PanelContainer = styled.div`
   width: 100%;
   height: 50vh;
 `;
-
+ 
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,26 +31,20 @@ const Panel = styled.div`
 `;
 
 const Title = styled.h3`
+  ${titleLarge}
   width: 100%;
   padding: 2rem 4rem 0 4rem;
   text-align: left;
-  font-size: 1.4rem;
 `;
 
 const ParagraphIntro = styled.p`
-  font-size: 1.8rem;
-  line-height: 2rem;
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
   margin: 2rem 4rem 0 4rem;
   text-align: left;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.2rem;
-  font-family: ${FONT.sans}; 
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
   margin: 2rem 4rem 0 4rem;
 `;
 

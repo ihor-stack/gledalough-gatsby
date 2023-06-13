@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { gutterLeft, gutterRight } from '../constants/styles';
+import { gutter, gutterLeft, gutterRight, respondTo } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   align-items: stretch;
+  flex-direction: column;
   width: 100%;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
 const Panel = styled.div`
   display: flex;
@@ -19,16 +23,23 @@ const Panel = styled.div`
   &.photo {
     background-size: cover;
     background-repeat: no-repeat;
-    ${gutterRight}
   }
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    ${gutterLeft}
   }
+  ${gutter}
+  ${respondTo.md`
+    &.photo {
+      ${gutterRight}
+    }
+    &.text {
+      ${gutterLeft}
+    }
+  `}
 `;
 const Title = styled.h3`
-  width: 100%;
+  width: 100%; 
   text-align: left;
   font-size: 1.2rem;
   font-family: ${FONT.sans}; 

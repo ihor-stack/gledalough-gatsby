@@ -112,7 +112,7 @@ const Footer = ({ className }) => {
         </Nav>
         <Nav className='nav-footer'>
           <ul className="nav justify-content-start">
-            {footerItems}
+            { footerItems }
           </ul>
         </Nav>
       </Col>

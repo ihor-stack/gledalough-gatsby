@@ -19,15 +19,12 @@ const SliderContainer = styled.div`
   width: 100%;
   max-width: 100%;
   height: 100vh;
-  //padding-top: 20vh;
 `;
 
 const SliderItem = styled.div`
   width: 100%;
-  height: 100vh;
-  flex-shrink: 0;
 `;
-const SlideImage = styled.div`
+const SlideImage = styled.div` 
   text-align: center;
   margin-top: 10vh;
   img{
@@ -46,7 +43,7 @@ const SlideLink = styled.div`
   margin-top: 1rem;
   a {
     ${linkUnderlined}
-  }
+  } 
 `;
 const SlideButton = styled.div`
   width: 100%;

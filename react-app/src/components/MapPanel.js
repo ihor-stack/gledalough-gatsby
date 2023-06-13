@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Map from 'react-map-gl';
 import { COLOR, FONT } from '../constants';
-import { gutter, gutterLeft, gutterRight, buttonRounded, linkUnderlined } from '../constants/styles';
+import { gutter, gutterMobile,  gutterLeft, gutterRight, respondTo, buttonRounded, linkUnderlined } from '../constants/styles';
 import { locations as location_items, retailers as retailer_items} from '../constants/menu_items';
 
 const PanelContainer = styled.div`
@@ -13,8 +13,17 @@ const PanelContainer = styled.div`
 `;
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
   width: 100%;
+  flex-direction: column;
+  &.map {
+    ${gutterMobile}
+  }
+  ${respondTo.md`
+    flex-direction: row;
+    &.map {
+      padding: 0;
+    }
+  `}
 `;
 const MapHeader = styled.div`
   margin: 5vh 0 0 0;
@@ -22,7 +31,7 @@ const MapHeader = styled.div`
   ${gutter}
 `;
 const MapFooter = styled.div`
-  margin: 5vh 0 0 0;
+  margin: 5vh 0 5vh 0;
   width: 100%;
   ${gutter}
   p {
@@ -59,20 +68,35 @@ const Title = styled.h2`
 `;
 const Panel = styled.div`
   display: flex;
-  flex: 50%;
+  flex-wrap: wrap;
   justify-content: start;
   align-items: start;
-  ${gutterLeft}
   &.locations {
-    height: 60vh;
+    height: 20vh;
     overflow: hidden;
     overflow-y: scroll;
   }
   &:last-child {
-    padding: 0;
-    ${gutterRight}
+    height: 30vh;
   }
-`;
+  width: 100%;
+  ${respondTo.md`
+    width: 50%;
+    ${gutterLeft}
+    &.locations {
+      height: 60vh;
+    }
+    &:last-child {
+      height: 60vh;
+      padding: 0;
+      ${gutterRight}
+    }
+  `}
+  .map {
+    width: 100%;
+    height: 60vh;
+  }
+`; 
 
 const LocationList = styled.ul`
     list-style-type: none;
@@ -100,11 +124,11 @@ const LocationList = styled.ul`
 `;
 
 const FilterMenu = styled.div`
-    margin: 1.5rem 0;
-    ${gutter}
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
+  margin: 1.5rem 0;
+  ${gutter}
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
 `;
 
 const Button = styled.button`
@@ -116,6 +140,10 @@ const RetailMenu = styled.div`
   width: 100%;
   display: flex;
   flex-grow: 1;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `
 const RetailItem = styled.div`
   width: 100%;
@@ -123,7 +151,9 @@ const RetailItem = styled.div`
   flex-grow: 1;
   align-items: start;
   justify-content: center;
-  flex-wrap: wrap;
+  ${respondTo.md`
+    flex-wrap: wrap;
+  `}
 `
 
 const RetailImage = styled.img`
@@ -174,7 +204,7 @@ const MapPanel = ({ className, bgColor }) => {
           <Button>Any Flavor</Button>
         </FilterMenu>
       </Row>
-      <Row>
+      <Row className='map'>
         <Panel className='locations'>
           <LocationList>
             {locationItems}
@@ -183,7 +213,7 @@ const MapPanel = ({ className, bgColor }) => {
         <Panel>
           <Map
             {...viewState}
-            style={{ width: '100%', height: '60vh' }}
+            className='map'
             mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxAccessToken='pk.eyJ1Ijoic2VvbnpvbyIsImEiOiJjbGk4ejZzZnExZ3k5M2RrYnhsaHB2cHhlIn0.TDLTRrdsalrU5XM5yhtweA'
           />

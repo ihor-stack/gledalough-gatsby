@@ -1,7 +1,9 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+// import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import HeroVideo from '../components/HeroVideo';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import ProductIntro  from '../components/ProductIntro';
 import ProductSlider  from '../components/ProductSlider';
 import FeaturesPanel  from '../components/FeaturesPanel';
@@ -19,7 +21,8 @@ const GinHome = () => {
 
   return (
     <>
-    <NavPanel currentPage={`whiskeys-page-${currentPage}`}/>
+    <NavPanel currentPage={`whiskeys-page-${currentPage}`} />
+    <NavMobile currentPage={`whiskeys-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='whiskey_home' title='Whiskey' />
         <ProductIntro className='page' content={CONTENT.whiskey_intro} bgColor='cream' />

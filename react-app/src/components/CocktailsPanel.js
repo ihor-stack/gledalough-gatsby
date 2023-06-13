@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import AliceCarousel from 'react-alice-carousel';
 import { FONT } from '../constants';
 import { gutter, titleMedium, buttonBlank, linkUnderlined } from '../constants/styles';
 import { capitilize } from '../utils/filters';
@@ -16,7 +17,7 @@ const PanelContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-`;
+`; 
 
 const PanelHeader = styled.h3`
   text-align: center;
@@ -29,17 +30,22 @@ const PanelHeader = styled.h3`
   line-height: 3.2rem;
 `;
 
-const ItemsContainer = styled.div`
+const SliderContainer = styled.div`
   ${gutter}
   width: 100%;
   display: flex;
   flex: 1;
 `;
 
-const Item = styled.div`
+const SliderItem = styled.div`
   text-align: center;
-  width: 25vw;
   padding: 2vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
 `;
 
 const Button = styled.button` 
@@ -60,23 +66,38 @@ const Image = styled.img`
   -moz-border-radius: 50% 50% 0 0;
 `;
 
+const responsive = {
+  0: { 
+      items: 1
+  },
+  568: { 
+      items: 2
+  },
+  1024: {
+      items: 3, 
+      itemsFit: 'fill'
+  },
+};
+
 const CocktailsPanel = ({ className, theme='', items }) => {
 
-  const cocktails = items.map((item, i) => (
-    <Item key={i}>
+  const slides = items.map((item, i) => (
+    <SliderItem key={i}>
         <Image className='img-fluid' src={item.image} alt={item.title} />
         <Title>{item.title}</Title>
         <Button><Link to={item.url}>View Recipe</Link></Button>
-    </Item>
+    </SliderItem>
   ))
 
   return (
     <PanelContainer className={className}>
       <PanelHeader>{capitilize(theme)} Cocktails</PanelHeader>
-      <ItemsContainer>{ cocktails }</ItemsContainer>
+      <SliderContainer>
+        <AliceCarousel mouseTracking items={slides} responsive={responsive} />
+      </SliderContainer>
     </PanelContainer>
   )
-};
+}; 
 
 CocktailsPanel.propTypes = {
   className: PropTypes.string,

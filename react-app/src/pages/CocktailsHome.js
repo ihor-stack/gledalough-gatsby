@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+//import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import HeroVideo from '../components/HeroVideo';
 import FeatureSlider from '../components/FeatureSlider';
 import SliderPanel from '../components/SliderPanel';
@@ -16,7 +18,8 @@ const CocktailsHome = () => {
 
   return (
     <>
-    <NavPanel currentPage={`cocktails-page-${currentPage}`}/>
+    <NavPanel currentPage={`cocktails-page-${currentPage}`} />
+    <NavMobile currentPage={`cocktails-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='cocktails' title='Cocktails' />
         <FeatureSlider className='page' category='gin' items={cocktails.gin} bgColor='beige' />
@@ -25,7 +28,7 @@ const CocktailsHome = () => {
         <SliderPanel className='page' page='cocktails' items={slider_items} />
         <Footer className='page' />
       </PageScroll>
-    </>
+    </> 
 )}; 
 
 export default CocktailsHome;

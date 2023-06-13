@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
-import { heroText } from '../constants/styles';
+import { respondTo, heroText } from '../constants/styles';
 
 
 const PanelContainer = styled.div`
@@ -10,14 +10,17 @@ const PanelContainer = styled.div`
   background-color: #efefef;
 `;
 const TextContainer = styled.div`
-  margin: 0 20vw;
+  padding: 0 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  ${respondTo.sm`
+    padding: 0 20vw;
+  `}
 `;
 const HeroText = styled.h2`
   ${heroText}
-  text-align: center;
+  text-align: center; 
 `;
 
 const Hero = ({ className, title, bgColor }) => {
@@ -25,7 +28,7 @@ const Hero = ({ className, title, bgColor }) => {
   return (
     <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
       <TextContainer>
-          <HeroText>{title}</HeroText>
+        <HeroText>{title}</HeroText>
       </TextContainer>
     </PanelContainer>
   )

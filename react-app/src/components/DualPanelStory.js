@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
-import { gutter, sansNormal, titleMedium, headingLarge } from '../constants/styles';
+import { gutter, gutterRight, respondTo, sansNormal, titleMedium, headingLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
@@ -14,46 +14,63 @@ const PanelContainer = styled.div`
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
- 
-  display: flex;
-  flex-grow: 1;
-  width: 50%;
+  flex-basis: 100%;
   justify-content: center;
   align-items: center;
   &.photo {
+    background-position: center; 
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    max-width: 100%;
   }
-  &.text {
-    background-size: cover;
-    background-repeat: no-repeat;
+  &.text { 
     ${gutter}
+    max-width: 100%;
+    text-align: center;
   }
+  ${respondTo.lg`
+    flex: 1;
+    padding: 0;
+    &.text {
+      ${gutterRight}
+      padding-left: 5vw;
+      text-align: left;
+    }
+  `}
 `;
 
-const Title = styled.div`
+const Heading = styled.div`
   ${headingLarge}
-  font-size: 1.4rem;
-  line-height: 1.4rem;
   letter-spacing: 0.2rem;
-`;
+  margin-top: 4rem;
+  ${respondTo.lg`
+    margin-top: 0;
+  `}
+`; 
 
 const ParagraphIntro = styled.p`
   ${titleMedium}
-  margin: 2rem 0 0 0;
+  padding: 2rem 0 0 0;
   text-align: center;
 `;
 
 const Paragraph = styled.p`
   ${sansNormal}
-  margin: 2rem 4rem 0 10rem;
+  margin: 3rem 0;
+  text-align: left;
+  ${respondTo.lg`
+    margin: 0;
+    padding: 2rem 4rem 0 10rem;
+    text-align: center;
+  `}
 `;
 
 const DualPanel = ({ className, bgColor, photo, content }) => (
     <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
       <Panel className='photo' style={{backgroundImage: `url(${photo})`}} />
-      <Panel className='text' >
-        <Title>{content.title}</Title>
+      <Panel className='text'>
+        <Heading>{content.title}</Heading>
         <ParagraphIntro>{content.p1}</ParagraphIntro>
         <Paragraph>{content.p2}</Paragraph>
       </Panel>

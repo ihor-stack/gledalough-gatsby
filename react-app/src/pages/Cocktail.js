@@ -1,7 +1,9 @@
 import React, { useState }  from 'react';
 import { useParams } from 'react-router-dom';
-import PageScroll from 'react-page-scroll';
+// import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import HeroVideo from '../components/HeroVideo';
 import FeatureSlider from '../components/FeatureSlider';
 import DualPanelCocktail from '../components/DualPanelCocktail';
@@ -21,7 +23,8 @@ const CocktailsHome = () => {
 
   return ( 
     <>
-    <NavPanel currentPage={`cocktails-page-${currentPage}`}/>
+    <NavPanel currentPage={`cocktail-page-${currentPage}`} />
+    <NavMobile currentPage={`cocktail-page-${currentPage}`} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='cocktails' title={cocktail.title} />
         <DualPanelCocktail className='page' cocktail={cocktail} />

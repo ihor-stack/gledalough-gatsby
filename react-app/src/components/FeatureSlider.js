@@ -5,27 +5,30 @@ import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 //import { useRef, useEffect } from 'react';
 import { COLOR } from '../constants';
-import { gutter, titleMedium, titleLargest, titleMono } from '../constants/styles';
+import { gutter, respondTo, titleMedium, titleLargest, titleMono } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   ${gutter}
+  ${respondTo.lg`
+    flex-direction: row;
+  `}
 `;
 const SliderContainer = styled.div`
   width: 100%;
   max-width: 100%;
-  height: 100vh;
+  min-height: 50vh;
 `;
 const SliderItem = styled.div`
   width: 100%;
-  height: 100vh;
   flex-shrink: 0;
   justify-content: start;
   align-items: start;
   cursor: pointer;
+
 `;
 const FeatureHeading = styled.h2`
   margin-top: 4rem;
@@ -34,6 +37,7 @@ const FeatureHeading = styled.h2`
   text-align: left;
   text-transform: capitalize;
   ${titleLargest}
+  max-height: 50vh;
 `;
 const ItemDate = styled.h3`
   ${titleMono}
@@ -43,14 +47,18 @@ const ItemDate = styled.h3`
 const ItemImage = styled.div`
   position: relative;
   text-align: center;
-  height: 25vw; 
   margin-right: 2rem;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  min-height: 320px;
+  max-width: 90%;
+
 `;
 const ItemTitle = styled.h3`
   position: absolute;
-  bottom: 0;
+  bottom: 0; 
   margin: 0;
   width: 100%;
   text-align: center;

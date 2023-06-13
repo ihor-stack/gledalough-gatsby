@@ -1,8 +1,11 @@
 import React from 'react';
-import NavPanel from '../components/NavPanel';
+import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import { FONT } from '../constants';
+import { gutter, gutterMobile, respondTo, sansNormal, headingMedium } from '../constants/styles';
+
 import { privacy as items } from '../constants/pages';
 
 const PanelContainer = styled.div`
@@ -10,7 +13,10 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 12vw;
+  ${gutterMobile}
+  ${respondTo.sm`
+    ${gutter}
+  `}
 `;
 const PanelHeader = styled.div`
   display: flex;
@@ -22,10 +28,7 @@ const PanelHeader = styled.div`
 const Heading = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 1.2rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  text-transform: uppercase;
+  ${headingMedium}
 `;
 const Title = styled.div`
   width: 100%;
@@ -37,15 +40,29 @@ const Title = styled.div`
     text-align:left;
   }
 `;
+
+const ItemHeading = styled.h3`
+  width: 100%;
+  text-align: left;
+  ${headingMedium}
+  margin-top: 2rem;
+`;
+const ItemParagraph = styled.p`
+  width: 100%;
+  text-align: left;
+  ${sansNormal}
+  margin: 2rem 0;
+`;
+
 const PrivacyPage = () => {
 
   const privacy_items = items.sections.map((item, i) => {
     const paragraphs = item.ps.map((paragraph, pi) => (
-      <p key={pi}>{paragraph}</p>
+      <ItemParagraph key={pi}>{paragraph}</ItemParagraph>
     ))
     return (
       <div key={i}>
-        <h3>{item.title}</h3>
+        <ItemHeading>{i+1}) {item.title}</ItemHeading>
         {paragraphs}
       </div>
     )
@@ -53,8 +70,8 @@ const PrivacyPage = () => {
 
   return (
     <>
-      <NavPanel currentPage={`privacy-page-${0}`} />
-
+      <NavPanel currentPage={`privacy-page-0`} />
+      <NavMobile currentPage={`privacy-page-0`} />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>
@@ -63,7 +80,6 @@ const PrivacyPage = () => {
         {privacy_items}
       </PanelContainer>
       <Footer className='page' />
-
     </>
   )
 };

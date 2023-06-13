@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
-import { gutter } from '../constants/styles';
+import AliceCarousel from 'react-alice-carousel';
+import { COLOR } from '../constants';
+import { gutter, respondTo, sansNormal, titleMedium, titleLarge } from '../constants/styles';
 import DualPanelFeature  from '../components/DualPanelFeature';
 import useGinFeatureState from '../utils/useGinFeatureState';
 
@@ -10,10 +11,11 @@ const PanelContainer = styled.div`
   ${gutter}
 `;
 const Title = styled.h3`
+  ${titleLarge}
   width: 100%;
   text-align: left;
-  font-size: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
 `;
 const Row = styled.div`
   display: flex;
@@ -27,9 +29,11 @@ const HalfColumn = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  flex: 1;
   justify-content: start;
   align-items: start;
+  ${respondTo.md`
+    flex: 1;
+  `}
 `;
 const Features = styled.div`
   margin-top: 4rem;
@@ -37,6 +41,10 @@ const Features = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  display: none;
+  ${respondTo.md`
+    display: flex;
+  `}
 `;
 const Feature = styled.div`
   cursor: pointer;
@@ -49,38 +57,77 @@ const Feature = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: 1rem;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  &.slide {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 `;
 const FeatureTitle = styled.h3`
   position: absolute;
   bottom: 0;
-  left:0;
-  right:0;
   margin: 0;
+  width: 100%;
   text-align: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(35, 31, 32, 0.6);
+  ${titleMedium}
   color: ${COLOR.white};
-`;
-const Paragraph = styled.p`
-  font-size: 1.2rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
-  margin: 0 4rem 0 0;
+  padding: 1rem;
 `;
 
+const Paragraph = styled.p`
+  ${sansNormal}
+  margin: 1rem 0;
+  ${respondTo.md`
+    margin: 0 4rem 0 0;
+  `}
+`;
+
+const FeaturesSlider = styled.div`
+  display: flex;
+  margin-top: 2rem;
+  ${respondTo.md`
+    display: none;
+  `}
+`;
+const SliderItem = styled.div`
+  width: 100%;
+`;
+const responsive = {
+  0: { 
+      items: 1
+  },
+  768: { 
+      items: 2
+  },
+  992: {
+      items: 3, 
+      itemsFit: 'fill'
+  },
+};
 
 const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
 
   const { feature, loadFeature } = useGinFeatureState();
-  
+
+  // DESKTOP
   const features = items.map((item, i) => (
-    <Feature key={i} style={{backgroundImage: `url(${item.image})`}} onClick={() => loadFeature(1)}>
-      <FeatureTitle>{item.title}</FeatureTitle>
+    <Feature key={i} style={{backgroundImage: `url(${item.image})`}}>
+      <FeatureTitle onClick={() => loadFeature(1)}>{item.title}</FeatureTitle>
     </Feature>
+  ))
+
+  // MOBILE
+  const handleDragStart = (e) => e.preventDefault();
+  const slides = items.map((item, i) => (
+    <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
+      <Feature className='slide' key={i} style={{backgroundImage: `url(${item.image})`}}>
+        <FeatureTitle onClick={() => loadFeature(1)}>{item.title}</FeatureTitle>
+      </Feature>
+    </SliderItem>
   ))
 
   return(
@@ -93,8 +140,9 @@ const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
         <HalfColumn>
           <Paragraph>{content.p2}</Paragraph>
         </HalfColumn>
-      </Row>
+      </Row> 
       { !feature  && <Features>{features}</Features> }
+      { !feature  && <FeaturesSlider><AliceCarousel mouseTracking items={slides} responsive={responsive} /></FeaturesSlider> }
       { feature > 0 && <DualPanelFeature className='feature' bgColor='cream' content={subcontent} close={loadFeature} /> }
     </PanelContainer>
 )};

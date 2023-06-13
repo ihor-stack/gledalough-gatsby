@@ -3,38 +3,46 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { gutter, buttonBlank, linkUnderlined, titleLarge } from '../constants/styles';
+import { gutter, gutterLeft, gutterRight, respondTo, buttonBlank, linkUnderlined, titleLarge, headingMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-  ${gutter}
+  width: 100%; 
 `;
 
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 0 5vw;
+  ${gutter}
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   img {
     height: 40%;
   }
+  ${respondTo.lg`
+    flex: 1;
+    padding: 0;
+    &:first-of-type{
+      ${gutterLeft}
+      padding-right:5vw;
+    }
+    &:last-of-type{
+      ${gutterRight}
+      padding-left:5vw;
+    }
+  `}
 `;
 
 const Heading = styled.h3`
   width: 100%;
   text-align: start;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-family: ${FONT.sans};
-  //font-weight: 600;
-  font-style: 'normal';
-  text-transform: uppercase;
+  margin-top: 2rem;
+  ${headingMedium}
 `;
 
 const Title = styled.h2`
@@ -55,11 +63,11 @@ const Subtitle = styled.h3`
 
 const Paragraph = styled.p`
   font-size: 1.2rem;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
   font-family: ${FONT.sans};
   font-weight: 400;
   font-style: 'normal';
-`; 
+`;  
 
 const Button = styled.button` 
   ${buttonBlank}

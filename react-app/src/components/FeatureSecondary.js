@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR } from '../constants';
-import { gutter, sansNormal, titleMedium } from '../constants/styles';
+import { gutter, respondTo, sansNormal, titleMedium } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
@@ -11,6 +11,10 @@ const PanelContainer = styled.div`
 const Row = styled.div`
   display: flex; 
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
 
 const Panel = styled.div`
@@ -20,13 +24,16 @@ const Panel = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 3rem;
-  width: 50%;
-  ${gutter}
-  padding-right: 2.5vw;
-  &:last-child {
+  padding: 0 10vw;
+  ${respondTo.md`
+    width: 50%;
     ${gutter}
-    padding-left: 2.5vw;
-  }
+    padding-right: 2.5vw;
+    &:last-child {
+      ${gutter}
+      padding-left: 2.5vw;
+    }
+  `}
 `;
 
 const Title = styled.div`

@@ -43,7 +43,6 @@ const Panel = styled.div`
 
 const Nav = styled.nav`
   position: absolute;
-  width: 100%;
   left: ${gutterWidth};
   bottom:-2rem;
   right:0;

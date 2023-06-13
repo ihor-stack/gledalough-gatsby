@@ -1,7 +1,9 @@
 import React, { useState }  from 'react';
-import PageScroll from 'react-page-scroll';
+// import PageScroll from 'react-page-scroll';
+import PageScroll from '../components/PageScroll';
 import HeroVideo from '../components/HeroVideo';
 import NavPanel  from '../components/NavPanel';
+import NavMobile  from '../components/NavMobile';
 import ProductIntro  from '../components/ProductIntro';
 import ProductSlider  from '../components/ProductSlider';
 import FeaturesPanel  from '../components/FeaturesPanel';
@@ -20,7 +22,8 @@ const GinHome = () => {
   return (
     <>
     <NavPanel currentPage={`gins-page-${currentPage}`} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+    <NavMobile currentPage={`gins-page-${currentPage}`} />
+      <PageScroll className='gins-page' width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='gin_home' title='Gin' />
         <ProductIntro className='page' content={CONTENT.gin_intro} bgColor='cream' />
         <ProductSlider className='page' product='gin' items={productItems} activeUrl='/gin' bgColor='cream' />
