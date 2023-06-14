@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import SocialNav from './SocialNav';
 import { COLOR } from '../constants';
 import { footer_items } from '../constants/menu_items'; 
-import { gutter, titleMono, titleLargest, sansNormal } from '../constants/styles';
+import { gutter, respondTo, titleMono, titleLargest, sansNormal } from '../constants/styles';
 import footer_logo from '../assets/footer_logo.png';
 
 const PanelContainer = styled.div`
@@ -20,12 +20,14 @@ const Col = styled.div`
   flex-direction: column;
   justify-content: start;
   &.col-left {
-    width: 45vw;
+    width: 100%;
   }
   &.col-center { 
+    display:none;
     width: 15vw;
   }
   &.col-right {
+    display:none;
     width: auto;
     padding-top: 15vw;
     align-items: end;
@@ -36,6 +38,14 @@ const Col = styled.div`
       color: ${COLOR.white};
     }
   }
+  ${respondTo.sm`
+      &.col-left {
+        width: 45vw;
+      }
+      &.col-center, &.col-right {
+        display:flex;
+      }
+  `}
 `;
 const FooterTitle = styled.h2`
   ${titleLargest}

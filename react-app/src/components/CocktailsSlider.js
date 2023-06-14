@@ -79,7 +79,7 @@ const responsive = {
   },
 };
 
-const CocktailsPanel = ({ className, theme='', items }) => {
+const CocktailsSlider = ({ className, theme='', items }) => {
 
   const slides = items.map((item, i) => (
     <SliderItem key={i}>
@@ -99,10 +99,10 @@ const CocktailsPanel = ({ className, theme='', items }) => {
   )
 }; 
 
-CocktailsPanel.propTypes = {
+CocktailsSlider.propTypes = {
   className: PropTypes.string,
   theme: PropTypes.string,
   items: PropTypes.array,
 };
 
-export default CocktailsPanel;
+export default CocktailsSlider;

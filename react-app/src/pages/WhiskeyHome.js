@@ -1,14 +1,13 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 // import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
 import HeroVideo from '../components/HeroVideo';
-import NavPanel  from '../components/NavPanel';
-import NavMobile  from '../components/NavMobile';
-import ProductIntro  from '../components/ProductIntro';
-import ProductSlider  from '../components/ProductSlider';
-import FeaturesPanel  from '../components/FeaturesPanel';
-import DualPanelStory  from '../components/DualPanelStory';
-import Footer  from '../components/Footer';
+import NavComponent from '../components/NavComponent';
+import ProductIntro from '../components/ProductIntro';
+import ProductSlider from '../components/ProductSlider';
+import FeaturesPanel from '../components/FeaturesPanel';
+import DualPanelStory from '../components/DualPanelStory';
+import Footer from '../components/Footer';
 import { CONTENT } from '../constants';
 import { whiskeys as productItems } from '../constants/menu_items';
 import { oaks as featureItems } from '../constants/menu_items';
@@ -18,11 +17,11 @@ import photo_whiskey_article from '../assets/photo_whiskey_article.jpg';
 const GinHome = () => {
   // const { homeContent } = useLatestData(); // use when API is available
   const [currentPage, setCurrentPage] = useState(0);
+  const pageClass = `whiskeys-page-${currentPage}`;
 
   return (
     <>
-    <NavPanel currentPage={`whiskeys-page-${currentPage}`} />
-    <NavMobile currentPage={`whiskeys-page-${currentPage}`} />
+      <NavComponent pageClass={pageClass} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <HeroVideo className='page' page='whiskey_home' title='Whiskey' />
         <ProductIntro className='page' content={CONTENT.whiskey_intro} bgColor='cream' />
@@ -32,6 +31,7 @@ const GinHome = () => {
         <Footer className='page' />
       </PageScroll>
     </>
-)};
+  )
+};
 
 export default GinHome;

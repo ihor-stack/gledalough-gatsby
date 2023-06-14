@@ -18,7 +18,7 @@ const NavContainer = styled(animated.div)`
   bottom: 0;
   z-index 10001;
   width: 100vw;
-  max-width: 428px;
+  max-width: 100%;
   background-color: ${COLOR.darkgreen};
   flex-direction: column;
   justify-content: space-between;
@@ -41,23 +41,24 @@ const NavHeader = styled.div`
 `;
 
 const NavToggle = styled.div`
+  z-index 99999999;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
-  ${sansNormal}
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  cursor: pointer;
-  color: ${COLOR.white};
   position: absolute;
   top: 1rem;
   right: 1rem;
   width: 2.6rem;
   height: 2.6rem;
-  border 2px solid ${COLOR.white};
-  text-align: center;
-  border-radius: 1.3rem;
   padding: 0.3rem 0 0.3rem 0.65rem;
+  ${sansNormal}
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+  cursor: pointer;
+  color: ${COLOR.white};
+  border 2px solid ${COLOR.white};
+  border-radius: 1.3rem;
   > div {
     width: 1.5rem;
     height: 0.2rem;
@@ -77,8 +78,7 @@ const NavToggle = styled.div`
     }
   }
   &.closed {
-    left: 98vw;
-    margin-left: 375px;
+    left: calc(200vw - 4rem);
     padding: 0.3rem 0 0.3rem 0.45rem;
     > div {
       &:nth-of-type(1) {
@@ -91,12 +91,18 @@ const NavToggle = styled.div`
       &:nth-of-type(3) {
         transform: rotate(0);
       }
-
+    }
+  }
+  &.invert:not(.home-page-0) {
+    color: ${COLOR.black};
+    border-color: ${COLOR.black};
+    > div {
+      background-color: ${COLOR.black};
     }
   }
 `;
 
-const NavPrimary = styled.nav`
+const StyledNav = styled.nav`
   padding-left: 2vw;
   a {
     pointer-events: all;
@@ -143,22 +149,22 @@ const NavFooter = styled.div`
   }
 `;
 
-const NavPanel = ({ className='', currentPage }) => {
+const NavPrimary = ({currentPage, menuActive, toggleMenu }) => {
   
-  const [menuActive, setMenuActive] = useState(false);
+  //const [menuActive, setMenuActive] = useState(false);
 
   const [springs, api] = useSpring(() => ({
     from: {
-      x: '0px'
+      x: '0vw'
     },
     to: {
-      x: '-428px'
+      x: '-101vw'
     }
   }));
 
   const handleMenuToggle = () => {
-    const to = menuActive ? '-428px' : '0px';
-    const from = menuActive ? '0px' : '-428px';
+    const to = menuActive ? '-101vw' : '0vw';
+    const from = menuActive ? '0vw' : '-101vw';
     api.start({
       from: {
         x: from,
@@ -167,7 +173,7 @@ const NavPanel = ({ className='', currentPage }) => {
         x: to,
       },
     })
-    setMenuActive(!menuActive);
+    toggleMenu();
   }
 
   const navItems = nav_items.map((item, i) => (
@@ -179,8 +185,8 @@ const NavPanel = ({ className='', currentPage }) => {
   ));
  
   return (
-      <NavContainer style={{...springs}} className={`${className} ${menuActive ? 'open':'closed'}`}>
-        <NavToggle className={`${className} ${menuActive ? 'open':'closed'}`} onClick={handleMenuToggle}>
+      <NavContainer style={{...springs}} className={`${menuActive ? 'open':'closed'}`}>
+        <NavToggle className={`${currentPage} ${menuActive ? 'open':'closed'} ${menuActive ? '':'invert'}`} onClick={handleMenuToggle}>
           <div />
           <div />
           <div />
@@ -188,7 +194,7 @@ const NavPanel = ({ className='', currentPage }) => {
         <NavHeader>
           <img src={header_glendalough} className="cross-logo" alt="Glendalough header logo" />
         </NavHeader>
-        <NavPrimary className={`${currentPage}`}>
+        <StyledNav className={`${currentPage}`}>
           <ul className="nav flex-column">
             <li className="nav-item">
               <Link to="/" className="nav-link">
@@ -200,7 +206,7 @@ const NavPanel = ({ className='', currentPage }) => {
           <ShopLogoContainer className={`d-flex align-items-center ${currentPage}`}>
               <img src={shop_logo} className="nav-logo-shop" alt="Glendalough shop logo" />
           </ShopLogoContainer>
-        </NavPrimary>
+        </StyledNav>
 
         <NavFooter>
           <SocialNav />
@@ -210,9 +216,8 @@ const NavPanel = ({ className='', currentPage }) => {
   )
 };
 
-NavPanel.propTypes = {
-  className: PropTypes.string,
+NavPrimary.propTypes = {
   currentPage: PropTypes.string,
 };
 
-export default NavPanel;
+export default NavPrimary;

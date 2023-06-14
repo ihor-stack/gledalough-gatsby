@@ -1,6 +1,5 @@
 import React from 'react';
-import NavPanel  from '../components/NavPanel';
-import NavMobile  from '../components/NavMobile';
+import NavComponent from '../components/NavComponent';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import { FONT } from '../constants';
@@ -55,6 +54,7 @@ const ItemParagraph = styled.p`
 `;
 
 const PrivacyPage = () => {
+  const pageClass = `privacy-page-0`;
 
   const privacy_items = items.sections.map((item, i) => {
     const paragraphs = item.ps.map((paragraph, pi) => (
@@ -70,8 +70,7 @@ const PrivacyPage = () => {
 
   return (
     <>
-      <NavPanel currentPage={`privacy-page-0`} />
-      <NavMobile currentPage={`privacy-page-0`} />
+      <NavComponent pageClass={pageClass} />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>

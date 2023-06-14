@@ -1,11 +1,10 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 // import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
-import NavPanel  from '../components/NavPanel';
-import NavMobile  from '../components/NavMobile';
+import NavComponent from '../components/NavComponent';
 import StoryPrimary from '../components/StoryPrimary';
 import StorySecondary from '../components/StorySecondary';
-import Footer  from '../components/Footer';
+import Footer from '../components/Footer';
 
 import { CONTENT } from '../constants';
 // import { gins as productItems } from '../constants/menu_items';
@@ -15,11 +14,11 @@ import { CONTENT } from '../constants';
 const Story = () => {
   // const { homeContent } = useLatestData(); // use when API is available 
   const [currentPage, setCurrentPage] = useState(0);
+  const pageClass = `story-page-${currentPage}`;
 
   return (
     <>
-    <NavPanel currentPage={`story-page-${currentPage}`}/>
-    <NavMobile currentPage={`story-page-${currentPage}`} />
+      <NavComponent pageClass={pageClass} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
         <StoryPrimary className='page' bgColor='cream' content={CONTENT.stories} />
         <StorySecondary className='page' bgColor='beige' index={1} reverse={true} content={CONTENT.stories} />
@@ -28,6 +27,7 @@ const Story = () => {
         <Footer className='page' />
       </PageScroll>
     </>
-)};  
+  )
+};
 
 export default Story; 

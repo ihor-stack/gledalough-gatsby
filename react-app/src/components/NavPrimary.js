@@ -9,7 +9,7 @@ import logo from '../assets/ic_glendalough.svg';
 import shop_logo from '../assets/ic_shop.svg';
 import cross_logo from '../assets/ic_cross.svg';
 
-const NavContainer = styled.div`
+const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@ const LogoContainer = styled.div`
     filter: invert(1);
   }
 `;
-const NavPrimary = styled.nav`
+const StyledNav = styled.nav`
   padding-left: 2vw;
   a {
     pointer-events: all;
@@ -100,7 +100,7 @@ const ShopLogoContainer = styled.div`
   }
 `;
 
-const NavPanel = ({ className, currentPage }) => {
+const NavPrimary = ({ currentPage }) => {
 
   const navItems = nav_items.map((item, i) => (
     <li key={i} className="nav-item">
@@ -111,8 +111,8 @@ const NavPanel = ({ className, currentPage }) => {
   ));
  
   return (
-    <NavContainer className={className}>
-      <NavPrimary className={`${currentPage}`}>
+    <Container>
+      <StyledNav className={`${currentPage}`}>
         <ul className="nav flex-column">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -121,20 +121,20 @@ const NavPanel = ({ className, currentPage }) => {
           </li>
           { navItems }
         </ul>
-      </NavPrimary>
+      </StyledNav>
       <LogoContainer className={`${currentPage}`} hidden>
         <img src={logo} className="nav-logo" alt="Glendalough logo" />
       </LogoContainer>
       <ShopLogoContainer className={`d-flex align-items-center ${currentPage}`}>
         <img src={shop_logo} className="nav-logo-shop" alt="Glendalough shop logo" />
       </ShopLogoContainer>
-    </NavContainer>
+    </Container>
   )
 };
 
-NavPanel.propTypes = {
+NavPrimary.propTypes = {
   className: PropTypes.string,
   currentPage: PropTypes.string,
 };
 
-export default NavPanel;
+export default NavPrimary;

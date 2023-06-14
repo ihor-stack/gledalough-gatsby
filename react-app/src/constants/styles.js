@@ -25,8 +25,12 @@ export const gutterWidth = '15vw';
 export const gutterWidthMobile = '10vw';
 
 export const gutter = css`
-    padding-left: ${gutterWidth};
-    padding-right: ${gutterWidth};
+    padding-left: ${gutterWidthMobile};
+    padding-right: ${gutterWidthMobile};
+    ${respondTo.sm`
+        padding-left: ${gutterWidth};
+        padding-right: ${gutterWidth};
+    `}
 `;
 export const gutterMobile = css`
     padding-left: ${gutterWidthMobile};
