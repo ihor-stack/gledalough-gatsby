@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
-import { FONT } from '../constants';
+import { FONT, COLOR } from '../constants';
 import { gutter, titleMedium, buttonBlank, linkUnderlined } from '../constants/styles';
 import { capitilize } from '../utils/filters';
 import img_bg_texture from '../assets/bg_textured_paper.jpg';
@@ -61,6 +61,8 @@ const Title = styled.h3`
 `;
 
 const Image = styled.img`
+  border 10px solid ${COLOR.cream};
+  box-shadow: 1px 1px 1px 1px ${COLOR.beige};
   border-radius: 50% 50% 0 0;
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;

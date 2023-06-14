@@ -7,7 +7,7 @@ import { respondTo, heroText } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
-  background-color: #efefef;
+  background-color: ${COLOR.beige};
 `;
 const TextContainer = styled.div`
   padding: 0 10vw;

@@ -10,10 +10,14 @@ import footer_logo from '../assets/footer_logo.png';
 
 const PanelContainer = styled.div`
   display: flex;
+  flex-direction: column;
   background-color: ${COLOR.darkgreen};
   color: ${COLOR.white};
   ${gutter}
   padding-top: 4rem;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
 const Col = styled.div`
   display: flex;
@@ -27,8 +31,7 @@ const Col = styled.div`
     width: 15vw;
   }
   &.col-right {
-    display:none;
-    width: auto;
+    display:flex;
     padding-top: 15vw;
     align-items: end;
     p {
@@ -38,7 +41,7 @@ const Col = styled.div`
       color: ${COLOR.white};
     }
   }
-  ${respondTo.sm`
+  ${respondTo.md`
       &.col-left {
         width: 45vw;
       }
@@ -60,6 +63,17 @@ const FormMessage = styled.p`
 `;
 const NewsContainer = styled.div`
   width: 100%;
+  .cross-logo{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    max-width: 200px;
+  }
+  ${respondTo.md`
+    .cross-logo{
+      display: none;
+    }
+  `}
 `;
 const Nav = styled.nav`
   width: 100%;
@@ -113,6 +127,7 @@ const Footer = ({ className }) => {
     <PanelContainer className={className}>
       <Col className='col-left'>
         <NewsContainer className="text-left">
+          <img src={footer_logo} className="cross-logo img-fluid" alt="Glendalough cross logo" />
           <FooterTitle>Distillery News</FooterTitle>
           <InputEmail placeholder={`Email`} /><Button>Sign-up</Button>
           <FormMessage>Get the latest news and cocktails straight to your inbox</FormMessage>

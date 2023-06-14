@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from '@react-spring/web';
 import PropTypes from 'prop-types';
@@ -24,7 +24,7 @@ const NavContainer = styled(animated.div)`
   justify-content: space-between;
   align-items: start;
   display: flex;
-  ${respondTo.sm`
+  ${respondTo.md`
     display:none;
   `}
 `;

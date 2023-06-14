@@ -22,12 +22,12 @@ const Home = () => {
     <>
       <NavComponent pageClass={pageClass} />
       <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='home' title="Glendalough Distillery" />
-        <Hero className='page' title={CONTENT.home_intro} />
-        <DrinksPanel className='page' />
-        <SliderPanel className='page' page='home' items={slider_items} />
-        <CocktailsSlider className='page' theme='' items={cocktails.gin.slice(0, 3)} />
-        <Footer className='page' />
+        <HeroVideo id='HeroVideo' className='page' page='home' title="Glendalough Distillery" />
+        <Hero id='Hero' className='page' title={CONTENT.home_intro} />
+        <DrinksPanel id='DrinksPanel' className='page' />
+        <SliderPanel id='SliderPanel' className='page' page='home' items={slider_items} />
+        <CocktailsSlider id='CocktailsSlider' className='page' theme='' items={cocktails.gin.slice(0, 3)} />
+        <Footer id='Footer' className='page' />
       </PageScroll>
     </>
   )

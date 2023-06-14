@@ -20,7 +20,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   display: none;
-  ${respondTo.sm`
+  ${respondTo.md`
     display:flex;
   `}
 `;
