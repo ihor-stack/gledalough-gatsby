@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { buttonRounded } from '../constants/styles';
+import { respondTo, gutter, sansNormal, buttonRounded } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
   &.gin {
     color: ${COLOR.black};
     background-color: ${COLOR.cream};
@@ -24,6 +27,9 @@ const PanelContainer = styled.div`
       color: ${COLOR.white};
       border: 1px solid ${COLOR.white};
     }
+    p {
+      color: ${COLOR.white};
+    }
   }
 `;
 
@@ -31,19 +37,31 @@ const Panel = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 50%;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 6rem;
+  ${gutter}
   &.text {
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 0 0 0 12vw;
+    padding: 0 5vw;
   }
   &.images {
     display: flex;
     flex-direction: row;
-    padding: 0 12vw 0 0;
+    padding: 0 5vw;
   }
+  ${respondTo.md`
+    width: 50%;
+    margin-bottom: 0;
+    &.text {
+      padding: 0 0 0 12.5vw;
+    }
+    &.images {
+      padding: 0 12.5vw 0 0;
+    }
+  `}
 `;
 
 const Title = styled.h2`
@@ -58,11 +76,7 @@ const Title = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.8rem;
-  line-height: 1.9rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
-  font-style: 'normal';
+  ${sansNormal}
   margin: 2rem 0 0 0;
   text-align: left;
 `;
@@ -75,6 +89,10 @@ const ShopButton = styled.div`
     ${buttonRounded}
     margin: 0 auto;
   }
+  text-align:center;
+  ${respondTo.md`
+    text-align:left;
+  `}
 `;
 
 const ProductImage = styled.div`

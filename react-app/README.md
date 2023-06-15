@@ -107,124 +107,127 @@ background: #8E8982;
 
 ```
 
-### Glendalough Pages
+
+### GLENDALOUGH PAGES
 
 * Home
-* OurStory
+* Our Story
 * Gin
 * Whiskey
+* Poitín (???)
 * Cocktails
-* Features
-* Ethos
-* Contact
-* Tours
+* Features 
+
+
+### SECONDARY PAGES
+
+* Our Ethos
+* Contact Us
+* Nutritional Info
+* Enjoy Responsibly
 * Privacy
-* Terms
+* Terms & Conditions
 
 
-### Glendalough Components
+### MAIN PAGE COMPONENTS
 
 * Home
-    - Nav
-    - Hero
-    - SubHero
-    - Drinks (Gin|Whiskey)
-    - Slider
-    - Cocktails
-    - Footer
-    - ModalEmail PopUp (why)
-
-* Tertiary
-    - Heading
-    - Body
-    - BodyImage
-    - News *
+    - Hero Video
+    - Hero Text
+    - Product Slider
+    - Story Slider
+    - Cocktails Slider
     - Footer
 
-* Gin 
-    - Nav *
-    - Hero *?
-    - Slider
-    - Thumbs + detail
-    - ModalVideo
-    - Story
-    - Awards
-    - News *
-    - Footer *
+* Our Story
+    - Hero Video
+    - Hero Text
+    - Story Intro 1-2
+    - Story Intro 3-4
+    - Footer
 
-- Product (gin/Whiskey)
-    - Nav *
-    - ProductHero
-    - Notes
-    - Impact (Story)
-    - Thumbs
-    - Connect
-    - Footer *
+* Story
+    - Story Panel
+    - Story Panel
+    - Story Panel
+    - Story Panel
+    - Footer
 
-- Story
-    - Nav *
-    - Hero
-    - Panel1
-    - Panel2
-    - Panel3
-    - Panel4
-    - News *
-    - Footer *
+* Gin | Whiskey | Poitín (Home)
+    - Hero Video
+    - Hero Text Split
+    - Product Slider
+    - Features List
+    - Feature Intro
+    - Footer
+    
+* Gin | Whiskey | Poitín (Product)
+    - Product Intro
+    - Product Feature
+    - Product Hero
+    - Cocktail Slider
+    - Shop CTA
+    - Footer
 
-- Article
-    - Nav *
-    - Heading
-    - Panel1
-    - Panel2
-    - Panel3
-    - Panel4
-    - News *
-    - Footer *
+* Cocktails
+    - Hero Video
+    - Cocktail Slider
+    - Cocktail Slider
+    - Cocktail Slider
+    - Story Slider
+    - Footer
+* Cocktail
+    - Hero Video
+    - Cocktail Instructions
+    - Cocktail Slider
+    - Footer
 
-- Whiskey
-    - Nav *
-    - Hero *?
-    - Slider
-    - Thumbs + detail
-    - ModalVideo
-    - Story
-    - Awards
-    - News *
-    - Footer *
+* Features
+    - Hero Video
+    - Feature Slider
+    - Feature Slider
+    - Feature Slider
+    - Story Slider
+    - Footer
+
+* Feature
+    - Feature Article
+    - Feature Secondary
+    - Story Slider
+    - Footer
 
 
-- Features
-    - Nav *
-    - Heading
-    - Filter
-    - Thumbs
-    - News *
-    - Footer *
+### SECONDARY PAGE COMPONENTS
 
-- Feature (blog post)
-    - Nav *
-    - Heading
-    - HeroImage
-    - Article
-    - Gallery
-    - News *
-    - Footer *
+* Our Ethos
+    - ???
+    - Footer
 
-- Cocktails
-    - Nav *
-    - Heading
-    - Thumbs (Gin/Whiskey/Occasion)
-    - Thumbs (Bar Drinks)
-    - News *
-    - Footer *
 
-- Cocktail
-    - Nav *
-    - Heading
-    - Hero
-    - Recipe
-    - News *
-    - Footer *
+* Contact Us
+    - Retailer List
+    - Retailer Map
+    - Online Shops
+    - Footer
+
+
+* Nutritional Info
+    - ???
+    - Footer
+
+
+* Enjoy Responsibly
+    - ???
+    - Footer
+
+* Privacy
+    - Legal Paragraphs
+    - Footer
+
+* Terms & Conditions
+    - ??? (Legal Paragraphs)
+    - Footer
+
  
 ### Questions
 

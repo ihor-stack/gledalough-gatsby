@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { gutter, sansNormal, headingLarge, titleLarge } from '../constants/styles';
+import { gutter, respondTo, sansNormal, headingLarge, titleLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
@@ -10,9 +10,12 @@ const PanelContainer = styled.div`
 
 const Row = styled.div`
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
-
+ 
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,12 +24,14 @@ const Panel = styled.div`
   align-items: start;
   margin-top: 3rem;
   ${gutter}
-  padding-right: 2.5vw;
-  width: 50%;
-  &:last-child {
-    ${gutter}
-    padding-left: 2.5vw;
-  }
+  ${respondTo.md`
+    width: 50%;
+    padding-right: 2.5vw;
+    &:last-child {
+      ${gutter}
+      padding-left: 2.5vw !important;
+    }
+  `}
 `;
 
 const PanelHeader = styled.div`
@@ -35,6 +40,7 @@ const PanelHeader = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding-top: 3rem;
+  margin-top: 5rem; // !!! NavHeader
 `;
 
 const Heading = styled.div`

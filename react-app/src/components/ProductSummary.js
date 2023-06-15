@@ -1,45 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLOR, FONT } from '../constants';
-import { gutter } from '../constants/styles';
+import { COLOR } from '../constants';
+import { gutter, gutterLeft, headingMedium, sansNormal, respondTo } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
 
 const Panel = styled.div`
   display: flex;
-  flex-direction: column;
   flex-basis: 100%;
   flex: 1;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  ${gutter}
+  ${respondTo.md`
+    ${gutterLeft}
+    padding-right: 0;
+  `}
 `;
 
 const Heading = styled.h3`
   width: 100%;
   text-align: left;
-  ${gutter}
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-family: ${FONT.sans};
-  font-style: 'normal';
-  text-transform: uppercase;
+  ${headingMedium}
 `;
 
-const Paragraph = styled.p`
+const Paragraph = styled.p` 
   width: 100%;
   text-align: left;
-  ${gutter}
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-family: ${FONT.sans};
-  font-weight: 400;
-  font-style: 'normal';
+  ${sansNormal}
 `;
 
 const ProductSummary = ({ className, product, bgColor }) => (

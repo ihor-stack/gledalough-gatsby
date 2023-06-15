@@ -2,22 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { gutter } from '../constants/styles';
+import { gutter, respondTo } from '../constants/styles';
 
 const PanelContainer = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
 
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 50%;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  ${respondTo.md`
+    width: 50%;
+  `}
+
   &.photo {
     background-size: cover;
     background-repeat: no-repeat;

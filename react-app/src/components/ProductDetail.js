@@ -2,15 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
+import { gutter, titleLarge, titleLargest, headingMedium, sansNormal, respondTo} from '../constants/styles';
 
 const PanelContainer = styled.div`
   position: relative;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  ${respondTo.md`
+    flex-direction: row;
+  `}
 `;
- 
+
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,70 +24,71 @@ const Panel = styled.div`
   align-items: center;
   min-height: 380px;
   background-color: ${COLOR.rose};
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+  &.primary {
+    padding-top: 40rem;
+    ${respondTo.md`
+      padding-top: 4rem;
+    `}
+  }  
 `;
 
 const ProductHeader = styled.div`
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 8rem;
   h3 {
-    font-size: 1.4rem;
-    font-family: ${FONT.sans};
-    //font-weight: 700;
-    text-transform: uppercase;
+     ${headingMedium}
   }
   h2 {
-    font-size: 3.4rem;
-    font-family: ${FONT.serif};
-    //font-weight: 600;
+    ${titleLargest}
   }
 `;
  
 const ProductImage = styled.div`
   position: absolute;
-  top: 25vh;
+  top: 16rem;
   width: 100%;
   text-align: center;
   img {
-    width: 20vw;
+    width: 30vw;
   }
+  ${respondTo.md`
+  top: 25vh;
+    img {
+      width: 20vw;
+    }
+  `}
 `;
 
 const ParagraphLeft = styled.p`
-  padding: 0 12vw 0 12vw;
+  ${gutter}
   text-align: left;
   width: 100%;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
+  ${sansNormal}
 `;
  
 
 const ParagraphRight = styled.p`
-  padding: 0 12vw 0 12vw;
+  ${gutter}
   text-align: left;
   width: 100%;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  font-family: ${FONT.sans};
-  font-weight: 500;
+  ${sansNormal}
 `;
  
 
 const TitleRight = styled.h2`
-  padding: 0 12vw 0 12vw;
+  ${gutter}
   text-align: left;
   width: 100%;
-  font-size: 2rem;
-  font-family: ${FONT.serif};
-  //font-weight: 600;
+  ${titleLarge}
 `;
    
 
 const HeadingRight = styled.h3`
-  padding: 0 12vw 0 12vw;
+  ${gutter} 
   text-align: left;
   width: 100%;
   font-size: 1.4rem;
@@ -103,7 +108,7 @@ const ProductDetail = ({ className, product, bgColor }) => (
          <img src={product.image} className="img-fluid" alt="alt placeholder" />
       </ProductImage>
 
-      <Panel style={{ backgroundColor: `${COLOR[bgColor]}`}}>
+      <Panel className='primary' style={{ backgroundColor: `${COLOR[bgColor]}`}}>
         <ParagraphLeft>{product.p1}</ParagraphLeft>
         <ParagraphLeft>{product.p2}</ParagraphLeft>
       </Panel>

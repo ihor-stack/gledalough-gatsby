@@ -21,10 +21,7 @@ const Panel = styled.div`
   justify-content: center;
   align-items: start;
   &.photo {
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  &.text {
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -67,7 +64,7 @@ const DualPanelCocktail = ({ className, bgColor, cocktail }) => {
   ))  
   const instructions = cocktail['instructions'].map((instruction, i) => (
     <li key={i}>
-      { instruction }
+      { instruction } 
     </li>
   ))  
   const preperations = cocktail['preperations'].map((preperation, i) => (

@@ -16,7 +16,7 @@ const Row = styled.div`
     flex-direction: row;
   `}
 `;
- 
+
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,6 +41,7 @@ const PanelHeader = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding: 3rem 0;
+  margin-top: 4rem;
 `;
 
 const Heading = styled.div`

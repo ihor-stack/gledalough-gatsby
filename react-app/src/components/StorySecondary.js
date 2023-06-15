@@ -2,35 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
-import { gutter, sansNormal, titleLarge } from '../constants/styles';
+import { gutter, respondTo, sansNormal, titleLarge } from '../constants/styles';
 
 const PanelContainer = styled.div`
   width: 100%;
 `; 
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  > div {
-    ${gutter}
-    padding-right: 2.5vw;
-    &:last-child {
-      ${gutter}
-      padding-left: 2.5vw;
-    }
-  }
-  &.reverse {
-    flex-direction: row-reverse;
-    > div {
-      ${gutter}
-      padding-left: 2.5vw;
-      &:last-child {
-        ${gutter}
+  &:not(.reverse) {
+    ${respondTo.md`
+      > div:first-child  {
         padding-right: 2.5vw;
       }
-    }
+      > div:last-child  {
+          padding-left: 2.5vw;
+      }
+    `}
   }
+
+  &.reverse {
+    flex-direction: column-reverse;
+    ${respondTo.md`
+      flex-direction: row-reverse;
+      > div:first-child  {
+          padding-left: 2.5vw;
+      }
+      > div:last-child  {
+          padding-right: 2.5vw;
+      }
+    `}
+  }
+
 `; 
 const Panel = styled.div`
   display: flex;
@@ -40,8 +46,10 @@ const Panel = styled.div`
   align-items: start;
   margin-top: 3rem;
   ${gutter}
-  padding-right: 2.5vw;
-  width: 50%;
+  width: 100%;
+  ${respondTo.md`
+    width: 50%;
+  `}
 `;
 const Title = styled.div`
   width: 100%;
@@ -63,7 +71,7 @@ const Summary = styled.div`
 const Paragraph = styled.p`
   ${sansNormal}
 `;
-const ImageHolder = styled.div`
+const ImageHolder = styled.div` 
   text-align: center;
   width: 100%;
 `;
