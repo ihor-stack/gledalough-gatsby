@@ -15,7 +15,7 @@ const Container = styled.div`
   right:0;
   background-color: ${COLOR.white};
   z-index 10001;
-  &.home-page-0 {
+  &.home {
     display:none;
   }
 `;

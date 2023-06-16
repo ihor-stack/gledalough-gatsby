@@ -3,7 +3,7 @@ import NavPrimary from '../components/NavPrimary';
 import NavMobile from '../components/NavMobile';
 import StickyHeader from '../components/StickyHeader';
 
-const NavComponent = ({ pathname, pageClass }) => {
+const NavComponent = ({ pathname, currentPage }) => {
 
     const [menuActive, setMenuActive] = useState(false);
 
@@ -13,9 +13,9 @@ const NavComponent = ({ pathname, pageClass }) => {
 
     return (
         <>
-            <StickyHeader pathname={pathname} currentPage={pageClass} />
-            <NavPrimary pathname={pathname} currentPage={pageClass} />
-            <NavMobile pathname={pathname} currentPage={pageClass} menuActive={menuActive} toggleMenu={toggleMenu} />
+            <StickyHeader pathname={pathname} currentPage={currentPage} />
+            <NavPrimary pathname={pathname} currentPage={currentPage} />
+            <NavMobile pathname={pathname} currentPage={currentPage} menuActive={menuActive} toggleMenu={toggleMenu} />
         </>
     )
 };

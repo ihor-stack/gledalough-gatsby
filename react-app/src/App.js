@@ -44,12 +44,14 @@ const AppRoutes = () => {
     }
   });
 
+  let currentPage = location.pathname.replace(/^\/+/g, '');
+  currentPage = currentPage === '' ? 'home' : currentPage;
 
   return (
       <Fragment>
           <ParallaxProvider>
           <ScrollToTop />
-          <NavComponent pathname={location.pathname} />
+          <NavComponent currentPage={currentPage} pathname={location.pathname} />
           {transitions((styles, item) => (
             <animated.div style={styles} className='router-transition'>
               <Routes location={item}>
