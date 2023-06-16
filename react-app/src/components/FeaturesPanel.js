@@ -9,6 +9,7 @@ import useGinFeatureState from '../utils/useGinFeatureState';
 
 const PanelContainer = styled.div`
   ${gutter}
+  padding-bottom: 6rem;
 `;
 const Title = styled.h3`
   ${titleLarge}

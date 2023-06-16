@@ -22,7 +22,7 @@ const Panel = styled.div`
   align-items: center;
   width: 100%;
   ${respondTo.md`
-    width: 50%;
+    width: 50%; 
   `}
 
   &.photo {

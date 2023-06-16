@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
-
-// import { COLOR, FONT } from '../constants';
+import { COLOR } from '../constants';
 import { gutter, titleMedium, buttonBlank, linkUnderlined } from '../constants/styles';
 import img_gin from '../assets/home_irish_gin.jpg';
 import img_whiskey from '../assets/home_irish_whiskey.jpg';
@@ -16,6 +15,7 @@ const PanelContainer = styled.div`
   display: flex;
   align-items: center;
   ${gutter}
+  background-color: ${COLOR.warmwhite};
 `;
 const SliderContainer = styled.div`
   width: 100%;

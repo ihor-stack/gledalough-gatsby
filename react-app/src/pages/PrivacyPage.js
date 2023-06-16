@@ -54,8 +54,6 @@ const ItemParagraph = styled.p`
 `;
 
 const PrivacyPage = () => {
-  const pageClass = `privacy-page-0`;
-
   const privacy_items = items.sections.map((item, i) => {
     const paragraphs = item.ps.map((paragraph, pi) => (
       <ItemParagraph key={pi}>{paragraph}</ItemParagraph>
@@ -70,7 +68,6 @@ const PrivacyPage = () => {
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>

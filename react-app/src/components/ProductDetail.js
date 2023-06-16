@@ -13,6 +13,7 @@ const PanelContainer = styled.div`
   ${respondTo.md`
     flex-direction: row;
   `}
+  background-color: ${COLOR.warmwhite};
 `;
 
 const Panel = styled.div`

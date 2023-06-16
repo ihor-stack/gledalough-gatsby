@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-// import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
 import PropTypes from 'prop-types';
-import NavComponent from '../components/NavComponent';
 import ProductDetail from '../components/ProductDetail';
 import ProductSummary from '../components/ProductSummary';
 import ProductDualPanel from '../components/ProductDualPanel';
@@ -16,16 +14,14 @@ import photo_whiskey_summary from '../assets/photo_whiskey_summary.jpg';
 
 
 const Whiskey = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `whiskey-page-${currentPage}`;
+
   const { slug } = useParams('slug');
   const data = CONTENT.whiskeys;
   const whiskey = data[slug];
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll width="100vw" height="100vh">
         <ProductDetail className='page' bgColor='wgrey' product={whiskey} />
         <ProductSummary className='page' product={whiskey} bgColor='cream' />
         <ProductDualPanel className='page' bgColor='wgrey' theme='whiskey' content={CONTENT.whiskey_article} photo={photo_whiskey_summary} />

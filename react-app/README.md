@@ -30,7 +30,9 @@
 * [React swiper candidates](https://alvarotrigo.com/blog/react-carousels/)
 * [Old useState example by Seón](https://codesandbox.io/s/n3jjpo805j)
 * [Grain filter (svg)](https://css-tricks.com/grainy-gradients/)
-
+* [React Parallax](https://react-scroll-parallax.damnthat.tv/docs/usage/)
+* [React Spring+Router v6](https://codesandbox.io/s/react-router-animated-transitions-w-react-spring-not-working-forked-8py5jb?file=/src/index.js)
+ 
 ```
 # React from scratch
 

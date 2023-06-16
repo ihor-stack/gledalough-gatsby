@@ -1,8 +1,6 @@
-import React, { useState }  from 'react';
-// import PageScroll from 'react-page-scroll';
+import React from 'react';
 import PageScroll from '../components/PageScroll';
 import HeroVideo from '../components/HeroVideo';
-import NavComponent from '../components/NavComponent';
 import ProductIntro  from '../components/ProductIntro';
 import ProductSlider  from '../components/ProductSlider';
 import FeaturesPanel  from '../components/FeaturesPanel';
@@ -16,13 +14,9 @@ import photo_gin_article from '../assets/photo_gin_article.jpg';
 
 const GinHome = () => {
   // const { homeContent } = useLatestData(); // use when API is available 
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `gins-page-${currentPage}`;
-
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll className='gins-page' width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll className='gins-page' width="100vw" height="100vh">
         <HeroVideo className='page' page='gin_home' title='Gin' />
         <ProductIntro className='page' content={CONTENT.gin_intro} bgColor='cream' />
         <ProductSlider className='page' product='gin' items={productItems} activeUrl='/gin' bgColor='cream' />

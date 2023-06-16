@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-//import PageScroll from 'react-page-scroll';
+import React from 'react';
 import PageScroll from '../components/PageScroll';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import NavComponent from '../components/NavComponent';
 import ProductDetail from '../components/ProductDetail';
 import ProductSummary from '../components/ProductSummary';
 import ProductDualPanel from '../components/ProductDualPanel';
@@ -16,17 +14,13 @@ import photo_gin_summary from '../assets/photo_gin_summary.jpg';
 
 
 const Gin = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `gin-page-${currentPage}`;
-
   const { slug } = useParams('slug');
   const data = CONTENT.gins;
   const gin = data[slug];
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll width="100vw" height="100vh">
         <ProductDetail className='page' bgColor='wrpink' product={gin} />
         <ProductSummary className='page' product={gin} bgColor='cream' />
         <ProductDualPanel className='page' bgColor='wrpink' theme='gin' content={CONTENT.gin_article} photo={photo_gin_summary} />

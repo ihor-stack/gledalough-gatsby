@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
-import NavComponent from '../components/NavComponent';
+//import NavComponent from '../components/NavComponent';
 import CocktailsSlider from '../components/CocktailsSlider';
 import Hero from '../components/Hero';
 import HeroVideo from '../components/HeroVideo';
@@ -15,13 +15,11 @@ import { cocktails, slider_items } from '../constants/menu_items';
 
 const Home = () => {
   //const { homeContent } = useLatestData(); // use when API is available
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `home-page-${currentPage}`;
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      {/* <NavComponent pageClass={pageClass} /> */}
+      <PageScroll width="100vw" height="100vh">
         <HeroVideo id='HeroVideo' className='page' page='home' title="Glendalough Distillery" />
         <Hero id='Hero' className='page' title={CONTENT.home_intro} />
         <DrinksPanel id='DrinksPanel' className='page' />

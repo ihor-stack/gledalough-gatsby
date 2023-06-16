@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useParallax } from "react-scroll-parallax";
 import { COLOR } from '../constants';
 import { respondTo, heroText } from '../constants/styles';
 
@@ -24,11 +25,13 @@ const HeroText = styled.h2`
 `;
 
 const Hero = ({ className, title, bgColor }) => {
- 
+  const parallaxText = useParallax({
+    speed: -10
+  });
   return (
     <PanelContainer className={className} style={{backgroundColor: `${COLOR[bgColor]}`}}>
       <TextContainer>
-        <HeroText>{title}</HeroText>
+       <HeroText><div ref={parallaxText.ref}>{title}</div> </HeroText>
       </TextContainer>
     </PanelContainer>
   )

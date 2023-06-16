@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useParallax } from "react-scroll-parallax";
 import { COLOR } from '../constants';
 import { respondTo, headingLarge, titleLargest } from '../constants/styles';
-
 import logo from '../assets/ic_glendalough.svg';
 import bg_hero_home from '../assets/bg_hero_home.jpg';
 import bg_hero_our_story from '../assets/bg_hero_our_story.jpg';
@@ -20,7 +20,7 @@ const bg = {
   'our_story': bg_hero_our_story,
   'gin_home': bg_hero_gin_home,
   'whiskey_home': bg_hero_whiskey_home,
-  'features': bg_hero_features, 
+  'features': bg_hero_features,
   'cocktails': bg_hero_cocktails,
   'stories': bg_hero_stories,
 }
@@ -40,6 +40,7 @@ const PanelContainer = styled.div`
     align-items: center;
   } 
   img {
+    margin-top: -4rem;
     max-width: 300px;
     ${respondTo.xs`
       max-width: 400px;
@@ -63,17 +64,22 @@ const Title = styled.h2`
   color: ${COLOR.white};
 `;
 
-const HeroVideo = ({ className, page, heading='Glendalough Distillery', title = '' }) => (
-  <PanelContainer className={className} style={{ backgroundImage: `url(${bg[page]})` }}>
-    <div>
-      {'home' !== page && <Heading>{heading}</Heading>}
-      {'home' !== page && <Title>{title}</Title>}
-      {'home' === page && <div>
-        <img src={logo} className="nav-logo" alt="Glendalough logo" />
-      </div>}
-    </div>
-  </PanelContainer>
-);
+const HeroVideo = ({ className, page, heading = 'Glendalough Distillery', title = '' }) => {
+  const parallaxText = useParallax({
+    speed: -33
+  });
+  return (
+    <PanelContainer className={className} style={{ backgroundImage: `url(${bg[page]})` }}>
+      <div ref={parallaxText.ref}>
+        {'home' !== page && <Heading>{heading}</Heading>}
+        {'home' !== page && <Title>{title}</Title>}
+        {'home' === page && <div>
+          <img src={logo} className="nav-logo" alt="Glendalough logo" />
+        </div>}
+      </div>
+    </PanelContainer>
+  )
+};
 
 HeroVideo.propTypes = {
   className: PropTypes.string,

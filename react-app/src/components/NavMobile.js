@@ -130,6 +130,8 @@ const ShopLogoContainer = styled.div`
   img {
     margin-left: 1rem;
     width: 7rem;
+    -webkit-filter: invert(1); 
+    filter: invert(1);
   }
 `;
 
@@ -178,7 +180,7 @@ const NavPrimary = ({currentPage, menuActive, toggleMenu }) => {
 
   const navItems = nav_items.map((item, i) => (
     <li key={i} className="nav-item">
-      <Link to={item.url} className="nav-link">
+      <Link to={item.url} className="nav-link" onClick={handleMenuToggle}>
         {item.title}
       </Link>
     </li>
@@ -197,7 +199,7 @@ const NavPrimary = ({currentPage, menuActive, toggleMenu }) => {
         <StyledNav className={`${currentPage}`}>
           <ul className="nav flex-column">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link" onClick={handleMenuToggle}>
                 <img src={cross_logo} className="cross-logo" alt="Glendalough cross logo" />
               </Link>
             </li>

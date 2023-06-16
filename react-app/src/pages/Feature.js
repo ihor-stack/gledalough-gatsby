@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-// import PageScroll from 'react-page-scroll';
+import React from 'react';
 import PageScroll from '../components/PageScroll';
-import NavComponent from '../components/NavComponent';
 import FeaturePrimary from '../components/FeaturePrimary';
 import FeatureSecondary from '../components/FeatureSecondary';
 import SliderPanel from '../components/SliderPanel';
@@ -14,13 +12,10 @@ import { slider_items } from '../constants/menu_items'; // features as menuItems
 
 const Feature = () => {
   // const { homeContent } = useLatestData(); // use when API is available 
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `feature-page-${currentPage}`;
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll width="100vw" height="100vh">
         <FeaturePrimary className='page' bgColor='cream' content={CONTENT.features} />
         <FeatureSecondary className='page' bgColor='cream' content={CONTENT.features} />
         <SliderPanel className='page' page='features' items={slider_items} />

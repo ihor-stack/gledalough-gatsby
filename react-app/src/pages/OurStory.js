@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-//import PageScroll from 'react-page-scroll';
+import React from 'react';
 import PageScroll from '../components/PageScroll';
-import NavComponent from '../components/NavComponent';
 import Hero from '../components/Hero';
 import HeroVideo from '../components/HeroVideo';
 import StoryPanel from '../components/StoryPanel';
@@ -11,21 +9,17 @@ import img_story_1 from '../assets/story_1.jpg';
 import img_story_4 from '../assets/story_4.jpg';
 
 const OurStory = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `stories-page-${currentPage}`;
-
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
-        <HeroVideo className='page' page='our_story' title='Our Story' />
-        <Hero className='page' bgColor='cream' title={CONTENT.home_intro} />
-        <StoryPanel className='page' panelLeft={CONTENT.story1} panelRight={CONTENT.story2} imgLeft={img_story_1} />
-        <StoryPanel className='page' panelLeft={CONTENT.story3} panelRight={CONTENT.story4} imgRight={img_story_4} />
-        <Footer className='page' />
+      <PageScroll width="100vw" height="100vh">
+        <HeroVideo id='HeroVideo' className='page' page='our_story' title='Our Story' />
+        <Hero id='Hero' className='page' bgColor='cream' title={CONTENT.home_intro} />
+        <StoryPanel id='StoryPanel' className='page' panelLeft={CONTENT.story1} panelRight={CONTENT.story2} imgLeft={img_story_1} />
+        <StoryPanel id='StoryPanel' className='page' panelLeft={CONTENT.story3} panelRight={CONTENT.story4} imgRight={img_story_4} />
+        <Footer id='Footer' className='page' />
       </PageScroll>
     </>
   )
 };
 
-export default OurStory; 
+export default OurStory;  

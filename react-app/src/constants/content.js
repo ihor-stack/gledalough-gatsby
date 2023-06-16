@@ -33,13 +33,14 @@ import photo_cocktail_01 from '../assets/photo_cocktail_01.jpg';
 const home_intro = "At Glendalough Distillery we progressively-craft luxury spirits in the Wicklow Mountains. We hope these spirits evoke a sense of place through their depth of flavour as they are an expression of what we love about these mountains.";
 
 const story1 = {
-    url: '/story/story-one',
     bg: 'beige',
+    url: '/story/story-one',
     heading: 'Chapter 1',
     title: 'This place',
     p1: 'The story of St Kevin is where we draw our inspiration. He abandoned safety and comfort to follow his passion and create something more meaningful in the mountains.',
 }
 const story2 = {
+    bg: 'warmwhite',
     url: '/story/story-two',
     heading: 'Chapter 2',
     title: 'Our Craft',
@@ -49,14 +50,15 @@ const story2 = {
     p2: 'A key influence on the flavour of our whiskey comes from the wood it has spent time in. There are countless nuances in how that wood effects and injects flavour, from the straightness of the tree or fineness of the grain to the size of the barrel or depth of the char.'
 }
 const story3 = {
+    bg: 'warmwhite',
     url: '/story/story-three',
     heading: 'Chapter 3',
     title: 'Our Process',
     p1: 'After many an evening\'s banter and debate over why there weren\'t more craft distilleries in the birthplace of distilling, the friends convinced each other to leave the safety of their day jobs, head into the mountains and take a chance on something more meaningful (much like the man on the bottle, St Kevin). Together they built a craft distillery near their favourite spot in those mountains, Glendalough.',
 }
 const story4 = {
-    url: '/story/story-four',
     bg: 'beige',
+    url: '/story/story-four',
     heading: 'Chapter 4',
     title: 'Our People',
     p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non molestie augue. Aliquam eget risus at dui consectetur auctor at id risus. Proin porttitor est ante, venenatis sagittis leo posuere quis.',

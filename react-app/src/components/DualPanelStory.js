@@ -32,10 +32,12 @@ const Panel = styled.div`
   ${respondTo.lg`
     flex: 1;
     padding: 0;
+    width: 50%; 
     &.text {
       ${gutterRight}
       padding-left: 5vw;
       text-align: left;
+      max-width: 50%; 
     }
   `}
 `;
@@ -61,7 +63,7 @@ const Paragraph = styled.p`
   text-align: left;
   ${respondTo.lg`
     margin: 0;
-    padding: 2rem 4rem 0 10rem;
+    padding: 2rem 0 0 4rem;
     text-align: center;
   `}
 `;
@@ -74,7 +76,7 @@ const DualPanel = ({ className, bgColor, photo, content }) => (
         <ParagraphIntro>{content.p1}</ParagraphIntro>
         <Paragraph>{content.p2}</Paragraph>
       </Panel>
-    </PanelContainer>
+    </PanelContainer> 
 );
 
 DualPanel.propTypes = {

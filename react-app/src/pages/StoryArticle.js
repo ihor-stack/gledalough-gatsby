@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
-import NavComponent from '../components/NavComponent';
 import StoryPrimary from '../components/StoryPrimary';
 import StorySecondary from '../components/StorySecondary';
 import Footer from '../components/Footer';
@@ -13,13 +12,10 @@ import { CONTENT } from '../constants';
 
 const Story = () => {
   // const { homeContent } = useLatestData(); // use when API is available 
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `story-page-${currentPage}`;
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll width="100vw" height="100vh">
         <StoryPrimary className='page' bgColor='cream' content={CONTENT.stories} />
         <StorySecondary className='page' bgColor='beige' index={1} reverse={true} content={CONTENT.stories} />
         <StorySecondary className='page' bgColor='cream' index={2} content={CONTENT.stories} />

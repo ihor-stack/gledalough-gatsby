@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-// import PageScroll from 'react-page-scroll';
 import PageScroll from '../components/PageScroll';
 import HeroVideo from '../components/HeroVideo';
-import NavComponent from '../components/NavComponent';
 import ProductIntro from '../components/ProductIntro';
 import ProductSlider from '../components/ProductSlider';
 import FeaturesPanel from '../components/FeaturesPanel';
@@ -16,13 +14,10 @@ import photo_whiskey_article from '../assets/photo_whiskey_article.jpg';
 
 const GinHome = () => {
   // const { homeContent } = useLatestData(); // use when API is available
-  const [currentPage, setCurrentPage] = useState(0);
-  const pageClass = `whiskeys-page-${currentPage}`;
 
   return (
     <>
-      <NavComponent pageClass={pageClass} />
-      <PageScroll width="100vw" height="100vh" onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}>
+      <PageScroll width="100vw" height="100vh">
         <HeroVideo className='page' page='whiskey_home' title='Whiskey' />
         <ProductIntro className='page' content={CONTENT.whiskey_intro} bgColor='cream' />
         <ProductSlider className='page' product='whiskey' items={productItems} activeUrl='/whiskey' bgColor='cream' />
