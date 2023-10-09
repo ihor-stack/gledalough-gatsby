@@ -1,0 +1,572 @@
+.product-range-menu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: $breakpoint-s-devices) {
+    align-items: center;
+  }
+
+  &__item {
+    background: none;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: "halis_grs_bold", sans-serif;
+  }
+
+  &__first-level {
+    display: flex;
+    align-items: center;
+
+    .product-range-menu__item {
+      background: none;
+      border: 0;
+      color: $black;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 18px;
+      height: 70px;
+      padding: 0;
+
+      @media screen and (max-width: $breakpoint-s-devices) {
+        flex: 1;
+      }
+
+      @media screen and (min-width: $breakpoint-s-devices) {
+        padding: 0 49px;
+        min-width: 202px;
+      }
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        font-size: 24px;
+        line-height: 31px;
+        height: 97px;
+        padding: 0 72px;
+        min-width: 323px;
+      }
+
+      &--active {
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+
+  &__second-level-wrapper {
+    background-color: $black;
+    overflow-x: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__second-level {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 7.5vw;
+    width: calc(100% - 15vw);
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      margin: 0;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    .product-range-menu__item {
+      flex: 1;
+      height: 50px;
+      padding: 0 20px;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        flex: none;
+        height: 75px;
+      }
+
+      .product-range-menu__item-text-content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 9px 0;
+        height: 100%;
+        pointer-events: none;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% + 40px);
+          border-bottom: 6px solid transparent;
+          pointer-events: none;
+        }
+
+        @media screen and (min-width: $breakpoint-l-devices) {
+          &:after {
+            border-bottom-width: 9px;
+          }
+        }
+      }
+
+      &--active {
+        .product-range-menu__item-text-content {
+          &:after {
+            border-color: inherit;
+          }
+        }
+      }
+    }
+
+    .product-range-menu__item-text {
+      color: $white;
+      font-size: 14px;
+      line-height: 18px;
+      pointer-events: none;
+      white-space: nowrap;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        font-size: 21px;
+        line-height: 27px;
+      }
+    }
+
+    .product-range-menu__item-new {
+      color: $white;
+      font-size: 14px;
+      padding: 2px 2px 0;
+      border: 2px solid $white;
+      line-height: 1;
+      margin: 0 0 2px 7px;
+      pointer-events: none;
+    }
+  }
+}
+
+.product-range-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image-pct {
+    display: flex;
+    justify-content: center;
+    width: 271px;
+    max-width: 90%;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      width: 165px;
+
+      @media screen and (min-width: $breakpoint-m-devices) {
+        width: 320px;
+      }
+    }
+
+    .product-range-content--rtd_vodka_soda &,
+    .product-range-content[data-cat="VODKA+SODA"] & {
+      width: 550px;
+    }
+  }
+
+  &__image-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__tagline {
+    font-weight: 700;
+    font-family: 'halis_grs_bold' , sans-serif;
+    font-size: max(1.875vw, 27px);
+    line-height: max(1.875vw, 27px);
+    color: $black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5px;
+
+    .product-range-content--rtd_surge &,
+    .product-range-content[data-cat="SURGE"] &,
+    .product-range-content--rtd_iced-tea &,
+    .product-range-content[data-cat="REFRSHR ICED TEA"] &,
+    .product-range-content--rtd_lemonade &,
+    .product-range-content[data-cat="REFRSHR LEMONADE"] & {
+      margin-top: 15px;
+    }
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      font-size: max(2.77vw, 40px);
+      line-height: max(2.77vw, 40px);
+    }
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      font-size: 4.1vw;
+      line-height: 4.1vw;
+      text-align: center;
+      top: 10px;
+      width: auto;
+      white-space: pre-line;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        font-size: max(2.63vw, 38px);
+        line-height: max(2.63vw, 38px);
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info-subtitle {
+    margin: 0 20px 10px;
+    font-family: "halis_grs_bold", sans-serif;
+    font-size: max(0.5vw, 10px);
+    text-align: center;
+    text-transform: uppercase;
+    color: $black;
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      margin: 10px 0 10px;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 7vw;
+    position: relative;
+    text-align: center;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      padding: 0 3.5vw;
+    }
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      flex-direction: row;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      height: 66px;
+      border-right: 1.37px solid #D9D9D9;
+    }
+
+    &:last-child {
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__info-icon {
+    height: 40px;
+    width: auto;
+    margin-bottom: 11px;
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      margin-right: 11px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__info-title {
+    font-weight: 700;
+    font-family: "halis_grs_bold", sans-serif;
+    color: $black;
+  }
+}
+
+.product-range-content {
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    position: relative;
+    padding-top: 30px;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      padding-top: 0;
+    }
+
+    .swiper-prev-custom,
+    .swiper-next-custom {
+      width: 75px;
+      height: 75px;
+      border: 2px solid $black;
+      background-color: $white;
+      position: absolute;
+      bottom: 15%;
+      z-index: 1;
+
+      @media screen and (min-width: $breakpoint-m-devices) {
+        bottom: 30%;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+
+      &:after {
+        color: $black;
+      }
+    }
+
+    .swiper-prev-custom {
+      left: 0;
+    }
+
+    .swiper-next-custom {
+      right: 0;
+    }
+  }
+
+  &__bg-image-pct {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+
+    @media screen and (max-width: $breakpoint-m-devices) {
+      display: none;
+    }
+  }
+
+  &__bg-image-mobile-pct {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 244px;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      height: 294px;
+      top: -18px;
+    }
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      display: none;
+    }
+  }
+
+  &__bg-image-img {
+    height: 254px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__bg-image-mobile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    text-align: center;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      margin-top: 55px;
+      padding: 0 20px;
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+      padding: 0 3.3vw;
+    }
+  }
+
+  &__name-text {
+    color: $black;
+    font-weight: 700;
+    font-family: "halis_grs_bold", sans-serif;
+    font-size: 26px;
+    line-height: 30px;
+    text-transform: uppercase;
+
+    .product-range-content__slide:hover &,
+    .product-range-content__slide:focus & {
+      text-decoration: underline;
+    }
+  }
+
+  &__name-new {
+    color: $black;
+    font-family: 'HalisGR-Black', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    display: inline-flex;
+    margin: 10px auto;
+    border: 2px solid $black;
+    line-height: 1;
+    padding: 0 3px;
+  }
+
+  .swiper {
+    margin-top: -80px;
+
+    .product-range-content--rtd_vodka_soda &,
+    .product-range-content[data-cat="VODKA+SODA"] & {
+      margin-top: -104px;
+    }
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      max-width: calc(100% - 150px);
+    }
+  }
+
+  .swiper-wrapper {
+    align-items: flex-end;
+    padding-bottom: 90px;
+  }
+
+  &--spirit_vodka,
+  &[data-cat="VODKA"] {
+    .swiper {
+      margin-top: -93px;
+    }
+  }
+
+  .swiper-slide {
+    display: grid;
+    justify-content: center;
+    height: 500px;
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      align-items: flex-end;
+    }
+  }
+
+  &--spirit_vodka .swiper-slide,
+  &[data-cat="VODKA"] .swiper-slide {
+    height: 570px;
+  }
+
+  &__slide {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:after {
+      @media screen and (min-width: $breakpoint-m-devices) {
+        content: '';
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        width: 110%;
+        height: 115%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0,0,0,0.06);
+        pointer-events: none;
+
+        .product-range-content--spirit_vodka &,
+        [data-cat="VODKA"] & {
+          top: 50%;
+          height: 120%;
+        }
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      &:hover,
+      &:focus {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__image-pct {
+    transition: height 0.2s ease-in-out;
+    height: 248px;
+    display: block;
+    text-align: center;
+    position: relative;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      height: 350px;
+    }
+
+    @media screen and (max-width: $breakpoint-m-devices) {
+      .swiper-slide-active & {
+        height: 317px;
+
+        .product-range-content--spirit_vodka &,
+        [data-cat="VODKA"] & {
+          height: 400px;
+        }
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-m-devices) {
+      .product-range-content--spirit_vodka &,
+      [data-cat="VODKA"] & {
+        height: 400px;
+      }
+    }
+
+    .product-range-content__slide:hover &,
+    .product-range-content__slide:focus & {
+      @media screen and (min-width: $breakpoint-l-devices) {
+        height: 317px;
+
+        .product-range-content--spirit_vodka &,
+        [data-cat="VODKA"] & {
+          height: 450px;
+        }
+      }
+    }
+  }
+
+  &__image-img {
+    max-height: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    .product-range-content--spirit_vodka &,
+    .product-range-content[data-cat="VODKA"] & {
+      left: -10px;
+    }
+  }
+}
+
+#homepage{
+  .product-details{
+    overflow: hidden;
+  }
+}

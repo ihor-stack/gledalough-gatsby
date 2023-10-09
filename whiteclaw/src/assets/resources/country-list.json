@@ -1,0 +1,237 @@
+[{
+    "regionName": "North America",
+    "countries": {
+      "us": [
+        {
+          "countryLanguageId": 1,
+          "countryName": "UNITED STATES",
+          "language": "English",
+          "url": "https://www.whiteclaw.com/",
+          "langTag": "en-us",
+          "flag": "/img/flags/US.svg",
+          "suggestedCountries": [2, 3]
+        },
+        {
+          "countryLanguageId": 2,
+          "countryName": "ESTADOS UNIDOS",
+          "language": "Español",
+          "url": "https://www.whiteclaw.com/es/",
+          "langTag": "es-us",
+          "flag": "/img/flags/US.svg",
+          "suggestedCountries": [1, 3]
+        }
+      ],
+      "ca": [
+        {
+          "countryLanguageId": 3,
+          "countryName": "CANADA",
+          "language": "English",
+          "url": "https://ca.whiteclaw.com/",
+          "langTag": "en-ca",
+          "flag": "/img/flags/CA.svg",
+          "suggestedCountries": [4, 1]
+        },
+        {
+          "countryLanguageId": 4,
+          "countryName": "CANADA",
+          "language": "Français",
+          "url": "https://ca.whiteclaw.com/fr/",
+          "langTag": "fr-ca",
+          "flag": "/img/flags/CA.svg",
+          "suggestedCountries": [3, 1]
+        }
+      ]
+    }
+  },
+  {
+    "regionName": "Europe",
+    "countries": {
+      "uk": [
+        {
+          "countryLanguageId": 5,
+          "countryName": "UNITED KINGDOM",
+          "language": "English",
+          "url": "https://uk.whiteclaw.com/",
+          "langTag": "en-gb",
+          "flag": "/img/flags/UK.svg",
+          "suggestedCountries": [6, 1]
+        }
+      ],
+      "ie": [
+        {
+          "countryLanguageId": 6,
+          "countryName": "IRELAND",
+          "language": "English",
+          "url": "https://ie.whiteclaw.com/",
+          "langTag": "en-ie",
+          "flag": "/img/flags/IE.svg",
+          "suggestedCountries": [5, 1]
+        }
+      ],
+      "nl": [
+        {
+          "countryLanguageId": 7,
+          "countryName": "NEDERLAND",
+          "language": "Nederlands",
+          "url": "https://nl.whiteclaw.com/nl/",
+          "langTag": "nl-nl",
+          "flag": "/img/flags/NL.svg",
+          "suggestedCountries": [8, 11]
+        },
+        {
+          "countryLanguageId": 8,
+          "countryName": "NETHERLANDS",
+          "language": "English",
+          "url": "https://nl.whiteclaw.com/",
+          "langTag": "en-nl",
+          "flag": "/img/flags/NL.svg",
+          "suggestedCountries": [7, 9]
+        }
+      ],
+      "be": [
+        {
+          "countryLanguageId": 9,
+          "countryName": "BELGIUM",
+          "language": "English",
+          "url": "https://be.whiteclaw.com/",
+          "langTag": "en-be",
+          "flag": "/img/flags/BE.svg",
+          "suggestedCountries": [10, 11, 5]
+        },
+        {
+          "countryLanguageId": 10,
+          "countryName": "BELGIQUE",
+          "language": "Français",
+          "url": "https://be.whiteclaw.com/fr/",
+          "langTag": "fr-be",
+          "flag": "/img/flags/BE.svg",
+          "suggestedCountries": [9, 11, 15]
+        },
+        {
+          "countryLanguageId": 11,
+          "countryName": "BELGIE",
+          "language": "Nederlands",
+          "url": "https://be.whiteclaw.com/nl/",
+          "langTag": "nl-be",
+          "flag": "/img/flags/BE.svg",
+          "suggestedCountries": [9, 10, 7]
+        }
+      ],
+      "fi": [
+        {
+          "countryLanguageId": 12,
+          "countryName": "FINLAND",
+          "language": "English",
+          "url": "https://fi.whiteclaw.com/",
+          "langTag": "en-fi",
+          "flag": "/img/flags/FI.svg",
+          "suggestedCountries": [21, 5]
+        }
+      ],
+      "at": [
+        {
+          "countryLanguageId": 13,
+          "countryName": "ÖSTERREICH",
+          "language": "Deutsch",
+          "url": "https://at.whiteclaw.com/",
+          "langTag": "de-at",
+          "flag": "/img/flags/AT.svg",
+          "suggestedCountries": [14, 18]
+        },
+        {
+          "countryLanguageId": 14,
+          "countryName": "AUSTRIA",
+          "language": "English",
+          "url": "https://at.whiteclaw.com/en/",
+          "langTag": "en-at",
+          "flag": "/img/flags/AT.svg",
+          "suggestedCountries": [13, 19]
+        }
+      ],
+      "ch": [
+        {
+          "countryLanguageId": 15,
+          "countryName": "SUISSE",
+          "language": "Français",
+          "url": "https://ch.whiteclaw.com/fr/",
+          "langTag": "fr-ch",
+          "flag": "/img/flags/CH.svg",
+          "suggestedCountries": [15, 17, 10]
+        },
+        {
+          "countryLanguageId": 16,
+          "countryName": "SCHWEIZ",
+          "language": "Deutsch",
+          "url": "https://ch.whiteclaw.com/",
+          "langTag": "de-ch",
+          "flag": "/img/flags/CH.svg",
+          "suggestedCountries": [15, 17, 18]
+        },
+        {
+          "countryLanguageId": 17,
+          "countryName": "SWITZERLAND",
+          "language": "English",
+          "url": "https://ch.whiteclaw.com/en/",
+          "langTag": "en-ch",
+          "flag": "/img/flags/CH.svg",
+          "suggestedCountries": [15, 16, 19]
+        }
+      ],
+      "de": [
+        {
+          "countryLanguageId": 18,
+          "countryName": "DEUTSCHLAND",
+          "language": "Deutsch",
+          "url": "https://de.whiteclaw.com/",
+          "langTag": "de-de",
+          "flag": "/img/flags/DE.svg",
+          "suggestedCountries": [19, 16]
+        },
+        {
+          "countryLanguageId": 19,
+          "countryName": "GERMANY",
+          "language": "English",
+          "url": "https://de.whiteclaw.com/en/",
+          "langTag": "en-de",
+          "flag": "/img/flags/DE.svg",
+          "suggestedCountries": [18, 17]
+        }
+      ],
+      "se": [
+        {
+          "countryLanguageId": 20,
+          "countryName": "SVERIGE",
+          "language": "Svenska",
+          "url": "https://se.whiteclaw.com/sv/",
+          "langTag": "sv-se",
+          "flag": "/img/flags/SE.svg",
+          "suggestedCountries": [21, 12, 5]
+        },
+        {
+          "countryLanguageId": 21,
+          "countryName": "SWEDEN",
+          "language": "English",
+          "url": "https://se.whiteclaw.com/",
+          "langTag": "en-se",
+          "flag": "/img/flags/SE.svg",
+          "suggestedCountries": [20, 12, 5]
+        }
+      ]
+    }
+  },
+  {
+    "regionName": "Asia/Oceania",
+    "countries": {
+      "au": [
+        {
+          "countryLanguageId": 22,
+          "countryName": "Australia",
+          "language": "English",
+          "url": "https://au.whiteclaw.com/",
+          "langTag": "en-au",
+          "flag": "/img/flags/AU.svg",
+          "suggestedCountries": [1, 3]
+        }
+      ]
+    }
+}]

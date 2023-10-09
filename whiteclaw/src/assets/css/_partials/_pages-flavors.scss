@@ -1,0 +1,153 @@
+.centered-page-heading:not(:first-child) {
+    text-align: center;
+    position: relative;
+    padding-top: 90px;
+}
+sup{
+  top: -0.4em;
+}
+.centered-page-heading{
+    color: $black;
+
+    &:before{
+      content: " ";
+      border-top: solid 1px rgba(0, 0, 0, .2);
+      width: 140px;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 38px;
+      z-index: 5;
+    }
+
+    &:first-child:before {
+        display: none !important;
+    }
+
+    h1, h2{
+      margin-bottom: 0px;
+      text-align: center;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+        text-align: center;
+        font-family: "BentonSans","Open Sans","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+}
+.centered-page-heading--variety-packs{
+  padding-bottom: 50px;
+}
+
+.added-tlt{
+  font-size: 80%;
+  display: block;
+  line-height: 1;
+  position: relative !important;
+  @media screen and (max-width: $breakpoint-s-devices){
+    font-size: 60%;
+  }
+}
+
+.flavor-row{
+  & > div {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 20px;
+
+    img{
+      max-width: 90%;
+      margin: 0px auto 20px auto;
+    }
+
+    h4{
+      text-align: center;
+      margin: 0px auto;
+      text-transform: uppercase;
+      font-size: 1.3vw;
+      font-weight: 700;
+      line-height: 30px;
+      padding-bottom: 0;
+      color: $black;
+      letter-spacing: 0.9px;
+    }
+
+    p{
+      font-size: 16px;
+      color: $black;
+      letter-spacing: 0.8px;
+      font-weight: 400;
+    }
+  }
+
+}
+.flavor-row.irregular {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flavors .flavor-drink a {
+  display: block;
+  color: inherit;
+  text-decoration: none !important;
+}
+.flavors .flavor-row.full .flavor-drink a:hover, .flavors .flavor-row.full .flavor-drink a:focus, .flavors .flavor-row.full .flavor-drink a:active  {
+  background: rgba(112,112,112,0.3);
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .flavor-row > div h4 {
+        font-size: 2.2vw;
+        line-height: 2.4vw;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .flavor-row > div h4 {
+      font-size: 2.8vw;
+      line-height: 2.9vw;
+      position: relative;
+      text-align: center;
+      display: block;
+    }
+    .flavor-row > div h4 span {
+      position: absolute;
+      text-align: center;
+      display: inline-block;
+      text-align: center;
+      left: 0px;
+      right: 0px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .centered-page-heading h1, .centered-page-heading h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .centered-page-heading h3 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .flavor-row > div h4 {
+    font-size: 16px;
+    line-height: 17px;
+  }
+
+}

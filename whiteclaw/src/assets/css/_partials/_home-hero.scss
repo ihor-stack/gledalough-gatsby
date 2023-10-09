@@ -1,0 +1,834 @@
+.hero-section {
+  height: 179vw;
+  background-color: #FFFFFF;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+  @media (min-width: $breakpoint-m-devices) {
+    height: 47vw;
+    background-size: contain;
+    background-position: top;
+    margin-bottom: -2px;
+  }
+
+  &__button.button-white {
+    font-size: max(1.7vw,1.16rem);
+    padding: 0.5em;
+    max-width: 50%;
+
+    @media (min-width: $breakpoint-m-devices) {
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      width: 400px;
+      max-width: 45%;
+    }
+  }
+
+  &__button.button-black {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    font-size: max(1.7vw,1.16rem);
+    padding: 0.5em;
+    width: 100%;
+    max-width: unset;
+    &:hover, &:focus {
+      border-color: #FFFFFF;
+    }
+  }
+}
+
+.hero-container {
+  max-height: 46vw;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 85px;
+
+  .hero-container-row{
+    height: 100%;
+  }
+
+  @media (max-width: $breakpoint-max-m-devices){
+    max-height: unset;
+    height: auto;
+  }
+
+
+  .col-img {
+    position: relative;
+    padding-right: 0;
+    img {
+      max-width: 100% !important;
+      width: 100%;
+    }
+  }
+
+  .col-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+    overflow:hidden;
+    text-align: center;
+    min-height: unset;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+
+    @media screen and (max-width: $breakpoint-l-devices) {
+      justify-content: space-around;
+      min-height: unset;
+      max-height: 80%;
+      height: 37vw;
+      padding-top: 3vw;
+    }
+
+
+    @media screen and (max-width: $breakpoint-max-s-devices) {
+      justify-content: flex-start;
+      padding-top: 0px;
+      height: 100vw;
+    }
+
+
+    .nutrition-info {
+
+      padding-top: 0;
+      font-size: 2vw;
+      margin-bottom: 0.2rem;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75%;
+        margin: 0;
+        padding: 20px 0 0 0;
+      }
+
+      li {
+        padding: 0 0.1vw;
+        flex-grow: 1;
+        text-align: center;
+        font-family: 'HalisGR-SBlack', sans-serif;
+        text-transform: uppercase;
+        font-size: 1.1vw;
+        color: #000;
+        line-height: 1.2;
+
+        &:not(:first-child) {
+          border-left: 2px solid #000;
+        }
+
+        @media (max-width: $breakpoint-laptop) {
+          font-size: 1vw;
+        }
+      }
+    }
+
+    .hero-section__title{
+      position: relative;
+      font-size: 4vw;
+      font-family: 'HalisGR-SBlack', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #000000;
+      line-height: 1.2;
+      text-align: center;
+      padding: 0;
+      letter-spacing: -2px;
+      margin-top: 0 !important;
+
+      @media screen and (max-width: $breakpoint-max-s-devices) {
+        font-size: 9vw;
+        margin-top: 2em;
+      }
+    }
+
+    .hero-section__content-img{
+      width: 70%;
+      margin: 0 auto;
+      max-width: 100%;
+
+
+      @media screen and (min-width: $breakpoint-m-devices){
+        display: inline-block;
+        width: 50vw;
+        height: auto;
+      }
+    }
+  }
+}
+
+//eof module
+
+.hero-section__vodka-soda-launch {
+  &.hero-section {
+    height: 179vw;
+    background-color: #000000;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    @media (min-width: $breakpoint-m-devices) {
+      height: 47vw;
+      background-size: contain;
+      background-position: top;
+      margin-bottom: -2px;
+    }
+
+    .hero-section__button.button-white {
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      max-width: 50%;
+
+      @media (min-width: $breakpoint-m-devices) {
+        font-size: max(1.7vw,1.16rem);
+        padding: 0.5em;
+        width: 400px;
+        max-width: 45%;
+      }
+    }
+
+    .hero-section__button.button-black {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      width: 100%;
+      max-width: unset;
+
+      @media screen and (min-width: $breakpoint-m-devices) {
+        position: relative;
+        bottom: unset;
+        left: unset;
+        width: 400px;
+        max-width: 45%;
+        border-color: #FFFFFF;
+        margin-bottom: 6.5%;
+      }
+    }
+
+    .hero-container {
+      max-height: 46vw;
+      height: 100%;
+      overflow: hidden;
+      margin-top: 85px;
+
+      .hero-container-row{
+        height: 100%;
+      }
+
+      @media (max-width: $breakpoint-max-m-devices){
+        max-height: unset;
+        height: auto;
+      }
+
+
+      .col-img {
+        position: relative;
+        padding-right: 0;
+        img {
+          max-width: 100% !important;
+          width: 100%;
+        }
+      }
+
+      .col-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow:hidden;
+        text-align: center;
+        min-height: unset;
+        padding-left: 0;
+        padding-top: 3vw;
+        padding-bottom: 5vw;
+        padding-right: 2vw;
+
+        @media screen and (max-width: $breakpoint-l-devices) {
+          justify-content: space-around;
+          min-height: unset;
+          max-height: 80%;
+          height: 37vw;
+          padding-top: 15vw;
+        }
+
+
+        @media screen and (max-width: $breakpoint-max-s-devices) {
+          justify-content: flex-start;
+          padding-top: 17vw;
+          height: 100vw;
+        }
+
+
+        .nutrition-info {
+          padding-top: 0;
+          font-size: 2vw;
+          margin-bottom: 0.2rem;
+
+          @media screen and (min-width: 768px) {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 75%;
+            margin: 0;
+            padding: 40px 0 0 0;
+          }
+
+          li {
+            display: none;
+            padding: 0 0.1vw;
+            flex-grow: 1;
+            text-align: center;
+            font-family: 'HalisGR-SBlack', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1vw;
+            color: #000;
+            line-height: 1.2;
+
+            &:not(:first-child) {
+              border-left: 2px solid #000;
+            }
+
+            @media (max-width: $breakpoint-laptop) {
+              font-size: 1vw;
+            }
+          }
+        }
+
+        .hero-section__title{
+          position: relative;
+          font-size: 4vw;
+          font-family: 'HalisGR-SBlack', sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          color: #000000;
+          line-height: 1.2;
+          text-align: center;
+          padding: 0;
+          letter-spacing: -2px;
+          margin-top: 0 !important;
+
+          @media screen and (max-width: $breakpoint-max-s-devices) {
+            font-size: 9vw;
+            margin-top: 2em;
+          }
+        }
+
+        .hero-section__content-img{
+          width: 90%;
+          margin: 0 auto;
+          max-width: 100%;
+
+
+          @media screen and (min-width: $breakpoint-m-devices){
+            display: inline-block;
+            width: 50vw;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero-section__jb-smoove {
+  &.hero-section {
+    height: 165vw;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    @media (min-width: $breakpoint-m-devices) {
+      height: 49vw;
+      background-size: cover;
+      background-position: top;
+      margin-bottom: -2px;
+    }
+
+    .hero-section__button.button-white {
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      max-width: 50%;
+
+      @media (min-width: $breakpoint-m-devices) {
+        font-size: max(1.7vw,1.16rem);
+        padding: 0.5em;
+        width: 400px;
+        max-width: 45%;
+      }
+    }
+
+    .hero-section__button.button-black {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      width: 100%;
+      max-width: unset;
+
+      @media screen and (min-width: $breakpoint-m-devices) {
+        position: relative;
+        bottom: unset;
+        left: unset;
+        width: 400px;
+        max-width: 45%;
+        border-color: #FFFFFF;
+        margin-bottom: 6.5%;
+      }
+    }
+
+    .hero-container {
+      max-height: 46vw;
+      height: 100%;
+      overflow: hidden;
+      margin-top: 85px;
+
+      .hero-container-row{
+        height: 100%;
+      }
+
+      @media (max-width: $breakpoint-max-m-devices){
+        max-height: unset;
+        height: auto;
+      }
+
+
+      .col-img {
+        position: relative;
+        padding-right: 0;
+        img {
+          max-width: 100% !important;
+          width: 100%;
+        }
+      }
+
+      .col-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow:hidden;
+        text-align: center;
+        min-height: unset;
+        padding-left: 0;
+        padding-top: 3vw;
+        padding-bottom: 7vw;
+
+        @media screen and (max-width: $breakpoint-l-devices) {
+          justify-content: space-around;
+          min-height: unset;
+          max-height: 80%;
+          height: 52vw;
+          padding-top: 15vw;
+        }
+
+
+        @media screen and (max-width: $breakpoint-max-s-devices) {
+          justify-content: flex-start;
+          padding-top: 17vw;
+          height: 100vw;
+        }
+      }
+    }
+  }
+}
+
+// Bring the wave module
+.hero-refrshr-es{
+  margin-top: 80px;
+  // height: calc(100vh - 80px);
+  height: auto;
+  max-height: 47vw;
+  overflow: hidden;
+  min-height: 580px;
+  @media (max-width: $breakpoint-laptop){
+    max-height: 47vw;
+  }
+  @media (max-width: $breakpoint-l-devices){
+    max-height: unset;
+    height: auto;
+  }
+  .col-img{
+    position: relative;
+    text-align: right;
+    img{
+      max-width: 100% !important;
+      width: 100%;
+    }
+  }
+  .col-content{
+    padding-top: 100px;
+    flex-flow: column;
+    color: #000;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 1vw;
+    padding-left: 0;
+    overflow: hidden;
+    height: auto;
+    @media (max-width: $breakpoint-l-devices){
+      padding-right: 1rem;
+      overflow:visible;
+      height: unset;
+    }
+    h2{
+      color: #000 !important;
+      text-shadow: unset;
+      line-height: 1;
+      font-size: 5vw;
+      letter-spacing: 0;
+      display: block;
+      font-family: 'HalisGR-Black';
+      .color-black{
+        color: $black !important;
+      }
+      @media (max-width: $breakpoint-l-devices){
+        font-size: 10vw;
+      }
+      @media (max-width: $breakpoint-s-devices){
+        font-size: 15vw;
+        width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-bottom: 0;
+      }
+    }
+    .new-product__content{
+      padding:2vw 0;
+      @media (max-width: $breakpoint-l-laptop){
+        padding: 1vw 0;
+      }
+      @media (max-width: $breakpoint-laptop){
+        padding: 0 !important;
+      }
+      @media (max-width: $breakpoint-l-devices){
+        padding: 0;
+      }
+      @media (max-width: $breakpoint-s-devices){
+        padding-bottom: 0;
+      }
+      .button-style-2{
+        @media (max-width: $breakpoint-laptop) and (min-width: $breakpoint-l-devices){
+          font-size: 16px;
+          height: 55px;
+        }
+      }
+      img{
+        max-width: 650px;
+        width: 30vw;
+        @media screen and (max-width: $breakpoint-l-devices){
+          width: 80%;
+          margin-bottom: 1.5rem;
+        }
+      }
+      &.new-product__content--es{
+        @media (max-width: $breakpoint-l-devices){
+          width: 100%;
+        }
+        h1{
+          font-size: 4vw;
+          line-height: 1.15;
+          @media (max-width: $breakpoint-l-devices){
+            font-size: 9vw;
+            line-height: 1.1;
+          }
+        }
+        p{
+          text-shadow: unset !important;
+          font-family: 'halis_grs_bold';
+          font-weight: bold;
+          line-height: 1.2 !important;
+          font-size: 28px;
+          @media (max-width: $breakpoint-laptop){
+            font-size: 24px;
+          }
+          @media (max-width: $breakpoint-s-devices){
+            font-size: 18px;
+          }
+        }
+      }
+      h1{
+        position: relative;
+        font-family: "itc-avant-garde-gothic-pro";
+        font-size: 5vw;
+        line-height: 0.9;
+        small{
+          font-weight: bold;
+          font-size: 87%;
+        }
+        @media screen and (max-width: $breakpoint-l-devices){
+          margin-bottom: 1rem;
+          font-size: 12vw;
+        }
+        @media screen and (max-width: $breakpoint-s-devices){
+          font-size: 13vw;
+        }
+        &:after{
+          content: '';
+          width: 80%;
+          height: 2px;
+          background-color: #000;
+          display: block;
+          max-width: 400px;
+          position: absolute;
+          bottom: -1.5rem;
+          left: 0;
+          right: 0;
+          margin: auto;
+          @media screen and (max-width: $breakpoint-l-devices){
+            bottom: 0;
+          }
+        }
+      }
+      p{
+        padding-top: 3rem;
+        min-height: unset !important;
+        color: $black !important;
+        font-size: 24px;
+        @media screen and (max-width: $breakpoint-l-devices){
+          padding-top: 1rem;
+          font-size: 18px;
+        }
+      }
+      h4{
+        width: 100%;
+        margin: auto;
+        padding-top: 2rem;
+        line-height: 1.8;
+        font-size: 24px;
+        @media screen and (max-width: $breakpoint-l-laptop){
+          font-size: 1.5vw;
+        }
+        @media screen and (max-width: $breakpoint-l-devices){
+          font-size: 3vw;
+          padding-top: 1rem;
+          line-height: 1.2 !important;
+        }
+        @media screen and (max-width: $breakpoint-s-devices){
+          font-size: 5vw;
+          padding-left: 1rem;
+          width: 98%;
+          margin: auto;
+        }
+      }
+    }
+    .new-product__img{
+      @media (max-width: $breakpoint-l-devices){
+        margin-top: 10vw;
+      }
+      &.new-product__img{
+        img{
+          @media (max-width: 1200px){
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+      img{
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 0;
+        position: relative;
+        @media screen and (max-width: $breakpoint-l-devices){
+          width: 90%;
+        }
+      }
+    }
+    .nutrition-info{
+      list-style-type: none;
+      display: flex;
+      padding: 0;
+      width: 100%;
+      max-width: 630px;
+      margin-top: 1rem;
+      &.nutrition-info--es{
+        li{
+          font-size: 24px;
+          @media (max-width: $breakpoint-laptop){
+            font-size: 18px;
+          }
+          @media (max-width: $breakpoint-s-devices){
+            font-size: 3vw;
+          }
+        }
+      }
+      @media (max-width: $breakpoint-l-devices){
+        padding: 3rem 0;
+        width: 90%;
+      }
+      @media (max-width: $breakpoint-s-devices){
+        width: 100%;
+        position: relative;
+        padding: 1rem 0;
+        padding-left: 1rem;
+      }
+      li{
+        padding: 0 15px;
+        flex-grow: 1;
+        text-align: center;
+        font-family: 'HalisGR-SBlack', sans-serif;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #000;
+        line-height: 1.2;
+        &:not(:first-child){
+          border-left: 2px solid #000;
+        }
+        @media (max-width: $breakpoint-laptop){
+          font-size: 1.2vw;
+        }
+        @media (max-width: $breakpoint-l-devices){
+          font-size: 16px;
+        }
+        @media (max-width: $breakpoint-s-devices){
+          padding: 0 3px;
+          font-size: 3vw;
+        }
+      }
+    } // eof nutrition-info
+  }
+}
+
+// Eof bring the wave module
+
+.hero-section__clawback-summer {
+  height: calc(100vh - 90px);
+  margin-top: 90px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hero-section__content-logo {
+    pointer-events: none;
+    display: block;
+    width: 166px;
+    height: 72px;
+
+    @media (min-width: $breakpoint-m-devices) {
+      margin-bottom: 3vw;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .hero-section__content-img {
+    width: 100%;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+      object-position: 86.5%;
+      width: 100%;
+      height: 100%;
+      
+      @media (min-width: $breakpoint-m-devices) {
+        object-position: right;
+        transition: filter 1s ease-in-out;
+        filter: grayscale(100%) blur(2px);
+      }
+    }
+  }
+
+  .hero-section__pill {
+    width: 85vw;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $breakpoint-m-devices) {
+      width: 94.32vw;
+      height: 85.02vh;
+    }
+  }
+
+  .hero-section__pill-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-m-devices) and (max-width: $breakpoint-l-devices) {
+      border-radius: 37vw;
+    }
+
+    &:hover .hero-section__content-img img {
+      @media (min-width: $breakpoint-m-devices) {
+        filter: grayscale(0) blur(0);
+      }
+    }
+  }
+
+  .hero-section__pill-content {
+    position: relative;
+    z-index: 1;
+    margin: 0 16vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: calc(100% - 22vw);
+    justify-content: space-around;
+
+    @media (min-width: $breakpoint-m-devices) {
+      margin: 0 33vw 0 10vw;
+      height: unset;
+      justify-content: unset;
+    }
+
+    &:hover + .hero-section__pill-bg .hero-section__content-img img {
+      filter: grayscale(0) blur(0);
+    }
+
+    .cb-button {
+      align-self: center;
+    }
+  }
+
+  .hero-section__pill-title {
+    pointer-events: none;
+    font-family: 'HalisGR-Black';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 8vw;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $black;
+    margin-top: 12vw;
+    letter-spacing: -2px;
+
+    @media (min-width: $breakpoint-m-devices) {
+      font-size: 3.81vw;
+      letter-spacing: -4px;
+      margin: 0 5vw;
+    }
+  }
+
+  .hero-section__pill-subtitle {
+    pointer-events: none;
+    font-family: HalisGR-Regular, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4vw;
+    line-height: normal;
+    color: $black;
+
+    @media (min-width: $breakpoint-m-devices) {
+      font-size: 1.75vw;
+    }
+  }
+}

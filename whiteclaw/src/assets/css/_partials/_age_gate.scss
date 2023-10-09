@@ -1,0 +1,88 @@
+.modal-age-gate {
+  background-color: $white;
+  @media (min-width: $breakpoint-l-devices) {
+    background-color: $black;
+  }
+}
+
+.age-gate {
+
+  .bg-black {
+    background-color: #000000;
+  }
+
+  .w-lg-80 {
+      width: 80%;
+  }
+
+  .age-gate-logo{
+    max-width: 126px;
+
+    @media (min-width: $breakpoint-l-devices){
+      max-width: 176px;
+    }
+  }
+
+  h1{
+    color: $white;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+
+      @media (min-width: $breakpoint-l-devices){
+        font-size: 2rem;
+      }
+  }
+
+  .age-gate-btns{
+
+    .age-gate-yes-container .btn{
+      border-left: 1px solid $gray-400;
+      border-right: 1px solid $gray-400;
+      border-bottom: 1px solid $gray-400;
+    }
+
+    .age-gate-no-container .btn{
+      border-right: 1px solid $gray-400;
+      border-bottom: 1px solid $gray-400;
+    }
+
+    .btn {
+      @include prefix(transition, all 200ms ease, o ms webkit moz);
+      @include fontMixingBentonSansBold;
+      background-color: $white;
+      color: $black;
+      font-size: 1.1rem;
+      border-radius: 0;
+
+      @media (min-width: $breakpoint-l-devices){
+        font-size: 1.4rem;
+      }
+
+        &:hover, &:focus, &:active{
+          border-color: $black;
+          background-color: $black;
+          color: $white;
+        }
+    }
+  }
+
+  .age-gate-terms{
+    color: $gray-600;
+    font-size: 0.72rem;
+    width: 80%;
+
+      @media(min-width: $breakpoint-l-devices){
+        width: 100%;
+      }
+  }
+
+  .age-limit {
+    font-size: 1.1rem;
+    color: $white;
+
+    @media (min-width: $breakpoint-l-devices){
+      font-size: 1.36rem;
+    }
+  }
+}

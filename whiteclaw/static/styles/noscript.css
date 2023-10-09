@@ -1,0 +1,9 @@
+body.preloader_active {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.preloader_active #preloader {
+    display: none;
+}

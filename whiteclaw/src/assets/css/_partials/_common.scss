@@ -1,0 +1,562 @@
+body {
+  background: #000000;
+  position: relative;
+  font-family: "BentonSans", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4A4A4A;
+}
+
+
+p,
+li {
+  font-family: "BentonSans", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 180%;
+  color: #4A4A4A;
+}
+
+p {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 30px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include halisGrsBold;
+  line-height: 120%;
+  letter-spacing: 1px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 20px 0px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5,
+h6 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  .trademark{
+    font-size: 0.55em;
+    top: -0.5em;
+  }
+}
+
+span, div {
+  .trademark{
+    font-size: 0.7em;
+    top: -0.25em;
+  }
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p,
+.dark li,
+.dark blockquote {
+  color: #ffffff;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+}
+
+a:hover,
+a:focus {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.dark a,
+.dark a:link,
+.dark a:visited,
+.dark a:active {
+  color: #ffffff;
+}
+
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  &>[class^="col-"],
+  &>[class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+.button-style-1,
+.button-style-1:link,
+.button-style-1:visited,
+.button-style-1:active {
+  font-family: 'halis_grbold';
+  font-size: 1.16rem;
+  line-height: 1.16rem;
+  padding-top: 2px;
+  position: relative;
+  height: 60px;
+  width: 280px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none !important;
+  max-width: 50%;
+  transition: all 600ms ease;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+.button-style-1:hover,
+.button-style-1:focus {
+  transition: all 600ms ease !important;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.button-style-2,
+.button-style-2:link,
+.button-style-2:visited,
+.button-style-2:active {
+  font-family: 'halis_grbold';
+  font-size: 1.16rem;
+  line-height: 1.16rem;
+  padding-top: 2px;
+  position: relative;
+  height: 70px;
+  width: 280px;
+  border: 2px solid #000000;
+  color: #000000;
+  text-decoration: none !important;
+  max-width: 50%;
+  transition: all 600ms ease;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+.button-style-2:hover,
+.button-style-2:focus {
+  transition: all 600ms ease;
+  background-color: rgba(0, 0, 0, .8);
+  color: #ffffff;
+}
+
+@mixin button-style-3 {
+  font-family: 'halis_grbold';
+  font-size: 1.16rem;
+  line-height: 1.16rem;
+  padding: 2px 30px 0px 30px;
+  position: relative;
+  height: 50px;
+  width: auto;
+  text-decoration: none !important;
+  max-width: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none !important;
+  border-radius: none;
+  border: solid 0px transparent !important;
+  text-transform: uppercase;
+  cursor: pointer !important;
+  background-color: rgba(0, 0, 0, .3);
+
+  &:link,
+  &:visited {
+    color: #000000;
+    transition: all 600ms ease;
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    transition: all 600ms ease;
+    background-color: rgba(0, 0, 0, .8) !important;
+    color: #ffffff !important;
+  }
+}
+
+.button-white,
+.button-white:link,
+.button-white:visited,
+.button-white:active {
+  font-family: HalisGR-Bold, sans-serif;
+  font-size: 3.5vw;
+  line-height: 2;
+  padding: 0.5em;
+  width: 400px;
+  border: 2px solid #000000;
+  color: #000000;
+  text-decoration: none !important;
+  max-width: 80%;
+  margin: 0 auto;
+  transition: all 600ms ease;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $breakpoint-l-devices){
+    font-size: 1.15vw;
+    padding: 0.7em;
+    max-width: 50%;
+  }
+}
+.button-white:hover,
+.button-white:focus  {
+  transition: all 600ms ease;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+.button-black,
+.button-black:link,
+.button-black:visited,
+.button-black:active {
+  font-family: HalisGR-Bold, sans-serif;
+  font-size: 3.5vw;
+  line-height: 2;
+  padding: 0.5em;
+  width: 400px;
+  border: 2px solid #000000;
+  color: #ffffff;
+  text-decoration: none !important;
+  max-width: 80%;
+  margin: 0 auto;
+  transition: all 600ms ease;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $breakpoint-l-devices){
+    font-size: 1.15vw;
+    padding: 0.7em;
+    max-width: 50%;
+  }
+}
+.button-black:hover,
+.button-black:focus  {
+  transition: all 600ms ease;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+
+#age-gate .region-select .input-group-btn,
+#age-gate .region-select button {
+  color: #000000;
+}
+
+#age-gate h1 {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.age-gate-btns a:hover,
+.age-gate-btns a:focus {
+  text-decoration: none !important;
+}
+
+.form-control,
+#contact-us .form-control,
+#careers-help .form-control {
+  border: 2px solid $black;
+  background-color: rgba($white , 0.8);
+  color: $black;
+  border-radius: 0;
+  font-size: 1.4rem;
+  height: auto;
+  line-height: 1.5;
+
+  &:focus {
+    border-color: $black;
+    @include box-shadow-dark;
+    color: $gray-900;
+  }
+}
+
+#contact-us .form-control,
+#careers-help .form-control {
+  font-size: 1.2rem;
+  line-height: 1.667;
+}
+
+.btn {
+  padding: .375rem 1rem;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    @include box-shadow-dark;
+    color: $white;
+  }
+}
+
+
+// Cross Browser Resets
+
+// testing
+.toggle-hide {
+  display: none;
+}
+
+// .form-section-info {
+//   display: none;
+// }
+
+// #extra-fields-container.d-none {
+//   display: block !important;
+// }
+
+select {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -moz-border-radius: 0;
+  /* Firefox 1-3.6 */
+  border-radius: 0;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  height: auto;
+}
+
+
+footer {
+  overflow: hidden;
+}
+
+.mobile-only {
+  @media (min-width: $breakpoint-l-devices) {
+    display: none;
+  }
+}
+
+.screen-only {
+  @media (max-width: $breakpoint-l-devices) {
+    display: none;
+  }
+}
+
+select>option {
+  outline: inherit;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select {
+  padding: 0.4rem 0.8rem 0.3rem;
+  outline: 0;
+  width: 100%;
+
+  option {
+    background-color: rgba($black , 0.1);
+    background-color: $white;
+    color: $black;
+    // font-size: 1.5rem;
+    border-color: black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($black , 0.3) !important;
+      // background-color: #111111;
+      color: $white !important;
+    }
+  }
+}
+
+.select {
+  overflow: hidden;
+  position: relative;
+  display: block;
+
+  svg {
+    position: absolute;
+    color: $white;
+    right: 0;
+    top: 0;
+    width: calc(48px - (0.75rem * 2));
+    height: 48px;
+    padding: 0 0.75rem;
+    z-index: 1;
+    pointer-events: none;
+    background-color: $black;
+  }
+}
+
+#contact-us,
+#careers-help {
+  .select {
+    svg {
+      height: 46px;
+    }
+  }
+}
+
+// --- End Cross Browser Resets
+
+// IE helper class for streched images
+.flex-shrink-cls {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+// Home Page Animation
+.bounce-up .animation-element {
+  opacity: 0;
+  @include prefix(transition, all 1s linear, o ms webkit moz);
+  @include prefix(transform, translate(0, 60px), o ms webkit moz);
+
+  // translate(Y, X)
+
+  //        Y
+  //        +
+  // X <--- + ---> X
+  //        +
+  //        Y
+
+  // 3D vERSION
+  // -moz-transform: translate3d(0px, 200px, 0px);
+  // -webkit-transform: translate3d(0px, 200px, 0px);
+  // -o-transform: translate(0px, 200px);
+  // -ms-transform: translate(0px, 200px);
+  // transform: translate3d(0px, 200, 0px);
+  // -webkit-backface-visibility: hidden;
+  // -moz-backface-visibility: hidden;
+  // backface-visibility: hidden;
+
+  // https://www.sitepoint.com/scroll-based-animations-jquery-css3/
+}
+
+.bounce-up.in-view .animation-element {
+  opacity: 1;
+  @include prefix(transform, translate(0, 0), o ms webkit moz);
+
+  // 3D vERSION
+  // -moz-transform: translate3d(0px, 0px, 0px);
+  // -webkit-transform: translate3d(0px, 0px, 0px);
+  // -o-transform: translate(0px, 0px);
+  // -ms-transform: translate(0px, 0px);
+  // transform: translate3d(0px, 0px, 0px);
+}
+
+.bounce-left .animation-element {
+  opacity: 0;
+  @include prefix(transition, all 1s linear, o ms webkit moz);
+  @include prefix(transition-delay, .5s, o ms webkit moz);
+  @include prefix(transform, translate(60px, 0), o ms webkit moz);
+}
+
+.bounce-left.in-view .animation-element {
+  opacity: 1;
+  @include prefix(transform, translate(0, 0), o ms webkit moz);
+}
+
+.fade-in-content .animation-element {
+  opacity: 0;
+  @include prefix(transition, all 1s linear, o ms webkit moz);
+  @include prefix(transition-delay, .5s, o ms webkit moz);
+}
+
+.fade-in-content.in-view .animation-element {
+  opacity: 1;
+}
+
+.sup-element-cls {
+  font-size: 70%;
+}
+
+.a-btn-underline {
+  text-decoration: underline;
+}
+
+.sec-copy-lg {
+  font-size: 1.1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

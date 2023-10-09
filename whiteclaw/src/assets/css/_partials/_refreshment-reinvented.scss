@@ -1,0 +1,165 @@
+.refreshment-reinvented{
+    .page-hero-wrapper{
+        .page-hero{
+            margin-top: 80px;
+            min-height: calc(100vh - 180px);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1{
+                font-size: 100px;
+                font-weight: bold;
+                font-family: "itc-avant-garde-gothic-pro";
+                color: #fff;
+            }
+        }
+        .navigation-bar{
+            background: #FFF150;
+            padding: 1rem 0;
+            .container-fluid{
+                width: 94%;
+                margin: auto;
+                & > div:first-child{
+                    font-family: "itc-avant-garde-gothic-pro";
+                    font-weight: bold;
+                    color: #000;
+                    font-size: 1.4vw;
+                }
+
+                .btn{
+                    max-width: unset;
+                    padding-top: 10px;
+                }
+            }
+        } // eof navigation-bar
+    }
+
+    //film
+    .section-film{
+        background-image: url(/img/REFRSHR/REFRSHR-film-thumbnail.png);
+        max-height: unset;
+        height: auto;
+        padding: 8vw 0 4vw 0;
+        background-size: cover;
+        min-height: calc(100vh - 90px);
+
+        @media (max-width: $breakpoint-l-devices){
+            max-height: unset;
+            height: auto;
+            min-height: unset;
+            background-size: cover;
+            background-position: 40% center !important;
+            padding: 0 0 50vw 0;
+          }
+      
+          &.playing{
+            padding: 0;
+            background-image: unset;
+            background-color: #000;
+            .film-content{
+              display: none;
+            }
+            .inline-video{
+              position: relative;
+              .embed-responsive{
+                max-height: calc(100vh - 85px);
+                height: 50vw;
+      
+                @media (max-width: 500px){
+                  height: 56vw;
+                }
+              }
+            }
+          } // eof playing
+          .film-content{
+            width: 100%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+      
+            .video-btn-wo-text{
+              position: relative;
+              @include prefix(transition, 0.3s ease-out, o moz webkit ms);
+              display: flex;
+              flex-flow: column;
+              &:after{
+                content: 'Reproducir';
+                font-family: 'halis_grbold';
+                text-transform: uppercase;
+              }
+      
+              &:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+              }
+              .play-btn{
+                &:hover{
+                  transform: unset !important;
+                  cursor: pointer;
+                }
+              }
+            }
+      
+            .play-btn{
+              @include prefix(transition, 0.3s ease-out, o moz webkit ms);
+              width: 15vw;
+              max-width: 120px;
+              @media screen and (max-width: $breakpoint-l-devices){
+                width: 30vw;
+              }
+              &:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+              }
+            }
+      
+            h3{
+              line-height: 1;
+              font-size: 5vw;
+              font-family: "itc-avant-garde-gothic-pro";
+      
+              @media (max-width: $breakpoint-l-devices){
+                margin-bottom: 30vw !important;
+                font-size: 10vw;
+                padding-top: 10vw;
+                text-align: left;
+                padding-left: 5%;
+                padding-right: 5%;
+              }
+            }
+            p{
+              color: #fff;
+              font-family: 'halis_grbold';
+              font-size: 24px;
+              line-height: 1.2 !important;
+              width: 90%;
+              margin: auto;
+              @media (max-width: $breakpoint-laptop){
+                font-size: 1.5vw;
+              }
+              @media (max-width: $breakpoint-l-devices){
+                font-size: 24px;
+                line-height: 1.2 !important;
+                padding-bottom: 1rem !important;
+                max-width: 600px;
+              }
+              @media (max-width: $breakpoint-s-devices){
+                font-size: 5vw;
+              }
+            }
+        }
+    }
+
+    .reinventor-navigation {
+      font-family: "itc-avant-garde-gothic-pro";
+      font-size: 50px;
+      font-weight: bold;
+      color: $white;
+      background: $black;
+    }
+}

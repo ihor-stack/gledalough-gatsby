@@ -1,0 +1,64 @@
+
+
+.us-site{
+  .social {
+      background-color: #000000;
+      text-align: center;
+  }
+  .social-intro {
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 30px;
+      text-align: center;
+      width: 100%;
+      background-color: #000;
+  }
+  .social-intro h2, .social-intro p {
+      color: #fff;
+      text-align: center;
+  }
+
+  // &.en, &.es{
+    .social-intro{
+      background-color: #fff;
+    }
+    .social-intro h2, .social-intro p {
+        color: #000;
+        text-align: center;
+    }
+
+    .social {
+      @media (max-width: 800px){
+        background-color: #fff;
+      }
+    } // eof social
+  // }
+} // eof us-site
+
+
+#homepage {
+  #instagram-section{
+    display: block;
+  }
+
+  #instagram-section .eapps-instagram-feed-posts-inner{
+    max-width: unset;
+    padding-bottom: 0 !important;
+  }
+
+  #instagram-section {
+    margin-top: -8px;
+  }
+
+  #instagram-section > div{
+    padding-bottom: 0 !important;
+  }
+
+  .eapps-instagram-feed{
+    padding-bottom: 0 !important;
+  }
+
+  .eapps-instagram-feed-posts-grid{
+    background-color: black !important;
+  }
+}

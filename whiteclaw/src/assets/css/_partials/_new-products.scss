@@ -1,0 +1,1988 @@
+// campaign-hero section / slice
+.campaign-hero{
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 80px;
+  &__bg{
+    height: 165vw;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    @media (min-width: $breakpoint-m-devices) {
+      height: 47vw;
+      background-size: contain;
+      background-position: top;
+      margin-bottom: -3%;
+    }
+  }
+
+  &__button.button-black{
+    display: none;
+    max-width: unset;
+    width: 100%;
+    margin-bottom: 5px;
+    border-right: transparent;
+    border-left: transparent;
+  }
+
+  &__button.button-white{
+    display: none;
+    @media screen and (min-width: 576px){
+      position: absolute;
+      display: flex;
+      max-width: 21vw;
+      width: 100%;
+      bottom: 18%;
+      left: 15%;
+      font-size: 1.15vw;
+      padding: 0.7em;
+      margin-top: 0;
+      z-index: 90;
+    }
+  }
+}
+//eof campaign-hero section / slice
+
+// campaign-video-hero section / slice
+.campaign-video-hero{
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 80px;
+  overflow: hidden;
+
+
+  // hide controls and prevent the fullscreen for IOS
+  .IIV::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  video::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  /* Old shadow dom for play button */
+
+  video::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  /* New shadow dom for play button */
+
+  @media screen and (min-width: $breakpoint-l-devices){
+    padding-top: 30px;
+  }
+
+
+  @media screen and (max-width: $breakpoint-m-devices) {
+    height: 206vw;
+    &__video {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .helper-bottom{
+    position: absolute;
+    width: 100%;
+    bottom: 16%;
+    left: 0;
+    height: 10px;
+    background-color: transparent;
+    @media screen and (min-width: 769px){
+      bottom: 0;
+      height: 14px;
+      background-color: white;
+    }
+  }
+
+  .helper-right{
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 4px;
+    background-color: white;
+    height: 100%;
+  }
+
+  &__button.button-white{
+    position: absolute;
+    bottom: 4%;
+    left: 11%;
+    width: 80%;
+    z-index: 90;
+    @media screen and (min-width: 769px){
+      max-width: 21vw;
+      width: 100%;
+      bottom: 18%;
+      right: 15%;
+      left: unset;
+      font-size: 1.15vw;
+      padding: 0.7em;
+      margin-top: 0;
+    }
+  }
+
+}
+// eof campaign-video-hero section / slice
+
+// key logo section / slice
+.key-logo{
+  min-height: 67vw;
+  background-color: #fff;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -3px;
+
+  @media screen and (min-width: $breakpoint-m-devices){
+    min-height: 37.5vw;
+  }
+
+  .container{
+    max-width: unset;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 0;
+    width: 80%;
+
+    @media screen and (min-width: $breakpoint-m-devices){
+      width: 100%;
+      h1 {
+        min-width: 36vw;
+      }
+    }
+  }
+
+}
+//eof key logo section / slice
+
+
+// key message section / slice
+.key-message{
+  min-height: 67vw;
+  background-color: #fff;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -3px;
+
+  @media screen and (min-width: $breakpoint-m-devices){
+    min-height: 37.5vw;
+  }
+
+  .container{
+    max-width: unset;
+    width: 100%;
+  }
+
+  &__content h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+
+  &__content h2 span{
+    font-family: "HalisGR-SBlack", sans-serif;
+    font-size: max(5.55vw, 35px);
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: -3.1px;
+    line-height: 1;
+  }
+
+}
+//eof key message section / slice
+
+// film section / slice
+.film{
+  background-color: #FFFFFF;
+  padding: 6vw 6vw ;
+  @media (min-width: $breakpoint-l-devices) {
+    padding: 5vw 0 5vw 0;
+  }
+
+  &__title{
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0 auto;
+    span {
+      font-family: HalisGR-Black, sans-serif;
+      letter-spacing: -2px;
+      font-size: 5vw;
+      line-height: 1;
+      color: #1E3A7C;
+    }
+
+    @media (min-width: $breakpoint-l-devices) {
+      padding: 3rem 0;
+      span {
+        font-size: 4.3vw;
+        letter-spacing: -4px;
+      }
+    }
+  }
+
+  &__inline-video{
+    position: relative;
+    z-index: 90;
+    width: 100%;
+    height: 100%;    display: contents;
+
+    .embed-responsive{
+      width: 100%;
+      height: 55vw;
+
+      @media (min-width: $breakpoint-l-devices){
+        height: 80vh;
+        max-height: 45vw;
+      }
+    }
+  }
+
+  &__content-wrap {
+
+    width: 100%;
+    height: 54vw;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center !important;
+    display: flex;
+    position: relative;
+    background-color: #000;
+
+    @media (min-width: $breakpoint-l-devices) {
+      width: 83%;
+      height: 80vh;
+      max-height: 45vw;
+      background-size: contain;
+      background-color: #fff;
+    }
+  }
+
+  &__content{
+    width: 30vw;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  &__video-btn {
+    display: block;
+    width: 15vw;
+    max-width: 50px;
+    margin: 0 auto;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    @media (min-width: $breakpoint-l-devices) {
+      width: 15vw;
+      max-width: 120px;
+    }
+  }
+
+  &__button-text{
+    font-family: 'HalisGR-Regular', sans-serif;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    line-height: 1.2 !important;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 0;
+
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 1vw;
+    }
+  }
+}
+//eof film section / slice
+
+// promotion section / slice
+.promotion {
+  width: 100%;
+
+  @media (min-width: $breakpoint-l-devices) {
+    height: auto;
+  }
+
+  &__container {
+    max-width: unset;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  &__container-row {
+    margin-right: 0;
+
+    @media (min-width: $breakpoint-l-devices) {
+      height: auto;
+      margin: 0 !important;
+    }
+  }
+
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 10vw;
+  }
+
+  &__description{
+    font-family: HalisGR-Regular, sans-serif;
+    font-size: 3.3vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 2.1vw;
+    }
+  }
+
+  &__button {
+    margin: 0 !important;
+  }
+
+  &__img{
+    text-align: right;
+    img {
+      max-width: 30vw;
+    }
+    @media (min-width: $breakpoint-l-devices) {
+      text-align: center;
+    }
+  }
+
+}
+//eof promotion section / slice
+
+// range section / slice
+.range {
+  width: 100%;
+  background-color: #FFFFFF;
+  height: 175vw;
+  background-size: 100% 70%;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (min-width: $breakpoint-l-devices) {
+    height: 53vw;
+    background-size: 100% 60%;
+    margin-bottom: -8px;
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__container{
+    position: relative;
+    height: 100%;
+  }
+
+  &__title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55%;
+    text-align: center;
+
+    @media (min-width: $breakpoint-l-devices) {
+      height: 100%;
+    }
+  }
+
+  &__title span{
+    font-family: HalisGR-Regular, sans-serif;
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #FFFFFF;
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 3.1vw;
+    }
+  }
+
+
+  &__items-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    bottom: 0;
+
+    @media (min-width: $breakpoint-l-devices) {
+      position: relative;
+      width: 56vw;
+      margin: 0 auto;
+      bottom: unset;
+    }
+  }
+
+  &__item{
+    width: 34vw;
+
+    @media (min-width: $breakpoint-l-devices) {
+      width: unset;
+      max-width: 10.5vw;
+    }
+  }
+
+  .button-white{
+    max-width: unset;
+  }
+}
+//eof range section / slice
+
+// new-product-details section / slice
+.new-product-details{
+
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  @media (min-width: $breakpoint-l-devices) {
+    z-index: 2;
+  }
+
+  &__bgr-container{
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media (min-width: $breakpoint-l-devices) {
+      position: absolute;
+      top: 0;
+      right: -14%;
+      width:  100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 27vw 100%;
+      background-position: right;
+    }
+  }
+
+  &__container{
+    max-width: 100%;
+    padding: 0;
+    @media (min-width: $breakpoint-l-devices) {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .slide{
+    display: flex;
+    height: 82vh !important;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-l-devices) {
+      flex-direction: row;
+      //height: 100vh !important;
+      height: unset;
+      min-height: 60vw;
+      margin-top: unset;
+    }
+
+    &__content-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__content-wrap{
+      width: 100%;
+      min-width: 55vw;
+      display: flex;
+      align-items: baseline;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-top: 0;
+      padding-right: 0;
+      padding-left: 3%;
+      @media (min-width: $breakpoint-l-devices) {
+        min-width: unset;
+        height: 75%;
+        justify-content: space-around;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-right: unset;
+        padding-left: unset;
+      }
+    }
+
+    &__title {
+      font-family: 'HalisGR-Black', sans-serif;
+      font-weight: 900;
+      font-size:min(3.5vh, 34px);
+      text-transform: uppercase;
+      line-height: 1.1;
+
+      @media (min-width: $breakpoint-l-devices) {
+        font-size: 3.3vw;
+        padding-bottom: 40px;
+        width: 90%;
+      }
+    }
+
+    &__subtitle{
+      font-family: 'HalisGR-Black', sans-serif;
+      font-weight: 700;
+      font-size:min(2.3vh, 24px);
+      text-transform: uppercase;
+      color: black;
+      @media (min-width: $breakpoint-l-devices) {
+        font-size:  2.1vw;
+      }
+    }
+
+    &__description{
+      font-family: 'BentonSans', sans-serif;
+      font-weight: 400;
+      font-size: min(1.5vh, 16px);
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+
+      @media (min-width: $breakpoint-l-devices) {
+        font-size: 1.3vw;
+      }
+    }
+
+    &__button-white{
+      display: none;
+      @media (min-width: $breakpoint-l-devices) {
+        display: flex;
+      }
+    }
+
+    &__button-black {
+      display: flex;
+      width: 100%;
+      max-width: unset;
+      font-size: 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border-radius: 0;
+      min-width: 3rem;
+    }
+
+    &__image-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    &__product{
+      max-width: 30vh;
+      width: 62vw;
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+
+      @media (min-width: $breakpoint-l-devices) {
+        width: 100%;
+        position: relative;
+        max-width: 15vw;
+        left: 4%;
+      }
+
+    }
+
+    &__btn{
+      display: flex;
+      width: 100%;
+      max-width: unset;
+      @media (min-width: $breakpoint-l-devices) {
+        display: none;
+      }
+    }
+  }
+}
+//eof new-product-details section / slice
+
+// master distiller section / slice
+.distiller{
+  width: 100%;
+  padding-top: 6vw;
+  background-color: #FFFFFF;
+  margin-top: -5px;
+  padding-bottom: 30px;
+
+  @media (min-width: $breakpoint-l-devices) {
+    padding-top: 165px;
+    min-height: 64vw
+  }
+
+  &__img-wrap{
+    padding: 0 8vw 6vw 0;
+
+    @media (min-width: $breakpoint-l-devices) {
+      padding: 0 5vw 0 0;
+    }
+  }
+
+  &__img{
+    width: 100%;
+  }
+
+  &__content-wrap{
+    padding: 0 9vw;
+    @media (min-width: $breakpoint-l-devices) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 13vw;
+    span {
+      font-family: HalisGR-Bold, sans-serif;
+      font-size: 13vw;
+      text-transform: uppercase;
+      color: #000000;
+      line-height: 1;
+    }
+
+    @media (min-width: $breakpoint-l-devices) {
+      margin-top: unset;
+      margin-bottom: 25px;
+      span {
+        font-size: 3.2vw;
+      }
+    }
+  }
+
+  &__subtitle{
+    font-family: HalisGR-Regular, sans-serif;
+    font-size: 6vw;
+    text-transform: uppercase;
+    color: #000000;
+    line-height: 1;
+
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 1.6vw;
+    }
+  }
+
+  &__description{
+    font-family: BentonSans, sans-serif;
+    font-size: 5.5vw;
+    color: #000000;
+    line-height: 1.2;
+    padding-top: 30px;
+    padding-bottom: 0;
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 1.3vw;
+      padding-top: 50px;
+      line-height: 1.5;
+      z-index: 9;
+    }
+  }
+
+  &__video{
+    position: relative;
+    margin-top: 25vw;
+
+    @media (min-width: $breakpoint-l-devices) {
+      position: absolute;
+      margin-top: unset;
+      bottom: -35%;
+      left: 25%;
+    }
+  }
+
+  &__play-btn-wrap{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -40%;
+    left: 7%;
+
+    @media (min-width: $breakpoint-l-devices) {
+      width: 100%;
+      top: 0;
+      left: 85%;
+    }
+  }
+
+  &__play-btn{
+    display: block;
+    width: 30vw;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    @media (min-width: $breakpoint-l-devices) {
+      width: 15vw;
+      max-width: 200px;
+    }
+  }
+
+  &__button-text{
+    font-family: 'HalisGR-Regular', sans-serif;
+    font-size: 7vw;
+    text-transform: uppercase;
+    line-height: 1.2 !important;
+    color: #fff;
+    padding-bottom: 0;
+
+    @media (min-width: $breakpoint-l-devices) {
+      font-size: 2vw;
+    }
+  }
+
+
+
+  &__video-thumb{
+    width: 100%;
+    max-width: 90vw;
+    margin-bottom: -12%;
+
+    @media (min-width: $breakpoint-l-devices) {
+      max-width: unset;
+      min-width: 35vw;
+      margin-bottom: unset;
+    }
+  }
+
+
+}
+//eof master distiller section / slice
+
+// promo module / slice
+.promo-module {
+  background-color: #FFFFFF;
+  margin-top: -2%;
+  overflow: hidden;
+
+  &__title{
+    font-family: 'HalisGR-Black', sans-serif;
+    font-size: 11vw;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+    padding: 2rem 15px;
+    color: #000000;
+    @media screen and (min-width: $breakpoint-l-devices){
+      font-size: 4vw;
+      padding: 50px;
+    }
+  }
+
+  &__cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    @media screen and (min-width: $breakpoint-l-devices){
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &__content-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+
+    @media screen and (min-width: $breakpoint-l-devices){
+      padding: 35px 0;
+      height: 15vw;
+    }
+
+  }
+
+  &__subtitle{
+    font-family: HalisGR-Regular, sans-serif;
+    font-size: 7.53vw;
+    line-height: 10.55vw;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #000000;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      font-size: 2.08vw;
+      line-height: 1.66vw;
+    }
+  }
+
+  &__image{
+    @media screen and (min-width: $breakpoint-l-devices) {
+      max-width: 28vw;
+    }
+  }
+}
+//eof promo module / slice
+
+// video slider module /slice
+.video-slider{
+  width: 100%;
+  display: inline-block;
+  max-height: 95vh;
+  position: relative;
+
+
+  // hide controls and prevent the fullscreen for IOS
+  .IIV::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  video::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  /* Old shadow dom for play button */
+
+  video::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  /* New shadow dom for play button */
+
+
+
+  &__slide{
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-top: -2%;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 95vh;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      margin-top: 0;
+      max-height: 95vh;
+    }
+  }
+
+  &__video{
+    object-fit: cover;
+  }
+
+  &__content-wrap{
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__subtitle{
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 0;
+    span {
+      font-family: HalisGR-Regular, sans-serif;
+      font-size: 4.5vw;
+      line-height: 1;
+      @media screen and (min-width: $breakpoint-l-devices) {
+        font-size: 2.8vw;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    span {
+      font-family: HalisGR-Bold, sans-serif;
+      font-size: 9vw;
+      line-height: 1;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        font-size: 4.8vw;
+      }
+    }
+  }
+}
+//eof video slider module /slice
+
+// our story section / slice
+.our-story-section {
+  width: 100%;
+  height: 150vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E3A7C;
+  color: #FFFFFF;
+
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+
+  &__title{
+    font-family: HalisGR-SBold, sans-serif;
+    text-align: center;
+    padding-bottom: 3%;
+    span {
+      font-size: 13.3vw;
+      line-height: 1;
+
+      &:first-child{
+        font-size: 7vw;
+        line-height: 1.4;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      //font-size: 4.1vw;
+      text-align: center;
+      padding-bottom: 3%;
+
+      span {
+        font-size: 4.1vw;
+        line-height: 1;
+
+        &:first-child{
+          font-size: 4.1vw;
+        }
+      }
+    }
+  }
+
+  &__description{
+    width: 73%;
+    font-family: BentonSans, sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 3%;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      width: 100%;
+      font-family: HalisGR-Regular, sans-serif;
+      font-size: 1.4vw;
+      line-height: unset;
+    }
+  }
+
+  &__button.button-white  {
+    background-color: transparent;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    font-size: max(1.7vw,1.16rem);
+    padding: 0.5em;
+    max-width: 65%;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      width: 405px;
+      max-width: 40%;
+    }
+
+    &:hover, &:focus {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+      color: #1E3A7C;
+      transition: all 600ms ease;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-l-devices) {
+    height: 35vw;
+  }
+}
+//eof our story section / slice
+
+// about new product section / slice
+.about-new-product {
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -5px;
+  @media (min-width: $breakpoint-l-devices) {
+    width:  100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-top: -9px;
+  }
+
+
+  &__container{
+    max-width: 100%;
+    padding: 0;
+    @media (min-width: $breakpoint-l-devices) {
+      max-width: 100%;
+      display: flex;
+    }
+  }
+
+  &__items{
+    height: 33vh;
+    overflow: scroll;
+    @media (min-width: $breakpoint-l-devices) {
+      height: unset;
+      overflow: unset;
+    }
+  }
+
+  .slide{
+    display: flex;
+    width: 100%;
+    height: 33vh !important;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-l-devices) {
+      width:  100%;
+      height: 100vh !important;
+      //max-height: 55vw;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: auto;
+    }
+
+    &__content-wrap{
+      width: 80%;
+      height: 100%;
+      min-width: 55vw;
+      display: flex;
+      align-items: baseline;
+      flex-direction: column;
+      margin-top: 12vw;
+      padding-right: 0;
+      padding-left: 6vw;
+      @media (min-width: $breakpoint-l-devices) {
+        min-width: 100%;
+        width: 100%;
+        //height: 60%;
+        justify-content: space-around;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-right: unset;
+        padding-left: 0;
+      }
+    }
+
+    &__title {
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      padding-left: 6vw;
+
+      h4 {
+        font-family: 'HalisGR-Black', sans-serif;
+        font-size:min(4.5vh, 34px);
+        width: 70%;
+        padding-top: 7vw;
+        padding-bottom: 0;
+      }
+
+      @media (min-width: $breakpoint-l-devices) {
+        position: absolute;
+        left: -52%;
+        top: 6%;
+        width: 50vw;
+        height: 35vh;
+        //background-color: #ffffff;
+        display: flex;
+        align-items: flex-end;
+        padding-left: 16%;
+
+        h4 {
+          font-size: 3.6vw;
+          width: 75%;
+          padding-top: 0;
+        }
+
+      }
+    }
+
+    &__subtitle{
+      font-family: 'HalisGR-Black', sans-serif;
+      font-weight: 700;
+      font-size:min(2.3vh, 24px);
+      text-transform: uppercase;
+      color: black;
+      @media (min-width: $breakpoint-l-devices) {
+        font-size:  2.2vw;
+      }
+    }
+
+    &__description{
+      font-family: 'BentonSans', sans-serif;
+      font-weight: 400;
+      //font-size: max(1.5vh, 22px);
+      font-size: 5.5vw;
+      color: #000000;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+
+      @media (min-width: $breakpoint-l-devices) {
+        font-size: 1.3vw;
+        line-height: 1.5;
+        padding-bottom: 0;
+      }
+    }
+
+    &__button-white{
+      display: none;
+      @media (min-width: $breakpoint-l-devices) {
+        display: flex;
+      }
+    }
+
+    &__video-sticky-container{
+      position:absolute;
+      bottom: 0;
+      overflow: hidden;
+      height:47vh;
+      @media (min-width: $breakpoint-l-devices) {
+        position:sticky;
+        top:0;
+        bottom: unset;
+        width: 100%;
+        height:100vh;
+        overflow: unset;
+      }
+    }
+
+
+    &__video-wrap{
+      position: relative;
+      height: 47vh;
+
+      @media (min-width: $breakpoint-l-devices) {
+        height: unset;
+      }
+
+      video {
+        width: 100vw;
+        @media screen and (min-width: $breakpoint-l-devices) {
+          width: 79vw;
+        }
+      }
+    }
+
+    &__image-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__product{
+      width: 100vw;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      max-width: 50vh;
+
+      @media (min-width: $breakpoint-l-devices) {
+        width: 46vw;
+        position: absolute;
+        bottom: 0;
+        left:  0;
+        max-width: unset;
+      }
+
+    }
+
+    &__button-black{
+      display: flex;
+      width: 100%;
+      max-width: unset;
+      font-size: 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border-radius: 0;
+      min-width: 3rem;
+      @media (min-width: $breakpoint-l-devices) {
+        display: none;
+      }
+    }
+
+
+
+    &__button{
+      position: absolute;
+      left: -52%;
+      top: 69%;
+      width: 50vw;
+      height: 50vh;
+      background: rgba(255, 255, 255, 0.1) 0;
+      background: -moz-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgb(255, 255, 255) 20%,
+              rgb(255, 255, 255) 70%,
+              rgb(255, 255, 255) 100%);
+      background: -webkit-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgb(255, 255, 255) 20%,
+              rgb(255, 255, 255) 70%,
+              rgb(255, 255, 255) 100%);
+      background: linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgb(255, 255, 255) 20%,
+              rgb(255, 255, 255) 70%,
+              rgb(255, 255, 255) 100%);
+      padding-left: 17%;
+      padding-top: 10%;
+    }
+
+    &__item{
+      position: sticky;
+      top:0;
+      background: rgba(255, 255, 255, 0.1) 0;
+      background: -moz-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 20%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255) 100%);
+      background: -webkit-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 20%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255) 100%);
+      background: linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 20%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255) 100%);
+    }
+
+    @media (min-width: $breakpoint-l-devices) {
+      padding-left: 29%;
+      background: rgba(255, 255, 255, 0.1) 0;
+      background: -moz-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 30%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255, 0.1) 100%);
+      background: -webkit-linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 30%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255, 0.1) 100%);
+      background: linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.1) 0,
+              rgba(255, 255, 255, 1) 30%,
+              rgba(255, 255, 255, 1) 70%,
+              rgba(255, 255, 255, 0.1) 100%);
+    }
+
+  }
+}
+//eof about new product section / slice
+
+// cta section / slice
+.cta-section {
+  width: 100%;
+  height: 150vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  color: #FFFFFF;
+
+  @media screen and (min-width: $breakpoint-l-devices) {
+    height: 35vw;
+  }
+
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+
+  &__title{
+    font-family: HalisGR-SBold, sans-serif;
+    text-align: center;
+    padding-bottom: 3%;
+    span {
+      font-size: 11.3vw;
+      line-height: 1;
+    }
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      text-align: center;
+      padding-bottom: 3%;
+
+      span {
+        font-size: 4.3vw;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__description{
+    width: 68%;
+    font-family: BentonSans, sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 3%;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      width: 100%;
+      font-family: HalisGR-Regular, sans-serif;
+      font-size: 1vw;
+      line-height: unset;
+    }
+  }
+
+  &__button.button-white  {
+    background-color: transparent;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    font-size: max(1.7vw,1.16rem);
+    padding: 0.5em;
+    max-width: 65%;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      font-size: max(1.7vw,1.16rem);
+      padding: 0.5em;
+      width: unset;
+      max-width: 40%;
+    }
+
+    &:hover, &:focus {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+      color: #1E3A7C;
+      transition: all 600ms ease;
+    }
+  }
+}
+//eof cta section / slice
+
+
+.product-locator-container{
+  background-color: #000000;
+}
+
+
+
+// instagram section
+#campaign-page_vodka,
+#campaign-page_vodka-soda,{
+  #instagram-section .eapps-instagram-feed-posts-inner{
+    max-width: unset;
+    padding-bottom: 0 !important;
+  }
+
+  #instagram-section {
+    margin-top: -8px;
+  }
+
+  #instagram-section > div{
+    padding-bottom: 0 !important;
+  }
+
+  .eapps-instagram-feed{
+    padding-bottom: 0 !important;
+  }
+
+  .film__title--inner{
+    display: none;
+  }
+}
+//eof instagram section
+
+
+// vodka soda
+#campaign-page_vodka-soda {
+
+  // campaign-hero section / slice
+  .campaign-hero{
+    width: 100%;
+    background-color: #000000;
+    padding-top: 80px;
+    &__bg{
+      height: 180vw;
+      background-size: contain;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      @media (min-width: $breakpoint-m-devices) {
+        height: 45vw;
+        background-size: contain;
+        background-position: top;
+      }
+    }
+  }
+
+  // our story section / slice
+  .our-story-section {
+    width: 100%;
+    height: 117vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media screen and (min-width: $breakpoint-l-devices) {
+      height: 30vw;
+    }
+
+
+    &__content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;
+      padding: 0 15px;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        justify-content: center;
+        height: 100%;
+        padding: 0;
+      }
+    }
+
+
+    &__title{
+      font-family: HalisGR-SBold, sans-serif;
+      text-align: center;
+      padding-bottom: 3%;
+      br {
+        display: none;
+      }
+      span {
+        font-size: 7.15vw;
+        line-height: 1;
+
+        &:first-child{
+          font-size: 7.15vw;
+          line-height: 1;
+        }
+      }
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        text-align: center;
+        padding-bottom: 3%;
+        br {
+          display: block;
+        }
+
+        span {
+          font-size: 3.5vw;
+          line-height: 1;
+
+          &:first-child{
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+
+    &__description{
+      width: 87%;
+      font-family: BentonSans, sans-serif;
+      font-size: 4vw;
+      text-align: center;
+      color: #FFFFFF;
+      padding-bottom: 3%;
+      letter-spacing: 1px;
+      line-height: 1.4;
+
+      br {
+        display: none;
+      }
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        width: 100%;
+        font-family: HalisGR-Regular, sans-serif;
+        font-size: 1.3vw;
+        line-height: unset;
+        br {
+          display: block;
+        }
+      }
+    }
+
+    &__button:hover,
+    &__button:focus{
+      color: #000;
+    }
+  }
+
+  // new-product-details section / slice
+  .new-product-details {
+
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    @media (min-width: $breakpoint-l-devices) {
+      z-index: 2;
+    }
+
+    &__bgr-container {
+      position: relative;
+      width: 100%;
+      height: 25vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media (min-width: $breakpoint-l-devices) {
+        position: absolute;
+        top: 0;
+        right: -14%;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 27vw 100%;
+        background-position: right;
+      }
+    }
+
+    &__container {
+      max-width: 100%;
+      padding: 0;
+      @media (min-width: $breakpoint-l-devices) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .slide {
+      display: flex;
+      max-height: 82vh !important;
+      flex-direction: column;
+      height: 170vw !important;
+
+      @media (min-width: $breakpoint-l-devices) {
+        flex-direction: row;
+        height: unset;
+        min-height: 60vw;
+        margin-top: unset;
+      }
+
+      &__content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__content-wrap {
+        width: 100%;
+        min-width: 55vw;
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: 0;
+        padding-right: 0;
+        padding-left: 3%;
+        @media (min-width: $breakpoint-l-devices) {
+          min-width: unset;
+          height: 65%;
+          justify-content: space-around;
+          margin-top: auto;
+          margin-bottom: auto;
+          padding-right: unset;
+          padding-left: unset;
+        }
+      }
+
+      &__title {
+        font-family: 'HalisGR-Black', sans-serif;
+        font-weight: 900;
+        font-size: min(3.4vh, 34px);
+        text-transform: uppercase;
+        line-height: 1.1;
+
+        @media (min-width: $breakpoint-l-devices) {
+          font-size: 3.3vw;
+          padding-bottom: 40px;
+          width: 90%;
+        }
+      }
+
+      &__subtitle {
+        font-family: 'HalisGR-Black', sans-serif;
+        font-weight: 700;
+        font-size: min(2.3vh, 24px);
+        text-transform: uppercase;
+        color: black;
+        @media (min-width: $breakpoint-l-devices) {
+          font-size: 2.1vw;
+        }
+      }
+
+      &__description {
+        font-family: 'BentonSans', sans-serif;
+        font-weight: 400;
+        font-size: min(1.5vh, 16px);
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+
+        @media (min-width: $breakpoint-l-devices) {
+          font-size: 1.3vw;
+        }
+      }
+
+      &__button-white {
+        display: none;
+        @media (min-width: $breakpoint-l-devices) {
+          display: flex;
+        }
+      }
+
+      &__button-black {
+        display: flex;
+        width: 100%;
+        max-width: unset;
+        font-size: 1.5rem;
+        background-color: #000;
+        color: #fff;
+        border-radius: 0;
+        min-width: 3rem;
+      }
+
+      &__image-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      &__product {
+        max-width: 49vh;
+        width: 100vw;
+        position: absolute;
+        bottom: -20%;
+        left: -50%;
+
+        @media (min-width: $breakpoint-l-devices) {
+          width: 95%;
+          position: relative;
+          max-width: unset;
+          left: 0%;
+        }
+
+      }
+
+      &__btn {
+        display: flex;
+        width: 100%;
+        max-width: unset;
+        @media (min-width: $breakpoint-l-devices) {
+          display: none;
+        }
+      }
+    }
+  }
+  // range section / slice
+  .range {
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 175vw;
+    background-size: 100% 70%;
+    background-position: top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-l-devices) {
+      height: 60vw;
+      background-size: 100% 66%;
+    }
+
+    &__content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__container{
+      position: relative;
+      height: 100%;
+      max-width: unset;
+    }
+
+    &__title-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 55%;
+      text-align: center;
+
+      @media (min-width: $breakpoint-l-devices) {
+        height: 100%;
+        margin-bottom: -14%;
+      }
+    }
+
+    &__title span{
+      font-family: HalisGR-Regular, sans-serif;
+      font-size: 7.5vw;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #FFFFFF;
+      @media (min-width: $breakpoint-l-devices) {
+        font-size: 3.1vw;
+      }
+    }
+
+
+    &__items-container{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      bottom: 0;
+
+      @media (min-width: $breakpoint-l-devices) {
+        position: relative;
+        width: 70%;
+        margin: 0 auto;
+        bottom: -14%;
+      }
+    }
+
+    &__item{
+      width: 34vw;
+
+      @media (min-width: $breakpoint-l-devices) {
+        width: unset;
+        max-width: 17vw;
+      }
+    }
+  }
+
+  .product-locator-container{
+    background-color: #000000;
+  }
+
+  .promo-module{
+    margin-top: 0;
+  }
+}
+//eof vodka soda
+
+
+// jb-smoove updates
+#campaign-page_vodka-soda{
+  .hero-section__jb-smoove{
+    @media (min-width: $breakpoint-s-devices) {
+      .campaign-hero__bg{
+        background-size: cover;
+        height: 56vw;
+      }
+    }
+
+    .campaign-hero__button.button-black{
+      display: flex;
+    }
+  }
+}
+
+#campaign-page_vodka{
+  .hero-section__jb-smoove{
+    @media (min-width: $breakpoint-s-devices) {
+      .campaign-hero__bg{
+        height: 55vw;
+      }
+    }
+
+    .campaign-hero__button.button-black{
+      display: flex;
+    }
+
+    .campaign-hero__button.button-white{
+      display: none;
+      @media screen and (min-width: 576px){
+        position: absolute;
+        display: flex;
+        max-width: 21vw;
+        width: 100%;
+        bottom: 15%;
+        left: 17%;
+        font-size: 1.15vw;
+        padding: 0.7em;
+        margin-top: 0;
+        text-align: center;
+        z-index: 90;
+      }
+    }
+  }
+
+  .film {
+    //padding-top: 0;
+    padding: 7vw 0 5vw 0;
+    margin-top: -5px;
+  }
+}
+//eof jb-smoove updates
+
+//the-difference-is-clear
+#campaign-page_the-difference-is-clear{
+  background-color: #FFFFFF;
+
+  .film{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: -2px;
+    margin-top: -3%;
+    background-color: unset;
+
+    &__content-wrap{
+      background-color: transparent;
+      background-size: cover;
+    }
+
+    &__button-text{
+      color: #fff;
+    }
+
+
+    &__description{
+      font-family: BentonSans, sans-serif;
+      font-size: 2.85vw;
+      text-align: center;
+      color: #000;
+      padding: 15px 0;
+
+      @media screen and (min-width: $breakpoint-l-devices) {
+        width: 100%;
+        font-family: HalisGR-Regular, sans-serif;
+        font-size: 2vw;
+        line-height: unset;
+        padding: 45px 0;
+      }
+    }
+  }
+
+  .key-message {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 43.5vw;
+
+    &__content h2 span{
+      font-family: "HalisGR-SBlack", sans-serif;
+      font-size: max(5.55vw, 35px);
+      text-align: center;
+      text-transform: uppercase;
+      color: #000000;
+      letter-spacing: -3.1px;
+      line-height: 1;
+    }
+  }
+
+  .featured-products{
+    margin-bottom: 0;
+
+    @media (min-width: $breakpoint-m-devices) {
+      max-width: 1320px;
+    }
+  }
+  .featured-products__section{
+    padding-top: 56px;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: 136vw;
+    background-position: top left;
+    @media (min-width: $breakpoint-m-devices) {
+      background-size: 58%;
+      background-position: 76%;
+    }
+  }
+
+  .featured-products__header {
+    font-size: max(2vw, 18px);
+    line-height: 1.2;
+    padding: 0 15px;
+    @media (min-width: $breakpoint-m-devices) {
+      padding: 0;
+    }
+  }
+
+  .promo-module{
+    margin-top: 0;
+  }
+
+  .product-locator-container{
+    padding: 40px;
+  }
+}
+//eof the-difference-is-clear

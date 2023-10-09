@@ -1,0 +1,129 @@
+#homepage {
+  .film {
+    background-color: #FFFFFF;
+    padding: 0;
+    text-align: center;
+    @media (min-width: $breakpoint-l-devices) {
+      padding:0;
+    }
+
+    &__title{
+      display: none;
+    }
+
+    &__title--inner{
+      display: block;
+      font-family: "HalisGR-Black", sans-serif;
+
+      span {
+        color: #FFFFFF;
+        line-height: 1;
+        font-size: 8vw;
+        text-transform: uppercase;
+      }
+
+      @media (min-width: $breakpoint-l-devices) {
+        span {
+          font-size: 5vw;
+        }
+      }
+    }
+
+    &__inline-video {
+      position: relative;
+      z-index: 90;
+      width: 100%;
+      height: 100%;
+      display: contents;
+
+      .embed-responsive {
+        width: 100%;
+        height: 55vw;
+
+        @media (min-width: $breakpoint-l-devices) {
+          height: 86vh;
+          max-height: 49vw;
+        }
+      }
+    }
+
+    &__content-wrap {
+
+      width: 100%;
+      //height: 100vh;
+      margin: 0 auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center !important;
+      display: flex;
+      position: relative;
+      background-color: #000;
+      align-items: center;
+
+      @media (min-width: $breakpoint-l-devices) {
+        width: 100%;
+        height: 86vh;
+        max-height: 49vw;
+      }
+    }
+
+    &__content {
+      width: 80%;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    //&__title{
+    //  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    //  line-height: 1;
+    //  font-size: 8vw;
+    //  text-transform: uppercase;
+    //
+    //  @media (min-width: $breakpoint-l-devices) {
+    //    font-size: 5vw;
+    //  }
+    //}
+
+
+    &__video-btn {
+      display: block;
+      width: 15vw;
+      max-width: 50px;
+      margin: 0 auto;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      @media (min-width: $breakpoint-l-devices) {
+        width: 15vw;
+        max-width: 120px;
+      }
+    }
+
+    &__button-text {
+      font-family: 'HalisGR-Regular', sans-serif;
+      font-size: 3.5vw;
+      text-transform: uppercase;
+      line-height: 1.2 !important;
+      margin: 0 auto;
+      color: #fff;
+      padding-bottom: 0;
+
+      @media (min-width: $breakpoint-l-devices) {
+        font-size: 1vw;
+      }
+    }
+
+    &__cta-button{
+      display: inline-flex;
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,0 +1,365 @@
+// $dirAccProdBGs: '../images/products/whiteclaw-accordion-product-bgs/';
+
+.flavors {
+
+    .products-page-nav {
+
+        &.nav-tabs {
+            border-bottom: none;
+            margin-bottom: 94px;
+
+            @media (min-width: $breakpoint-s-devices) {
+                margin-bottom: 104px;
+            }
+
+            @media (min-width: $breakpoint-m-devices) {
+                margin-bottom: 130px;
+            }
+
+            @media (min-width: $breakpoint-l-devices) {
+                margin-bottom: 200px;
+            }
+
+            .nav-link {
+                font-weight: bold;
+                color: $black;
+                padding: .5rem 0 0 0;
+                margin-right: 1.2rem;
+                border: none;
+                border-bottom: 3px solid transparent;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    margin-right: 2.4rem;
+                }
+
+                &:hover {
+                    border-bottom: 3px solid #000;
+                }
+            }
+
+            .nav-item.show .nav-link,
+            .nav-link.active {
+                color: $black;
+                background-color: #fff;
+                border-bottom: 3px solid #000;
+            }
+
+            .nav-link.disabled {
+                color: $black;
+            }
+        }
+
+    }
+
+    .tab-content {
+        margin-bottom: 1rem;
+
+        @media (min-width: $breakpoint-m-devices) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    .accordion-header.collapsed,
+    .accordion-header {
+        padding-bottom: 0;
+        line-height: 0;
+
+        .accordion-button {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    .prod-accor-cont {
+
+        .prod-accor-cont-hd {
+            min-height: 140px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            .products-anchor {
+                position: relative;
+                top: -90px;
+            }
+
+            @media (min-width: $breakpoint-l-devices) {
+                min-height: 236px;
+            }
+
+            &.__original {
+                background: #F7F7F7;
+            }
+
+            &.__vodka-soda {
+                background: $black;
+
+                .__title-group {
+                    .__title-1 {
+                        color: $white;
+                        border-color: $white;
+                    }
+
+                    .__title-2 {
+                        color: $white;
+                    }
+
+                    .__title-3 {
+                        color: $white;
+                    }
+                }
+            }
+
+            &.__surf {
+                background: linear-gradient(90deg, #FC6C18 10.31%, #FFBB36 92.4%);
+            }
+
+            &.__surge {
+                background: linear-gradient(270deg, #003782 32.97%, #002D6A 86.91%);
+
+                .__title-group {
+                    .__title-1{
+                        color: $white;
+                        border-color: $white;
+                    }
+                    .__title-2{
+                        color: $white;
+                    }
+                    .__title-3{
+                        color: $white;
+                    }
+                }
+            }
+
+            .__title-group-parent {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+
+                &.active {
+                    margin-top: -380px;
+                }
+            }
+
+            .__title-group {
+                transition: position .4s;
+                max-width: 154px;
+                margin: 0 auto;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    max-width: 170px;
+                }
+                @media (min-width: $breakpoint-m-devices) {
+                    max-width: calc(100% - ((94px + 80px + 10px)*2));
+                }
+                @media (min-width: $breakpoint-l-devices) {
+                    max-width: 500px;
+                }
+                @media (min-width: $breakpoint-xl-devices) {
+                    max-width: calc(100% - ((170px + 100px + 10px)*2));
+                }
+
+                span {
+                    font-style: normal;
+                    color: $black;
+                }
+
+                .__title-1 {
+                    font-family: "halis_grs_bold";
+                    color: $black;
+                    border: 2px solid $black;
+                    // color: #136AA8;
+                    // border: 2px solid #136AA8;
+                    padding: 2px;
+                    font-size: 12px;
+                    line-height: 1;
+
+                    @media (min-width: $breakpoint-m-devices) {
+                        font-size: 16px;
+                        // border: 4px solid #136AA8;
+                        border: 4px solid $black;
+                    }
+                    @media (min-width: $breakpoint-l-devices) {
+                        font-size: 22px;
+                    }
+                }
+
+                .__title-2 {
+                    font-family: "halis_grs_bold";
+                    line-height: 1;
+                    letter-spacing: -0.04em;
+                    text-transform: uppercase;
+                    color: $black;
+                    font-size: 24px;
+
+                    @media (min-width: $breakpoint-s-devices) {
+                        font-size: 28px;
+                    }
+                    @media (min-width: $breakpoint-l-devices) {
+                        font-size: 62px;
+                    }
+                }
+
+                .__title-3 {
+                    font-family: "BentonSans";
+                    font-size: 14px;
+                    line-height: 1;
+
+                    @media (min-width: $breakpoint-m-devices) {
+                        font-family: "BentonSans Bold";
+                    }
+                    @media (min-width: $breakpoint-l-devices) {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        .prod-accor-cont-hd--img {
+            bottom: 0;
+            max-width: 80px;
+
+            @media (min-width: $breakpoint-s-devices) {
+                max-width: 94px;
+            }
+            @media (min-width: $breakpoint-l-devices) {
+                max-width: 100%;
+            }
+
+            &.position-absolute-right-aligned {
+                right: 15px;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    right: 50px;
+                }
+                @media (min-width: $breakpoint-m-devices) {
+                    right: 80px;
+                }
+                @media (min-width: $breakpoint-l-devices) {
+                    right: 70px;
+                }
+                @media (min-width: $breakpoint-xl-devices) {
+                    right: 100px;
+                }
+            }
+
+            &.position-absolute-left-aligned {
+                left: 15px;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    left: 50px;
+                }
+                @media (min-width: $breakpoint-m-devices) {
+                    left: 80px;
+                }
+                @media (min-width: $breakpoint-l-devices) {
+                    left: 70px;
+                }
+            }
+        }
+    }
+
+    .prod-accor-cont {
+        .accordion-row-body {
+            padding-top: 8vh;
+            padding-bottom: 2vh;
+            align-items: flex-start;
+
+            @media (min-width: $breakpoint-s-devices) {
+                padding-top: 12vh;
+                padding-bottom: 8vh;
+            }
+
+            @media (min-width: $breakpoint-l-devices) {
+                padding-top: 14vh;
+                padding-bottom: 18vh;
+            }
+
+            .accordion-info-field {
+                font-family: "halis_grs_bold";
+                color: $black;
+                margin-top: -5.5vh;
+                font-size: 12px;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    margin-top: -8.8vh;
+                    font-size: 14px;
+                }
+
+                @media (min-width: $breakpoint-l-devices) {
+                    margin-top: -10.2vh;
+                    font-size: 20px;
+                }
+            }
+
+            .product-info-subtitle {
+                margin-top: -2vh;
+                margin-bottom: 2vh;
+                font-family: "halis_grs_bold";
+                font-size: max(0.5vw, 10px);
+                text-align: center;
+                text-transform: uppercase;
+                color: $black;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    margin-top: -5vh;
+                    margin-bottom: inherit;
+                }
+            }
+
+            .product-title {
+                font-family: "halis_grs_bold";
+                font-size: 12px;
+                color: $black;
+                text-transform: uppercase;
+
+                @media (min-width: $breakpoint-l-devices) {
+                    font-size: 20px;
+                    height: 55px;
+
+                }
+            }
+
+            .product-new-item {
+                color: $black;
+                font-family: 'HalisGR-Black';
+                font-weight: 700;
+                display: inline-flex;
+                border: 2px solid $black;
+                line-height: 1;
+                padding: 0 3px;
+
+                @media (max-width: $breakpoint-l-devices) {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .product-image {
+                max-width: 76px;
+                max-height: 158px;
+                width: auto;
+
+                @media (min-width: $breakpoint-s-devices) {
+                    max-width: 90px;
+                    max-height: 188px;
+                }
+
+                @media (min-width: $breakpoint-l-devices) {
+                    max-width: 140px;
+                    max-height: 292px;
+                }
+            }
+        }
+    }
+}
+
+.flavors .anchor-toggle_vodka .prod-accor-cont .accordion-row-body .product-image {
+    @media (min-width: $breakpoint-l-devices) {
+        max-height: 481px;  
+    }  
+}

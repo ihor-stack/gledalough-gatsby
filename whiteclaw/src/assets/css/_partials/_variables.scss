@@ -1,0 +1,187 @@
+// Variables
+$accent-color: #ffffff;
+
+// Variables
+$primary: #F05F40 !default;
+$black: #000 !default;
+$white: #fff !default;
+$white-num: 255;
+$black-num: 0;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+
+// color
+$primary-bg-color: #34332D;
+$primary-bg-light-color: #F8F6F3;
+$primary-text-color: #6F6D63;
+$text-light-grey: #F8F6F3;
+
+$newGray-solid: rgba(112,112,112,1);
+$newGray-dark: rgba(112,112,112,.7);
+$newGray-medium: rgba(112,112,112,.5);
+$newGray-light: rgba(112,112,112,.15);
+
+$redColor: #ff0024;
+$CCC: #CCCCCC;
+$brand-color: #035e7b; // BTNs, Nav Hover, Generic Title, No BG BTNs
+$brand-block : #4d667f; // Footer Block
+$article-gray: #efeeec;
+$text-color: #4A4A4A;
+
+
+$product-original: #FFFFFF;
+$product-surf: #FF9F35;
+$product-surge: #00205C;
+$product-lemonade: #FAE815;
+$product-icedtea: #dab45f;
+$product-vodka: #136AA8;
+$product-vodka-soda: #FFFFFF;
+
+$product-new: #E56B23;
+
+$alpha: 0.8;
+$img-directory-assets: "../img/assets";
+
+$breakpoint-xxl-devices: 1920px;
+$breakpoint-laptop     : 1368px;
+$breakpoint-l-laptop   : 1620px;
+$breakpoint-xl-devices : 1200px;
+$breakpoint-l-devices  : 992px;
+$breakpoint-max-m-devices : 991px;
+$breakpoint-m-devices  : 768px;
+$breakpoint-max-s-devices : 767px;
+$breakpoint-s-devices  : 576px;
+
+
+$font-title: freight-display-pro, serif;
+$font-desc: aktiv-grotesk, sans-serif;
+
+
+
+
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+  
+  // -o-
+  // -ms-
+  // -webkit-
+  // -moz-
+  
+  @mixin fontMixingBentonSansBold {
+    font-family: "BentonSans Bold", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+  
+  @mixin fontMixingBentonSans {
+    font-family: "BentonSans", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    font-weight: normal;
+  
+    @media(min-width:$breakpoint-m-devices) {
+      line-height: 1.4;
+    }
+  }
+  
+  @mixin halisGrextralight {
+    font-family: 'halis_grextralight';
+  }
+  
+  @mixin halisGrsBold {
+    font-family: 'halis_grs_bold';
+  }
+  
+  @mixin halisGrRegularregular {
+    font-family: 'halis_gr_regularregular';
+  }
+  
+  @mixin halisGrbold {
+    font-family: 'halis_grbold';
+  }
+  
+  @mixin absolute-position {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  @mixin fixed-position {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+  
+  @mixin bg-cover{
+    background-position: center;
+    background-repeat: no-repeat;
+    @include prefix(background-size, cover, o ms webkit moz);
+  }
+  
+  @mixin bg-contain{
+    background-position: center;
+    background-repeat: no-repeat;
+    @include prefix(background-size, contain, o ms webkit moz);
+  }
+  
+  @mixin bg-100{
+    background-position: center;
+    background-repeat: no-repeat;
+    @include prefix(background-size, 100%, o ms webkit moz);
+  }
+  
+  @mixin text-shadow-white{
+    @include prefix(text-shadow, .1rem .1rem .3rem rgba(255, 255, 255, 1), o ms webkit moz);
+  }
+  
+  @mixin box-shadow-brand{
+    @include prefix(box-shadow, 0 0 .2rem .1rem rgba(3, 94, 123, 0.3), o ms webkit moz);
+  }
+  
+  @mixin box-shadow-dark{
+    @include prefix(box-shadow, 0 0.2rem 0.4rem 0.1rem rgba(0,0,0,0.2), o ms webkit moz);
+  }
+
+  @mixin center($type: 'all'){
+    @if $type == 'all' {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    @if $type == 'h' {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @if $type == 'v' {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @mixin cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+

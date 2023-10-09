@@ -1,0 +1,267 @@
+/* Modal window newsletter */
+.modal__newsletter-form {
+  background: rgba(255, 255, 255, 0.1);
+
+  .modal-dialog {
+    margin-top: 30px;
+
+    .modal-dialog {
+      max-width: 500px;
+      margin: 1.75rem auto;
+    }
+
+    .modal-content {
+      background-color: $black;
+
+      .modal-header {
+        border-color: transparent;
+        padding: 5px;
+        @include prefix(box-shadow, 0px 1px 13px 0px rgba(0, 0, 0, 0.3), moz o ms webkit);
+
+        .close-btn {
+          background: $white;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          position: absolute;
+          margin: auto;
+          @include prefix(border-radius, 100%, moz o webit ms);
+          outline: none;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+          @include prefix(box-sizing, border-box, moz o webkit ms);
+          right: -15px;
+          top: -10px;
+
+          .fa-xmark {
+            text-align: center;
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 19px;
+            width: 19px;
+            margin: auto;
+            font-size: 19px;
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 20px;
+
+        &.thank-you {
+          text-align: center;
+          color: #fff;
+          padding: 40px 0 50px 0;
+          font-size: 20px;
+
+          @media (max-width: $breakpoint-s-devices) {
+            font-size: 18px;
+          }
+        }
+
+        h1 {
+          font-family: 'halis_grbold';
+          font-size: 22px;
+          line-height: 22px;
+          font-weight: 600;
+          margin-bottom: 20px;
+          padding-bottom: 0;
+          color: $white;
+        }
+
+        p {
+          font-family: "BentonSans", "Open Sans", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          line-height: 180%;
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+/* Eof Modal window newsletter */
+
+/* Subscribe page newsletter */
+.subscribe-form-wrapper {
+  .subscribe-page-form {
+    margin: 0 auto;
+    padding: 0;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .thank-you {
+    color: #000 !important;
+    text-align: center;
+  }
+}
+/* Eof Subscribe page newsletter */
+
+/* Common newsletter form styles */
+.input-error {
+    padding: 8px 12px;
+    background-color: #f37c7b;
+    font-family: arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    bottom: 52px;
+    right: 0;
+    display: block;
+    position: absolute;
+    font-size: 14px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      right: 15px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #f37c7b;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .newsletter-input-subscribe {
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 0px;
+    font-family: 'halis_gr_regularregular';
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 15px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .newsletter-input {
+    padding: 6px;
+    height: auto;
+    border: #979797 1px solid;
+    border-radius: 4px;
+    color: $black;
+    width: 100%;
+    font-size: 1.2rem;
+    @include prefix(box-sizing, border-box, webkit moz o ms);
+    font-family: 'halis_gr_regularregular';
+    margin-bottom: 10px;
+    background-color: $white;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .newsletter-input-submit {
+    font-family: 'halis_grbold';
+    font-size: 1.16rem;
+    line-height: 1.16rem;
+    padding-top: 5px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border: 2px solid $white;
+    color: $white;
+    text-decoration: none;
+    background-color: inherit;
+
+    &.subscribe-page {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: $black;
+      font-size: 1.2rem;
+      text-align: center;
+      border: 0;
+      padding: 10px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.24);
+      }
+    }
+
+    &:hover {
+      @include prefix(transition, all 600ms ease, webkit moz ms o);
+      background-color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+    }
+  }
+/* Eof Common newsletter form styles */
+
+/* Subscription form */
+.subscription-form {
+
+  &.subscription-form--footer {
+    max-width: 400px;
+
+    .subscription-form-title {
+      padding: 0;
+    }
+  }
+
+  //   ._form_43 form {
+  //     width: 100% !important;
+  //     #_form_43_submit._submit {
+  //       font-family: 'halis_grbold' !important;
+  //       font-size: 1.16rem !important;
+  //       line-height: 1.16rem !important;
+  //       padding-top: 5px !important;
+  //       position: relative;
+  //       height: 50px !important;
+  //       width: 100%;
+  //       border: 2px solid #ffffff !important;
+  //       color: #ffffff !important;
+  //       text-decoration: none !important;
+  //       max-width: 100% !important;
+  //       transition: all 600ms ease !important;
+  //       background-color: rgba(255,255,255,0) !important;
+  //       display: flex !important;
+  //       align-items: center !important;
+  //       justify-content: center !important;
+  //       margin-left: auto;
+  //       margin-right: auto;
+  //       &:hover, &:focus {
+  //         transition: all 600ms ease !important;
+  //         background-color: rgba(255,255,255,.3) !important;
+  //       }
+  //     }
+  //   }
+}
+
+.subscription-form-title {
+  color: #ffffff;
+  font-family: 'halis_grbold' !important;
+  font-weight: bold;
+  font-size: 28px;
+  margin: 3rem 0 1rem;
+  text-transform: uppercase !important;
+
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
+
+}
+
+.subscription-page-form-title {
+  margin: 0 0 1rem;
+  color: #4a4a4a;
+}
+
+.subscription-form ._form_43 ._form-content>div>div input {
+  font-size: 1.2rem !important;
+  border-radius: 0px;
+  font-family: 'halis_gr_regularregular' !important;
+}

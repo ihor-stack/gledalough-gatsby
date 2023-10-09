@@ -1,0 +1,702 @@
+.back-button {
+  padding-bottom: 30px;
+}
+.back-button a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px 5px 30px;
+  position: relative;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'halis_gr_regularregular';
+}
+.back-button a:link, .back-button a:visited, .back-button a:active {
+  color: #707070;
+}
+.back-button a:before {
+    content: '\f053';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #707070;
+    left: 0;
+    top: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+}
+.back-button a:hover, .back-button a:hover:before, .back-button a:focus, .back-button a:focus:before {
+  color: #333333;
+}
+
+
+.single-flavor-row > div {
+
+}
+
+.single-flavor-drink {
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+}
+
+.single-flavor-drink-description {
+  vertical-align: top;
+  display: inline-block;
+  width: 58%;
+  padding-top: 20px;
+  span {
+    text-transform: capitalize;
+  }
+}
+
+.single-flavor-drink img {
+  width: 400px;
+  max-width: 100%;
+}
+
+.single-flavor-drink-description > h1 {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.single-flavor-drink-description h4 {
+  color: $newGray-dark;
+  padding: 0px 0px 18px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.single-flavor-drink-description > ul:not(.drink-sizes) {
+  margin-left: 0px;
+  padding-left: 20px;
+}
+
+.drink-sizes {
+  padding-bottom: 30px;
+}
+.drink-sizes > li {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+.drink-sizes > li {
+
+  background-position: center bottom 26px;
+  background-repeat: no-repeat;
+  padding-top: 68px;
+  position: relative;
+  text-align: center;
+}
+.drink-sizes > li.twelve {
+  background-image: url(../img/flavors/12oz.webp);
+  background-size: 27px 56px;
+}
+.drink-sizes > li.sixteen {
+  background-image: url(../img/flavors/16oz.webp);
+  background-size: 37px 56px;
+}
+.drink-sizes > li.nineteen {
+  background-image: url(../img/flavors/19oz@2x.webp);
+  background-size: 27px 66px;
+}
+.drink-sizes > li.twentyfour {
+  background-image: url(../img/flavors/24oz.png);
+  background-size: 27px 66px;
+}
+
+body.no-webp{
+  .drink-sizes > li.twelve {
+    background-image: url(../img/flavors/12oz.png);
+  }
+  .drink-sizes > li.sixteen {
+    background-image: url(../img/flavors/16oz.png);
+  }
+  .drink-sizes > li.nineteen {
+    background-image: url(../img/flavors/19oz@2x.png);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .single-flavor-row > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .single-flavor-drink {
+    width: 100%;
+    text-align: center;
+  }
+  .single-flavor-drink img {
+    width: 50%;
+    margin: 0px auto;
+  }
+  .single-flavor-drink-description {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .single-flavor-drink-description > h1 {
+    font-size: 26px;
+    line-height: 28px;
+    text-align: center;
+  }
+  .single-flavor-drink-description > p {
+    font-size: 17px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .single-flavor-drink-description h4 {
+    text-align: center;
+    padding-top: 30px;
+  }
+  .single-flavor-drink-description .drink-sizes {
+    margin-bottom: 0px;
+    padding-bottom: 16px;
+  }
+
+  .single-flavor-drink-description ul {
+    text-align: center;
+  }
+  .single-flavor-drink-description ul > li {
+    display: inline-block;
+    text-align: center;
+
+  }
+
+}
+
+
+
+
+/* flavor info column */
+
+.flavor-info-column {
+  padding-top: 20px;
+}
+.flavor-info-column a.button-style-2 {
+  width: 100%;
+  max-width: 100%;
+}
+
+.info-table {
+  padding-top: 30px;
+}
+
+.nutrition-toggle-button {
+  display: block;
+  width: 100%;
+  padding: 18px 20px 17px 20px;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 17px;
+  font-family: 'halis_gr_regularregular';
+}
+.nutrition-toggle-button:link, .nutrition-toggle-button:visited, .nutrition-toggle-button:active {
+  background-color: $newGray-light;
+  color: $newGray-solid;
+}
+.nutrition-toggle-button:hover, .nutrition-toggle-button:focus {
+  background-color: $newGray-medium;
+  text-decoration: none;
+}
+.nutrition-toggle-button::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: $newGray-medium;
+  right: 15px;
+  top: 18px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 18px;
+  position: absolute;
+  color: $newGray-solid;
+}
+
+.info-table-wrapper {
+  background-color: $newGray-light;
+  padding: 20px 20px 0px 20px;
+  display: none;
+  transition: transform 0.2s ease-in-out;
+
+  &--modified{
+    @extend .info-table-wrapper;
+    .indent-cell{
+      padding-left: 17px !important;
+    }
+  }
+}
+.info-table.open .info-table-wrapper {
+  display: block;
+}
+.info-table .nutrition-toggle-button::after {
+  content: '\f077';
+}
+.info-table.open .nutrition-toggle-button::after {
+  content: '\f078';
+}
+
+.serving-dropdown {
+  cursor: pointer;
+}
+.serving-dropdown a {
+  font-size: inherit;
+  background-color: transparent;
+  color: $newGray-solid;
+  border-radius: 0;
+  min-width: 3rem;
+  border: solid 0px transparent;
+  padding: 0px 0px 0px 0px;
+}
+.serving-dropdown a:hover, .serving-dropdown a:focus, .serving-dropdown a:active, .serving-dropdown.show {
+  background-color: transparent !important;
+  color: $newGray-solid !important;
+}
+.serving-dropdown .dropdown-item {
+  font-size: inherit !important;
+  padding: 4px 5px;
+  color: $newGray-dark;
+}
+.serving-dropdown .dropdown-menu {
+  min-width: auto;
+  padding: 0px 0px 0px 0px;
+}
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+  color: inherit;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.serving-dropdown .dropdown-toggle::after {
+    display: none !important;
+}
+.serving-dropdown .dropdown-toggle.surge,
+.serving-dropdown .dropdown-toggle.sixteen{
+  position: relative;
+  padding-right: 15px;
+  &:after{
+    content: '';
+    display: block !important;
+    color: inherit;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #4a4a4a;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+.serving-dropdown .dropdown-toggle.three::after {
+    display: inline-block !important;
+}
+
+
+.info-table table {
+  display: table;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.info-table table tr {
+  width: 100%;
+  display: table-row;
+  border-bottom: solid 1px $newGray-dark;
+}
+.info-table table tr.underline-dark {
+  border-bottom: solid 2px $newGray-solid;
+}
+.info-table table tr.underline-none {
+  border-bottom: solid 0px transparent !important;
+  padding-bottom: 0px;
+}
+
+.info-table .info-table-wrapper p, .info-table table td {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.info-table table td {
+  padding: 8px 5px 3px 5px;
+}
+.info-table table .indent-cell {
+  padding-left: 30px;
+}
+.info-table table tr td:last-child {
+  text-align: right;
+}
+.info-table table tr td.colspan:first-child {
+  text-align: left !important;
+}
+
+.info-table h4 {
+  @include fontMixingBentonSansBold;
+  font-weight: 700;
+}
+.info-table table h4 {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 500px) {
+  .info-table-wrapper {
+    background-color: $newGray-light;
+    padding: 12px 12px 0px 12px;
+  }
+  .nutrition-toggle-button {
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0px;
+  }
+
+}
+
+
+
+/* flavor page carousel */
+
+.flavor-page-carousel, .flavor-page-surf-carousel, .flavor-page-refrshr-carousel {
+    border-top: solid 1px $newGray-light;
+    padding-top: 30px;
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.flavor-page-carousel h3, .flavor-page-surf-carousel h3, .flavor-page-refrshr-carousel h3 {
+  color: $newGray-dark;
+  padding: 0px 0px 18px 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.flavor-page-carousel .swiper-container, .flavor-page-surf-carousel .swiper-container,
+.flavor-page-refrshr-carousel .swiper-container {
+    padding-bottom: 40px !important;
+}
+
+.flavor-page-carousel .swiper-slide img {
+    width: 80% !important;
+    height: auto;
+}
+
+.flavor-page-carousel h4, .flavor-page-surf-carousel h4,
+.flavor-page-refrshr-carousel h4 {
+  color: #333333;
+  padding: 18px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.flavor-page-carousel .swiper-button-next, .flavor-page-surf-carousel .swiper-button-next,
+.flavor-page-refrshr-carousel .swiper-button-next {
+  right: -30px;
+}
+.flavor-page-carousel .swiper-button-prev, .flavor-page-surf-carousel .swiper-button-prev,
+.flavor-page-refrshr-carousel .swiper-button-prev {
+  left: -30px;
+}
+
+.flavor-page-carousel .swiper-pagination-bullets, .flavor-page-surf-carousel .swiper-pagination-bullets,
+.flavor-page-refrshr-carousel .swiper-pagination-bullets {
+    bottom: 0px !important;
+    z-index: 999999;
+    margin: 30px auto 0px auto;
+    position: static;
+}
+.flavor-page-carousel .swiper-pagination-bullets .swiper-pagination-bullet, .flavor-page-surf-carousel .swiper-pagination-bullets .swiper-pagination-bullet,
+.flavor-page-refrshr-carousel .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 10px 20px 10px;
+}
+.flavor-page-carousel .swiper-pagination-bullet, .flavor-page-surf-carousel .swiper-pagination-bullet,
+.flavor-page-refrshr-carousel .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 100%;
+    background: $newGray-solid;
+    opacity: .4;
+    outline: 0 !important;
+}
+.flavor-page-carousel .swiper-pagination-bullet-active, .flavor-page-surf-carousel .swiper-pagination-bullet-active,
+.flavor-page-refrshr-carousel .swiper-pagination-bullet-active {
+    background: $newGray-medium;
+}
+@media (min-width: 768px){
+  .flavor-page-refrshr-carousel .swiper-button-next,
+  .flavor-page-refrshr-carousel .swiper-button-prev,
+  .flavor-page-refrshr-carousel .swiper-pagination{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .flavor-page-carousel .swiper-button-next, .flavor-page-surf-carousel .swiper-button-next,
+  .flavor-page-refrshr-carousel .swiper-button-next {
+    right: 0px;
+  }
+  .flavor-page-carousel .swiper-button-prev, .flavor-page-surf-carousel .swiper-button-prev,
+  .flavor-page-refrshr-carousel .swiper-button-prev {
+    left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+    .flavor-page-carousel .swiper-slide img, .flavor-page-surf-carousel .swiper-slide img,
+    .flavor-page-refrshr-carousel .swiper-slide img {
+        width: 80% !important;;
+        height: auto;
+    }
+    .flavor-page-carousel h4, .flavor-page-surf-carousel h4,
+    .flavor-page-refrshr-carousel h4 {
+        color: #333333;
+        padding: 18px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        font-size: 15px;
+        letter-spacing: 0px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .flavor-page-carousel .swiper-pagination-bullets .swiper-pagination-bullet,
+    .flavor-page-surf-carousel .swiper-pagination-bullets .swiper-pagination-bullet,
+    .flavor-page-refrshr-carousel .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0px 5px 12px 5px;
+    }
+    .flavor-page-carousel .swiper-pagination-bullet,
+    .flavor-page-surf-carousel .swiper-pagination-bullet,
+    .flavor-page-refrshr-carousel .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+    }
+
+    .flavor-page-carousel .swiper-button-next, .flavor-page-carousel .swiper-button-prev,
+    .flavor-page-surf-carousel .swiper-button-next, .flavor-page-surf-carousel .swiper-button-prev{
+      display: none !important;
+    }
+
+}
+
+.flavor-page-surf-carousel{
+  .swiper-container{
+    max-width: 800px;
+  }
+  .swiper-button-next, .swiper-button-prev{display: none;}
+
+  .swiper-pagination-bullets{
+    @media (min-width:  500px){
+      display: none;
+    }
+  }
+}
+
+
+
+/* variety pack pages */
+
+.variety-flavor-row > div .single-flavor-drink {
+  display: block;
+  width: 100%;
+  padding-right: 20%;
+}
+.variety-flavor-row > div .single-flavor-drink-description {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-right: 10%;
+}
+
+.variety-flavor-row > div .single-flavor-drink img {
+  width: 100%;
+  max-width: 470px;
+  height: auto;
+}
+
+.variety-flavor-row > div .single-flavor-drink-description > h1 {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.variety-flavor-row > div .single-flavor-drink-description h4 {
+  color: $newGray-medium;
+  padding: 0px 0px 18px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+
+.flavor-info-column.variety > h4 {
+    color: $newGray-dark;
+    padding-bottom: 0px;
+}
+.flavor-info-column.variety > a {
+    max-width: 358px !important;
+}
+
+.flavor-info-column.variety .flavor-row {
+  padding-bottom: 30px;
+}
+.flavor-info-column.variety .flavor-row .flavor-drink h4 {
+    font-size: 14px;
+    line-height: 16px !important;
+    position: relative;
+    text-align: center;
+    display: block;
+}
+.flavor-info-column.variety .flavor-row .flavor-drink h4 span {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0px;
+}
+.flavor-info-column.variety .flavor-row .flavor-drink h4 span.watermelon {
+  left: -10px;
+}
+.flavor-info-column.variety .flavor-row > div img {
+    max-width: 100%;
+    @media (max-width: $breakpoint-l-devices){
+      width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+  .flavor-info-column.variety > h4 {
+    text-align: center;
+  }
+  .variety-flavor-row > div .single-flavor-drink {
+    width: 100%;
+    padding-right: 0px;
+    text-align: center;
+  }
+  .variety-flavor-row > div .single-flavor-drink-description {
+    padding-top: 20px;
+    padding-right: 0px;
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .variety-flavor-row > div .single-flavor-drink-description > h1 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+}
+
+
+/* variety page carousel */
+
+.variety-page-carousel {
+  border-top: solid 1px $newGray-light;
+  padding-top: 30px;
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.variety-page-carousel h3 {
+  color: $newGray-dark;
+  padding: 0px 0px 18px 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.variety-page-carousel .swiper-container {
+  padding-bottom: 40px !important;
+}
+
+.variety-page-carousel .swiper-slide img {
+  width: 80% !important;
+  height: auto;
+}
+
+.variety-page-carousel h4 {
+  color: #333333;
+  padding: 18px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.variety-page-carousel .swiper-button-next {
+  right: -30px;
+}
+.variety-page-carousel .swiper-button-prev {
+  left: -30px;
+}
+
+.variety-page-carousel .swiper-pagination-bullets {
+  bottom: 0px !important;
+  z-index: 999999;
+  margin: 30px auto 0px auto;
+  position: static;
+}
+.variety-page-carousel .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0px 10px 20px 10px;
+}
+.variety-page-carousel .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 100%;
+  background: $newGray-solid;
+  opacity: .4;
+  outline: 0 !important;
+}
+.variety-page-carousel .swiper-pagination-bullet-active {
+  background: $newGray-medium;
+}
+
+@media(min-width: 992px) {
+  .variety-page-carousel .swiper-button-next, .variety-page-carousel .swiper-button-prev {
+    // display: none !important;
+  }
+  .variety-page-carousel .swiper-pagination-bullets {
+    // display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .variety-page-carousel .swiper-button-next {
+    right: 0px;
+  }
+  .variety-page-carousel .swiper-button-prev {
+    left: 0px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .variety-page-carousel .swiper-container {
+      height: auto;
+  }
+  .variety-page-carousel .swiper-slide img {
+      width: 80% !important;;
+      height: auto;
+  }
+  .variety-page-carousel .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+  }
+  .variety-page-carousel .swiper-button-next, .variety-page-carousel .swiper-button-prev {
+    display: none !important;
+  }
+
+}

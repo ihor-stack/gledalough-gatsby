@@ -1,0 +1,520 @@
+.deep-dive{
+    background: url(/img/bring-the-wave/deep-dive-bg.png);
+    background-size: 100% 100%;
+    background-position: center 60%;
+    padding-top: 50px !important;
+    background-attachment: fixed;
+    @media screen and (max-width: $breakpoint-l-devices){
+        background: url(/img/bring-the-wave/deep-dive-mobile-bg.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .page-film{
+        .page-film-inner{
+            background-image: url(/img/bring-the-wave/deep-dive-film-thumbnail.png);
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: 0 0 !important;
+            margin: 80px auto 0px auto;
+            display: flex;
+            position: relative;
+            background-color: #000;
+            max-height: unset;
+            height: auto;
+            padding: 0 0 4vw 0;
+            background-size: cover;
+            height: calc(100vh - 80px);
+            @media screen and (max-width: $breakpoint-xl-devices){
+                margin-top: 9vh;
+            }
+            @media (max-width: $breakpoint-l-devices){
+                max-height: unset;
+                height: auto;
+                min-height: unset;
+                padding: 0;
+                background-size: cover;
+                background-position: 40% center !important;
+            }
+            @media screen and (max-width: $breakpoint-s-devices){
+                margin-top: 80px;
+            }
+        }
+        .film-navigation-content{
+            @media screen and (max-width: $breakpoint-l-devices){
+                max-width: calc(100% - 40px);
+            }
+        }
+        .film-content{
+            width: 100%;
+            height: calc(100vh - 80px);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            @media (max-width: $breakpoint-l-devices){
+                height: 50vw;
+            }
+            &.playing{
+                padding: 0;
+                background-image: unset;
+                background-color: #000;
+                .film-content{
+                    display: none;
+                }
+                .inline-video{
+                    position: relative;
+                    .embed-responsive{
+                        max-height: calc(100vh - 80px);
+                        height: 50vw;
+                        @media (max-width: $breakpoint-l-devices){
+                            height: 50vw;
+                        }
+                        @media (max-width: 500px){
+                            height: 56vw;
+                        }
+                    }
+                }
+                .film-content-thumbnail{
+                    display: none;
+                }
+            } // eof playing
+            .film-content-thumbnail{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
+            }
+            .play-btn{
+                @include prefix(transition, 0.3s ease-out, o moz webkit ms);
+                width: 15vw;
+                max-width: 136px;
+                @media screen and (max-width: $breakpoint-l-devices){
+                    width: 15vw;
+                }
+                &:hover, &:focus{
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+            h3{
+                line-height: 1;
+                font-size: 5vw;
+                color: #ffffff;
+                text-transform: uppercase;
+                text-align: center;
+                padding-bottom: 1vw;
+                @media (max-width: $breakpoint-l-devices){
+                    font-size: 60px;
+                    padding-bottom: 1rem !important;
+                }
+                @media (max-width: $breakpoint-s-devices){
+                    font-size: 8vw;
+                    padding-bottom: 0 !important;
+                }
+            }
+            p{
+                color: #fff;
+                font-family: 'halis_grbold';
+                font-size: 24px;
+                line-height: 1.2 !important;
+                width: 90%;
+                margin: auto;
+                @media (max-width: $breakpoint-laptop){
+                        font-size: 1.5vw;
+                }
+                @media (max-width: $breakpoint-l-devices){
+                        font-size: 24px;
+                        line-height: 1.2 !important;
+                        padding-bottom: 1rem !important;
+                        max-width: 600px;
+                }
+                @media (max-width: $breakpoint-s-devices){
+                        font-size: 5vw;
+                }
+            }
+        }
+
+        a{
+            text-decoration: unset !important;
+            color: #fff;
+        }
+        .film-navigation-inner{
+            text-align: center;
+            padding: 1.5rem 0;
+            color: #fff !important;
+            font-size: 26px;
+            font-family: 'HalisGR-Black';
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            max-width: 650px;
+            margin: auto;
+
+            p{
+                font-size: 18px;
+                color: #fff;
+                font-family: 'HalisGR-Black';
+                padding-bottom: 10px;
+                line-height: 1.2;
+
+                @media screen and (max-width: $breakpoint-l-devices){
+                    font-size: 16px;
+                }
+            }
+
+            span{
+                text-transform: uppercase;
+                &:hover, &:focus{
+                    cursor: pointer;
+                }
+            }
+
+            .arrow{
+                display: inline-block;
+                width: 15px;
+                height: 25px;
+                background-image: url(/img/surf/carousel-arrow.png);
+                background-size: cover;
+                background-position: center;
+                @include prefix(transform, rotate(180deg), moz webkit ms o);
+                margin-left: 5px;
+                position: absolute;
+                left: calc(100% + 10px);
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                @media screen and (max-width: $breakpoint-l-devices){
+                    margin-right: 0;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 0;
+                    left: 100%;
+                }
+            }
+
+            @media screen and (max-width: $breakpoint-l-devices){
+            font-size: 22px;
+            line-height: 1;
+            padding-left: 1rem;
+            }
+            @media screen and (max-width: $breakpoint-s-devices){
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 16px;
+            }
+        }
+    }
+
+    // Carousel
+    .deep-dive-film-carousel{
+        margin: auto;
+        padding-top: 120px;
+        width: 100%;
+        overflow: hidden;
+        @media screen and (max-width: $breakpoint-l-devices){
+            padding-top: 80px;
+            width: calc(100% - 80px);
+            margin: auto !important;
+            overflow: initial;
+            position: relative;
+        }
+        .swiper-button-next{
+            &:after{
+                font-size: 30px;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                color: #fff !important;
+                // top: 0;
+                bottom: 33%;
+                margin: auto;
+                right: -33px;
+                background: transparent;
+            }
+            @media screen and (min-width: 991px){
+                right: 29%;
+                width: 50px;
+                background: #fff;
+                color: black !important;
+                height: 60px;
+                top: 50%;
+            }
+            @media screen and (min-width: $breakpoint-laptop){
+                top: 53%;
+            }
+        }
+        .swiper-button-prev{
+            &:after{
+                font-size: 30px;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                // top: 0;
+                bottom: 33%;
+                left: -33px;
+                margin: auto;
+                background: transparent;
+                color: #fff !important;
+            }
+            @media screen and (min-width: 991px){
+                left: 29%;
+                width: 50px;
+                background: #fff;
+                color: black !important;
+                height: 60px;
+                top: 50%;
+            }
+            @media screen and (min-width: $breakpoint-laptop){
+                top: 53%;
+            }
+        }
+        h3{
+            color: #fff;
+            font-family: 'HalisGR-Black';
+            font-size: 100px;
+            line-height: 1;
+            text-align: center;
+            letter-spacing: 5px;
+            @media screen and (max-width: $breakpoint-laptop){
+                font-size: 80px;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                font-size: 12vw;
+                text-align: left;
+                letter-spacing: 1px;
+            }
+        }
+        h5{
+            text-align: center;
+            font-family: 'HalisGR-Bold';
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 25px;
+            letter-spacing: 2px;
+            @media screen and (max-width: $breakpoint-laptop){
+                font-size: 22px;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                font-size: 3.5vw;
+                text-align: left;
+            }
+        }
+        h6{
+            color: #fff;
+            font-family: 'HalisGR-Bold';
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: auto;
+            @media screen and (max-width: $breakpoint-laptop){
+                font-size: 20px;
+                width: 60%;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                width: 100%;
+                text-align: left;
+                padding-bottom: 0 !important;
+                font-size: 18px;
+            }
+            @media screen and (max-width: $breakpoint-s-devices){
+               
+            }
+        }
+        .deep-dive-film-carousel-wrapper{
+            width: 120%;
+            position: relative;
+            left: -10%;
+            @media screen and (max-width: $breakpoint-l-devices){
+                width: 100%;
+                left: 0;
+            }
+            .swiper-slide{
+                height: auto;
+                &:not(.swiper-slide-active){
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    .crew-info{
+                        width: 100%;
+                        padding-bottom: 5%;
+                        .crew-img{
+                            width: 95%;
+                            height: 18vw;
+                            margin: auto;
+                            filter: blur(2px);
+                            -webkit-filter: blur(2px);
+                            @media screen and (max-width: $breakpoint-l-devices){
+                                width: 100%;
+                                height: 75.6vw;
+                            }
+                        }
+                        .crew-name{
+                            opacity: 0.5;
+                        }
+                        .crew-desc{
+                            opacity: 0.5;
+                        }
+                    } // eof crew-info
+                }
+                &.swiper-slide-active{
+                    .crew-info{
+                        .crew-img{
+                            border: 3px solid $white;
+                            @media screen and (max-width: $breakpoint-l-devices){
+                                border: 0px solid transparent;
+                            }
+                        }
+                    }
+                }
+                &:not(.swiper-slide-active){
+                    .crew-desc{
+                        display: none;
+                    }
+                }
+            }
+            .crew-info{
+                .crew-img{
+                    height: 20vw;
+                    @media screen and (max-width: $breakpoint-l-devices){
+                        height: 75.6vw;
+                    }
+                    background-position: center;
+                    background-size: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .play-btn{
+                        @include prefix(transition, 0.3s ease-out, o moz webkit ms);
+                        width: 15vw;
+                        max-width: 88px;
+                        @media screen and (max-width: $breakpoint-l-devices){
+                            width: 15vw;
+                        }
+                        &:hover, &:focus{
+                            transform: scale(1.1);
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .crew-name{
+                    background-image: url(/img/bring-the-wave/crew-name-lbl.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    font-size: 22px;
+                    height: 72px;
+                    width: 320px;
+                    background-size: 100% 100%;
+                    padding-top: 18px;
+                    margin: 1.5rem auto;
+                    text-align: center;
+                    font-family: 'HalisGR-Black';
+                    color: #000;
+                    line-height: 1;
+                    @media screen and (max-width: $breakpoint-laptop){
+                        margin-bottom: 0.5rem;
+                    }
+                    @media screen and (max-width: $breakpoint-l-devices){
+                        height: 13vw;
+                        width: 80%;
+                        font-size: 5vw;
+                        padding-top: 2vw;
+                    }
+                    span{
+                        display: block;
+                        font-size: 70%;
+                        @media screen and (max-width: $breakpoint-l-devices){
+                            font-size: 50%;
+                        }
+                    }
+                }
+                .crew-desc{
+                    font-size: 18px;
+                    color: #fff;
+                    font-family: 'HalisGR-Black';
+                    padding-bottom: 10px;
+                    line-height: 1.2;
+                    max-width: 80%;
+                    margin: auto;
+                    text-align: center;
+                    @media screen and (max-width: $breakpoint-l-devices){
+                        font-size: 16px;
+                    }
+                }
+            }
+            .swiper-pagination{
+                left: 0;
+                right: 0;
+                .swiper-pagination-bullet{
+                    background: $white;
+                    width: 12px;
+                    height: 12px;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+.deep-dive-video-popup{
+    .modal-dialog{
+        margin: 0 auto;
+        max-width: 1000px;
+        width: 100%;
+
+        .modal-content{
+            text-align: center;
+            background: transparent;
+            border: 0;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .modal-header{
+            padding: 0;
+            border: 0;
+
+            & > div{
+                position: absolute;
+                right: 0;
+                top: 5%;
+                cursor: pointer;
+                z-index: 999;
+            }
+            @media screen and (max-width: $breakpoint-l-devices){
+                position: absolute;
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+        .modal-body{
+            padding: 0;
+
+            @media screen and (max-width: $breakpoint-l-devices){
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            video{
+                max-height: 100vh;
+                @media screen and (max-width: $breakpoint-l-devices){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #video{
+        width: 52vw;
+        height: 29.5vw;
+        margin-top: 10%;
+        @media screen and (max-width: $breakpoint-l-devices){
+            width: 90vw;
+            height: 51vw;
+        }
+    }
+}

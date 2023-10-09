@@ -1,0 +1,238 @@
+[
+  {
+    "fromPath": "/about-us",
+    "toPath": "/our-story/"
+  },
+  {
+    "fromPath": "/new-products/our-story",
+    "toPath": "/new-products/our-vodka-story/"
+  },
+  {
+    "fromPath": "/new-products/the-difference-is-clear",
+    "toPath": "/the-difference-is-clear/"
+  },
+  {
+    "fromPath": "/wcpaddleboard",
+    "toPath": "/sweepstakes/wcpaddleboard/"
+  },
+  {
+    "fromPath": "/wcsummer23",
+    "toPath": "/sweepstakes/wcsummer23/"
+  },
+  {
+    "fromPath": "/whiteclawnysocial",
+    "toPath": "/sweepstakes/whiteclawnysocial/"
+  },
+  {
+    "fromPath": "/whiteclawny",
+    "toPath": "/sweepstakes/whiteclawny/"
+  },
+  {
+    "fromPath": "/wcgetaway23",
+    "toPath": "/sweepstakes/wcgetaway23/"
+  },
+  {
+    "fromPath": "/wcswag",
+    "toPath": "/sweepstakes/wcswag/"
+  },
+  {
+    "fromPath": "/vafestival",
+    "toPath": "/sweepstakes/vafestival/"
+  },
+  {
+    "fromPath": "/wcskateboard",
+    "toPath": "/sweepstakes/wcskateboard/"
+  },
+  {
+    "fromPath": "/freefuel",
+    "toPath": "/sweepstakes/freefuel/"
+  },
+  {
+    "fromPath": "/redrocksco",
+    "toPath": "/sweepstakes/redrocksco/"
+  },
+  {
+    "fromPath": "/wctravel",
+    "toPath": "/sweepstakes/wctravel/"
+  },
+  {
+    "fromPath": "/wcpizza",
+    "toPath": "/sweepstakes/wcpizza/"
+  },
+  {
+    "fromPath": "/mifestival",
+    "toPath": "/sweepstakes/mifestival/"
+  },
+  {
+    "fromPath": "/utahmusic",
+    "toPath": "/sweepstakes/utahmusic/"
+  },
+  {
+    "fromPath": "/delivertome",
+    "toPath": "/sweepstakes/delivertome/"
+  },
+  {
+    "fromPath": "/firepit",
+    "toPath": "/sweepstakes/firepit/"
+  },
+  {
+    "fromPath": "/firepitwc",
+    "toPath": "/sweepstakes/firepitwc/"
+  },
+  {
+    "fromPath": "/homegym",
+    "toPath": "/sweepstakes/homegym/"
+  },
+  {
+    "fromPath": "/kymusic",
+    "toPath": "/sweepstakes/kymusic/"
+  },
+  {
+    "fromPath": "/thrillorchill",
+    "toPath": "/sweepstakes/thrillorchill/"
+  },
+  {
+    "fromPath": "/waterscooter",
+    "toPath": "/sweepstakes/waterscooter/"
+  },
+  {
+    "fromPath": "/wcbike",
+    "toPath": "/sweepstakes/wcbike/"
+  },
+  {
+    "fromPath": "/wcdelivertome",
+    "toPath": "/sweepstakes/wcdelivertome/"
+  },
+  {
+    "fromPath": "/wcfestival",
+    "toPath": "/sweepstakes/wcfestival/"
+  },
+  {
+    "fromPath": "/wcfirepit23",
+    "toPath": "/sweepstakes/wcfirepit23/"
+  },
+  {
+    "fromPath": "/wcgetaway",
+    "toPath": "/sweepstakes/wcgetaway/"
+  },
+  {
+    "fromPath": "/wcgolf",
+    "toPath": "/sweepstakes/wcgolf/"
+  },
+  {
+    "fromPath": "/wchomegym",
+    "toPath": "/sweepstakes/wchomegym/"
+  },
+  {
+    "fromPath": "/wcluckreunion",
+    "toPath": "/sweepstakes/wcluckreunion/"
+  },
+  {
+    "fromPath": "/wcsnowboard",
+    "toPath": "/sweepstakes/wcsnowboard/"
+  },
+  {
+    "fromPath": "/wcsundance",
+    "toPath": "/sweepstakes/wcsundance/"
+  },
+  {
+    "fromPath": "/wcsxsw24",
+    "toPath": "/sweepstakes/wcsxsw24/"
+  },
+  {
+    "fromPath": "/wcvsmusic",
+    "toPath": "/sweepstakes/wcvsmusic/"
+  },
+  {
+    "fromPath": "/whiteclawfp",
+    "toPath": "/sweepstakes/whiteclawfp/"
+  },
+  {
+    "fromPath": "/wcyacht",
+    "toPath": "/sweepstakes/wcyacht/"
+  },
+  {
+    "fromPath": "/Derby23",
+    "toPath": "/sweepstakes/Derby23/"
+  },
+  {
+    "fromPath": "/derby23",
+    "toPath": "/sweepstakes/Derby23/"
+  },
+  {
+    "fromPath": "/wcderby",
+    "toPath": "/sweepstakes/WCDERBY/"
+  },
+  {
+    "fromPath": "/WCDERBY",
+    "toPath": "/sweepstakes/WCDERBY/"
+  },
+  {
+    "fromPath": "/wcvodka",
+    "toPath": "/sweepstakes/wcvodka/"
+  },
+  {
+    "fromPath": "/wcvipmusic",
+    "toPath": "/sweepstakes/wcvipmusic/"
+  },
+  {
+    "fromPath": "/ItsASchoolNight",
+    "toPath": "/sweepstakes/itsaschoolnight/"
+  },
+  {
+    "fromPath": "/wcvip",
+    "toPath": "/sweepstakes/wcvip/"
+  },
+  {
+    "fromPath": "/wcmusic23",
+    "toPath": "/sweepstakes/wcmusic23/"
+  },
+  {
+    "fromPath": "/wcmusicma",
+    "toPath": "/sweepstakes/wcmusicma/"
+  },
+  {
+    "fromPath": "/wckayak",
+    "toPath": "/sweepstakes/wckayak/"
+  },
+  {
+    "fromPath": "/camusic",
+    "toPath": "/sweepstakes/camusic/"
+  },
+  {
+    "fromPath": "/redrocks23",
+    "toPath": "/sweepstakes/redrocks23/"
+  },
+  {
+    "fromPath": "/wcmusictn",
+    "toPath": "/sweepstakes/wcmusictn/"
+  },
+  {
+    "fromPath": "/wclifenv",
+    "toPath": "/sweepstakes/wclifenv/"
+  },
+  {
+    "fromPath": "/wclife",
+    "toPath": "/sweepstakes/wclife/"
+  },
+  {
+    "fromPath": "/whiteclawco",
+    "toPath": "/sweepstakes/whiteclawco/"
+  },
+  {
+    "fromPath": "/whiteclawgear",
+    "toPath": "/sweepstakes/whiteclawgear/"
+  },
+  {
+    "fromPath": "/texasmusic",
+    "toPath": "/sweepstakes/texasmusic/"
+  },
+  {
+    "fromPath": "/wcfirepitny",
+    "toPath": "/sweepstakes/wcfirepitny/"
+  },
+  {
+    "fromPath": "/LifeIsBeautiful23",
+    "toPath": "/lifeisbeautiful23/"
+  }
+]

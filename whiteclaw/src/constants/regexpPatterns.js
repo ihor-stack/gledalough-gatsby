@@ -1,0 +1,4 @@
+const TRADE_MARKS = /[™®©]/g
+const ONLY_ALPHABET_CHARACTERS = /^[a-zA-Z\s]+$/
+
+export { TRADE_MARKS, ONLY_ALPHABET_CHARACTERS }
