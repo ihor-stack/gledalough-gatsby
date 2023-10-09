@@ -178,6 +178,7 @@ background: #8E8982;
     - Cocktail Slider
     - Story Slider
     - Footer
+    
 * Cocktail
     - Hero Video
     - Cocktail Instructions
@@ -239,3 +240,94 @@ background: #8E8982;
 * f37 / updated fonts? using google webfont 'Spectral' as placeholder
 * very different heights for fullpage panels - e.g. Gin home (supposed to be square or 2 panels?)
 * slider 'dot navigation' doesnt really make sense when a (variable) number of slides are visible at once
+
+...
+https://markanthony.atlassian.net/wiki/spaces/MWGS/pages/2167668808/MAG+CW+Project+Gatsby+React+and+Prismic
+
+https://markanthony.atlassian.net/wiki/spaces/MWGS/pages/2168815617/Multi-language+site
+
+https://markanthony.atlassian.net/wiki/spaces/MWGS/pages/2167668846/Config+files
+
+https://github.com/prismicio/gatsby-multi-language-site
+
+
+...
+https://prismic.io/docs/react
+
+https://prismic.io/docs/starters-gatsby
+
+https://prismic.io/docs/gatsby
+
+https://prismic.io/page-builder
+
+https://makersden.io/blog/create-sectional-website-builder-with-prismic-gatsby
+
+...
+
+```
+npx prismic-cli@latest theme --theme-url https://github.com/prismicio/gatsby-multi-language-site --conf prismic-configuration.js
+```
+
+Prismic = CDN + CMS
+Gatsby = just site builder
+
+Define custom types in gatsby (and Slices)
+
+use starter template
+with:
+prismic-src
+gatsby-images
+
+Custom type for each page
+- repeatable for similar pages
+- single for homepage / contact etc.
+- add fields
+- create content page - select custom types
+
+- hit top right icon / preview
+- hit 2nd top right 'publish'
+- publish as release = all changed pages.
+
+/templates = graphql queries
+/slices
+
+generate schema from prismic
+
+localhost:8000/__graphql
+> check fields (checkbox) to select for given page
+
+can create a page query with params
+
+activedoc for lang
+
+cant use static queries with variables
+
+2 queries for multilang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+

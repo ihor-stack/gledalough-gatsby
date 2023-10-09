@@ -1,0 +1,57 @@
+{
+  "name": "gatsby-multi-language-website",
+  "description": "Multi-language website example with Gatsby.js using Prismic headless CMS",
+  "author": "Prismic",
+  "dependencies": {
+    "@prismicio/helpers": "^2.0.0",
+    "@prismicio/react": "^2.0.3",
+    "@react-spring/web": "^9.7.3",
+    "bootstrap": "^5.3.2",
+    "gatsby": "^4.25.4",
+    "gatsby-plugin-image": "^2.0.0",
+    "gatsby-plugin-manifest": "^4.0.0",
+    "gatsby-plugin-prismic-previews": "^5.0.0",
+    "gatsby-plugin-react-helmet": "^5.0.0",
+    "gatsby-plugin-sass": "^5.0.0",
+    "gatsby-plugin-sharp": "^4.0.1",
+    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-source-prismic": "^5.0.4",
+    "mapbox-gl": "^2.15.0",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-alice-carousel": "^2.7.1",
+    "react-bootstrap": "^2.9.0",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-map-gl": "^7.1.6",
+    "react-scroll-parallax": "^3.4.2",
+    "react-waypoint": "^10.3.0",
+    "sass": "^1.58.3",
+    "styled-components": "^6.0.8"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^8.7.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.2"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "develop": "dotenv -e .env.development gatsby develop",
+    "prod": "dotenv -e .env.production gatsby develop",
+    "localbuild": "gatsby build && gatsby serve",
+    "startdev": "npm run clean && npm run develop",
+    "startprod": "npm run clean && npm run prod",
+    "builddev": "dotenv -e .env.development gatsby build",
+    "buildprod": "dotenv -e .env.production gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gatsby-plugin-s3 deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prismicio/gatsby-multi-language-site"
+  }
+}

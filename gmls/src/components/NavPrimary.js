@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
 import { respondTo} from '../constants/styles';
@@ -112,10 +111,6 @@ const NavPrimary = ({ pathname, currentPage }) => {
     </FixedContainer>
     </>
   )
-};
-
-NavPrimary.propTypes = {
-  currentPage: PropTypes.string,
 };
 
 export default NavPrimary;
