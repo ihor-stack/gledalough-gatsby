@@ -28,17 +28,18 @@ const HomepageTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query homepageQuery($lang: String) {
-    prismicHomepage(lang: { eq: $lang }) {
+  query homepageQuery($id: String, $lang: String) {
+    prismicHomepage(id: { eq: $id }, lang: { eq: $lang }) {
       _previewable
+      url
+      type
+      id
+      lang
       alternate_languages {
-        uid
+        id
         type
         lang
       }
-      lang
-      url
-      type
       data {
         body {
           ... on PrismicSliceType {

@@ -10,6 +10,7 @@ import { componentResolverFromMap } from 'gatsby-plugin-prismic-previews'
 import { linkResolver } from './linkResolver'
 
 import Homepage from '../templates/index'
+import PrivacyPage from '../templates/privacy'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -26,6 +27,7 @@ export const repositoryConfigs = [
     linkResolver,
     componentResolver: componentResolverFromMap({
       homepage: Homepage,
+      privacy_page: PrivacyPage,
     }),
   },
 ];

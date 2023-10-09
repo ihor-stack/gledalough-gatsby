@@ -1,10 +1,12 @@
-import React from 'react';
-import Footer from '../components/Footer';
-import styled from 'styled-components';
-import parse from 'html-react-parser';
-import { FONT } from '../constants';
-import { gutter, gutterMobile, respondTo, sansNormal, headingMedium } from '../constants/styles';
+import React from 'react'
+import { graphql } from 'gatsby'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+import parse from 'html-react-parser'
+import styled from 'styled-components'
+import { FONT } from '../constants'
+import { gutter, gutterMobile, respondTo, sansNormal, headingMedium } from '../constants/styles'
 import { Layout } from '../components/Layout'
+import Footer from '../components/Footer'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -46,9 +48,9 @@ const ContentWrapper = styled.p`
   margin: 2rem 0;
 `;
 
-const PrivacyPage = ({ data }) => {
-    const pageContent = data.prismicPrivacyPolicyPage
-    const pageData = data.prismicPrivacyPolicyPage.data
+const PrivacyTemplate = ({ data }) => {
+    const pageContent = data.prismicPrivacy
+    const pageData = data.prismicPrivacy.data
     // console.log('privacy pageContent ' , pageContent)
     
     const { lang, type, url } = pageContent
@@ -61,7 +63,7 @@ const PrivacyPage = ({ data }) => {
     }
 
   return (
-    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
+    <Layout activeDocMeta={activeDoc}>
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>
@@ -77,8 +79,8 @@ const PrivacyPage = ({ data }) => {
 };
 
 export const query = graphql`
-query PrivacyPageQuery($uid: String, $id: String, $lang: String){
-    prismicPrivacyPolicyPage(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
+query privacyQuery($uid: String, $id: String, $lang: String){
+    prismicPrivacy(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
         _previewable
         url
         uid
@@ -100,4 +102,4 @@ query PrivacyPageQuery($uid: String, $id: String, $lang: String){
     }
 }
 `
-export default withPrismicPreview(PrivacyPage)
+export default withPrismicPreview(PrivacyTemplate)

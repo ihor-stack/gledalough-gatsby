@@ -35,6 +35,7 @@ exports.createPages = async function ({ actions, graphql }) {
   // 
   const allPages = {
     allPrismicHomepage: 'templates/index.js',
+    allPrismicPrivacy: 'templates/privacy.js',
   }
 
   const pageQuery = Object.keys(allPages).map((key) => {
