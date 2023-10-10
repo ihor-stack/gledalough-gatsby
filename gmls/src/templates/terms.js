@@ -47,10 +47,10 @@ const ContentWrapper = styled.div`
   margin: 2rem 0;
 `;
 
-const PrivacyTemplate = ({ data }) => {
-    const pageContent = data.prismicPrivacy
-    const pageData = data.prismicPrivacy.data
-    // console.log('privacy pageContent ' , pageContent)
+const TermsTemplate = ({ data }) => {
+    const pageContent = data.prismicTerms
+    const pageData = data.prismicTerms.data
+    // console.log('terms pageContent ' , pageContent)
     
     const { lang, type, url } = pageContent
     const alternateLanguages = pageContent.alternate_languages || []
@@ -66,7 +66,7 @@ const PrivacyTemplate = ({ data }) => {
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>
-          <Title>Privacy Policy</Title>
+          <Title>Terms & Conditions</Title>
         </PanelHeader>
         <ContentWrapper>
           {parse(pageData.page_content.html)}
@@ -77,8 +77,8 @@ const PrivacyTemplate = ({ data }) => {
 };
 
 export const query = graphql`
-query privacyQuery($uid: String, $id: String, $lang: String){
-    prismicPrivacy(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
+query termsQuery($uid: String, $id: String, $lang: String){
+    prismicTerms(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
         _previewable
         url
         uid
@@ -100,4 +100,4 @@ query privacyQuery($uid: String, $id: String, $lang: String){
     }
 }
 `
-export default withPrismicPreview(PrivacyTemplate)
+export default withPrismicPreview(TermsTemplate)

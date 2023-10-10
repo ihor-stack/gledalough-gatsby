@@ -22,13 +22,13 @@ exports.linkResolver = (doc) => {
     }
     case 'cocktail_page': {
       return doc.lang === defaultLanguage
-        ? `/cocktail/${doc.uid}`
-        : `/${shortLang}/cocktail/${doc.uid}`
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
     }
     case 'cocktails_page': {
       return doc.lang === defaultLanguage
-        ? `/cocktails`
-        : `/${shortLang}/cocktails`
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
     }
     case 'privacy_page': {
       return doc.lang === defaultLanguage
