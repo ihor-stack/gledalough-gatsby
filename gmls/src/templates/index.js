@@ -69,6 +69,31 @@ export const query = graphql`
                 }
               }
             }
+            ... on PrismicHomepageDataBodyStoriesSection {
+              id
+              items {
+                slider_image {
+                  url
+                  alt
+                }
+              }
+              slice_label
+              slice_type
+              primary {
+                heading {
+                  text
+                }
+                link {
+                  url
+                }
+                title {
+                  text
+                }
+                link_text {
+                  text
+                }
+              }
+            }
           }
         }
       }
