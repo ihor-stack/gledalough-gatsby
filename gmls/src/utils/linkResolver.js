@@ -20,17 +20,17 @@ exports.linkResolver = (doc) => {
     case 'homepage': {
       return doc.lang === defaultLanguage ? '/' : `/${doc.lang}`
     }
-    case 'cocktail_page': {
+    case 'cocktail': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
     }
-    case 'cocktails_page': {
+    case 'cocktailshome': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
     }
-    case 'privacy_page': {
+    case 'privacy': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
