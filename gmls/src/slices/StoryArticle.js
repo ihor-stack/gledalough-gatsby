@@ -9,6 +9,7 @@ import {
   titleLargest,
   buttonRounded,
 } from '../constants/styles'
+import { Link } from 'gatsby'
 
 const PanelContainer = styled.div`
   position: relative;
@@ -82,13 +83,14 @@ const Title = styled.h2`
   ${titleLargest}
   color: ${COLOR.white};
 `
-const Button = styled.button`
+const Button = styled(Link)`
   pointer-events: all;
   ${buttonRounded}
   margin-top: 1rem;
   padding: 1rem 1.6rem;
   color: ${COLOR.white};
   border-color: ${COLOR.white};
+  text-decoration: none;
 `
 
 const StoryArticle = ({ slice }) => {
@@ -114,12 +116,13 @@ const StoryArticle = ({ slice }) => {
         <Title>
           {slice.primary.title.text ? slice.primary.title.text : 'Our Story'}
         </Title>
-        <Button>{slice.primary.link_text.text}</Button>
+        <Button to="/our-story">{slice.primary.link_text.text}</Button>
       </TextContainer>
 
       <AliceCarousel
         key="carousel"
         activeIndex={activeIndex}
+        onSlideChanged={(e) => setActiveIndex(e.item)}
         items={slides}
         mouseTracking
         disableDotsControls

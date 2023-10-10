@@ -14,14 +14,21 @@ const { defaultLanguage } = require('../../prismic-configuration')
  * @type import('@prismicio/helpers').LinkResolverFunction
  */
 exports.linkResolver = (doc) => {
-  const shortLang =  doc?.lang?.slice(0, 2)
+  const shortLang = doc?.lang?.slice(0, 2)
 
   switch (doc.type) {
     case 'homepage': {
       return doc.lang === defaultLanguage ? '/' : `/${doc.lang}`
     }
     case 'privacy': {
-      return doc.lang === defaultLanguage ? `/${doc.uid}` : `/${shortLang}/${doc.uid}`
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'ourstory': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
     }
 
     default:

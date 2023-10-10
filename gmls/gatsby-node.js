@@ -21,7 +21,6 @@ exports.onCreatePage = async ({ page, actions }) => {
 }
 
 exports.createPages = async function ({ actions, graphql }) {
-
   // const { createRedirect } = actions
 
   // redirects.forEach((redirect) =>
@@ -32,10 +31,11 @@ exports.createPages = async function ({ actions, graphql }) {
   //       redirectInBrowser: true,
   //     })
   // );
-  // 
+  //
   const allPages = {
     allPrismicHomepage: 'templates/index.js',
     allPrismicPrivacy: 'templates/privacy.js',
+    allPrismicOurstory: 'templates/our-story.js',
   }
 
   const pageQuery = Object.keys(allPages).map((key) => {
@@ -59,7 +59,7 @@ exports.createPages = async function ({ actions, graphql }) {
   //
   const buildPages = () => {
     Object.entries(data).map(([key, val]) => {
-      val.nodes.forEach(page => {
+      val.nodes.forEach((page) => {
         actions.createPage({
           path: page.url,
           component: path.resolve(__dirname, `src/${allPages[key]}`),
