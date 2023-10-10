@@ -13,6 +13,7 @@ import Homepage from '../templates/index'
 import PrivacyPage from '../templates/privacy'
 import CocktailPage from '../templates/cocktail'
 import CocktailsHomePage from '../templates/cocktails'
+import OurStoryPage from '../templates/our-story'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -32,6 +33,7 @@ export const repositoryConfigs = [
       privacy_page: PrivacyPage,
       cocktail_page: CocktailPage,
       cocktails_page: CocktailsHomePage,
+      ourstory: OurStoryPage,
     }),
   },
 ];
