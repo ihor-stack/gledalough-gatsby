@@ -35,6 +35,8 @@ exports.createPages = async function ({ actions, graphql }) {
   // 
   const allPages = {
     allPrismicHomepage: 'templates/index.js',
+    allPrismicCocktail: 'templates/cocktail.js',
+    allPrismicCocktailshome: 'templates/cocktails.js',
     allPrismicPrivacy: 'templates/privacy.js',
   }
 

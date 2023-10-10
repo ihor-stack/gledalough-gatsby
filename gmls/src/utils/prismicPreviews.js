@@ -11,6 +11,8 @@ import { linkResolver } from './linkResolver'
 
 import Homepage from '../templates/index'
 import PrivacyPage from '../templates/privacy'
+import CocktailPage from '../templates/cocktail'
+import CocktailsHomePage from '../templates/cocktails'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -28,6 +30,8 @@ export const repositoryConfigs = [
     componentResolver: componentResolverFromMap({
       homepage: Homepage,
       privacy_page: PrivacyPage,
+      cocktail_page: CocktailPage,
+      cocktails_page: CocktailsHomePage,
     }),
   },
 ];

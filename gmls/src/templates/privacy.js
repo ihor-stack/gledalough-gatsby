@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import { FONT } from '../constants'
 import { gutter, gutterMobile, respondTo, sansNormal, headingMedium } from '../constants/styles'
 import { Layout } from '../components/Layout'
-import Footer from '../components/Footer'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ const Title = styled.div`
   }
 `;
 
-const ContentWrapper = styled.p`
+const ContentWrapper = styled.div`
   width: 100%;
   text-align: left;
   ${sansNormal}
@@ -70,10 +69,9 @@ const PrivacyTemplate = ({ data }) => {
           <Title>Privacy Policy</Title>
         </PanelHeader>
         <ContentWrapper>
-          {parse(pageData.page_content.text)}
+          {parse(pageData.page_content.html)}
         </ContentWrapper>
       </PanelContainer>
-      <Footer className='page' />
     </Layout>
   )
 };

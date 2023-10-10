@@ -164,7 +164,7 @@ const footer_items = [
   { title: 'Contact Us', url: '/contact-us' },
   { title: 'Nutritional Info', url: '/nutritional-info' },
   { title: 'Enjoy Responsibly', url: '/enjoy-responsibly' },
-  { title: 'Privacy', url: '/privacy' },
+  { title: 'Privacy', url: '/privacy-policy' },
   { title: 'T&CS', url: '/terms-and-conditions' }
 ];
 
