@@ -116,7 +116,7 @@ const StoryPanel = ({ slice }) => {
                 </Subtitle>
               )}
               <Button>
-                <Link to={`/our-story/${data?.slug}`}>Learn more</Link>
+                <Link to={`/our-story/${slug}`}>Learn more</Link>
               </Button>
             </Panel>
           )

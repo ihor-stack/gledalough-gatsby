@@ -36,4 +36,4 @@ export const repositoryConfigs = [
       ourstory: OurStoryPage,
     }),
   },
-];
+]
