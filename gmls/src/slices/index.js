@@ -3,6 +3,7 @@ import HeroText from './HeroText'
 import StoryArticle from './StoryArticle'
 import StoryPanel from './StoryPanel'
 import CocktailsSlider from './CocktailsSlider'
+import DrinksPanel from './DrinksPanel'
 
 export const components = {
   herovideo: HeroVideo,
@@ -10,4 +11,5 @@ export const components = {
   stories_section: StoryArticle,
   story_chapters: StoryPanel,
   cocktailsslider: CocktailsSlider,
+  drinkspanel: DrinksPanel,
 }

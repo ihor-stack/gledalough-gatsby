@@ -120,6 +120,28 @@ export const query = graphql`
                 }
               }
             }
+            ... on PrismicHomepageDataBodyDrinkspanel {
+              id
+              slice_label
+              slice_type
+              items {
+                slide_image {
+                  url
+                  alt
+                }
+                slide_link_text {
+                  text
+                }
+                slide_title {
+                  text
+                }
+                slide_url {
+                  url
+                  id
+                  uid
+                }
+              }
+            }
           }
         }
       }
