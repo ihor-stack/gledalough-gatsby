@@ -153,8 +153,8 @@ const retailers = [
 
 const nav_items = [
   { title: 'Our Story', url: '/our-story' },
-  { title: 'Gin', url: '/gin' },
-  { title: 'Whiskey', url: '/whiskey' },
+  { title: 'Gin', url: '/gins' },
+  { title: 'Whiskey', url: '/whiskeys' },
   { title: 'Cocktails', url: '/cocktails' },
   { title: 'Features', url: '/features' },
 ];

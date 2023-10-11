@@ -22,15 +22,35 @@ exports.linkResolver = (doc) => {
     }
     case 'cocktail': {
       return doc.lang === defaultLanguage
-        ? `/${doc.uid}`
-        : `/${shortLang}/${doc.uid}`
+        ? `/cocktail/${doc.uid}`
+        : `/${shortLang}/cocktail/${doc.uid}`
     }
     case 'cocktailshome': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
     }
-    case 'privacy': {
+    case 'contact': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'feature': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'features': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'gin': {
+      return doc.lang === defaultLanguage
+        ? `/gin/${doc.uid}`
+        : `/${shortLang}/gin/${doc.uid}`
+    }
+    case 'ginhome': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
@@ -44,6 +64,27 @@ exports.linkResolver = (doc) => {
       return doc.lang === defaultLanguage
         ? `/our-story/${doc.uid}`
         : `/${shortLang}/our-story/${doc.uid}`
+    }
+
+    case 'privacy': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'terms': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'whiskey': {
+      return doc.lang === defaultLanguage
+        ? `/whiskey/${doc.uid}`
+        : `/${shortLang}/whiskey/${doc.uid}`
+    }
+    case 'whiskeyhome': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
     }
     default:
       return '/'
