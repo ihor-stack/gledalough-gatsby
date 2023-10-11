@@ -36,8 +36,16 @@ exports.createPages = async function ({ actions, graphql }) {
     allPrismicHomepage: 'templates/index.js',
     allPrismicCocktail: 'templates/cocktail.js',
     allPrismicCocktailshome: 'templates/cocktails.js',
-    allPrismicPrivacy: 'templates/privacy.js',
+    allPrismicContact: 'templates/contact-us.js',
+    allPrismicFeature: 'templates/feature.js',
+    allPrismicFeatures: 'templates/features.js',
+    allPrismicGin: 'templates/gin.js',
+    allPrismicGinhome: 'templates/gins.js',
     allPrismicOurstory: 'templates/our-story.js',
+    allPrismicPrivacy: 'templates/privacy.js',
+    allPrismicTerms: 'templates/terms.js',
+    allPrismicWhiskey: 'templates/whiskey.js',
+    allPrismicWhiskeyhome: 'templates/whiskeys.js',
   }
 
   const pageQuery = Object.keys(allPages).map((key) => {

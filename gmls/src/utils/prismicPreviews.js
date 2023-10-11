@@ -10,10 +10,18 @@ import { componentResolverFromMap } from 'gatsby-plugin-prismic-previews'
 import { linkResolver } from './linkResolver'
 
 import Homepage from '../templates/index'
-import PrivacyPage from '../templates/privacy'
 import CocktailPage from '../templates/cocktail'
 import CocktailsHomePage from '../templates/cocktails'
+import ContactPage from '../templates/contact-us'
+import FeaturePage from '../templates/feature'
+import FeaturesHomePage from '../templates/features'
+import GinPage from '../templates/gin'
+import GinsHomePage from '../templates/gins'
 import OurStoryPage from '../templates/our-story'
+import PrivacyPage from '../templates/privacy'
+import TermsPage from '../templates/terms'
+import WhiskeyPage from '../templates/whiskey'
+import WhiskeysHomePage from '../templates/whiskeys'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -30,10 +38,18 @@ export const repositoryConfigs = [
     linkResolver,
     componentResolver: componentResolverFromMap({
       homepage: Homepage,
-      privacy_page: PrivacyPage,
-      cocktail_page: CocktailPage,
-      cocktails_page: CocktailsHomePage,
+      cocktail: CocktailPage,
+      cocktails: CocktailsHomePage,
+      contact: ContactPage,
+      feature: FeaturePage,
+      features: FeaturesHomePage,
+      gin: GinPage,
+      gins: GinsHomePage,
       ourstory: OurStoryPage,
+      privacy: PrivacyPage,
+      terms: TermsPage,
+      whiskey: WhiskeyPage,
+      whiskeys: WhiskeysHomePage,
     }),
   },
 ];
