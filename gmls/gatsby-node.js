@@ -42,6 +42,7 @@ exports.createPages = async function ({ actions, graphql }) {
     allPrismicGin: 'templates/gin.js',
     allPrismicGinhome: 'templates/gins.js',
     allPrismicOurstory: 'templates/our-story.js',
+    allPrismicStoryarticle: 'templates/story-article.js',
     allPrismicPrivacy: 'templates/privacy.js',
     allPrismicTerms: 'templates/terms.js',
     allPrismicWhiskey: 'templates/whiskey.js',

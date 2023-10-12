@@ -1,16 +1,21 @@
-import React from 'react';
+import React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../slices'
+import { components } from '../slices'
 
 const CocktailTemplate = ({ data }) => {
-
   if (!data) return null
   const pageContent = data.prismicCocktail || {}
 
-  const { meta_title, meta_description, social_card, body: slices } = data.prismicCocktail.data
+  const {
+    meta_title,
+    meta_description,
+    social_card,
+    body: slices,
+  } = data.prismicCocktail.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -23,6 +28,11 @@ const CocktailTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <div className="page">
+        <h1 style={{ color: 'white', marginTop: '8rem' }}>
+          {meta_title?.text}
+        </h1>
+      </div>
       <SliceZone slices={slices} components={components} />
     </Layout>
   )
@@ -31,52 +41,31 @@ const CocktailTemplate = ({ data }) => {
 export const query = graphql`
   query cocktailQuery($uid: String, $id: String, $lang: String) {
     prismicCocktail(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
-        _previewable
-        url
-        uid
-        type
+      _previewable
+      url
+      uid
+      type
+      id
+      lang
+      alternate_languages {
         id
+        type
         lang
-        alternate_languages {
-          id
-          type
-          lang
-          uid
+        uid
+      }
+      data {
+        meta_description {
+          richText
+          text
         }
-        data {
-          meta_description {
-            richText
-            text
-          }
-          meta_title {
-            richText
-            text
-          }
-          body {
-            ... on PrismicSliceType {
-              id
-              slice_type
-              slice_label
-              ... on PrismicCocktailDataBodyHerovideo {
-                id
-                primary {
-                  background_image {
-                    url
-                  }
-                  video_url {
-                    url
-                  }
-                  heading {
-                    text
-                  }
-                  title {
-                    text
-                  }
-                }
-              }
-            }
-          }
+        meta_title {
+          richText
+          text
         }
+        preperations {
+          richText
+        }
+      }
     }
   }
 `

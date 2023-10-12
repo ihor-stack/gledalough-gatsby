@@ -19,6 +19,7 @@ const HomepageTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  console.log({ homepage })
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
@@ -94,13 +95,57 @@ export const query = graphql`
                 }
               }
             }
+            ... on PrismicHomepageDataBodyCocktailsslider {
+              id
+              slice_label
+              slice_type
+              items {
+                slide_image {
+                  alt
+                  url
+                }
+                slide_title {
+                  text
+                }
+                slide_url {
+                  url
+                  uid
+                  id
+                  type
+                }
+              }
+              primary {
+                title {
+                  text
+                }
+              }
+            }
+            ... on PrismicHomepageDataBodyDrinkspanel {
+              id
+              slice_label
+              slice_type
+              items {
+                slide_image {
+                  url
+                  alt
+                }
+                slide_link_text {
+                  text
+                }
+                slide_title {
+                  text
+                }
+                slide_url {
+                  url
+                  id
+                  uid
+                }
+              }
+            }
           }
         }
       }
     }
-    # prismicTopMenu(lang: { eq: $lang }) {
-    #   ...TopMenuFragment
-    # }
   }
 `
 

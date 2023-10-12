@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { COLOR } from '../constants/';
-import { sansNormal} from '../constants/styles';
-import header_glendalough from '../assets/header_glendalough.svg';
+import React from 'react'
+import styled from 'styled-components'
+import { COLOR } from '../constants/'
+import { sansNormal } from '../constants/styles'
+import header_glendalough from '../assets/header_glendalough.svg'
 
 const Container = styled.div`
   display: flex;
@@ -10,36 +10,40 @@ const Container = styled.div`
   flex-wrap: wrap;
   width: 100%;
   position: fixed;
-  top:0;
-  left:0;
-  right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: ${COLOR.white};
   z-index: 10001;
   &.home {
-    display:none;
+    display: none;
   }
-`;
+`
 
 const Header = styled.div`
   width: 100%;
   text-align: center;
   height: 5rem;
   ${sansNormal}
-  img { 
+  img {
     margin-top: 1rem;
     width: 55%;
     max-height: 3rem;
-    -webkit-filter: invert(1); 
+    -webkit-filter: invert(1);
     filter: invert(1);
   }
-`;
+`
 
 const StickyHeader = ({ currentPage }) => (
-    <Container className={currentPage}>
-        <Header>
-          <img src={header_glendalough} className="cross-logo" alt="Glendalough header logo" />
-        </Header>
-    </Container>
-);
+  <Container className={currentPage}>
+    <Header>
+      <img
+        src={header_glendalough}
+        className="cross-logo"
+        alt="Glendalough header logo"
+      />
+    </Header>
+  </Container>
+)
 
-export default StickyHeader;
+export default StickyHeader

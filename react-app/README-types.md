@@ -79,7 +79,7 @@
     - Feature Slider
     - Feature Slider
     - Feature Slider
-    - Story Slider
+    - Story Slider/Stories Section
     - Footer
 
 * Feature

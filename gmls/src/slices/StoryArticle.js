@@ -141,7 +141,7 @@ const StoryArticle = ({ slice }) => {
               }}
               aria-hidden
             >
-              {i + 1}
+              0{i + 1}
             </li>
           ))}
         </ul>

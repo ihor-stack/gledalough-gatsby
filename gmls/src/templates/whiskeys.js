@@ -1,16 +1,21 @@
-import React from 'react';
+import React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../slices'
+import { components } from '../slices'
 
 const WhiskeyHomeTemplate = ({ data }) => {
-
   if (!data) return null
   const pageContent = data.prismicWhiskeyhome || {}
 
-  const { meta_title, meta_description, social_card, body: slices } = data.prismicWhiskeyhome.data
+  const {
+    meta_title,
+    meta_description,
+    social_card,
+    body: slices,
+  } = data.prismicWhiskeyhome.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -23,60 +28,154 @@ const WhiskeyHomeTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <SliceZone slices={ slices } components={components} />
+      <SliceZone slices={slices} components={components} />
     </Layout>
   )
 }
 
 export const query = graphql`
   query whiskeyhomeQuery($uid: String, $id: String, $lang: String) {
-    prismicWhiskeyhome(uid: { eq: $uid }, id: { eq: $id }, lang: { eq: $lang }) {
-        _previewable
-        url
-        uid
-        type
+    prismicWhiskeyhome(
+      uid: { eq: $uid }
+      id: { eq: $id }
+      lang: { eq: $lang }
+    ) {
+      _previewable
+      url
+      uid
+      type
+      id
+      lang
+      alternate_languages {
         id
+        type
         lang
-        alternate_languages {
-          id
-          type
-          lang
-          uid
+        uid
+      }
+      data {
+        meta_description {
+          richText
+          text
         }
-        data {
-          meta_description {
-            richText
-            text
+        meta_title {
+          richText
+          text
+        }
+        body {
+          ... on PrismicWhiskeyhomeDataBodyDualpanelstory {
+            id
+            slice_type
+            primary {
+              background_color
+              body_text {
+                richText
+              }
+              image {
+                alt
+                url
+              }
+              intro_text {
+                text
+              }
+            }
+            slice_label
           }
-          meta_title {
-            richText
-            text
-          }
-          body {
-            ... on PrismicSliceType {
-              id
-              slice_type
-              slice_label
-              ... on PrismicWhiskeyhomeDataBodyHerovideo {
-                id
-                primary {
-                  background_image {
-                    url
-                  }
-                  video_url {
-                    url
-                  }
-                  heading {
-                    text
-                  }
-                  title {
-                    text
-                  }
-                }
+          ... on PrismicWhiskeyhomeDataBodyFeaturespanel {
+            id
+            slice_label
+            slice_type
+            primary {
+              background_color
+              body_text_1 {
+                richText
+              }
+              body_text_2 {
+                richText
+              }
+              title {
+                text
+              }
+            }
+            items {
+              background_color
+              content {
+                richText
+              }
+              image {
+                url
+                alt
+              }
+              title {
+                text
               }
             }
           }
+          ... on PrismicWhiskeyhomeDataBodyHerotextsplit {
+            id
+            slice_label
+            slice_type
+            primary {
+              background_color
+              body_text {
+                richText
+              }
+              heading {
+                text
+              }
+              title {
+                text
+              }
+            }
+          }
+          ... on PrismicWhiskeyhomeDataBodyHerovideo {
+            id
+            slice_label
+            slice_type
+            primary {
+              background_image {
+                alt
+                url
+              }
+              heading {
+                text
+              }
+              title {
+                text
+              }
+              video_url {
+                url
+                uid
+                id
+              }
+            }
+          }
+          ... on PrismicWhiskeyhomeDataBodyProductslider {
+            id
+            items {
+              image {
+                alt
+                url
+              }
+              link_text {
+                text
+              }
+              title {
+                text
+              }
+              url {
+                id
+                url
+                uid
+              }
+            }
+            primary {
+              background_color
+            }
+            slice_label
+            slice_type
+          }
         }
+      }
     }
   }
 `
