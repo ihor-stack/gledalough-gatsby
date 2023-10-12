@@ -4,7 +4,6 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { components } from '../slices'
-import { components } from '../slices'
 
 const GinHomeTemplate = ({ data }) => {
   if (!data) return null
