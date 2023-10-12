@@ -137,30 +137,6 @@ export const query = graphql`
               }
             }
           }
-          body {
-            ... on PrismicSliceType {
-              id
-              slice_type
-              slice_label
-              ... on PrismicCocktailshomeDataBodyHerovideo {
-                id
-                primary {
-                  background_image {
-                    url
-                  }
-                  video_url {
-                    url
-                  }
-                  heading {
-                    text
-                  }
-                  title {
-                    text
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }
