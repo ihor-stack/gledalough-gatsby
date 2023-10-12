@@ -78,7 +78,7 @@ const Paragraph = styled.span`
   `}
 `
 
-const ProductIntro = ({ slice }) => {
+const HeroTextSplit = ({ slice }) => {
   const data = slice?.primary
   return (
     <PanelContainer
@@ -99,4 +99,4 @@ const ProductIntro = ({ slice }) => {
   )
 }
 
-export default ProductIntro
+export default HeroTextSplit

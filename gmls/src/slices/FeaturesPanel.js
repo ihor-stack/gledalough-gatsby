@@ -123,7 +123,7 @@ const FeaturesPanel = ({ slice }) => {
   const { feature, loadFeature } = useGinFeatureState()
 
   // DESKTOP
-  const features = items.map((item, i) => (
+  const features = items?.map((item, i) => (
     <Feature key={i} style={{ backgroundImage: `url(${item.image?.url})` }}>
       <FeatureTitle onClick={() => loadFeature(i + 1)}>
         {item.title?.text}
@@ -133,7 +133,7 @@ const FeaturesPanel = ({ slice }) => {
 
   // MOBILE
   const handleDragStart = (e) => e.preventDefault()
-  const slides = items.map((item, i) => (
+  const slides = items?.map((item, i) => (
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
       <Feature
         className="slide"

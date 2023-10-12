@@ -79,7 +79,7 @@ export const query = graphql`
               }
             }
           }
-          ... on PrismicGinhomeDataBodyProductintro {
+          ... on PrismicGinhomeDataBodyHerotextsplit {
             id
             slice_label
             slice_type
