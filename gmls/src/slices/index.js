@@ -4,6 +4,7 @@ import StoryArticle from './StoryArticle'
 import StoryPanel from './StoryPanel'
 import CocktailsSlider from './CocktailsSlider'
 import DrinksPanel from './DrinksPanel'
+import FeatureSlider from '../components/FeatureSlider'
 
 export const components = {
   herovideo: HeroVideo,
@@ -12,4 +13,5 @@ export const components = {
   story_chapters: StoryPanel,
   cocktailsslider: CocktailsSlider,
   drinkspanel: DrinksPanel,
+  featureslider: FeatureSlider,
 }
