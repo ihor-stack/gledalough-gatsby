@@ -3,6 +3,10 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
+import ProductDetail from '../components/ProductDetail'
+import ProductDualPanel from '../components/ProductDualPanel'
+import ProductSummary from '../components/ProductSummary'
+import { components } from '../slices'
 
 const GinTemplate = ({ data }) => {
 
@@ -22,8 +26,10 @@ const GinTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <div className='page'><h1 style={{color: 'white', marginTop: '8rem'}}>{ meta_title?.text }</h1></div>
-      {/* <SliceZone slices={ slices } components={components} /> */}
+      <ProductDetail data={data.prismicGin.data} />
+      <ProductSummary data={data.prismicGin.data} />
+      <ProductDualPanel data={data.prismicGin.data} theme='gin' />
+      <SliceZone slices={ slices } components={components} />
     </Layout>
   )
 }
@@ -44,11 +50,58 @@ export const query = graphql`
           uid
         }
         data {
+          article_body {
+            html
+            text
+          }
+          article_image {
+            alt
+            url
+          }
+          article_title {
+            richText
+            text
+          }
+          background_color
+          article_background_color
+          summary_background_color
+          description {
+            html
+            text
+          }
+          heading {
+            richText
+            text
+          }
+          image {
+            alt
+            url
+          }
           meta_description {
             richText
             text
           }
           meta_title {
+            richText
+            text
+          }
+          notes {
+            html
+            text
+          }
+          notes_heading {
+            richText
+            text
+          }
+          summary {
+            html
+            text
+          }
+          summary_heading {
+            richText
+            text
+          }
+          title {
             richText
             text
           }

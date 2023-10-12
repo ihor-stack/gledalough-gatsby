@@ -14,7 +14,7 @@ const Container = styled.div`
   left:0;
   right:0;
   background-color: ${COLOR.white};
-  z-index 10001;
+  z-index: 10001;
   &.home {
     display:none;
   }

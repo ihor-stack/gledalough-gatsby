@@ -50,6 +50,7 @@ const HeroVideo = ({ slice }) => {
     speed: -33
   });
   const backgroundImage = slice.primary.background_image.url
+  const videoURL = slice.primary.video_url?.url
   const heading = slice.primary.heading.text
   const title = slice.primary.title.text
   return (
