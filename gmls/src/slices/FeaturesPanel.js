@@ -1,11 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import AliceCarousel from "react-alice-carousel"
-import { COLOR } from "../constants"
-import { gutter, respondTo, sansNormal, titleMedium, titleLarge } from "../constants/styles"
-import DualPanelFeature from "../components/DualPanelFeature"
-import useGinFeatureState from "../utils/useGinFeatureState"
+import React from 'react'
+import styled from 'styled-components'
+import AliceCarousel from 'react-alice-carousel'
+import { COLOR } from '../constants'
+import {
+  gutter,
+  respondTo,
+  sansNormal,
+  titleMedium,
+  titleLarge,
+} from '../constants/styles'
+import DualPanelFeature from '../components/DualPanelFeature'
+import useGinFeatureState from '../utils/useGinFeatureState'
+import { PrismicRichText } from '@prismicio/react'
 
 const PanelContainer = styled.div`
   ${gutter}
@@ -106,17 +112,22 @@ const responsive = {
   },
   992: {
     items: 3,
-    itemsFit: "fill",
+    itemsFit: 'fill',
   },
 }
 
-const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
+const FeaturesPanel = ({ slice }) => {
+  const primary = slice.primary
+  const items = slice.items
+
   const { feature, loadFeature } = useGinFeatureState()
 
   // DESKTOP
   const features = items.map((item, i) => (
-    <Feature key={i} style={{ backgroundImage: `url(${item.image})` }}>
-      <FeatureTitle onClick={() => loadFeature(1)}>{item.title}</FeatureTitle>
+    <Feature key={i} style={{ backgroundImage: `url(${item.image?.url})` }}>
+      <FeatureTitle onClick={() => loadFeature(i + 1)}>
+        {item.title?.text}
+      </FeatureTitle>
     </Feature>
   ))
 
@@ -124,21 +135,33 @@ const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
   const handleDragStart = (e) => e.preventDefault()
   const slides = items.map((item, i) => (
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
-      <Feature className="slide" key={i} style={{ backgroundImage: `url(${item.image})` }}>
-        <FeatureTitle onClick={() => loadFeature(i)}>{item.title}</FeatureTitle>
+      <Feature
+        className="slide"
+        key={i}
+        style={{ backgroundImage: `url(${item.image?.url})` }}
+      >
+        <FeatureTitle onClick={() => loadFeature(i + 1)}>
+          {item.title?.text}
+        </FeatureTitle>
       </Feature>
     </SliderItem>
   ))
 
   return (
-    <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
-      <Title>{content.title}</Title>
+    <PanelContainer
+      style={{ backgroundColor: `${primary?.background_color || COLOR.beige}` }}
+    >
+      <Title>{primary?.title?.text}</Title>
       <Row>
         <HalfColumn>
-          <Paragraph>{content.p1}</Paragraph>
+          <Paragraph>
+            <PrismicRichText field={primary?.body_text_1?.richText} />
+          </Paragraph>
         </HalfColumn>
         <HalfColumn>
-          <Paragraph>{content.p2}</Paragraph>
+          <Paragraph>
+            <PrismicRichText field={primary?.body_text_2?.richText} />
+          </Paragraph>
         </HalfColumn>
       </Row>
       {!feature && <Features>{features}</Features>}
@@ -147,17 +170,18 @@ const FeaturesPanel = ({ className, bgColor, content, items, subcontent }) => {
           <AliceCarousel mouseTracking items={slides} responsive={responsive} />
         </FeaturesSlider>
       )}
-      {feature > 0 && <DualPanelFeature className="feature" bgColor="cream" content={subcontent} close={loadFeature} />}
+      {feature > 0 && (
+        <DualPanelFeature
+          className="feature"
+          title={items?.[feature - 1]?.title?.text}
+          bgColor={items?.[feature - 1]?.background_color}
+          image={items?.[feature - 1]?.image?.url}
+          content={items?.[feature - 1]?.content?.richText}
+          close={loadFeature}
+        />
+      )}
     </PanelContainer>
   )
-}
-
-FeaturesPanel.propTypes = {
-  className: PropTypes.string,
-  bgColor: PropTypes.string,
-  content: PropTypes.object,
-  items: PropTypes.array,
-  subcontent: PropTypes.array,
 }
 
 export default FeaturesPanel
