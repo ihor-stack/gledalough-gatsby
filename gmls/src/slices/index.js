@@ -1,3 +1,4 @@
+import React from 'react'
 import HeroVideo from './HeroVideo'
 import HeroText from './HeroText'
 import StoryArticle from './StoryArticle'
@@ -9,8 +10,9 @@ import ProductSlider from './ProductSlider'
 import FeaturesPanel from './FeaturesPanel'
 import DualPanel from './DualPanelStory'
 import HeroTextSplit from './HeroTextSplit'
+import PageScroll from '../components/PageScroll'
 
-export const components = {
+const componentList = {
   herovideo: HeroVideo,
   hero: HeroText,
   stories_section: StoryArticle,
@@ -23,3 +25,11 @@ export const components = {
   featurespanel: FeaturesPanel,
   dualpanelstory: DualPanel,
 }
+
+// loop components and append PageScroll to each components
+export const components = Object.keys(componentList).reduce((acc, key) => {
+  acc[key] = (props) => (
+    <PageScroll>{React.createElement(componentList[key], props)}</PageScroll>
+  )
+  return acc
+}, {})
