@@ -35,6 +35,11 @@ exports.linkResolver = (doc) => {
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
     }
+    case 'enjoyresponsibly': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
     case 'feature': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
@@ -51,6 +56,16 @@ exports.linkResolver = (doc) => {
         : `/${shortLang}/gin/${doc.uid}`
     }
     case 'ginhome': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'nutritionalinfo': {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${shortLang}/${doc.uid}`
+    }
+    case 'ourethos': {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${shortLang}/${doc.uid}`
