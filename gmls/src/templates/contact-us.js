@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
+import MapPanel from '../components/MapPanel'
 
 const ContactTemplate = ({ data }) => {
 
   if (!data) return null
   const pageContent = data.prismicContact || {}
 
-  const { meta_title, meta_description, social_card, body: slices } = data.prismicContact.data
+  const { meta_title, meta_description, social_card, locations, retailers } = data.prismicContact.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -22,8 +22,7 @@ const ContactTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <div className='page'><h1 style={{color: 'white', marginTop: '8rem'}}>{ meta_title?.text }</h1></div>
-      {/* <SliceZone slices={ slices } components={components} /> */}
+      <MapPanel locations={locations} retailers={retailers} />
     </Layout>
   )
 }
@@ -51,6 +50,40 @@ export const query = graphql`
           meta_title {
             richText
             text
+          }
+          locations {
+            title {
+              text
+            }
+            address1 {
+              text
+            }
+            address2 {
+              text
+            }
+            phone {
+              text
+            }
+            url {
+              url
+            }
+            lat {
+              text
+            }
+            lng {
+              text
+            }
+          }
+          retailers {
+            title {
+              text
+            }
+            image {
+              url
+            }
+            url {
+              url
+            }
           }
         }
     }
