@@ -22,7 +22,6 @@ const StoryArticleTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
-  console.log(data)
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
       <PageScroll width="100vw" height="100vh">
