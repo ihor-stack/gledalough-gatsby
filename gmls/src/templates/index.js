@@ -19,7 +19,6 @@ const HomepageTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
-  console.log({ homepage })
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
@@ -125,20 +124,39 @@ export const query = graphql`
               slice_label
               slice_type
               items {
-                slide_image {
-                  url
-                  alt
-                }
-                slide_link_text {
+                show_link
+                link_text {
                   text
                 }
-                slide_title {
-                  text
-                }
-                slide_url {
-                  url
+                item {
                   id
                   uid
+                  url
+                  document {
+                    ... on PrismicGin {
+                      id
+                      data {
+                        article_title {
+                          text
+                        }
+                        title {
+                          text
+                        }
+                        article_image {
+                          url
+                          alt
+                        }
+                        image {
+                          url
+                          alt
+                        }
+                        featured_image {
+                          url
+                          alt
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

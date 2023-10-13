@@ -53,6 +53,8 @@ const Title = styled.h3`
 const Image = styled.img`
   width: 90%;
   border-radius: 50% 50% 0 0;
+  max-height: 25rem;
+  object-fit: contain;
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;
 `
@@ -71,17 +73,19 @@ const responsive = {
 }
 
 const DrinksPanel = ({ slice }) => {
-  const slides = slice?.items?.map((item, i) => (
+  const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
     <SliderItem key={i}>
       <Image
-        src={item?.slide_image?.url}
+        src={item?.document?.data?.featured_image?.url}
         alt="Irish Gin"
-        onClick={() => navigate(item.slide_url?.url)}
+        onClick={() => navigate(item.url)}
       />
-      <Title>{item.slide_title?.text}</Title>
-      <Button>
-        <Link to={item.slide_url?.url}>{item?.slide_link_text?.text}</Link>
-      </Button>
+      <Title>{item?.document?.data?.title?.text}</Title>
+      {show_link && (
+        <Button>
+          <Link to={item?.url}>{link_text?.text}</Link>
+        </Button>
+      )}
     </SliderItem>
   ))
 
