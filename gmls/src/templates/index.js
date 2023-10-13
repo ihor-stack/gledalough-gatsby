@@ -94,31 +94,6 @@ export const query = graphql`
                 }
               }
             }
-            ... on PrismicHomepageDataBodyCocktailsslider {
-              id
-              slice_label
-              slice_type
-              items {
-                slide_image {
-                  alt
-                  url
-                }
-                slide_title {
-                  text
-                }
-                slide_url {
-                  url
-                  uid
-                  id
-                  type
-                }
-              }
-              primary {
-                title {
-                  text
-                }
-              }
-            }
             ... on PrismicHomepageDataBodyDrinkspanel {
               id
               slice_label
@@ -150,10 +125,49 @@ export const query = graphql`
                           url
                           alt
                         }
-                        featured_image {
+                        thumbnail {
                           url
                           alt
                         }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          ... on PrismicHomepageDataBodyCocktailsslider {
+            id
+            slice_label
+            slice_type
+            primary {
+              title {
+                text
+              }
+            }
+            items {
+              show_link
+              link_text {
+                text
+              }
+              item {
+                url
+                uid
+                slug
+                id
+                lang
+                document {
+                  ... on PrismicCocktail {
+                    id
+                    url
+                    lang
+                    data {
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      title {
+                        text
                       }
                     }
                   }

@@ -10,7 +10,6 @@ import {
   linkUnderlined,
 } from '../constants/styles'
 import img_bg_texture from '../assets/bg_textured_paper.jpg'
-import { localUrl } from '../utils/filters'
 
 const PanelContainer = styled.div`
   width: 100%;
@@ -87,17 +86,19 @@ const responsive = {
 }
 
 const CocktailsSlider = ({ slice }) => {
-  const slides = slice?.items?.map((item, i) => (
+  const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
     <SliderItem key={i}>
       <Image
         className="img-fluid"
-        src={item?.slide_image?.url}
-        alt={item.slide_image?.alt}
+        src={item?.document?.data?.thumbnail?.url}
+        alt={item?.document?.data?.thumbnail?.alt}
       />
-      <Title>{item?.slide_title?.text}</Title>
-      <Button>
-        <Link to={localUrl(item?.slide_url?.url)}>View Recipe</Link>
-      </Button>
+      <Title>{item?.document?.data?.title?.text}</Title>
+      {show_link && (
+        <Button>
+          <Link to={item?.url}>{link_text?.text}</Link>
+        </Button>
+      )}
     </SliderItem>
   ))
 

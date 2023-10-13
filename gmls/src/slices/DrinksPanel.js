@@ -76,8 +76,8 @@ const DrinksPanel = ({ slice }) => {
   const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
     <SliderItem key={i}>
       <Image
-        src={item?.document?.data?.featured_image?.url}
-        alt="Irish Gin"
+        src={item?.document?.data?.thumbnail?.url}
+        alt={item?.document?.data?.thumbnail?.alt}
         onClick={() => navigate(item.url)}
       />
       <Title>{item?.document?.data?.title?.text}</Title>
