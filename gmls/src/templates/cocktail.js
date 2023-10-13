@@ -27,11 +27,6 @@ const CocktailTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <div className="page">
-        <h1 style={{ color: 'white', marginTop: '8rem' }}>
-          {meta_title?.text}
-        </h1>
-      </div>
       <SliceZone slices={slices} components={components} />
     </Layout>
   )
@@ -61,8 +56,52 @@ export const query = graphql`
           richText
           text
         }
-        preperations {
+        title {
           richText
+          text
+        }
+        category
+        body {
+          ... on PrismicSliceType {
+            id
+            slice_type
+            slice_label
+            ... on PrismicCocktailDataBodyHerovideo {
+              id
+              primary {
+                background_image {
+                  url
+                }
+                heading {
+                  text
+                }
+                title {
+                  text
+                }
+              }
+            }
+            ... on PrismicCocktailDataBodyDualpanelcocktail {
+              id
+              primary {
+                background_color
+                image {
+                  url
+                }
+                ingredients {
+                  text
+                  html
+                }
+                instructions {
+                  text
+                  html
+                }
+                preperation {
+                  text
+                  html
+                }
+              }
+            }
+          }
         }
       }
     }

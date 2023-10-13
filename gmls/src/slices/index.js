@@ -8,6 +8,7 @@ import FeatureSlider from './FeatureSlider'
 import ProductSlider from './ProductSlider'
 import FeaturesPanel from './FeaturesPanel'
 import DualPanel from './DualPanelStory'
+import DualPanelCocktail from './DualPanelCocktail'
 import HeroTextSplit from './HeroTextSplit'
 
 export const components = {
@@ -22,4 +23,5 @@ export const components = {
   productslider: ProductSlider,
   featurespanel: FeaturesPanel,
   dualpanelstory: DualPanel,
+  dualpanelcocktail: DualPanelCocktail,
 }
