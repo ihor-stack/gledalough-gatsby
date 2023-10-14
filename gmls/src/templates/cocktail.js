@@ -102,6 +102,99 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicCocktailDataBodyFeatureslider {
+            id
+            slice_label
+            slice_type
+            primary {
+              background_color
+              category {
+                text
+              }
+            }
+            items {
+              item {
+                document {
+                  ... on PrismicGin {
+                    id
+                    url
+                    uid
+                    lang
+                    href
+                    type
+                    data {
+                      title {
+                        text
+                      }
+                      image {
+                        url
+                        alt
+                      }
+                      thumbnail {
+                        alt
+                        url
+                      }
+                    }
+                  }
+                  ... on PrismicWhiskey {
+                    id
+                    url
+                    uid
+                    type
+                    lang
+                    data {
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      title {
+                        text
+                      }
+                      image {
+                        alt
+                        url
+                      }
+                      article_image {
+                        url
+                        alt
+                      }
+                    }
+                  }
+                  ... on PrismicCocktail {
+                    id
+                    url
+                    type
+                    uid
+                    lang
+                    href
+                    data {
+                      category
+                      title {
+                        text
+                      }
+                      thumbnail {
+                        alt
+                        url
+                      }
+                      meta_title {
+                        text
+                      }
+                      meta_description {
+                        text
+                      }
+                    }
+                    _previewable
+                  }
+                }
+                url
+                uid
+                type
+                slug
+                id
+                lang
+              }
+            }
+          }
         }
       }
     }

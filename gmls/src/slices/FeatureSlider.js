@@ -87,6 +87,7 @@ const responsive = {
 }
 
 const FeatureSlider = ({ slice }) => {
+  console.log({ slice })
   const handleDragStart = (e) => e.preventDefault()
 
   const COORDS = {
@@ -114,21 +115,29 @@ const FeatureSlider = ({ slice }) => {
     }
   }
 
-  const slides = slice?.items?.map((item, i) => (
-    <SliderItem
-      key={i}
-      role="presentation"
-      onDragStart={handleDragStart}
-      onMouseDown={handleOnMouseDown}
-      onMouseUp={handleMouseUp}
-      onClick={(e) => handleOnClick(e, item?.slide_url?.url)}
-    >
-      {item?.slide_date && <ItemDate>{item?.slide_date}</ItemDate>}
-      <ItemImage style={{ backgroundImage: `url(${item?.slide_image?.url})` }}>
-        <ItemTitle>{item?.slide_title?.text}</ItemTitle>
-      </ItemImage>
-    </SliderItem>
-  ))
+  const slides = slice?.items?.map(
+    ({ item: { url, document, ...item } }, i) => (
+      <SliderItem
+        key={i}
+        role="presentation"
+        onDragStart={handleDragStart}
+        onMouseDown={handleOnMouseDown}
+        onMouseUp={handleMouseUp}
+        onClick={(e) => handleOnClick(e, url)}
+      >
+        {document?.data?.date && <ItemDate>{document?.data?.date}</ItemDate>}
+        <ItemImage
+          style={{
+            backgroundImage: `url(${
+              document?.data?.thumbnail?.url || document?.data?.image?.url
+            })`,
+          }}
+        >
+          <ItemTitle>{document?.data?.title?.text}</ItemTitle>
+        </ItemImage>
+      </SliderItem>
+    ),
+  )
 
   return (
     <PanelContainer

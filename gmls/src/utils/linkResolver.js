@@ -42,8 +42,8 @@ exports.linkResolver = (doc) => {
     }
     case 'feature': {
       return doc.lang === defaultLanguage
-        ? `/${doc.uid}`
-        : `/${shortLang}/${doc.uid}`
+        ? `/feature/${doc.uid}`
+        : `/${shortLang}/feature/${doc.uid}`
     }
     case 'features': {
       return doc.lang === defaultLanguage

@@ -59,29 +59,121 @@ export const query = graphql`
         body {
           ... on PrismicFeaturesDataBodyFeatureslider {
             id
-            items {
-              slide_date
-              slide_image {
-                url
-                alt
-              }
-              slide_title {
-                text
-              }
-              slide_url {
-                url
-                uid
-                id
-              }
-            }
+            slice_label
+            slice_type
             primary {
               background_color
               category {
                 text
               }
             }
-            slice_label
-            slice_type
+            items {
+              item {
+                document {
+                  ... on PrismicGin {
+                    id
+                    url
+                    uid
+                    lang
+                    href
+                    type
+                    data {
+                      title {
+                        text
+                      }
+                      image {
+                        url
+                        alt
+                      }
+                      thumbnail {
+                        alt
+                        url
+                      }
+                    }
+                  }
+                  ... on PrismicWhiskey {
+                    id
+                    url
+                    uid
+                    type
+                    lang
+                    data {
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      title {
+                        text
+                      }
+                      image {
+                        alt
+                        url
+                      }
+                      article_image {
+                        url
+                        alt
+                      }
+                    }
+                  }
+                  ... on PrismicCocktail {
+                    id
+                    url
+                    type
+                    uid
+                    lang
+                    href
+                    data {
+                      category
+                      title {
+                        text
+                      }
+                      thumbnail {
+                        alt
+                        url
+                      }
+                      meta_title {
+                        text
+                      }
+                      meta_description {
+                        text
+                      }
+                    }
+                    _previewable
+                  }
+                  ... on PrismicFeature {
+                    id
+                    _previewable
+                    url
+                    uid
+                    type
+                    lang
+                    href
+                    data {
+                      date
+                      meta_description {
+                        text
+                      }
+                      meta_title {
+                        text
+                      }
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      title {
+                        text
+                      }
+                    }
+                  }
+                }
+                url
+                uid
+                type
+                slug
+                id
+                lang
+              }
+            }
           }
           ... on PrismicFeaturesDataBodyHerovideo {
             id
