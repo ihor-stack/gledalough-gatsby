@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import MapPanel from '../components/MapPanel'
 
 const ContactTemplate = ({ data }) => {
@@ -9,7 +10,7 @@ const ContactTemplate = ({ data }) => {
   if (!data) return null
   const pageContent = data.prismicContact || {}
 
-  const { meta_title, meta_description, social_card, locations, retailers } = data.prismicContact.data
+  const { meta_title, meta_description, locations, retailers } = data.prismicContact.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -22,6 +23,10 @@ const ContactTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <MapPanel locations={locations} retailers={retailers} />
     </Layout>
   )

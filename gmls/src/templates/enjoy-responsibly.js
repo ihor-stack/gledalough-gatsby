@@ -12,6 +12,7 @@ import {
   headingMedium,
 } from '../constants/styles'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 
 const PanelContainer = styled.div`
   display: flex;
@@ -57,6 +58,7 @@ const EnjoyResponsiblyTemplate = ({ data }) => {
   const pageContent = data.prismicEnjoyresponsibly
   const pageData = data.prismicEnjoyresponsibly.data
   // console.log('privacy pageContent ' , pageContent)
+  const { meta_title, meta_description } = data.prismicEnjoyresponsibly.data
 
   const { lang, type, url } = pageContent
   const alternateLanguages = pageContent.alternate_languages || []
@@ -69,6 +71,10 @@ const EnjoyResponsiblyTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>
@@ -97,6 +103,14 @@ export const query = graphql`
         uid
       }
       data {
+        meta_description {
+          richText
+          text
+        }
+        meta_title {
+          richText
+          text
+        }
         page_content {
           text
           richText

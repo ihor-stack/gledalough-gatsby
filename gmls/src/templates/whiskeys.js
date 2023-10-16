@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import { components } from '../slices'
 
 const WhiskeyHomeTemplate = ({ data }) => {
@@ -12,7 +13,6 @@ const WhiskeyHomeTemplate = ({ data }) => {
   const {
     meta_title,
     meta_description,
-    social_card,
     body: slices,
   } = data.prismicWhiskeyhome.data
 
@@ -27,6 +27,10 @@ const WhiskeyHomeTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <SliceZone slices={slices} components={components} />
     </Layout>
   )

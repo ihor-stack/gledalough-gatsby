@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { FONT } from '../constants'
 import { gutter, gutterMobile, respondTo, sansNormal, headingMedium } from '../constants/styles'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 
 const PanelContainer = styled.div`
   display: flex;
@@ -51,6 +52,7 @@ const TermsTemplate = ({ data }) => {
     const pageContent = data.prismicTerms
     const pageData = data.prismicTerms.data
     // console.log('terms pageContent ' , pageContent)
+    const { meta_title, meta_description } = data.prismicTerms.data
     
     const { lang, type, url } = pageContent
     const alternateLanguages = pageContent.alternate_languages || []
@@ -63,6 +65,10 @@ const TermsTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>
@@ -92,6 +98,14 @@ query termsQuery($uid: String, $id: String, $lang: String){
           uid
         }
         data {
+          meta_description {
+            richText
+            text
+          }
+          meta_title {
+            richText
+            text
+          }
           page_content {
             html
             text

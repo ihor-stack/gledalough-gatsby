@@ -4,12 +4,15 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import { components } from '../slices'
 
 const OurStoryTemplate = ({ data }) => {
   if (!data) return null
   const ourstory = data.prismicOurstory || {}
   const topMenu = data.prismicTopMenu || {}
+
+  const { meta_title, meta_description } = data.prismicOurstory.data
 
   const { lang, type, url } = ourstory || {}
   const alternateLanguages = ourstory.alternate_languages || []
@@ -22,6 +25,10 @@ const OurStoryTemplate = ({ data }) => {
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <SliceZone slices={ourstory.data.body} components={components} />
     </Layout>
   )
@@ -41,6 +48,14 @@ export const query = graphql`
         lang
       }
       data {
+        meta_description {
+          richText
+          text
+        }
+        meta_title {
+          richText
+          text
+        }
         body {
           ... on PrismicOurstoryDataBodyHerovideo {
             id

@@ -3,7 +3,6 @@ import { useLocation } from '@reach/router'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ScrollToTop from '../utils/ScrollToTop'
 import { animated, useTransition } from '@react-spring/web'
-//import PageScroll from './PageScroll';
 import NavComponent from './NavComponent'
 import Footer from './Footer'
 import 'normalize.css'

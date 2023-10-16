@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import ProductDetail from '../components/ProductDetail'
 import ProductDualPanel from '../components/ProductDualPanel'
 import ProductSummary from '../components/ProductSummary'
@@ -15,7 +16,6 @@ const GinTemplate = ({ data }) => {
   const {
     meta_title,
     meta_description,
-    social_card,
     body: slices,
   } = data.prismicGin.data
 
@@ -30,6 +30,10 @@ const GinTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <ProductDetail data={data.prismicGin.data} />
       <ProductSummary data={data.prismicGin.data} />
       <ProductDualPanel data={data.prismicGin.data} theme="gin" />

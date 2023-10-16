@@ -4,15 +4,21 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import { components } from '../slices'
 
 const HomepageTemplate = ({ data }) => {
   if (!data) return null
-  const homepage = data.prismicHomepage || {}
-  const topMenu = data.prismicTopMenu || {}
+  const pageContent = data.prismicHomepage || {}
 
-  const { lang, type, url } = homepage || {}
-  const alternateLanguages = homepage.alternate_languages || []
+  const {
+    meta_title,
+    meta_description,
+    body: slices,
+  } = data.prismicHomepage.data
+
+  const { lang, type, url } = pageContent || {}
+  const alternateLanguages = pageContent.alternate_languages || []
   const activeDoc = {
     lang,
     type,
@@ -21,8 +27,12 @@ const HomepageTemplate = ({ data }) => {
   }
 
   return (
-    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
-      <SliceZone slices={homepage.data.body} components={components} />
+    <Layout activeDocMeta={activeDoc}>
+      <Seo
+          title={ meta_title?.text }
+          description={ meta_description?.text }
+      />
+      <SliceZone slices={slices} components={components} />
     </Layout>
   )
 }
@@ -41,6 +51,14 @@ export const query = graphql`
         lang
       }
       data {
+        meta_description {
+          richText
+          text
+        }
+        meta_title {
+          richText
+          text
+        }
         body {
           ... on PrismicSliceType {
             id

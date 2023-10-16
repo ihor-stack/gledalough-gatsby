@@ -3,13 +3,14 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
+import { Seo } from "../components/Seo";
 import { components } from '../slices'
 
 const FeatureTemplate = ({ data }) => {
   if (!data) return null
   const pageContent = data.prismicFeature || {}
 
-  const { meta_title, meta_description, social_card, body, ...obj } =
+  const { meta_title, meta_description, body, ...obj } =
     data.prismicFeature.data
 
   const { lang, type, url } = pageContent || {}
@@ -30,6 +31,10 @@ const FeatureTemplate = ({ data }) => {
 
   return (
     <Layout activeDocMeta={activeDoc}>
+      <Seo
+        title={ meta_title?.text }
+        description={ meta_description?.text }
+      />
       <SliceZone slices={slices} components={components} />
     </Layout>
   )
