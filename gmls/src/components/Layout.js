@@ -13,7 +13,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import PageScroll from './PageScroll'
 
-export const Layout = ({ children, hideFooter = false }) => {
+export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   const { pathname } = useLocation()
   let currentPage = pathname.split('/').slice(1)[0]
   currentPage = currentPage !== '' ? currentPage : 'home'
@@ -39,7 +39,9 @@ export const Layout = ({ children, hideFooter = false }) => {
           </animated.div>
         ))}
 
-        {!hideFooter && <Footer className="page" />}
+        {!hideFooter && (
+          <Footer className="page" activeDocMeta={activeDocMeta} />
+        )}
       </ParallaxProvider>
     </>
   )

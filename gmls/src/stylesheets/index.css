@@ -96,3 +96,18 @@
   .mapboxgl-compact {
     display: none !important;
   }
+  .language-selection {
+    list-style-type: none;
+    margin: 0;
+  }
+  .language-selection li {
+    color: #fff;
+    display: inline-block;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+  }
+  .language-selection li.active {
+    border-bottom: 1px solid #fff;
+  }
