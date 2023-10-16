@@ -73,19 +73,17 @@ const responsive = {
 }
 
 const DrinksPanel = ({ slice }) => {
-  const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
+  const slides = slice?.items?.map(({ link, link_text, title, image }, i) => (
     <SliderItem key={i}>
       <Image
-        src={item?.document?.data?.thumbnail?.url}
-        alt={item?.document?.data?.thumbnail?.alt}
-        onClick={() => navigate(item.url)}
+        src={image?.url}
+        alt={image?.alt}
+        onClick={() => navigate(link?.url)}
       />
-      <Title>{item?.document?.data?.title?.text}</Title>
-      {show_link && (
-        <Button>
-          <Link to={item?.url}>{link_text?.text}</Link>
-        </Button>
-      )}
+      <Title>{title?.text}</Title>
+      <Button>
+        <Link to={link?.url}>{link_text?.text}</Link>
+      </Button>
     </SliderItem>
   ))
 

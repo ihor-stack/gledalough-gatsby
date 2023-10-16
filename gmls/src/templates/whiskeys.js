@@ -150,28 +150,63 @@ export const query = graphql`
           }
           ... on PrismicWhiskeyhomeDataBodyProductslider {
             id
-            items {
-              image {
-                alt
-                url
-              }
-              link_text {
-                text
-              }
-              title {
-                text
-              }
-              url {
-                id
-                url
-                uid
-              }
-            }
             primary {
               background_color
             }
             slice_label
             slice_type
+            items {
+              product {
+                id
+                url
+                document {
+                  ... on PrismicGin {
+                    id
+                    url
+                    lang
+                    href
+                    _previewable
+                    data {
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      title {
+                        text
+                      }
+                      image {
+                        alt
+                        url
+                      }
+                    }
+                  }
+                  ... on PrismicWhiskey {
+                    id
+                    url
+                    uid
+                    lang
+                    _previewable
+                    href
+                    data {
+                      title {
+                        text
+                      }
+                      thumbnail {
+                        url
+                        alt
+                      }
+                      image {
+                        alt
+                        url
+                      }
+                    }
+                  }
+                }
+                lang
+                uid
+                type
+              }
+            }
           }
         }
       }

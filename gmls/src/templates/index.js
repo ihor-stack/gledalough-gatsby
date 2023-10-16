@@ -98,48 +98,11 @@ export const query = graphql`
               id
               slice_label
               slice_type
-              items {
-                show_link
-                link_text {
-                  text
-                }
-                item {
-                  id
-                  uid
-                  url
-                  document {
-                    ... on PrismicGin {
-                      id
-                      data {
-                        article_title {
-                          text
-                        }
-                        title {
-                          text
-                        }
-                        article_image {
-                          url
-                          alt
-                        }
-                        image {
-                          url
-                          alt
-                        }
-                        thumbnail {
-                          url
-                          alt
-                        }
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
           ... on PrismicHomepageDataBodyCocktailsslider {
             id
             slice_label
-            slice_type
             primary {
               title {
                 text
@@ -172,6 +135,32 @@ export const query = graphql`
                     }
                   }
                 }
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomepageDataBodyDrinkspanel {
+            id
+            slice_label
+            slice_type
+            items {
+              title {
+                text
+              }
+              link_text {
+                text
+              }
+              link {
+                url
+                uid
+                target
+                type
+                id
+                lang
+              }
+              image {
+                alt
+                url
               }
             }
           }

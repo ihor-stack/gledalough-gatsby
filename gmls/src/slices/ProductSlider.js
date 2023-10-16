@@ -68,22 +68,21 @@ const responsive = {
 }
 
 const ProductSlider = ({ slice }) => {
-  console.log({ slice })
   const primary = slice.primary
   const handleDragStart = (e) => e.preventDefault()
 
-  const slides = slice?.items?.map((item, i) => (
+  const slides = slice?.items?.map(({ product: item }, i) => (
     <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
       <SlideImage>
         <img
-          src={item.image?.url}
+          src={item.document?.data?.image?.url}
           className="img-fluid"
-          alt={item?.image?.alt || 'alt placeholder'}
+          alt={item.document?.data?.image?.alt || 'alt placeholder'}
         />
       </SlideImage>
-      <SlideTitle>{item?.title?.text}</SlideTitle>
+      <SlideTitle>{item.document?.data?.title?.text}</SlideTitle>
       <SlideLink>
-        <Link to={item?.url?.url}>{item?.link_text?.text}</Link>
+        <Link to={item?.url}>Learn More</Link>
       </SlideLink>
       <SlideButton>
         <button>Buy now</button>
