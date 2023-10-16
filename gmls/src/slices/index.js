@@ -12,6 +12,8 @@ import DualPanel from './DualPanelStory'
 import DualPanelCocktail from './DualPanelCocktail'
 import HeroTextSplit from './HeroTextSplit'
 import PageScroll from '../components/PageScroll'
+import FeatureArticle from './FeatureArticle'
+import FeatureSecondaryArticle from './FeatureSecondaryArticle'
 
 const componentList = {
   herovideo: HeroVideo,
@@ -26,6 +28,8 @@ const componentList = {
   featurespanel: FeaturesPanel,
   dualpanelstory: DualPanel,
   dualpanelcocktail: DualPanelCocktail,
+  featurearticle: FeatureArticle,
+  featuresecondaryarticle: FeatureSecondaryArticle,
 }
 
 // loop components and append PageScroll to each components

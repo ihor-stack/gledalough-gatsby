@@ -1,9 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { COLOR } from "../constants"
-import { gutter, respondTo, titleMono, sansNormal, headingLarge, titleLarge, titleMedium } from "../constants/styles"
-
+import React from 'react'
+import styled from 'styled-components'
+import {
+  gutter,
+  respondTo,
+  titleMono,
+  sansNormal,
+  headingLarge,
+  titleLarge,
+  titleMedium,
+} from '../constants/styles'
+import moment from 'moment'
+import { PrismicRichText } from '@prismicio/react'
 const PanelContainer = styled.div`
   width: 100%;
 `
@@ -77,7 +84,7 @@ const Summary = styled.div`
   ${titleMedium}
 `
 
-const Paragraph = styled.p`
+const Content = styled.span`
   ${sansNormal}
 `
 
@@ -87,36 +94,35 @@ const ImageHolder = styled.div`
   margin-top: 3rem;
 `
 
-const FeaturePrimary = ({ className, bgColor, content }) => {
+const FeatureArticle = ({ slice }) => {
   // const index = 0; // !!! TODO: nav / state change
+  // const paragraphs = content[0].primary_ps.map((paragraph, pi) => <Paragraph key={pi}>{paragraph}</Paragraph>)
 
-  const paragraphs = content[0].primary_ps.map((paragraph, pi) => <Paragraph key={pi}>{paragraph}</Paragraph>)
+  const { background_color, content, image, summary } = slice.primary
+  const article = slice?.article
 
   return (
-    <PanelContainer className={className} style={{ backgroundColor: `${COLOR[bgColor]}` }}>
+    <PanelContainer style={{ backgroundColor: background_color }}>
       <PanelHeader>
-        <Heading>{content[0].heading}</Heading>
-        <Title>{content[0].title}</Title>
-        <Date>{content[0].date}</Date>
+        <Heading>{article?.heading?.text}</Heading>
+        <Title>{article?.title?.text}</Title>
+        <Date>{moment(article?.date).format('DD MMMM YYYY')}</Date>
       </PanelHeader>
       <Row>
         <Panel>
-          <Summary>{content[0].summary}</Summary>
+          <Summary>{summary?.text}</Summary>
           <ImageHolder>
-            <img className="img-fluid" src={content[0].photo_1} alt="alt placeholder" />
+            <img className="img-fluid" src={image?.url} alt="alt placeholder" />
           </ImageHolder>
         </Panel>
-        <Panel>{paragraphs}</Panel>
+        <Panel>
+          <Content>
+            <PrismicRichText field={content?.richText} />
+          </Content>
+        </Panel>
       </Row>
     </PanelContainer>
   )
 }
 
-FeaturePrimary.propTypes = {
-  className: PropTypes.string,
-  bgColor: PropTypes.string,
-  content: PropTypes.array,
-  photo: PropTypes.string,
-}
-
-export default FeaturePrimary
+export default FeatureArticle
