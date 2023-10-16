@@ -14,6 +14,7 @@ import HeroTextSplit from './HeroTextSplit'
 import PageScroll from '../components/PageScroll'
 import FeatureArticle from './FeatureArticle'
 import FeatureSecondaryArticle from './FeatureSecondaryArticle'
+import ShopCTA from './ShopCTA'
 
 const componentList = {
   herovideo: HeroVideo,
@@ -30,6 +31,7 @@ const componentList = {
   dualpanelcocktail: DualPanelCocktail,
   featurearticle: FeatureArticle,
   featuresecondaryarticle: FeatureSecondaryArticle,
+  shopcta: ShopCTA,
 }
 
 // loop components and append PageScroll to each components
