@@ -13,6 +13,10 @@ import {
 } from '../constants/styles'
 import footer_logo from '../assets/footer_logo.png'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { Field, Form, Formik } from 'formik'
+import * as Yup from 'yup'
+import axios from 'axios'
+import { API_URL } from '../constants/baseUrl'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -80,6 +84,12 @@ const NewsContainer = styled.div`
       display: none;
     }
   `}
+  .error {
+    color: #fca5a5;
+  }
+  .success {
+    color: #86efac;
+  }
 `
 const Nav = styled.nav`
   width: 100%;
@@ -95,7 +105,7 @@ const Nav = styled.nav`
     }
   }
 `
-const InputEmail = styled.input`
+const InputEmail = styled(Field)`
   ${titleMono}
   font-size: 1rem;
   line-height: 1rem;
@@ -105,7 +115,7 @@ const InputEmail = styled.input`
   color: white;
   border-radius: 1.6rem 0 0 1.6rem;
   padding: 0.6rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.225rem;
 `
 const Button = styled.button`
   ${titleMono}
@@ -118,7 +128,19 @@ const Button = styled.button`
   padding: 0.76rem 2rem 0.76rem 1rem;
 `
 
+const emailValidationSchema = Yup.object().shape({
+  // email, required
+  email: Yup.string().email('Please enter valid email.').required('Required'),
+})
 const Footer = ({ className, activeDocMeta }) => {
+  const [success, setSuccess] = React.useState({
+    show: false,
+    message: '',
+  })
+  const [error, setError] = React.useState({
+    show: false,
+    message: '',
+  })
   const footerItems = footer_items.map((item, i) => (
     <li key={i} className="nav-item">
       <Link to={item.url} className="nav-link">
@@ -127,21 +149,71 @@ const Footer = ({ className, activeDocMeta }) => {
     </li>
   ))
 
+  const handleSubmit = async (values) => {
+    const data = {
+      email: values.email,
+    }
+    const api = await axios
+      .post(API_URL.LOCAL + '/contact', data)
+      .then(({ data }) => {
+        console.log(data)
+        setSuccess({
+          show: true,
+          message: 'Thank you for signing up',
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        setError({
+          show: true,
+          message: 'Something went wrong, please try again',
+        })
+      })
+  }
+
   return (
     <PanelContainer className={className}>
       <Col className="col-left">
         <NewsContainer className="text-left">
-          <img
-            src={footer_logo}
-            className="cross-logo img-fluid"
-            alt="Glendalough cross logo"
-          />
-          <FooterTitle>Distillery News</FooterTitle>
-          <InputEmail placeholder={`Email`} />
-          <Button>Sign-up</Button>
-          <FormMessage>
-            Get the latest news and cocktails straight to your inbox
-          </FormMessage>
+          <Formik
+            initialValues={{
+              email: '',
+            }}
+            onSubmit={handleSubmit}
+            validationSchema={emailValidationSchema}
+          >
+            {({ values, errors, handleChange, setFieldValue }) => (
+              <Form id="contact-form" autoComplete="off">
+                <img
+                  src={footer_logo}
+                  className="cross-logo img-fluid"
+                  alt="Glendalough cross logo"
+                />
+                <FooterTitle>Distillery News</FooterTitle>
+                <div>
+                  <div>
+                    <InputEmail
+                      type="email"
+                      id="form-email"
+                      name="email"
+                      placeholder="Email *"
+                      disabled={success.show}
+                      required
+                    />
+                    <Button disabled={success.show}>Sign-up</Button>
+                  </div>
+                  {errors.email && <div className="error">{errors.email}</div>}
+                  {error?.show && <div className="error">{error?.message}</div>}
+                  {success?.show && (
+                    <div className="success">{success?.message}</div>
+                  )}
+                </div>
+                <FormMessage>
+                  Get the latest news and cocktails straight to your inbox
+                </FormMessage>
+              </Form>
+            )}
+          </Formik>
         </NewsContainer>
         <Nav>
           <SocialNav className="nav justify-content-start" />
