@@ -13,6 +13,7 @@ import {
 } from '../constants/styles'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
+import { extractSeo } from '../utils/filters'
 
 const PanelContainer = styled.div`
   display: flex;
