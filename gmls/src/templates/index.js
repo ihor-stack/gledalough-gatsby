@@ -12,6 +12,7 @@ const HomepageTemplate = ({ data }) => {
   const topMenu = data.prismicTopMenu || {}
 
   const { lang, type, url } = homepage || {}
+  const { meta_title, meta_description, meta_image } = homepage.data || {}
   const alternateLanguages = homepage.alternate_languages || []
   const activeDoc = {
     lang,
@@ -19,9 +20,14 @@ const HomepageTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = {
+    meta_title: meta_title?.text,
+    meta_description: meta_description?.text,
+    meta_image: meta_image?.url,
+  }
 
   return (
-    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
+    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc} seo={seo}>
       <SliceZone slices={homepage.data.body} components={components} />
     </Layout>
   )
@@ -164,6 +170,19 @@ export const query = graphql`
               }
             }
           }
+        }
+        meta_description {
+          text
+        }
+        meta_image {
+          url
+          alt
+        }
+        meta_site_url {
+          url
+        }
+        meta_title {
+          text
         }
       }
     }

@@ -11,9 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../stylesheets/index.css'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import PageScroll from './PageScroll'
+import { Seo } from './Seo'
 
-export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
+export const Layout = ({
+  children,
+  hideFooter = false,
+  activeDocMeta,
+  seo,
+}) => {
   const { pathname } = useLocation()
   let currentPage = pathname.split('/').slice(1)[0]
   currentPage = currentPage !== '' ? currentPage : 'home'
@@ -28,21 +33,22 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   })
 
   return (
-    <>
-      <ParallaxProvider>
-        <ScrollToTop />
-        <NavComponent currentPage={currentPage} pathname={pathname} />
+    <ParallaxProvider>
+      <Seo
+        title={seo?.meta_title}
+        description={seo?.meta_description}
+        image={seo?.meta_image}
+      />
+      <ScrollToTop />
+      <NavComponent currentPage={currentPage} pathname={pathname} />
 
-        {transitions((styles, item) => (
-          <animated.div style={styles} className="router-transition">
-            {children}
-          </animated.div>
-        ))}
+      {transitions((styles, item) => (
+        <animated.div style={styles} className="router-transition">
+          {children}
+        </animated.div>
+      ))}
 
-        {!hideFooter && (
-          <Footer className="page" activeDocMeta={activeDocMeta} />
-        )}
-      </ParallaxProvider>
-    </>
+      {!hideFooter && <Footer className="page" activeDocMeta={activeDocMeta} />}
+    </ParallaxProvider>
   )
 }
