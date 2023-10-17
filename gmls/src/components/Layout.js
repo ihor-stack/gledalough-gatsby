@@ -10,11 +10,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../stylesheets/index.css'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import AgeGate from './AgeGate'
+import { useCookies } from 'react-cookie'
 
 export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   const { pathname } = useLocation()
+  const [showAgeGate, setShowAgeGate] = React.useState(true)
   let currentPage = pathname.split('/').slice(1)[0]
   currentPage = currentPage !== '' ? currentPage : 'home'
+  const [cookies, setCookie] = useCookies()
 
   const transitions = useTransition(pathname, {
     from: { opacity: 0 },
@@ -25,8 +29,28 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
     },
   })
 
+  const ageGateValid = () => {
+    // Get Date
+    let currentDate = new Date()
+    currentDate.setDate(currentDate.getDate() + 7)
+    let aWeekFromCurrentDate = currentDate
+    setCookie('adult', true, { expires: aWeekFromCurrentDate })
+  }
+
+  React.useEffect(() => {
+    if (cookies?.adult) {
+      setShowAgeGate(false)
+    } else {
+      setShowAgeGate(true)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cookies?.adult])
+
   return (
     <ParallaxProvider>
+      {showAgeGate && (
+        <AgeGate setAgeValid={ageGateValid} activeDocMeta={activeDocMeta} />
+      )}
       <ScrollToTop />
       <NavComponent currentPage={currentPage} pathname={pathname} />
 
