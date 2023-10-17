@@ -9,6 +9,13 @@ module.exports = {
   siteMetadata: {
     title: 'Multi-language site',
     description: 'Sample multi-language website with Prismic CMS & Gatsby.js',
+    siteUrl: 'https://glendalough.com',
+    ogType: 'website',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@glendalough',
+    pinterestDomainVerify: 'f54b03a588d3c7bda5612bd3c74cc8d0',
+    googleSearchConsole: 'WNQN1m7UbyTMklHMJipAIh7akMWJQ6GIbsOzfuYFxog',
+    bingWebMaster: 'B030043A25801A3B080DB5C7A09C63DD',
   },
   plugins: [
     {

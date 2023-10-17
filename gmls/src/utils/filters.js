@@ -10,3 +10,12 @@ export const localUrl = (url) => {
   }
   return url
 }
+
+export const extractSeo = (data) => {
+  const { meta_title, meta_description, meta_image } = data
+  return {
+    title: meta_title?.text,
+    description: meta_description?.text,
+    image: meta_image?.url,
+  }
+}

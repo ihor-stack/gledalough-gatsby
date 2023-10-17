@@ -3,21 +3,18 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 import ProductDetail from '../components/ProductDetail'
 import ProductDualPanel from '../components/ProductDualPanel'
 import ProductSummary from '../components/ProductSummary'
 import { components } from '../slices'
+import { extractSeo } from '../utils/filters'
 
 const GinTemplate = ({ data }) => {
   if (!data) return null
   const pageContent = data.prismicGin || {}
 
-  const {
-    meta_title,
-    meta_description,
-    body: slices,
-  } = data.prismicGin.data
+  const { body: slices } = data.prismicGin.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -27,13 +24,11 @@ const GinTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicGin.data)
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <ProductDetail data={data.prismicGin.data} />
       <ProductSummary data={data.prismicGin.data} />
       <ProductDualPanel data={data.prismicGin.data} theme="gin" />

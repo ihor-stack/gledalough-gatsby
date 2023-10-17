@@ -12,7 +12,7 @@ import {
   headingMedium,
 } from '../constants/styles'
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -58,7 +58,6 @@ const PrivacyTemplate = ({ data }) => {
   const pageContent = data.prismicOurethos
   const pageData = data.prismicOurethos.data
   // console.log('privacy pageContent ' , pageContent)
-  const { meta_title, meta_description } = data.prismicOurethos.data
 
   const { lang, type, url } = pageContent
   const alternateLanguages = pageContent.alternate_languages || []
@@ -68,13 +67,11 @@ const PrivacyTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicOurethos.data)
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>

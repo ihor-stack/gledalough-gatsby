@@ -4,15 +4,14 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 import { components } from '../slices'
+import { extractSeo } from '../utils/filters'
 
 const OurStoryTemplate = ({ data }) => {
   if (!data) return null
   const ourstory = data.prismicOurstory || {}
   const topMenu = data.prismicTopMenu || {}
-
-  const { meta_title, meta_description } = data.prismicOurstory.data
 
   const { lang, type, url } = ourstory || {}
   const alternateLanguages = ourstory.alternate_languages || []
@@ -22,13 +21,11 @@ const OurStoryTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicOurstory.data)
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <SliceZone slices={ourstory.data.body} components={components} />
     </Layout>
   )

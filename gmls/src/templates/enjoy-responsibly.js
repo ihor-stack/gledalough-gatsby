@@ -12,7 +12,8 @@ import {
   headingMedium,
 } from '../constants/styles'
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
+import { extractSeo } from '../utils/filters'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -68,13 +69,11 @@ const EnjoyResponsiblyTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicEnjoyresponsibly.data)
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <PanelContainer>
         <PanelHeader>
           <Heading>Glendalough Distillery</Heading>

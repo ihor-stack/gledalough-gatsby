@@ -1,15 +1,27 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from 'gatsby'
 
 export const useSiteMetadata = () => {
-  return  useStaticQuery(graphql`
+  return useStaticQuery(graphql`
     query {
-       site {
+      site {
         siteMetadata {
+          siteUrl
           title
           description
+          twitterCard
+          twitterSite
+          pinterestDomainVerify
+          googleSearchConsole
+          bingWebMaster
         }
+      }
+      featuredImage: file(
+        absolutePath: { glob: "**/src/images/social-card.png" }
+      ) {
+        uid
+        absolutePath
+        publicURL
       }
     }
   `)
-
 }

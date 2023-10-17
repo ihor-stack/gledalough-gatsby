@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../stylesheets/index.css'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import PageScroll from './PageScroll'
 
 export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   const { pathname } = useLocation()
@@ -27,21 +26,17 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   })
 
   return (
-    <>
-      <ParallaxProvider>
-        <ScrollToTop />
-        <NavComponent currentPage={currentPage} pathname={pathname} />
+    <ParallaxProvider>
+      <ScrollToTop />
+      <NavComponent currentPage={currentPage} pathname={pathname} />
 
-        {transitions((styles, item) => (
-          <animated.div style={styles} className="router-transition">
-            {children}
-          </animated.div>
-        ))}
+      {transitions((styles, item) => (
+        <animated.div style={styles} className="router-transition">
+          {children}
+        </animated.div>
+      ))}
 
-        {!hideFooter && (
-          <Footer className="page" activeDocMeta={activeDocMeta} />
-        )}
-      </ParallaxProvider>
-    </>
+      {!hideFooter && <Footer className="page" activeDocMeta={activeDocMeta} />}
+    </ParallaxProvider>
   )
 }

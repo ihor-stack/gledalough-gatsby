@@ -3,21 +3,18 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 import ProductDetail from '../components/ProductDetail'
 import ProductDualPanel from '../components/ProductDualPanel'
 import ProductSummary from '../components/ProductSummary'
 import { components } from '../slices'
+import { extractSeo } from '../utils/filters'
 
 const WhiskeyTemplate = ({ data }) => {
   if (!data) return null
   const pageContent = data.prismicWhiskey || {}
 
-  const {
-    meta_title,
-    meta_description,
-    body: slices,
-  } = data.prismicWhiskey.data
+  const { body: slices } = data.prismicWhiskey.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -27,13 +24,11 @@ const WhiskeyTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicWhiskey.data)
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <ProductDetail data={data.prismicWhiskey.data} />
       <ProductSummary data={data.prismicWhiskey.data} />
       <ProductDualPanel data={data.prismicWhiskey.data} theme="whiskey" />

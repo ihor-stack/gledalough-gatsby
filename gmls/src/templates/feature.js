@@ -3,15 +3,15 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 import { components } from '../slices'
+import { extractSeo } from '../utils/filters'
 
 const FeatureTemplate = ({ data }) => {
   if (!data) return null
   const pageContent = data.prismicFeature || {}
 
-  const { meta_title, meta_description, body, ...obj } =
-    data.prismicFeature.data
+  const { body, ...obj } = data.prismicFeature.data
 
   const { lang, type, url } = pageContent || {}
   const alternateLanguages = pageContent.alternate_languages || []
@@ -28,13 +28,11 @@ const FeatureTemplate = ({ data }) => {
       ...obj,
     },
   }))
+  const seo = extractSeo(data.prismicFeature.data)
 
   return (
     <Layout activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <SliceZone slices={slices} components={components} />
     </Layout>
   )

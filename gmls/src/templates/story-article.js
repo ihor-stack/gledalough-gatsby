@@ -5,15 +5,15 @@ import StoryPrimary from '../components/StoryPrimary'
 import StorySecondary from '../components/StorySecondary'
 
 import { Layout } from '../components/Layout'
-import { Seo } from "../components/Seo";
+import { Seo } from '../components/Seo'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { graphql } from 'gatsby'
+import { extractSeo } from '../utils/filters'
 
 const StoryArticleTemplate = ({ data }) => {
   if (!data) return null
   const story = data.prismicStoryarticle || {}
   const topMenu = data.prismicTopMenu || {}
-  const { meta_title, meta_description } = data.prismicStoryarticle.data
 
   const { lang, type, url } = story || {}
   const alternateLanguages = story.alternate_languages || []
@@ -23,12 +23,10 @@ const StoryArticleTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  const seo = extractSeo(data.prismicStoryarticle.data)
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
-      <Seo
-        title={ meta_title?.text }
-        description={ meta_description?.text }
-      />
+      <Seo {...seo} />
       <PageScroll width="100vw" height="100vh">
         {story?.data?.body?.[0]?.items?.map((slice, index) => {
           if (index === 0) {
