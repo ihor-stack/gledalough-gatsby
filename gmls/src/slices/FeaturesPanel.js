@@ -124,10 +124,12 @@ const FeaturesPanel = ({ slice }) => {
 
   // DESKTOP
   const features = items?.map((item, i) => (
-    <Feature key={i} style={{ backgroundImage: `url(${item.image?.url})` }}>
-      <FeatureTitle onClick={() => loadFeature(i + 1)}>
-        {item.title?.text}
-      </FeatureTitle>
+    <Feature
+      key={i}
+      style={{ backgroundImage: `url(${item.image?.url})` }}
+      onClick={() => loadFeature(i + 1)}
+    >
+      <FeatureTitle>{item.title?.text}</FeatureTitle>
     </Feature>
   ))
 
@@ -139,10 +141,9 @@ const FeaturesPanel = ({ slice }) => {
         className="slide"
         key={i}
         style={{ backgroundImage: `url(${item.image?.url})` }}
+        onClick={() => loadFeature(i + 1)}
       >
-        <FeatureTitle onClick={() => loadFeature(i + 1)}>
-          {item.title?.text}
-        </FeatureTitle>
+        <FeatureTitle>{item.title?.text}</FeatureTitle>
       </Feature>
     </SliderItem>
   ))

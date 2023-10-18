@@ -38,9 +38,11 @@ const Title = styled.h3`
   text-align: left;
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled.span`
   ${sansNormal}
   margin: 1rem 3rem 0 3rem;
+  max-height: 18rem;
+  overflow-y: auto;
 `
 
 const DualPanelFeature = ({
