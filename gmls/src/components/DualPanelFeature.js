@@ -38,7 +38,7 @@ const Title = styled.h3`
   text-align: left;
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled.div`
   ${sansNormal}
   margin: 1rem 3rem 0 3rem;
 `

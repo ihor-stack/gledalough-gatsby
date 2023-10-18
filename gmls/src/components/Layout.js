@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState } from 'react'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ScrollToTop from '../utils/ScrollToTop'
 import { animated, useTransition } from '@react-spring/web'
@@ -12,11 +13,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import AgeGate from './AgeGate'
 import { useCookies } from 'react-cookie'
 import useCurrentLocation from '../hooks/useCurrentLocation'
+import { WaypointContext } from '../hooks/WaypointContext.js';
 
 export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   const {pathname, currentPage} = useCurrentLocation();
   const [showAgeGate, setShowAgeGate] = React.useState(true)
   const [cookies, setCookie] = useCookies()
+  const [waypoint, setWaypoint] = useState('');
 
   const transitions = useTransition(pathname, {
     from: { opacity: 0 },
@@ -45,20 +48,22 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
   }, [cookies?.adult])
 
   return (
-    <ParallaxProvider>
-      {showAgeGate && (
-        <AgeGate setAgeValid={ageGateValid} activeDocMeta={activeDocMeta} />
-      )}
-      <ScrollToTop />
-      <NavComponent currentPage={currentPage} pathname={pathname} />
+    <WaypointContext.Provider value={[waypoint, setWaypoint]}>
+      <ParallaxProvider>
+        {showAgeGate && (
+          <AgeGate setAgeValid={ageGateValid} activeDocMeta={activeDocMeta} />
+        )}
+        <ScrollToTop />
+        <NavComponent currentPage={currentPage} pathname={pathname} />
 
-      {transitions((styles, item) => (
-        <animated.div style={styles} className="router-transition">
-          {children}
-        </animated.div>
-      ))}
+        {transitions((styles, item) => (
+          <animated.div style={styles} className="router-transition">
+            {children}
+          </animated.div>
+        ))}
 
-      {!hideFooter && <Footer className="page" activeDocMeta={activeDocMeta} />}
-    </ParallaxProvider>
+        {!hideFooter && <Footer className="page" activeDocMeta={activeDocMeta} />}
+      </ParallaxProvider>
+    </WaypointContext.Provider>
   )
 }

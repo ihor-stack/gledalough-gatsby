@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContext } from 'react'
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { COLOR, FONT } from '../constants';
@@ -6,6 +7,7 @@ import { respondTo} from '../constants/styles';
 import { nav_items } from '../constants/menu_items';
 import shop_logo from '../assets/ic_shop.svg';
 import cross_logo from '../assets/ic_cross.svg';
+import { WaypointContext } from '../hooks/WaypointContext.js';
 
 const FixedContainer =  styled.div`
   position: fixed;
@@ -80,7 +82,18 @@ const ShopLogoContainer = styled.div`
   }
 `;
 
+const inverted = {
+  home: ['herovideo', 'stories_section', 'footer'],
+  'our-story': ['herovideo', 'footer'],
+  gins: ['herovideo', 'dualpanelstory', 'footer'],
+  whiskeys: ['herovideo', 'dualpanelstory', 'footer'],
+  cocktails: ['herovideo', 'stories_section', 'footer'],
+  features: ['herovideo', 'stories_section', 'footer'],
+}
+
 const NavPrimary = ({ pathname, currentPage }) => {
+  const [waypoint, setWaypoint] = useContext(WaypointContext);
+  const invert = inverted[currentPage] && inverted[currentPage].includes(waypoint);
 
   const navItems = nav_items.map((item, i) => (
     <li key={i} className="nav-item">
@@ -89,11 +102,11 @@ const NavPrimary = ({ pathname, currentPage }) => {
       </Link>
     </li>
   ));
- 
+
   return (
     <>
-    <FixedContainer className='left'>
-      <Nav className={`${currentPage} invert`}>
+    <FixedContainer className={`left`}>
+      <Nav className={ invert ? 'invert' : ''}>
         <ul className="nav">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -104,8 +117,8 @@ const NavPrimary = ({ pathname, currentPage }) => {
         </ul>
       </Nav>
     </FixedContainer>
-    <FixedContainer className='right'>
-      <ShopLogoContainer className={`${currentPage} invert`}>
+    <FixedContainer className={`right`}>
+      <ShopLogoContainer className={ invert ? 'invert' : ''}>
         <img src={shop_logo} className="nav-logo-shop" alt="Glendalough shop logo" />
       </ShopLogoContainer>
     </FixedContainer>
