@@ -24,6 +24,7 @@ const Container = styled.div`
 
 const Notice = styled.span`
   font-family: ${FONT.serif};
+  letter-spacing: 0.05rem;
   font-size: 1.2rem;
   font-weight: 500;
 `

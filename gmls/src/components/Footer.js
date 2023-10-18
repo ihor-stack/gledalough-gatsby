@@ -94,15 +94,22 @@ const NewsContainer = styled.div`
 const Nav = styled.nav`
   width: 100%;
   margin-top: 2rem;
+  color: ${COLOR.white};
+  ${sansNormal}
+  font-size: 1rem;
   &.nav-footer a {
-    ${sansNormal}
-    font-size: 1rem;
     line-height: 1rem;
     color: ${COLOR.white};
     text-transform: uppercase;
     &:first-of-type {
       padding-left: 0;
     }
+  }
+  .language-switcher {
+    font-size: 0.9rem;
+  }
+  span {
+    color: ${COLOR.white};
   }
 `
 const InputEmail = styled(Field)`

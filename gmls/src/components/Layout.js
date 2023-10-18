@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useLocation } from '@reach/router'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ScrollToTop from '../utils/ScrollToTop'
 import { animated, useTransition } from '@react-spring/web'
@@ -12,12 +11,11 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import AgeGate from './AgeGate'
 import { useCookies } from 'react-cookie'
+import useCurrentLocation from '../hooks/useCurrentLocation'
 
 export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
-  const { pathname } = useLocation()
+  const {pathname, currentPage} = useCurrentLocation();
   const [showAgeGate, setShowAgeGate] = React.useState(true)
-  let currentPage = pathname.split('/').slice(1)[0]
-  currentPage = currentPage !== '' ? currentPage : 'home'
   const [cookies, setCookie] = useCookies()
 
   const transitions = useTransition(pathname, {

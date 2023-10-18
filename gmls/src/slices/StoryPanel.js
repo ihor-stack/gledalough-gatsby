@@ -121,6 +121,7 @@ const StoryPanel = ({ slice }) => {
             </Panel>
           )
         })}
+        {!items[1] && (<Panel style={{ backgroundColor: `${COLOR.beige}`}}></Panel>)}
       </PanelContainer>
     )
   }, [])

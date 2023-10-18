@@ -10,7 +10,7 @@ import {
   titleLarge,
 } from '../constants/styles'
 import DualPanelFeature from '../components/DualPanelFeature'
-import useGinFeatureState from '../utils/useGinFeatureState'
+import useGinFeatureState from '../hooks/useGinFeatureState'
 import { PrismicRichText } from '@prismicio/react'
 
 const PanelContainer = styled.div`
@@ -85,7 +85,7 @@ const FeatureTitle = styled.h3`
   padding: 1rem;
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled.div`
   ${sansNormal}
   margin: 1rem 0;
   ${respondTo.md`

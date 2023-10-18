@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import parse from 'html-react-parser'
 import styled from 'styled-components'
-import { FONT } from '../constants'
+import { COLOR, FONT } from '../constants'
 import {
   gutter,
   gutterMobile,
@@ -20,6 +20,7 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  background-color: ${COLOR.warmwhite};
   ${gutterMobile}
   ${respondTo.sm`
     ${gutter}
