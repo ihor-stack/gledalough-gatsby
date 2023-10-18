@@ -7,6 +7,7 @@ import {
   gutter,
   titleMedium,
   buttonBlank,
+  buttonRounded,
   linkUnderlined,
 } from '../constants/styles'
 import img_bg_texture from '../assets/bg_textured_paper.jpg'
@@ -19,7 +20,7 @@ const PanelContainer = styled.div`
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   min-height: 100vh;
 `
 
@@ -38,6 +39,7 @@ const SliderContainer = styled.div`
   ${gutter}
   width: 100%;
   display: flex;
+  flex-direction: column;
   flex: 1;
 `
 
@@ -52,20 +54,37 @@ const SliderItem = styled.div`
   justify-content: center;
 `
 
-const Button = styled.button`
+const SlideButton = styled.button`
   ${buttonBlank}
   > a {
     ${linkUnderlined}
   }
 `
 
+const ButtonMore = styled.button`
+  pointer-events: all;
+  ${buttonRounded}
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 30vh;
+  padding: 1rem 1.6rem;
+  color: ${COLOR.black};
+  border-color: ${COLOR.black};
+  text-decoration: none;
+  > a {
+    ${linkUnderlined}
+    border-bottom: 0;
+  }
+`
+
 const Title = styled.h3`
   margin-top: 1rem;
+  width: 100%;
   ${titleMedium}
 `
 
 const Image = styled.img`
-  border 10px solid ${COLOR.cream};
+  border: 10px solid ${COLOR.cream};
   box-shadow: 1px 1px 1px 1px ${COLOR.beige};
   border-radius: 50% 50% 0 0;
   -webkit-border-radius: 50% 50% 0 0;
@@ -95,9 +114,9 @@ const CocktailsSlider = ({ slice }) => {
       />
       <Title>{item?.document?.data?.title?.text}</Title>
       {show_link && (
-        <Button>
+        <SlideButton>
           <Link to={item?.url}>{link_text?.text}</Link>
-        </Button>
+        </SlideButton>
       )}
     </SliderItem>
   ))
@@ -108,6 +127,9 @@ const CocktailsSlider = ({ slice }) => {
       <SliderContainer>
         <AliceCarousel mouseTracking items={slides} responsive={responsive} />
       </SliderContainer>
+      <ButtonMore>
+          <Link to={`/cocktails`}>Discover more</Link>
+      </ButtonMore>
     </PanelContainer>
   )
 }

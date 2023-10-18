@@ -16,17 +16,19 @@ const PageScroll = ({ className, children }) => {
   }
 
   return (
-    <Waypoint
-      className={`page-scroll ${className}`}
-      topOffset="50px"
-      bottomOffset="50px"
-      onEnter={(wp) => handleEnter(children.props?.slice?.slice_type, wp)}
-      onLeave={(wp) => handleLeave(children.props?.slice?.slice_type, wp)}
-    >
-      <div className={`waypoint ${children.props?.slice?.slice_type || ''}`}>
-        {children}
-      </div>
-    </Waypoint>
+    <>
+      <Waypoint
+        className={`page-scroll ${className}`}
+        topOffset="50px"
+        bottomOffset="50px"
+        onEnter={(wp) => handleEnter(children.props?.slice?.slice_type, wp)}
+        onLeave={(wp) => handleLeave(children.props?.slice?.slice_type, wp)}
+      >
+        <div className={`waypoint ${children.props?.slice?.slice_type || ''}`}>
+          {children}
+        </div>
+      </Waypoint>
+    </>
   )
   // return (
   //   <>

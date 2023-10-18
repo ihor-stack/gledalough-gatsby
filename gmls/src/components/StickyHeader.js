@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { COLOR } from '../constants/'
 import { sansNormal } from '../constants/styles'
 import header_glendalough from '../assets/header_glendalough.svg'
+import usePageScroll from '../hooks/usePageScroll'
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Container = styled.div`
   right: 0;
   background-color: ${COLOR.white};
   z-index: 10001;
-  &.home {
+  &.hidden {
     display: none;
   }
 `
@@ -34,16 +35,20 @@ const Header = styled.div`
   }
 `
 
-const StickyHeader = ({ currentPage }) => (
-  <Container className={currentPage}>
-    <Header>
-      <img
-        src={header_glendalough}
-        className="cross-logo"
-        alt="Glendalough header logo"
-      />
-    </Header>
-  </Container>
-)
+const StickyHeader = ({ currentPage }) => {
+  const pageScroll = usePageScroll();
+
+  return (
+    <Container className={ pageScroll < 250  ? 'hidden' : '' }>
+      <Header>
+        <img
+          src={header_glendalough}
+          className="cross-logo"
+          alt="Glendalough header logo"
+        />
+      </Header>
+    </Container>
+  )
+}
 
 export default StickyHeader

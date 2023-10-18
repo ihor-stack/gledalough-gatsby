@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import { linkResolver } from '../utils/linkResolver'
 import { defaultLanguage } from '../../prismic-configuration'
 
@@ -17,7 +16,7 @@ export const LanguageSwitcher = ({ activeDocMeta }) => {
   const alternateDoc = activeDocMeta.alternateLanguages[0]
   console.log(currentLang)
   return (
-    <div className="col-md-8 d-flex mt-5">
+    <div className="language-switcher col-md-8 d-flex mt-5">
       <div className="d-flex align-items-center">
         {currentLang === 'en-us' && (
           <>
