@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PageScroll from "../components/PageScroll"
 import HeroVideo from "../components/HeroVideo"
 import ProductIntro from "../components/ProductIntro"

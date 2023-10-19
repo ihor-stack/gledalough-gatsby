@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
 //import { useRef, useEffect } from 'react';
 import { COLOR } from '../constants'
-import { gutter } from '../constants/styles'
+import { gutterLeft } from '../constants/styles'
 import { buttonRounded, linkUnderlined, titleMedium } from '../constants/styles'
 
 const PanelContainer = styled.div`
@@ -12,12 +12,12 @@ const PanelContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  ${gutter}
+  padding-bottom: 5rem;
+  ${gutterLeft}
 `
 const SliderContainer = styled.div`
   width: 100%;
   max-width: 100%;
-  height: 100vh;
 `
 
 const SliderItem = styled.div`
@@ -25,9 +25,8 @@ const SliderItem = styled.div`
 `
 const SlideImage = styled.div`
   text-align: center;
-  margin-top: 10vh;
   img {
-    height: 60vh;
+    height: 38rem;
   }
 `
 const SlideTitle = styled.h3`
@@ -63,16 +62,32 @@ const responsive = {
   },
   1024: {
     items: 3,
-    itemsFit: 'fill',
   },
 }
 
 const ProductSlider = ({ slice }) => {
   const primary = slice.primary
   const handleDragStart = (e) => e.preventDefault()
+  const percent = 0.15
+  const section = useRef(null)
+  const [padding, setPadding] = useState(0)
+
+  const syncState = () => {
+    const { current } = section
+    if (current) {
+      setPadding(current.offsetWidth * percent)
+    }
+  }
+
+  useEffect(syncState, [])
 
   const slides = slice?.items?.map(({ product: item }, i) => (
-    <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
+    <SliderItem
+      key={i}
+      onDragStart={handleDragStart}
+      role="presentation"
+      data-value={i}
+    >
       <SlideImage>
         <img
           src={item.document?.data?.image?.url}
@@ -94,8 +109,14 @@ const ProductSlider = ({ slice }) => {
     <PanelContainer
       style={{ backgroundColor: `${primary?.background_color || COLOR.cream}` }}
     >
-      <SliderContainer>
-        <AliceCarousel mouseTracking items={slides} responsive={responsive} />
+      <SliderContainer ref={section}>
+        <AliceCarousel
+          mouseTracking
+          items={slides}
+          responsive={responsive}
+          paddingRight={padding}
+          onResized={syncState}
+        />
       </SliderContainer>
     </PanelContainer>
   )

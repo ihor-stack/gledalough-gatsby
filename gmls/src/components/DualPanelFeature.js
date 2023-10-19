@@ -2,15 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { COLOR } from '../constants'
-import { sansNormal, titleLarge } from '../constants/styles'
+import { buttonBlank, sansNormal, titleLarge } from '../constants/styles'
 import { PrismicRichText } from '@prismicio/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 
 const PanelContainer = styled.div`
   margin-top: 4rem;
   display: flex;
   align-items: stretch;
-  width: 100%;
-  height: 50vh;
+  min-height: 30rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1024;
 `
 
 const Panel = styled.div`
@@ -21,7 +28,6 @@ const Panel = styled.div`
   justify-content: center;
   align-items: center;
   &.photo {
-    cursor: pointer;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -41,8 +47,16 @@ const Title = styled.h3`
 const Paragraph = styled.span`
   ${sansNormal}
   margin: 1rem 3rem 0 3rem;
-  max-height: 18rem;
+  max-height: 80vh;
   overflow-y: auto;
+`
+
+const CloseButton = styled.button`
+  ${buttonBlank}
+  color: ${COLOR.white};
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
 `
 
 const DualPanelFeature = ({
@@ -52,24 +66,34 @@ const DualPanelFeature = ({
   content,
   title,
   close,
-}) => (
-  <PanelContainer
-    className={className}
-    style={{ backgroundColor: `${bgColor || COLOR.beige}` }}
-  >
-    <Panel
-      className="photo"
-      style={{ backgroundImage: `url(${image})` }}
-      onClick={() => close(null)}
-    />
-    <Panel className="text">
-      <Title>{title}</Title>
-      <Paragraph>
-        <PrismicRichText field={content} />
-      </Paragraph>
-    </Panel>
-  </PanelContainer>
-)
+}) => {
+  React.useEffect(() => {
+    // disable scrolling
+    document.body.style.overflow = 'hidden'
+    return () => {
+      // enable scrolling
+      document.body.style.overflow = 'unset'
+    }
+  }, [])
+  return (
+    <PanelContainer
+      className={className}
+      style={{ backgroundColor: `${bgColor || COLOR.beige}` }}
+    >
+      <Panel className="text">
+        <Title>{title}</Title>
+        <Paragraph>
+          <PrismicRichText field={content} />
+        </Paragraph>
+      </Panel>
+      <Panel className="photo" style={{ backgroundImage: `url(${image})` }}>
+        <CloseButton onClick={() => close(null)}>
+          <FontAwesomeIcon icon={faXmarkCircle} size="3x" />
+        </CloseButton>
+      </Panel>
+    </PanelContainer>
+  )
+}
 
 DualPanelFeature.propTypes = {
   className: PropTypes.string,

@@ -1,14 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR } from '../constants'
-import {
-  gutter,
-  gutterRight,
-  respondTo,
-  sansNormal,
-  titleMedium,
-  headingLarge,
-} from '../constants/styles'
+import { COLOR, FONT } from '../constants'
+import { gutter, respondTo, sansNormal, titleMedium } from '../constants/styles'
 import { PrismicRichText } from '@prismicio/react'
 
 const PanelContainer = styled.div`
@@ -28,11 +21,12 @@ const Panel = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
     max-width: 100%;
+    min-height: 85vh;
   }
   &.text {
     ${gutter}
+    padding: 4rem;
     max-width: 100%;
     text-align: center;
   }
@@ -41,7 +35,7 @@ const Panel = styled.div`
     padding: 0;
     width: 50%; 
     &.text {
-      ${gutterRight}
+      padding-right: 5vw;
       padding-left: 5vw;
       text-align: left;
       max-width: 50%; 
@@ -49,13 +43,13 @@ const Panel = styled.div`
   `}
 `
 
-const Heading = styled.div`
-  ${headingLarge}
-  letter-spacing: 0.2rem;
-  margin-top: 4rem;
-  ${respondTo.lg`
-    margin-top: 0;
-  `}
+const Heading = styled.span`
+  color: ${COLOR.black};
+  font-family: ${FONT.sans};
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 `
 
 // const ParagraphIntro = styled.p`
@@ -75,14 +69,18 @@ const Paragraph = styled.span`
   h5,
   h6 {
     ${titleMedium}
-    margin: 0;
+    margin-bottom: 3rem;
     padding: 0;
     text-align: center;
+    line-height: 40px;
+    letter-spacing: 1.44px;
   }
   ${respondTo.lg`
     margin: 0;
-    padding: 2rem 0 0 4rem;
-    text-align: center;
+    padding: 2rem 0 0 2rem;
+    p {
+      margin-left: 30%;
+    }
   `}
 `
 

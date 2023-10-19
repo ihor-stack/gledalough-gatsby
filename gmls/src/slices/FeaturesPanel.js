@@ -8,6 +8,7 @@ import {
   sansNormal,
   titleMedium,
   titleLarge,
+  buttonBlank,
 } from '../constants/styles'
 import DualPanelFeature from '../components/DualPanelFeature'
 import useGinFeatureState from '../hooks/useGinFeatureState'
@@ -53,37 +54,6 @@ const Features = styled.div`
     display: flex;
   `}
 `
-const Feature = styled.div`
-  cursor: pointer;
-  display: flex;
-  flex-grow: 1;
-  width: 30%;
-  max-width: 30%;
-  margin-right: 3%;
-  height: 25vh;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &.slide {
-    width: 90%;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-`
-const FeatureTitle = styled.h3`
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-  background: rgba(35, 31, 32, 0.6);
-  ${titleMedium}
-  color: ${COLOR.white};
-  padding: 1rem;
-`
 
 const Paragraph = styled.div`
   ${sansNormal}
@@ -91,6 +61,72 @@ const Paragraph = styled.div`
   ${respondTo.md`
     margin: 0 4rem 0 0;
   `}
+`
+
+const FeatureTitle = styled.h3`
+  ${titleMedium}
+  color: ${COLOR.white};
+`
+
+const FeatureContent = styled.div`
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(35, 31, 32, 0.6);
+  padding: 1rem;
+`
+
+const FeatureAction = styled.button`
+  ${buttonBlank}
+  ${sansNormal}
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-decoration: underline;
+  font-weight: 600;
+  opacity: 0;
+  display: none;
+`
+const Feature = styled.div`
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 30%;
+  max-width: 30%;
+  margin-right: 3%;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  ${FeatureContent} {
+    min-height: 0;
+    max-height: 6rem;
+  }
+  &:hover {
+    ${FeatureContent} {
+      transition: all 0.2s ease-in-out;
+      background: rgba(255, 255, 255, 0.8);
+      max-height: 100%;
+      ${FeatureTitle} {
+        color: ${COLOR.black};
+      }
+      ${FeatureAction} {
+        opacity: 1;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  &.slide {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 `
 
 const FeaturesSlider = styled.div`
@@ -129,7 +165,10 @@ const FeaturesPanel = ({ slice }) => {
       style={{ backgroundImage: `url(${item.image?.url})` }}
       onClick={() => loadFeature(i + 1)}
     >
-      <FeatureTitle>{item.title?.text}</FeatureTitle>
+      <FeatureContent>
+        <FeatureTitle>{item.title?.text}</FeatureTitle>
+        <FeatureAction>Expand</FeatureAction>
+      </FeatureContent>
     </Feature>
   ))
 

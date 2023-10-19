@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { COLOR, FONT } from '../constants'
 import {
@@ -32,12 +31,25 @@ const Panel = styled.div`
   ${gutter}
   padding-top: 5rem;
   padding-bottom: 5rem;
-  img {
-    height: 40%;
+  .img-container {
+    width: 100%;
+    margin-top: -8rem;
+    margin-bottom: 5rem;
+    &.left {
+      margin-left: -5vw;
+    }
+    &.right {
+      margin-right: -5vw;
+      display: flex;
+      justify-content: end;
+    }
+    img {
+      min-height: 21rem;
+      object-fit: cover;
+    }
   }
   ${respondTo.lg`
     flex: 1;
-    padding: 0;
     &:first-of-type{
       ${gutterLeft}
       padding-right:5vw;
@@ -52,23 +64,29 @@ const Panel = styled.div`
 const Heading = styled.h3`
   width: 100%;
   text-align: start;
-  margin-top: 2rem;
-  ${headingMedium}
+  color: ${COLOR.black};
+  font-family: ${FONT.sans};
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 `
 
 const Title = styled.h2`
   width: 100%;
   text-align: start;
+  margin-bottom: 1rem;
   ${titleLarge}
 `
 
 const Subtitle = styled.span`
   width: 100%;
   text-align: start;
-  font-size: 1.2rem !important;
+  font-size: 1rem;
   line-height: 1.6rem;
   font-family: ${FONT.sans};
-  font-weight: 500;
+  letter-spacing: 0.96px;
   h3 {
     font-size: 1.2rem !important;
   }
@@ -84,6 +102,7 @@ const Button = styled.button`
 `
 
 const StoryPanel = ({ slice }) => {
+  console.log(slice)
   const renderItem = useCallback((items, direction) => {
     return (
       <PanelContainer>
@@ -91,6 +110,8 @@ const StoryPanel = ({ slice }) => {
           const left =
             (index % 2 == 0 && direction === 'left') ||
             (index % 2 !== 0 && direction === 'right')
+          const right = !left && index % 2 !== 0 && direction === 'right'
+
           const { document, slug } = chapters
           const { data } = document
 
@@ -102,11 +123,22 @@ const StoryPanel = ({ slice }) => {
               }}
             >
               {left && (
-                <img
-                  src={data?.featured_image?.url}
-                  className="img-fluid"
-                  alt="alt placeholder"
-                />
+                <div className={`img-container ${direction}`}>
+                  <img
+                    src={data?.featured_image?.url}
+                    className="img-fluid"
+                    alt="alt placeholder"
+                  />
+                </div>
+              )}
+              {right && (
+                <div className={`img-container ${direction}`}>
+                  <img
+                    src={data?.featured_image?.url}
+                    className="img-fluid"
+                    alt="alt placeholder"
+                  />
+                </div>
               )}
               <Heading>{data?.heading?.text}</Heading>
               <Title>{data?.title?.text}</Title>
@@ -121,7 +153,9 @@ const StoryPanel = ({ slice }) => {
             </Panel>
           )
         })}
-        {!items[1] && (<Panel style={{ backgroundColor: `${COLOR.beige}`}}></Panel>)}
+        {!items[1] && (
+          <Panel style={{ backgroundColor: `${COLOR.beige}` }}></Panel>
+        )}
       </PanelContainer>
     )
   }, [])
@@ -133,14 +167,6 @@ const StoryPanel = ({ slice }) => {
       {renderItem(slice?.items?.slice(2), 'right')}
     </>
   )
-}
-
-StoryPanel.propTypes = {
-  className: PropTypes.string,
-  imgLeft: PropTypes.string,
-  imgRight: PropTypes.string,
-  panelLeft: PropTypes.object,
-  panelRight: PropTypes.object,
 }
 
 export default StoryPanel

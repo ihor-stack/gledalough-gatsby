@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR } from '../constants'
+import { COLOR, FONT } from '../constants'
 import {
   gutter,
   respondTo,
@@ -29,13 +29,12 @@ const Panel = styled.div`
   justify-content: start;
   align-items: center;
   margin-top: 2rem;
-  min-height: 75vh;
   ${respondTo.sm`
     margin-top: 0;
     flex: 1;
   `}
   ${respondTo.md`
-    margin-top: 30vh;
+    margin: 20vh 0;
   `}
 `
 
@@ -44,10 +43,13 @@ const Heading = styled.h3`
   text-align: end;
   padding-right: 5vw;
   margin-top: 6rem;
-  ${headingLarge}
-  font-size: 1.2rem;
+  color: ${COLOR.black};
+  font-family: ${FONT.sans};
+  font-size: 0.9rem;
   line-height: 1.2rem;
-  letter-spacing: 0.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   ${respondTo.sm`
     margin-top: 12rem;
   `}
@@ -62,7 +64,8 @@ const Title = styled.h2`
   ${titleLarge}
   margin-top: 6rem;
   ${respondTo.sm`
-    margin-top: 0;
+    margin-top: -.5rem;
+    font-size: 2rem;
   `}
 `
 

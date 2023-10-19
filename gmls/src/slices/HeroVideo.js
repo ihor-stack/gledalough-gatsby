@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useParallax } from 'react-scroll-parallax'
 import useCurrentLocation from '../hooks/useCurrentLocation'
-import { COLOR } from '../constants'
+import { COLOR, FONT } from '../constants'
 import { respondTo, headingLarge, titleLargest } from '../constants/styles'
 import logo from '../assets/ic_glendalough.svg'
 import ic_arrow_down from '../assets/ic_arrow_down.png'
@@ -37,8 +37,15 @@ const PanelContainer = styled.div`
 `
 
 const Heading = styled.h1`
-  ${headingLarge}
-  text-align:center;
+  color: ${COLOR.black};
+  font-family: ${FONT.sans};
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: 'normal';
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
   color: ${COLOR.white};
 `
 const Title = styled.h2`
@@ -60,13 +67,13 @@ const ArrowContainer = styled.span`
   align-items: center;
   z-index: 100001;
   .icon-arrow {
-      display: flex;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-image: url(${ic_arrow_down});
-      width: 46px;
-      height: 22px;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(${ic_arrow_down});
+    width: 46px;
+    height: 22px;
   }
 `
 
@@ -74,7 +81,7 @@ const HeroVideo = ({ slice }) => {
   const parallaxText = useParallax({
     speed: -33,
   })
-  const {pathname, currentPage} = useCurrentLocation()
+  const { pathname, currentPage } = useCurrentLocation()
   const backgroundImage = slice.primary.background_image.url
   const videoURL = slice.primary.video_url?.url
   const heading = slice.primary.heading.text
@@ -93,7 +100,9 @@ const HeroVideo = ({ slice }) => {
           </div>
         )}
       </div>
-      <ArrowContainer><div className='icon-arrow'></div></ArrowContainer>
+      <ArrowContainer>
+        <div className="icon-arrow"></div>
+      </ArrowContainer>
     </PanelContainer>
   )
 }
