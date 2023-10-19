@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import SocialNav from './SocialNav'
-import { COLOR } from '../constants'
+import { COLOR, FONT } from '../constants'
 import { footer_items } from '../constants/menu_items'
 import {
   gutter,
@@ -12,7 +12,7 @@ import {
   sansNormal,
 } from '../constants/styles'
 import footer_logo from '../assets/footer_logo.png'
-import { LanguageSwitcher } from './LanguageSwitcher'
+// import { LanguageSwitcher } from './LanguageSwitcher'
 import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
@@ -25,9 +25,8 @@ const PanelContainer = styled.div`
   color: ${COLOR.white};
   ${gutter}
   padding-top: 4rem;
-  ${respondTo.md`
-    flex-direction: row;
-  `}
+  padding-bottom: 5rem;
+  font-family: ${FONT.sans};
 `
 const Col = styled.div`
   display: flex;
@@ -41,15 +40,9 @@ const Col = styled.div`
     width: 15vw;
   }
   &.col-right {
+    flex: 1;
+    justify-content: center;
     display: flex;
-    padding-top: 15vw;
-    align-items: end;
-    p {
-      ${sansNormal}
-      font-size: 1rem;
-      line-height: 1rem;
-      color: ${COLOR.white};
-    }
   }
   ${respondTo.md`
       &.col-left {
@@ -60,16 +53,24 @@ const Col = styled.div`
       }
   `}
 `
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
 const FooterTitle = styled.h2`
   ${titleLargest}
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: ${COLOR.white};
 `
 
 const FormMessage = styled.p`
   ${sansNormal}
   color: ${COLOR.white};
-  margin-top: 2rem;
+  margin-top: 1rem;
+  letter-spacing: 1px;
 `
 const NewsContainer = styled.div`
   width: 100%;
@@ -93,16 +94,23 @@ const NewsContainer = styled.div`
 `
 const Nav = styled.nav`
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   color: ${COLOR.white};
   ${sansNormal}
   font-size: 1rem;
-  &.nav-footer a {
-    line-height: 1rem;
-    color: ${COLOR.white};
-    text-transform: uppercase;
-    &:first-of-type {
-      padding-left: 0;
+  &.nav-footer {
+    width: auto;
+    flex: 1;
+    margin-top: 0rem;
+    a {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: ${COLOR.white};
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      &:first-of-type {
+        padding-left: 0;
+      }
     }
   }
   .language-switcher {
@@ -121,8 +129,15 @@ const InputEmail = styled(Field)`
   border: 1px solid white;
   color: white;
   border-radius: 1.6rem 0 0 1.6rem;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.5rem;
   margin-bottom: 0.225rem;
+  &:placeholder {
+    color: ${COLOR.white};
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `
 const Button = styled.button`
   ${titleMono}
@@ -133,6 +148,7 @@ const Button = styled.button`
   color: white;
   border-radius: 0 1.6rem 1.6rem 0;
   padding: 0.76rem 2rem 0.76rem 1rem;
+  border-left: none;
 `
 
 const emailValidationSchema = Yup.object().shape({
@@ -180,68 +196,75 @@ const Footer = ({ className, activeDocMeta }) => {
 
   return (
     <PanelContainer className={className}>
-      <Col className="col-left">
-        <NewsContainer className="text-left">
-          <Formik
-            initialValues={{
-              email: '',
-            }}
-            onSubmit={handleSubmit}
-            validationSchema={emailValidationSchema}
-          >
-            {({ values, errors, handleChange, setFieldValue }) => (
-              <Form id="contact-form" autoComplete="off">
-                <img
-                  src={footer_logo}
-                  className="cross-logo img-fluid"
-                  alt="Glendalough cross logo"
-                />
-                <FooterTitle>Distillery News</FooterTitle>
-                <div>
+      <Row>
+        <Col className="col-left">
+          <NewsContainer className="text-left">
+            <Formik
+              initialValues={{
+                email: '',
+              }}
+              onSubmit={handleSubmit}
+              validationSchema={emailValidationSchema}
+            >
+              {({ values, errors, handleChange, setFieldValue }) => (
+                <Form id="contact-form" autoComplete="off">
+                  <img
+                    src={footer_logo}
+                    className="cross-logo img-fluid"
+                    alt="Glendalough cross logo"
+                  />
+                  <FooterTitle>Distillery News</FooterTitle>
                   <div>
-                    <InputEmail
-                      type="email"
-                      id="form-email"
-                      name="email"
-                      placeholder="Email *"
-                      disabled={success.show}
-                      required
-                    />
-                    <Button disabled={success.show}>Sign-up</Button>
+                    <div>
+                      <InputEmail
+                        type="email"
+                        id="form-email"
+                        name="email"
+                        placeholder="Email *"
+                        disabled={success.show}
+                        required
+                      />
+                      <Button disabled={success.show}>Sign-up</Button>
+                    </div>
+                    {errors.email && (
+                      <div className="error">{errors.email}</div>
+                    )}
+                    {error?.show && (
+                      <div className="error">{error?.message}</div>
+                    )}
+                    {success?.show && (
+                      <div className="success">{success?.message}</div>
+                    )}
                   </div>
-                  {errors.email && <div className="error">{errors.email}</div>}
-                  {error?.show && <div className="error">{error?.message}</div>}
-                  {success?.show && (
-                    <div className="success">{success?.message}</div>
-                  )}
-                </div>
-                <FormMessage>
-                  Get the latest news and cocktails straight to your inbox
-                </FormMessage>
-              </Form>
-            )}
-          </Formik>
-        </NewsContainer>
-        <Nav>
-          <SocialNav className="nav justify-content-start" />
-          <LanguageSwitcher activeDocMeta={activeDocMeta} />
-        </Nav>
+                  <FormMessage>
+                    Get the latest news and cocktails straight to your inbox
+                  </FormMessage>
+                </Form>
+              )}
+            </Formik>
+          </NewsContainer>
+          <Nav>
+            <SocialNav className="nav justify-content-start" />
+            {/* <LanguageSwitcher activeDocMeta={activeDocMeta} /> */}
+          </Nav>
+        </Col>
+        <Col className="col-right">
+          <img
+            src={footer_logo}
+            className="cross-logo img-fluid mx-auto"
+            alt="Glendalough cross logo"
+            width={200}
+          />
+        </Col>
+      </Row>
+      <Row className="mt-4">
         <Nav className="nav-footer">
           <ul className="nav justify-content-start">{footerItems}</ul>
         </Nav>
-      </Col>
-      <Col className="col-center">
-        <img
-          src={footer_logo}
-          className="cross-logo img-fluid"
-          alt="Glendalough cross logo"
-        />
-      </Col>
-      <Col className="col-right">
         <div>
-          <p>&copy; Glendalough Distillery 2023</p>
+          <span>&copy; Glendalough Distillery 2023</span>
         </div>
-      </Col>
+      </Row>
     </PanelContainer>
   )
 }

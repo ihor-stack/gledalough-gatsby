@@ -20,19 +20,19 @@ const PanelContainer = styled.div`
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
-  min-height: 100vh;
+  background-size: cover;
+  padding: 4rem 0;
 `
 
 const PanelHeader = styled.h3`
   text-align: center;
   width: 100%;
-  padding-top: 4rem;
   font-family: ${FONT.serif};
   font-style: 'normal';
   font-weight: 400;
   font-size: 3rem;
   line-height: 3.2rem;
+  margin-bottom: 2rem;
 `
 
 const SliderContainer = styled.div`
@@ -45,7 +45,6 @@ const SliderContainer = styled.div`
 
 const SliderItem = styled.div`
   text-align: center;
-  padding: 2vw;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -57,6 +56,7 @@ const SliderItem = styled.div`
 const SlideButton = styled.button`
   ${buttonBlank}
   > a {
+    display: inline-flex;
     ${linkUnderlined}
   }
 `
@@ -65,14 +65,26 @@ const ButtonMore = styled.button`
   pointer-events: all;
   ${buttonRounded}
   margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 30vh;
+  margin-top: 1.5rem;
   padding: 1rem 1.6rem;
   color: ${COLOR.black};
   border-color: ${COLOR.black};
   text-decoration: none;
   > a {
-    ${linkUnderlined}
+    color: ${COLOR.black};
+    padding: 0.5rem 0.2rem;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.1rem;
+    font-family: ${FONT.monospace};
+    font-weight: 400;
+    font-style: 'normal';
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid ${COLOR.black};
     border-bottom: 0;
   }
 `
@@ -86,7 +98,10 @@ const Title = styled.h3`
 const Image = styled.img`
   border: 10px solid ${COLOR.cream};
   box-shadow: 1px 1px 1px 1px ${COLOR.beige};
+  width: 95%;
   border-radius: 50% 50% 0 0;
+  height: 28rem;
+  object-fit: cover;
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;
 `
@@ -108,7 +123,6 @@ const CocktailsSlider = ({ slice }) => {
   const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
     <SliderItem key={i}>
       <Image
-        className="img-fluid"
         src={item?.document?.data?.thumbnail?.url}
         alt={item?.document?.data?.thumbnail?.alt}
       />
@@ -128,7 +142,7 @@ const CocktailsSlider = ({ slice }) => {
         <AliceCarousel mouseTracking items={slides} responsive={responsive} />
       </SliderContainer>
       <ButtonMore>
-          <Link to={`/cocktails`}>Discover more</Link>
+        <Link to="/cocktails">Discover more</Link>
       </ButtonMore>
     </PanelContainer>
   )

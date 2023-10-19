@@ -38,16 +38,15 @@ const Panel = styled.div`
 const Nav = styled.nav`
   position: absolute;
   left: ${gutterWidth};
-  bottom: -2rem;
+  bottom: -1rem;
   right: 0;
   height: 6rem;
-  font-size: 1.4rem;
   li {
     color: ${COLOR.grey};
     padding-bottom: 0.2rem;
     cursor: pointer;
     margin-right: 1rem;
-    font-size: 1.4rem;
+    font-size: 0.75rem;
     line-height: 1.4rem;
     letter-spacing: 0.1rem;
     font-family: ${FONT.monospace};
@@ -56,7 +55,7 @@ const Nav = styled.nav`
     text-transform: uppercase;
     &.active {
       color: ${COLOR.black};
-      border-bottom: 1px ${COLOR.black} dotted;
+      border-bottom: 1.5px ${COLOR.black} solid;
     }
   }
 `

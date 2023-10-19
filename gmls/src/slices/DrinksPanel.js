@@ -53,8 +53,8 @@ const Title = styled.h3`
 const Image = styled.img`
   width: 90%;
   border-radius: 50% 50% 0 0;
-  max-height: 25rem;
-  object-fit: contain;
+  max-height: 28rem;
+  object-fit: cover;
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;
 `

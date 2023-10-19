@@ -1,3 +1,9 @@
+import '../stylesheets/index.css'
+import 'normalize.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-alice-carousel/lib/alice-carousel.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
+
 import * as React from 'react'
 import { useState } from 'react'
 import { ParallaxProvider } from 'react-scroll-parallax'
@@ -5,21 +11,16 @@ import ScrollToTop from '../utils/ScrollToTop'
 import { animated, useTransition } from '@react-spring/web'
 import NavComponent from './NavComponent'
 import Footer from './Footer'
-import 'normalize.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../stylesheets/index.css'
-import 'react-alice-carousel/lib/alice-carousel.css'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import AgeGate from './AgeGate'
 import { useCookies } from 'react-cookie'
 import useCurrentLocation from '../hooks/useCurrentLocation'
-import { WaypointContext } from '../hooks/WaypointContext.js';
+import { WaypointContext } from '../hooks/WaypointContext.js'
 
 export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
-  const {pathname, currentPage} = useCurrentLocation();
+  const { pathname, currentPage } = useCurrentLocation()
   const [showAgeGate, setShowAgeGate] = React.useState(true)
   const [cookies, setCookie] = useCookies()
-  const [waypoint, setWaypoint] = useState('');
+  const [waypoint, setWaypoint] = useState('')
 
   const transitions = useTransition(pathname, {
     from: { opacity: 0 },
@@ -62,7 +63,7 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
           </animated.div>
         ))}
 
-        {!hideFooter && <Footer className="page" activeDocMeta={activeDocMeta} />}
+        {!hideFooter && <Footer activeDocMeta={activeDocMeta} />}
       </ParallaxProvider>
     </WaypointContext.Provider>
   )
