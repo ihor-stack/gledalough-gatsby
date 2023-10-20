@@ -19,3 +19,12 @@ export const extractSeo = (data) => {
     image: meta_image?.url,
   }
 }
+
+export const extractNavigation = (data) => {
+  const { next, previous, parent_document_link } = data
+  return {
+    next,
+    previous,
+    parent_document_link,
+  }
+}

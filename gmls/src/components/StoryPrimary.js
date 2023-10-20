@@ -13,6 +13,7 @@ import { PrismicRichText } from '@prismicio/react'
 
 const PanelContainer = styled.div`
   width: 100%;
+  padding-top: 7rem;
 `
 
 const Row = styled.div`

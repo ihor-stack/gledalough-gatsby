@@ -15,8 +15,14 @@ import AgeGate from './AgeGate'
 import { useCookies } from 'react-cookie'
 import useCurrentLocation from '../hooks/useCurrentLocation'
 import { WaypointContext } from '../hooks/WaypointContext.js'
+import ContentNavigation from './ContentNavigation'
 
-export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
+export const Layout = ({
+  children,
+  hideFooter = false,
+  activeDocMeta,
+  navigation,
+}) => {
   const { pathname, currentPage } = useCurrentLocation()
   const [showAgeGate, setShowAgeGate] = React.useState(true)
   const [cookies, setCookie] = useCookies()
@@ -54,6 +60,7 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
         {showAgeGate && (
           <AgeGate setAgeValid={ageGateValid} activeDocMeta={activeDocMeta} />
         )}
+        <ContentNavigation {...navigation} />
         <ScrollToTop />
         <NavComponent currentPage={currentPage} pathname={pathname} />
 

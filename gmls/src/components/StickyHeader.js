@@ -37,10 +37,9 @@ const Header = styled.div`
 `
 
 const StickyHeader = ({ currentPage }) => {
-  const pageScroll = usePageScroll();
-
+  const pageScroll = usePageScroll()
   return (
-    <Container id='stickyHeader' className={ pageScroll < 250  ? 'hidden' : '' }>
+    <Container id="stickyHeader" className={pageScroll < 250 ? 'hidden' : ''}>
       <Header>
         <Link to="/">
           <img
