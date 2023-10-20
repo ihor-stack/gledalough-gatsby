@@ -8,7 +8,7 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { graphql } from 'gatsby'
-import { extractSeo } from '../utils/filters'
+import { extractNavigation, extractSeo } from '../utils/filters'
 
 const StoryArticleTemplate = ({ data }) => {
   if (!data) return null
@@ -24,8 +24,13 @@ const StoryArticleTemplate = ({ data }) => {
     alternateLanguages,
   }
   const seo = extractSeo(data.prismicStoryarticle.data)
+  const navigation = extractNavigation(data?.prismicStoryarticle?.data)
   return (
-    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
+    <Layout
+      topMenu={topMenu.data}
+      activeDocMeta={activeDoc}
+      navigation={navigation}
+    >
       <Seo {...seo} />
       <PageScroll width="100vw" height="100vh">
         {story?.data?.body?.[0]?.items?.map((slice, index) => {
@@ -134,7 +139,20 @@ export const query = graphql`
             slice_type
           }
         }
+        next {
+          uid
+          url
+        }
+        previous {
+          uid
+          url
+        }
+        parent_document_link {
+          url
+          uid
+        }
       }
+      last_publication_date
     }
   }
 `
