@@ -93,8 +93,11 @@ const inverted = {
   'our-story': ['herovideo', 'footer'],
   gins: ['herovideo', 'dualpanelstory', 'footer'],
   whiskeys: ['herovideo', 'dualpanelstory', 'footer'],
+  whiskey: ['shopcta', 'footer'],
   cocktails: ['herovideo', 'stories_section', 'footer'],
+  cocktail: ['herovideo', 'footer'],
   features: ['herovideo', 'stories_section', 'footer'],
+  feature: ['stories_section', 'footer'],
 }
 
 const NavPrimary = ({ pathname, currentPage }) => {

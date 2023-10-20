@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 import { COLOR } from '../constants/'
 import { sansNormal } from '../constants/styles'
 import header_glendalough from '../assets/header_glendalough.svg'
@@ -38,13 +39,15 @@ const Header = styled.div`
 const StickyHeader = ({ currentPage }) => {
   const pageScroll = usePageScroll()
   return (
-    <Container className={pageScroll < 250 ? 'hidden' : ''}>
+    <Container id="stickyHeader" className={pageScroll < 250 ? 'hidden' : ''}>
       <Header>
-        <img
-          src={header_glendalough}
-          className="cross-logo"
-          alt="Glendalough header logo"
-        />
+        <Link to="/">
+          <img
+            src={header_glendalough}
+            className="cross-logo"
+            alt="Glendalough header logo"
+          />
+        </Link>
       </Header>
     </Container>
   )

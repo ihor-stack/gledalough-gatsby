@@ -5,6 +5,7 @@ import AliceCarousel from 'react-alice-carousel'
 import { FONT, COLOR } from '../constants'
 import {
   gutterWidth,
+  headingMedium,
   headingLarge,
   titleLargest,
   buttonRounded,
@@ -75,7 +76,7 @@ const TextContainer = styled.div`
   z-index: 1;
 `
 const Heading = styled.h1`
-  ${headingLarge}
+  ${headingMedium}
   color: ${COLOR.white};
 `
 const Title = styled.h2`

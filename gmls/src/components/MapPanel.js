@@ -54,6 +54,11 @@ const Heading = styled.h3`
     text-align: left;
   }
 `;
+const LocationHeading = styled.h3`
+  width: 100%;
+  font-family: ${FONT.serif};
+  font-style: 'normal';
+`;
 const Title = styled.h2`
   width: 100%;
   text-align: center;
@@ -65,6 +70,7 @@ const Title = styled.h2`
     text-align: left;
   }
 `;
+
 const Panel = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -174,8 +180,8 @@ const MapPanel = ({ locations, retailers }) => {
   }); 
 
   const locationItems = locations.map((item, i) => (
-    <li key={i} className={`${viewState.index === i ? 'active' : ''}`} onClick={() => setViewState({ index: i, latitude: item.lat, longitude: item.lng, zoom: 12 })}>
-      <h3>{item?.title?.text}</h3>
+    <li key={i} className={`${viewState.index === i ? 'active' : ''}`} onClick={() => setViewState({ index: i, latitude: item.lat.text, longitude: item.lng.text, zoom: 12 })}>
+      <LocationHeading>{item?.title?.text}</LocationHeading>
       <div>{item?.address1?.text}</div>
       <div>{item?.address2?.text}</div>
       <div>{item?.phone?.text}</div>

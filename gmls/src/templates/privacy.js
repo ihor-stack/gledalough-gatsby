@@ -31,7 +31,7 @@ const PanelHeader = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  padding-top: 3rem;
+  padding-top: 6rem;
 `
 const Heading = styled.div`
   width: 100%;
@@ -53,7 +53,17 @@ const ContentWrapper = styled.div`
   width: 100%;
   text-align: left;
   ${sansNormal}
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 768px;
+  h3{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
 `
 
 const PrivacyTemplate = ({ data }) => {
