@@ -110,6 +110,11 @@
     /*max-height: 100vh;*/
     /* overflow: hidden; */
   }
+
+  .cocktails .featureslider > div,
+  .features .featureslider > div {
+    min-height: 50vh;
+  }
   
   .alice-carousel__prev-btn,
   .alice-carousel__next-btn,

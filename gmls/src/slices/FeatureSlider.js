@@ -50,16 +50,28 @@ const ItemDate = styled.h3`
   width: 100%;
   text-align: left;
 `
-const ItemImage = styled.div`
+const ImageContainer = styled.div`
   position: relative;
   text-align: center;
   padding-right: 2rem;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   margin: 0 auto;
   min-height: 320px;
   max-width: 90%;
+  overflow: hidden;
+`
+const ItemImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.4s;
+  &:hover{
+    transform: scale(1.2);
+  }
 `
 const ItemTitle = styled.h3`
   position: absolute;
@@ -126,15 +138,16 @@ const FeatureSlider = ({ slice }) => {
         onClick={(e) => handleOnClick(e, url)}
       >
         {document?.data?.date && <ItemDate>{document?.data?.date}</ItemDate>}
-        <ItemImage
-          style={{
-            backgroundImage: `url(${
-              document?.data?.thumbnail?.url || document?.data?.image?.url
-            })`,
-          }}
-        >
+        <ImageContainer>
+          <ItemImage
+            style={{
+              backgroundImage: `url(${document?.data?.thumbnail?.url || document?.data?.image?.url
+                })`,
+            }}
+          >
+          </ItemImage>
           <ItemTitle>{document?.data?.title?.text}</ItemTitle>
-        </ItemImage>
+        </ImageContainer>
       </SliderItem>
     ),
   )

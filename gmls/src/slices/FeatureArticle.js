@@ -47,8 +47,8 @@ const PanelHeader = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  padding: 3rem 0;
-  margin-top: 4rem;
+  padding: 6rem 0 3rem 0;
+  
 `
 
 const Heading = styled.div`
@@ -86,6 +86,9 @@ const Summary = styled.div`
 
 const Content = styled.span`
   ${sansNormal}
+  p:last-child {
+    margin-bottom: 4rem;
+  }
 `
 
 const ImageHolder = styled.div`

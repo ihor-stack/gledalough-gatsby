@@ -58,7 +58,7 @@ export const Layout = ({ children, hideFooter = false, activeDocMeta }) => {
         <NavComponent currentPage={currentPage} pathname={pathname} />
 
         {transitions((styles, item) => (
-          <animated.div style={styles} className="router-transition">
+          <animated.div style={styles} className={`router-transition ${currentPage}`}>
             {children}
           </animated.div>
         ))}

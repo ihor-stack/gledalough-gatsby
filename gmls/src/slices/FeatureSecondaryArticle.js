@@ -20,7 +20,7 @@ const Panel = styled.div`
   flex-wrap: wrap;
   justify-content: start;
   align-items: start;
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding: 0 10vw;
   ${respondTo.md`
     // width: 50%;
@@ -29,6 +29,7 @@ const Panel = styled.div`
     &:last-child {
       ${gutter}
       padding-left: 2.5vw;
+      margin-bottom: 4rem;
     }
   `}
 `
