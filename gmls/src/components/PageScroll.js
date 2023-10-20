@@ -25,8 +25,8 @@ const PageScroll = ({ className, children }) => {
     <>
       <Waypoint
         className={`page-scroll ${className}`}
-        topOffset="50px"
-        bottomOffset="50px"
+        topOffset="100px"
+        bottomOffset="100px"
         onEnter={(wp) => handleEnter(children.props?.slice?.slice_type, wp)}
         onLeave={(wp) => handleLeave(children.props?.slice?.slice_type, wp)}
       >

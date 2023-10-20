@@ -101,10 +101,10 @@ export const sansNormal = css`
   color: ${COLOR.black};
   font-family: ${FONT.sans};
   font-size: 1rem;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   font-weight: 400;
   font-style: 'normal';
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.04rem;
 `
 // ${respondTo.xs`
 //     font-size: 1.2rem;

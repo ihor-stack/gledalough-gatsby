@@ -51,6 +51,7 @@ const Heading = styled.h1`
 const Title = styled.h2`
   ${titleLargest}
   color: ${COLOR.white};
+  margin-top:0.5rem;
 `
 
 const ArrowContainer = styled.span`
@@ -67,6 +68,7 @@ const ArrowContainer = styled.span`
   align-items: center;
   z-index: 100001;
   .icon-arrow {
+    cursor:pointer;
     display: flex;
     background-position: center;
     background-repeat: no-repeat;
@@ -101,7 +103,7 @@ const HeroVideo = ({ slice }) => {
         )}
       </div>
       <ArrowContainer>
-        <div className="icon-arrow"></div>
+        <div className="icon-arrow" onClick={()=>{window.scrollBy({ top: ( window.innerHeight ), left: 0, behavior: 'smooth' });}}></div>
       </ArrowContainer>
     </PanelContainer>
   )
