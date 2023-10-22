@@ -8,7 +8,7 @@ import ProductDetail from '../components/ProductDetail'
 import ProductDualPanel from '../components/ProductDualPanel'
 import ProductSummary from '../components/ProductSummary'
 import { components } from '../slices'
-import { extractSeo } from '../utils/filters'
+import { extractNavigation, extractSeo } from '../utils/filters'
 
 const WhiskeyTemplate = ({ data }) => {
   if (!data) return null
@@ -25,9 +25,10 @@ const WhiskeyTemplate = ({ data }) => {
     alternateLanguages,
   }
   const seo = extractSeo(data.prismicWhiskey.data)
+  const navigation = extractNavigation(data?.prismicWhiskey?.data)
 
   return (
-    <Layout activeDocMeta={activeDoc}>
+    <Layout activeDocMeta={activeDoc} navigation={navigation}>
       <Seo {...seo} />
       <ProductDetail data={data.prismicWhiskey.data} />
       <ProductSummary data={data.prismicWhiskey.data} />
@@ -183,6 +184,25 @@ export const query = graphql`
               }
             }
           }
+        }
+        parent_document_link {
+          url
+          uid
+        }
+        previous {
+          url
+          uid
+        }
+        thumbnail {
+          url
+          alt
+        }
+        next {
+          url
+          uid
+        }
+        all_text_label {
+          text
         }
       }
     }

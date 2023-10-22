@@ -151,6 +151,9 @@ export const query = graphql`
           url
           uid
         }
+        all_text_label {
+          text
+        }
       }
       last_publication_date
     }

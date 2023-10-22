@@ -5,7 +5,7 @@ import { SliceZone } from '@prismicio/react'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { components } from '../slices'
-import { extractSeo } from '../utils/filters'
+import { extractNavigation, extractSeo } from '../utils/filters'
 
 const FeatureTemplate = ({ data }) => {
   if (!data) return null
@@ -29,9 +29,10 @@ const FeatureTemplate = ({ data }) => {
     },
   }))
   const seo = extractSeo(data.prismicFeature.data)
+  const navigation = extractNavigation(data?.prismicFeature?.data)
 
   return (
-    <Layout activeDocMeta={activeDoc}>
+    <Layout activeDocMeta={activeDoc} navigation={navigation}>
       <Seo {...seo} />
       <SliceZone slices={slices} components={components} />
     </Layout>
@@ -143,6 +144,25 @@ export const query = graphql`
         heading {
           text
           richText
+        }
+        parent_document_link {
+          url
+          uid
+        }
+        previous {
+          url
+          uid
+        }
+        thumbnail {
+          url
+          alt
+        }
+        next {
+          url
+          uid
+        }
+        all_text_label {
+          text
         }
       }
     }

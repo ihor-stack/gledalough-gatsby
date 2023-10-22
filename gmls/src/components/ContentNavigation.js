@@ -7,6 +7,7 @@ const Container = styled.div`
   position: absolute;
   top: 6rem;
   right: 10vw;
+  z-index: 1024;
 `
 const Button = styled(Link)`
   ${buttonBlank}
@@ -43,7 +44,12 @@ const Button = styled(Link)`
   }
 `
 
-const ContentNavigation = ({ previous, next, parent_document_link }) => {
+const ContentNavigation = ({
+  previous,
+  next,
+  parent_document_link,
+  all_text_label,
+}) => {
   return (
     <Container>
       {previous?.uid && (
@@ -52,7 +58,9 @@ const ContentNavigation = ({ previous, next, parent_document_link }) => {
         </Button>
       )}
       {parent_document_link?.uid && (
-        <Button to={parent_document_link?.url}>ALL</Button>
+        <Button to={parent_document_link?.url}>
+          {all_text_label?.text || 'ALL'}
+        </Button>
       )}
       {next?.uid && (
         <Button className="next" to={next?.url}>

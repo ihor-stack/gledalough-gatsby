@@ -21,10 +21,11 @@ export const extractSeo = (data) => {
 }
 
 export const extractNavigation = (data) => {
-  const { next, previous, parent_document_link } = data
+  const { next, previous, parent_document_link, all_text_label } = data
   return {
     next,
     previous,
     parent_document_link,
+    all_text_label,
   }
 }
