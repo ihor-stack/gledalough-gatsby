@@ -22,7 +22,7 @@ const PanelContainer = styled.div`
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  ${(props) => (props.items > 3 ? gutterLeft : gutter)}
+  ${(props) => (props['data-items-count'] > 3 ? gutterLeft : gutter)}
   ${respondTo.lg`
     flex-direction: row;
   `}
@@ -40,19 +40,19 @@ const SliderItem = styled.div`
   cursor: pointer;
   padding-right: 1rem;
   ${(props) =>
-    props.index === props.total - 1 &&
+    props['index'] === props['total'] - 1 &&
     `
     padding-left: 1rem;
     padding-right: 0;
   `}
   ${(props) =>
-    props.index !== props.total - 1 &&
+    props['index'] !== props['total'] - 1 &&
     `
     padding-left: 1rem;
     padding-right: 1rem;
   `}
   ${(props) =>
-    props.index === 0 &&
+    props['index'] === 0 &&
     `
     padding-left: 0;
     padding-right: 1rem;
@@ -149,7 +149,7 @@ const ArrowContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  ${(props) => props.items > 3 && gutterRight}
+  ${(props) => props['data-items-count'] > 3 && gutterRight}
 `
 
 const FeatureSlider = ({ slice }) => {
@@ -203,9 +203,9 @@ const FeatureSlider = ({ slice }) => {
         onMouseDown={handleOnMouseDown}
         onMouseUp={handleMouseUp}
         onClick={(e) => handleOnClick(e, url)}
-        activeIndex={activeIndex}
-        index={i}
-        total={slice?.items?.length}
+        data-active-index={activeIndex}
+        data-index={i}
+        data-total={slice?.items?.length}
       >
         {document?.data?.date && (
           <ItemDate>
@@ -232,13 +232,13 @@ const FeatureSlider = ({ slice }) => {
         backgroundColor: `${slice?.primary?.background_color || COLOR.beige}`,
       }}
       data-category={slugify(slice?.primary?.category?.text)}
-      items={slice?.items?.length}
+      data-items-count={slice?.items?.length}
     >
       <HeadingContainer>
         <FeatureHeading>{slice?.primary?.category?.text}</FeatureHeading>
 
         {slice?.items?.length > 3 && (
-          <ArrowContainer items={slice?.items?.length}>
+          <ArrowContainer data-items-count={slice?.items?.length}>
             <Arrow onClick={(e) => sliderRef?.current?.slidePrev(e)}>
               <svg
                 width="16"

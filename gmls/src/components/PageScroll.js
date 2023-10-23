@@ -1,23 +1,22 @@
 import React from 'react'
 import { useContext } from 'react'
 import { Waypoint } from 'react-waypoint'
-import { WaypointContext } from '../hooks/WaypointContext.js';
+import { WaypointContext } from '../hooks/WaypointContext.js'
 
 const PageScroll = ({ className, children }) => {
-  const [waypoint, setWaypoint] = useContext(WaypointContext);
+  const [waypoint, setWaypoint] = useContext(WaypointContext)
 
   const handleEnter = (id, wp) => {
     const isBrowser = typeof window !== `undefined`
     if (!isBrowser || !id) return
-    console.log(`Waypoint Enter = ${id}`)
+    // console.log(`Waypoint Enter = ${id}`)
     //console.log(wp)
     setWaypoint(id)
-
   }
   const handleLeave = (id, wp) => {
     const isBrowser = typeof window !== `undefined`
     if (!isBrowser || !id) return
-    console.log(`Waypoint Leave = ${id}`)
+    // console.log(`Waypoint Leave = ${id}`)
     //console.log(wp)
   }
 

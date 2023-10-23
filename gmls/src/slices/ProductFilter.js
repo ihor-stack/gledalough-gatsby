@@ -36,7 +36,7 @@ const FilterButton = styled.button`
     color: ${COLOR.black};
   }
   ${(props) =>
-    props.active &&
+    props['data-active'] == 'true' &&
     `
     color: ${COLOR.black};
     border: 1px solid black;
@@ -83,7 +83,7 @@ const ProductFilter = ({ slice }) => {
     >
       <Label>{slice?.primary?.label?.text || 'FILTER'}:</Label>
       <FilterButton
-        active={activeFilter === 'all'}
+        data-active={(activeFilter === 'all').toString()}
         onClick={() => handleFilterClick('all')}
       >
         All
@@ -92,7 +92,7 @@ const ProductFilter = ({ slice }) => {
         return (
           <FilterButton
             key={index}
-            active={item.key === activeFilter}
+            data-active={(item.key === activeFilter).toString()}
             onClick={() => handleFilterClick(item.key)}
           >
             {item?.category}

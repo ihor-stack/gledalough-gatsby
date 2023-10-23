@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 //import { COLOR, FONT } from '../constants';
 import ic_instagram from '../assets/ic_instagram.png'
@@ -42,14 +41,14 @@ const SocialNav = ({ className }) => {
     <SocialList className={className}>
       {items.map((item, i) => (
         <SocialItem key={i}>
-          <Link to={item.url} target="_blank">
+          <a href={item.url} target="_blank" rel="noreferrer">
             <img
               src={item.image}
               width={20}
               height={20}
               alt={`${item.title}`}
             />
-          </Link>
+          </a>
         </SocialItem>
       ))}
     </SocialList>
