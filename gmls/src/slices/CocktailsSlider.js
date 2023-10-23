@@ -9,6 +9,7 @@ import {
   buttonBlank,
   buttonRounded,
   linkUnderlined,
+  respondTo,
 } from '../constants/styles'
 import img_bg_texture from '../assets/bg_textured_paper.jpg'
 
@@ -100,10 +101,14 @@ const Image = styled.img`
   box-shadow: 1px 1px 1px 1px ${COLOR.beige};
   width: 95%;
   border-radius: 50% 50% 0 0;
-  height: 28rem;
   object-fit: cover;
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;
+  min-height: 20rem;
+  max-height: 28rem;
+  ${respondTo.xl`
+    height: 28rem;      
+  `}
 `
 
 const responsive = {
