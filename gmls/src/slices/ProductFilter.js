@@ -45,8 +45,7 @@ const FilterButton = styled.button`
   `}
 `
 
-const FeatureFilter = ({ slice }) => {
-  console.log({ slice })
+const ProductFilter = ({ slice }) => {
   const [activeFilter, setActiveFilter] = React.useState('all')
 
   const items = slice?.items?.map((item) => ({
@@ -104,4 +103,4 @@ const FeatureFilter = ({ slice }) => {
   )
 }
 
-export default FeatureFilter
+export default ProductFilter

@@ -15,7 +15,7 @@ import PageScroll from '../components/PageScroll'
 import FeatureArticle from './FeatureArticle'
 import FeatureSecondaryArticle from './FeatureSecondaryArticle'
 import ShopCTA from './ShopCTA'
-import FeatureFilter from './FeatureFilter'
+import ProductFilter from './ProductFilter'
 
 const componentList = {
   herovideo: HeroVideo,
@@ -33,7 +33,7 @@ const componentList = {
   featurearticle: FeatureArticle,
   featuresecondaryarticle: FeatureSecondaryArticle,
   shopcta: ShopCTA,
-  featurefilter: FeatureFilter,
+  productfilter: ProductFilter,
 }
 
 // loop components and append PageScroll to each components

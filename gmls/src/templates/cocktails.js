@@ -201,6 +201,20 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicCocktailshomeDataBodyProductfilter {
+            id
+            slice_label
+            slice_type
+            primary {
+              label {
+                text
+              }
+              background_color
+            }
+            items {
+              category
+            }
+          }
         }
       }
     }

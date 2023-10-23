@@ -223,7 +223,7 @@ export const query = graphql`
             slice_label
             slice_type
           }
-          ... on PrismicFeaturesDataBodyFeaturefilter {
+          ... on PrismicFeaturesDataBodyProductfilter {
             id
             slice_label
             slice_type
