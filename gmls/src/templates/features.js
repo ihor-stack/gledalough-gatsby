@@ -223,6 +223,20 @@ export const query = graphql`
             slice_label
             slice_type
           }
+          ... on PrismicFeaturesDataBodyFeaturefilter {
+            id
+            slice_label
+            slice_type
+            primary {
+              label {
+                text
+              }
+              background_color
+            }
+            items {
+              category
+            }
+          }
         }
       }
     }

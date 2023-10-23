@@ -1,4 +1,5 @@
 import '../stylesheets/index.css'
+import '../stylesheets/alice-carousel.css'
 import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-alice-carousel/lib/alice-carousel.css'
@@ -65,7 +66,10 @@ export const Layout = ({
         <NavComponent currentPage={currentPage} pathname={pathname} />
 
         {transitions((styles, item) => (
-          <animated.div style={styles} className={`router-transition ${currentPage}`}>
+          <animated.div
+            style={styles}
+            className={`router-transition ${currentPage}`}
+          >
             {children}
           </animated.div>
         ))}

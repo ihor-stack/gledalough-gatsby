@@ -1,17 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
-//import { useRef, useEffect } from 'react';
 import { COLOR } from '../constants'
 import {
-  gutter,
   respondTo,
   titleMedium,
   titleLargest,
   titleMono,
+  gutterLeft,
+  gutter,
+  gutterRight,
+  buttonBlank,
 } from '../constants/styles'
 import { navigate } from 'gatsby'
+import { slugify } from '../utils/filters'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const PanelContainer = styled.div`
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  ${gutter}
+  ${(props) => (props.items > 3 ? gutterLeft : gutter)}
   ${respondTo.lg`
     flex-direction: row;
   `}
@@ -45,6 +47,15 @@ const FeatureHeading = styled.h2`
   ${titleLargest}
   max-height: 50vh;
 `
+const HeadingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  ${gutterRight}
+`
+
 const ItemDate = styled.h3`
   ${titleMono}
   width: 100%;
@@ -54,10 +65,14 @@ const ImageContainer = styled.div`
   position: relative;
   text-align: center;
   padding-right: 2rem;
-  margin: 0 auto;
   min-height: 320px;
   max-width: 90%;
   overflow: hidden;
+  ${(props) =>
+    props.centered &&
+    `
+    margin: 0 auto;
+  `}
 `
 const ItemImage = styled.div`
   position: absolute;
@@ -69,7 +84,7 @@ const ItemImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.4s;
-  &:hover{
+  &:hover {
     transform: scale(1.2);
   }
 `
@@ -98,10 +113,32 @@ const responsive = {
   },
 }
 
-const FeatureSlider = ({ slice }) => {
-  console.log({ slice })
-  const handleDragStart = (e) => e.preventDefault()
+const Arrow = styled.button`
+  ${buttonBlank}
+  &:first-child {
+    margin-right: 3rem;
+  }
+  &:last-child {
+    transform: rotate(180deg);
+  }
+`
 
+const ArrowContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const FeatureSlider = ({ slice }) => {
+  const percent = 0.15
+  const section = useRef(null)
+  const sliderRef = useRef(null)
+  const [padding, setPadding] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleDragStart = (e) => e.preventDefault()
   const COORDS = {
     xDown: null,
     xUp: null,
@@ -127,6 +164,15 @@ const FeatureSlider = ({ slice }) => {
     }
   }
 
+  const syncState = () => {
+    const { current } = section
+    if (current) {
+      setPadding(current.offsetWidth * percent)
+    }
+  }
+
+  useEffect(syncState, [])
+
   const slides = slice?.items?.map(
     ({ item: { url, document, ...item } }, i) => (
       <SliderItem
@@ -141,11 +187,11 @@ const FeatureSlider = ({ slice }) => {
         <ImageContainer>
           <ItemImage
             style={{
-              backgroundImage: `url(${document?.data?.thumbnail?.url || document?.data?.image?.url
-                })`,
+              backgroundImage: `url(${
+                document?.data?.thumbnail?.url || document?.data?.image?.url
+              })`,
             }}
-          >
-          </ItemImage>
+          ></ItemImage>
           <ItemTitle>{document?.data?.title?.text}</ItemTitle>
         </ImageContainer>
       </SliderItem>
@@ -157,10 +203,47 @@ const FeatureSlider = ({ slice }) => {
       style={{
         backgroundColor: `${slice?.primary?.background_color || COLOR.beige}`,
       }}
+      data-category={slugify(slice?.primary?.category?.text)}
+      items={slice?.items?.length}
     >
-      <FeatureHeading>{slice?.primary?.category?.text}</FeatureHeading>
-      <SliderContainer>
-        <AliceCarousel mouseTracking items={slides} responsive={responsive} />
+      <HeadingContainer>
+        <FeatureHeading>{slice?.primary?.category?.text}</FeatureHeading>
+
+        <ArrowContainer>
+          <Arrow onClick={(e) => sliderRef?.current?.slidePrev(e)}>
+            <svg
+              width="16"
+              height="34"
+              viewBox="0 0 15 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
+            </svg>
+          </Arrow>
+          <Arrow onClick={(e) => sliderRef?.current?.slideNext(e)}>
+            <svg
+              width="16"
+              height="34"
+              viewBox="0 0 15 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
+            </svg>
+          </Arrow>
+        </ArrowContainer>
+      </HeadingContainer>
+      <SliderContainer ref={section}>
+        <AliceCarousel
+          ref={sliderRef}
+          activeIndex={activeIndex}
+          mouseTracking
+          items={slides}
+          responsive={responsive}
+          paddingRight={slice?.items?.length > 3 ? padding : 0}
+          onResized={syncState}
+        />
       </SliderContainer>
     </PanelContainer>
   )
