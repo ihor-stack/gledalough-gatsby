@@ -14,6 +14,7 @@ import {
 } from '../constants/styles'
 import { navigate } from 'gatsby'
 import { slugify } from '../utils/filters'
+import moment from 'moment'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -60,6 +61,7 @@ const ItemDate = styled.h3`
   ${titleMono}
   width: 100%;
   text-align: left;
+  font-size: 0.85rem;
 `
 const ImageContainer = styled.div`
   position: relative;
@@ -183,7 +185,11 @@ const FeatureSlider = ({ slice }) => {
         onMouseUp={handleMouseUp}
         onClick={(e) => handleOnClick(e, url)}
       >
-        {document?.data?.date && <ItemDate>{document?.data?.date}</ItemDate>}
+        {document?.data?.date && (
+          <ItemDate>
+            {moment(document?.data?.date).format('DD MMMM YYYY')}
+          </ItemDate>
+        )}
         <ImageContainer>
           <ItemImage
             style={{
