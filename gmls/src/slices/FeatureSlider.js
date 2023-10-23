@@ -38,6 +38,25 @@ const SliderItem = styled.div`
   justify-content: start;
   align-items: start;
   cursor: pointer;
+  padding-right: 1rem;
+  ${(props) =>
+    props.index === props.total - 1 &&
+    `
+    padding-left: 1rem;
+    padding-right: 0;
+  `}
+  ${(props) =>
+    props.index !== props.total - 1 &&
+    `
+    padding-left: 1rem;
+    padding-right: 1rem;
+  `}
+  ${(props) =>
+    props.index === 0 &&
+    `
+    padding-left: 0;
+    padding-right: 1rem;
+  `}
 `
 const FeatureHeading = styled.h2`
   margin-top: 4rem;
@@ -54,7 +73,6 @@ const HeadingContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  ${gutterRight}
 `
 
 const ItemDate = styled.h3`
@@ -68,7 +86,7 @@ const ImageContainer = styled.div`
   text-align: center;
   padding-right: 2rem;
   min-height: 320px;
-  max-width: 90%;
+  max-width: 100%;
   overflow: hidden;
   ${(props) =>
     props.centered &&
@@ -131,6 +149,7 @@ const ArrowContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  ${(props) => props.items > 3 && gutterRight}
 `
 
 const FeatureSlider = ({ slice }) => {
@@ -184,6 +203,9 @@ const FeatureSlider = ({ slice }) => {
         onMouseDown={handleOnMouseDown}
         onMouseUp={handleMouseUp}
         onClick={(e) => handleOnClick(e, url)}
+        activeIndex={activeIndex}
+        index={i}
+        total={slice?.items?.length}
       >
         {document?.data?.date && (
           <ItemDate>
@@ -215,30 +237,32 @@ const FeatureSlider = ({ slice }) => {
       <HeadingContainer>
         <FeatureHeading>{slice?.primary?.category?.text}</FeatureHeading>
 
-        <ArrowContainer>
-          <Arrow onClick={(e) => sliderRef?.current?.slidePrev(e)}>
-            <svg
-              width="16"
-              height="34"
-              viewBox="0 0 15 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
-            </svg>
-          </Arrow>
-          <Arrow onClick={(e) => sliderRef?.current?.slideNext(e)}>
-            <svg
-              width="16"
-              height="34"
-              viewBox="0 0 15 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
-            </svg>
-          </Arrow>
-        </ArrowContainer>
+        {slice?.items?.length > 3 && (
+          <ArrowContainer items={slice?.items?.length}>
+            <Arrow onClick={(e) => sliderRef?.current?.slidePrev(e)}>
+              <svg
+                width="16"
+                height="34"
+                viewBox="0 0 15 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
+              </svg>
+            </Arrow>
+            <Arrow onClick={(e) => sliderRef?.current?.slideNext(e)}>
+              <svg
+                width="16"
+                height="34"
+                viewBox="0 0 15 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M14.3031 1L1.10937 16.5L14.3031 32" stroke="black" />
+              </svg>
+            </Arrow>
+          </ArrowContainer>
+        )}
       </HeadingContainer>
       <SliderContainer ref={section}>
         <AliceCarousel
