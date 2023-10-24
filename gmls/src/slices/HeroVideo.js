@@ -123,7 +123,7 @@ const HeroVideo = ({ slice }) => {
         {heading && <Heading>{heading}</Heading>}
         {title && <Title>{title}</Title>}
         {!heading && !title && (
-          <div data-aos="fade-up" data-aos-duration="3000">
+          <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300">
             <img src={logo} className="nav-logo" alt="Glendalough logo" />
           </div>
         )}
