@@ -110,13 +110,15 @@ const StoryArticle = ({ slice }) => {
   return (
     <PanelContainer>
       <TextContainer>
-        <Heading>
+        <Heading data-aos="fade-in">
           {slice.primary.heading.text ? slice.primary.heading.text : 'Explore'}
         </Heading>
-        <Title>
+        <Title data-aos="fade-in">
           {slice.primary.title.text ? slice.primary.title.text : 'Our Story'}
         </Title>
-        <Button to="/our-story">{slice.primary.link_text.text}</Button>
+        <Button to="/our-story" data-aos="fade-in" data-aos-delay="500">
+          {slice.primary.link_text.text}
+        </Button>
       </TextContainer>
 
       <AliceCarousel

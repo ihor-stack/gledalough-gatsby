@@ -126,7 +126,12 @@ const responsive = {
 
 const CocktailsSlider = ({ slice }) => {
   const slides = slice?.items?.map(({ show_link, link_text, item }, i) => (
-    <SliderItem key={i}>
+    <SliderItem
+      key={i}
+      data-aos="fade-up "
+      data-aos-delay={300 * i}
+      data-aos-offset="300"
+    >
       <Image
         src={item?.document?.data?.thumbnail?.url}
         alt={item?.document?.data?.thumbnail?.alt}

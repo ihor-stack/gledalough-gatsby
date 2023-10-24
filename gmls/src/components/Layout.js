@@ -4,6 +4,7 @@ import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import 'aos/dist/aos.css'
 
 import * as React from 'react'
 import { useState } from 'react'
@@ -17,6 +18,7 @@ import { useCookies } from 'react-cookie'
 import useCurrentLocation from '../hooks/useCurrentLocation'
 import { WaypointContext } from '../hooks/WaypointContext.js'
 import ContentNavigation from './ContentNavigation'
+import AOS from 'aos'
 
 export const Layout = ({
   children,
@@ -54,6 +56,12 @@ export const Layout = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cookies?.adult])
+
+  React.useEffect(() => {
+    AOS.init({
+      duration: 1500,
+    })
+  }, [])
 
   return (
     <WaypointContext.Provider value={[waypoint, setWaypoint]}>

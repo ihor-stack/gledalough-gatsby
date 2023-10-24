@@ -34,7 +34,7 @@ const HeroText = ({ slice }) => {
       style={{ backgroundColor: `${backgroundColor}` }}
     >
       <TextContainer>
-        <HeroTitle>
+        <HeroTitle data-aos="fade-up">
           <div ref={parallaxText.ref}>{title}</div>
         </HeroTitle>
       </TextContainer>

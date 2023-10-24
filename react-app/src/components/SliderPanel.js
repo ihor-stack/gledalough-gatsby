@@ -112,7 +112,7 @@ const SliderPanel = ({ className, page, items, activeUrl }) => {
 
   return (
     <PanelContainer className={className}>
-      <TextContainer>
+      <TextContainer data-aos="fade-in">
         <Heading>Explore</Heading>
         <Title>Our Story</Title>
         <Button onClick={()=>navigate('/our-story')}>Discover More</Button>

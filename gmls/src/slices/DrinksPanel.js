@@ -74,7 +74,7 @@ const responsive = {
 
 const DrinksPanel = ({ slice }) => {
   const slides = slice?.items?.map(({ link, link_text, title, image }, i) => (
-    <SliderItem key={i}>
+    <SliderItem key={i} data-aos="fade-up" data-aos-delay={300 * i}>
       <Image
         src={image?.url}
         alt={image?.alt}

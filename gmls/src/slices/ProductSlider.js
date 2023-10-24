@@ -87,6 +87,8 @@ const ProductSlider = ({ slice }) => {
       onDragStart={handleDragStart}
       role="presentation"
       data-value={i}
+      data-aos="fade-up "
+      data-aos-delay={300 * i}
     >
       <SlideImage>
         <img
