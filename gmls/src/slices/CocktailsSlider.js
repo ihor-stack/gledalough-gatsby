@@ -105,9 +105,9 @@ const Image = styled.img`
   -webkit-border-radius: 50% 50% 0 0;
   -moz-border-radius: 50% 50% 0 0;
   min-height: 20rem;
-  max-height: 28rem;
+  max-height: 30rem;
   ${respondTo.xl`
-    height: 28rem;      
+    height: 30rem;      
   `}
 `
 
