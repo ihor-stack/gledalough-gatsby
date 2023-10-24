@@ -57,14 +57,16 @@ const Paragraph = styled.div`
  
 const DualPanelCocktail = ({ slice }) => {
   const data = slice.primary
+  console.log(data)
   return (
     <PanelContainer className='page' style={{ backgroundColor: `${data?.background_color || COLOR.cream}` }}>
       <Panel className='text'>
         <Title>Ingredients</Title>
         <Paragraph>{parse(data?.ingredients?.html)}</Paragraph>
+        <Title>Glassware</Title>
+        <Paragraph>{parse(data?.glassware?.html)}</Paragraph>
+        <Title>Instructions</Title>
         <Paragraph>{parse(data?.instructions?.html)}</Paragraph>
-        <Title>Preperation</Title>
-        <Paragraph>{parse(data?.preperation?.html)}</Paragraph>
       </Panel>
       <Panel className='photo' style={{ backgroundImage: `url(${data?.image?.url})` }} />
     </PanelContainer>

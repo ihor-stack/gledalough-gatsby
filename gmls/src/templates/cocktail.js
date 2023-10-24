@@ -90,11 +90,11 @@ export const query = graphql`
                   text
                   html
                 }
-                instructions {
+                glassware {
                   text
                   html
                 }
-                preperation {
+                instructions {
                   text
                   html
                 }
