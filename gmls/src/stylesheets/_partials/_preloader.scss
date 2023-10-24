@@ -1,10 +1,10 @@
 @use 'three-dots' with (
   $dot-width: 15px,
   $dot-height: 15px,
-  $dot-color: #1a1919,
+  $dot-color: #f6f5ef
 );
 
-.dot-flashing{
+.dot-flashing {
   margin-top: 35px;
 }
 

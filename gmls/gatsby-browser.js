@@ -6,6 +6,8 @@ import { PrismicProvider } from '@prismicio/react'
 import { repositoryConfigs } from './src/utils/prismicPreviews'
 import { linkResolver } from './src/utils/linkResolver'
 
+import './src/stylesheets/index.scss'
+
 export const wrapRootElement = ({ element }) => (
   <PrismicProvider
     linkResolver={linkResolver}

@@ -1,4 +1,4 @@
-import '../stylesheets/index.css'
+// import '../stylesheets/index.css'
 import '../stylesheets/alice-carousel.css'
 import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
