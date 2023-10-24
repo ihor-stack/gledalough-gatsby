@@ -164,6 +164,8 @@ const FeaturesPanel = ({ slice }) => {
       key={i}
       style={{ backgroundImage: `url(${item.image?.url})` }}
       onClick={() => loadFeature(i + 1)}
+      data-aos="fade-in"
+      data-aos-delay={300 * i}
     >
       <FeatureContent>
         <FeatureTitle>{item.title?.text}</FeatureTitle>
@@ -175,7 +177,13 @@ const FeaturesPanel = ({ slice }) => {
   // MOBILE
   const handleDragStart = (e) => e.preventDefault()
   const slides = items?.map((item, i) => (
-    <SliderItem key={i} onDragStart={handleDragStart} role="presentation">
+    <SliderItem
+      key={i}
+      onDragStart={handleDragStart}
+      data-aos="fade-in"
+      data-aos-delay={300 * i}
+      role="presentation"
+    >
       <Feature
         className="slide"
         key={i}
@@ -191,15 +199,15 @@ const FeaturesPanel = ({ slice }) => {
     <PanelContainer
       style={{ backgroundColor: `${primary?.background_color || COLOR.beige}` }}
     >
-      <Title>{primary?.title?.text}</Title>
+      <Title data-aos="fade-in">{primary?.title?.text}</Title>
       <Row>
-        <HalfColumn>
+        <HalfColumn data-aos="fade-up">
           <Paragraph>
             <PrismicRichText field={primary?.body_text_1?.richText} />
           </Paragraph>
         </HalfColumn>
         <HalfColumn>
-          <Paragraph>
+          <Paragraph data-aos="fade-up" data-aos-delay="300">
             <PrismicRichText field={primary?.body_text_2?.richText} />
           </Paragraph>
         </HalfColumn>

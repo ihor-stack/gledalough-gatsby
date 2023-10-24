@@ -102,7 +102,6 @@ const Button = styled.button`
 `
 
 const StoryPanel = ({ slice }) => {
-  console.log(slice)
   const renderItem = useCallback((items, direction) => {
     return (
       <PanelContainer>
@@ -123,7 +122,10 @@ const StoryPanel = ({ slice }) => {
               }}
             >
               {left && (
-                <div className={`img-container ${direction}`}>
+                <div
+                  data-aos="fade-right"
+                  className={`img-container ${direction}`}
+                >
                   <img
                     src={data?.featured_image?.url}
                     className="img-fluid"
@@ -132,7 +134,10 @@ const StoryPanel = ({ slice }) => {
                 </div>
               )}
               {right && (
-                <div className={`img-container ${direction}`}>
+                <div
+                  data-aos="fade-left"
+                  className={`img-container ${direction}`}
+                >
                   <img
                     src={data?.featured_image?.url}
                     className="img-fluid"
@@ -140,14 +145,16 @@ const StoryPanel = ({ slice }) => {
                   />
                 </div>
               )}
-              <Heading>{data?.heading?.text}</Heading>
-              <Title>{data?.title?.text}</Title>
+              <Heading data-aos="fade-in">{data?.heading?.text}</Heading>
+              <Title data-aos="fade-in" data-aos-delay="300">
+                {data?.title?.text}
+              </Title>
               {data?.overview?.richText?.length !== 0 && (
-                <Subtitle>
+                <Subtitle data-aos="fade-in">
                   <PrismicRichText field={data?.overview?.richText} />
                 </Subtitle>
               )}
-              <Button>
+              <Button data-aos="fade-in" data-aos-delay="300">
                 <Link to={`/our-story/${slug}`}>Learn more</Link>
               </Button>
             </Panel>

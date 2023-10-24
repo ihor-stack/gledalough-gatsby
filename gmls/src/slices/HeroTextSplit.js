@@ -89,12 +89,12 @@ const HeroTextSplit = ({ slice }) => {
         backgroundColor: `${data?.background_color || COLOR.cream}`,
       }}
     >
-      <Panel>
+      <Panel data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
         <Heading>{data?.heading?.text}</Heading>
       </Panel>
       <Panel>
-        <Title>{data?.title?.text}</Title>
-        <Paragraph>
+        <Title data-aos="fade-up">{data?.title?.text}</Title>
+        <Paragraph data-aos="fade-up" data-aos-delay="500">
           <PrismicRichText field={data?.body_text?.richText} />
         </Paragraph>
       </Panel>

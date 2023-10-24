@@ -95,8 +95,10 @@ const DualPanel = ({ slice }) => {
         style={{ backgroundImage: `url(${data?.image?.url})` }}
       />
       <Panel className="text">
-        <Heading>{data?.intro_text?.text}</Heading>
-        <Paragraph>
+        <Heading data-aos="fade-in" data-aos-delay="750">
+          {data?.intro_text?.text}
+        </Heading>
+        <Paragraph data-aos="fade-up">
           <PrismicRichText field={data?.body_text?.richText} />
         </Paragraph>
       </Panel>
