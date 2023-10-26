@@ -206,6 +206,8 @@ const FeatureSlider = ({ slice }) => {
         data-active-index={activeIndex}
         data-index={i}
         data-total={slice?.items?.length}
+        data-aos="fade-up"
+        data-aos-delay={i * 200}
       >
         {document?.data?.date && (
           <ItemDate>
@@ -235,7 +237,9 @@ const FeatureSlider = ({ slice }) => {
       data-items-count={slice?.items?.length}
     >
       <HeadingContainer>
-        <FeatureHeading>{slice?.primary?.category?.text}</FeatureHeading>
+        <FeatureHeading data-aos="fade-in">
+          {slice?.primary?.category?.text}
+        </FeatureHeading>
 
         {slice?.items?.length > 3 && (
           <ArrowContainer data-items-count={slice?.items?.length}>

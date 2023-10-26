@@ -1,8 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import parse from 'html-react-parser';
-import { COLOR } from '../constants';
-import { gutter, gutterLeft, headingMedium, sansNormal, respondTo } from '../constants/styles';
+import React from 'react'
+import styled from 'styled-components'
+import parse from 'html-react-parser'
+import { COLOR } from '../constants'
+import {
+  gutter,
+  gutterLeft,
+  headingMedium,
+  sansNormal,
+  respondTo,
+} from '../constants/styles'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -12,7 +18,7 @@ const PanelContainer = styled.div`
   ${respondTo.md`
     flex-direction: row;
   `}
-`;
+`
 
 const Panel = styled.div`
   display: flex;
@@ -26,30 +32,31 @@ const Panel = styled.div`
     ${gutterLeft}
     padding-right: 0;
   `}
-`;
+`
 
 const Heading = styled.h3`
   width: 100%;
   text-align: left;
   ${headingMedium}
-`;
+`
 
-const Paragraph = styled.p` 
+const Paragraph = styled.p`
   width: 100%;
   text-align: left;
   ${sansNormal}
-`;
+`
 
 const ProductSummary = ({ data }) => (
-    <PanelContainer className='page' style={{backgroundColor: `${data.summary_background_color}`}}>
-      <Panel>
-        <Heading>{data.summary_heading.text}</Heading>
-        <Paragraph>{parse(data.summary.html)}</Paragraph>
-      </Panel>
-      <Panel>
+  <PanelContainer
+    className="page"
+    style={{ backgroundColor: `${data.summary_background_color}` }}
+  >
+    <Panel data-aos="fade-up">
+      <Heading>{data.summary_heading.text}</Heading>
+      <Paragraph>{parse(data.summary.html)}</Paragraph>
+    </Panel>
+    <Panel></Panel>
+  </PanelContainer>
+)
 
-      </Panel>
-    </PanelContainer>
-);
-
-export default ProductSummary;
+export default ProductSummary

@@ -1,8 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import parse from 'html-react-parser';
-import { COLOR, FONT } from '../constants';
-import { gutter, titleLarge, titleLargest, headingMedium, sansNormal, respondTo} from '../constants/styles';
+import React from 'react'
+import styled from 'styled-components'
+import parse from 'html-react-parser'
+import { COLOR, FONT } from '../constants'
+import {
+  gutter,
+  titleLarge,
+  titleLargest,
+  headingMedium,
+  sansNormal,
+  respondTo,
+} from '../constants/styles'
 
 const PanelContainer = styled.div`
   position: relative;
@@ -14,7 +21,7 @@ const PanelContainer = styled.div`
     flex-direction: row;
   `}
   background-color: ${COLOR.warmwhite};
-`;
+`
 
 const Panel = styled.div`
   display: flex;
@@ -32,8 +39,8 @@ const Panel = styled.div`
     ${respondTo.md`
       padding-top: 4rem;
     `}
-  }  
-`;
+  }
+`
 
 const ProductHeader = styled.div`
   position: absolute;
@@ -41,13 +48,13 @@ const ProductHeader = styled.div`
   text-align: center;
   margin-top: 8rem;
   h3 {
-     ${headingMedium}
+    ${headingMedium}
   }
   h2 {
     ${titleLargest}
   }
-`;
- 
+`
+
 const ProductImage = styled.div`
   position: absolute;
   top: 16rem;
@@ -62,48 +69,60 @@ const ProductImage = styled.div`
       width: 20vw;
     }
   `}
-`;
+`
 
 const ParagraphLeft = styled.p`
   ${gutter}
   text-align: left;
   width: 100%;
   ${sansNormal}
-`;
- 
+`
+
 const TitleRight = styled.h2`
   ${gutter}
   text-align: left;
   width: 100%;
   ${titleLarge}
-`;
+`
 
 const ParagraphRight = styled.div`
   ${gutter}
   text-align: left;
   width: 100%;
   ${sansNormal}
-`;
-
+`
 
 const ProductDetail = ({ data }) => (
-    <PanelContainer className='page'>
-      <ProductHeader>
-        <h3>{data.heading.text}</h3>
-        <h2>{data.title.text}</h2>
-      </ProductHeader>
-      <ProductImage>
-         <img src={data.image.url} className="img-fluid" alt={data.image.alt}/>
-      </ProductImage>
+  <PanelContainer className="page">
+    <ProductHeader data-aos="fade-in">
+      <h3>{data.heading.text}</h3>
+      <h2>{data.title.text}</h2>
+    </ProductHeader>
+    <ProductImage>
+      <img
+        src={data.image.url}
+        className="img-fluid"
+        alt={data.image.alt}
+        data-aos="slide-up"
+        data-aos-delay="500"
+      />
+    </ProductImage>
 
-      <Panel className='primary' style={{ backgroundColor: `${data.background_color}`}}>
-        <ParagraphLeft>{parse(data.description.html)}</ParagraphLeft>
-      </Panel>
-      <Panel>
-        <TitleRight>{data.notes_heading.text}</TitleRight>
-        <ParagraphRight>{parse(data.notes.html)}</ParagraphRight>
-      </Panel>
-    </PanelContainer>
-); 
+    <Panel
+      className="primary"
+      style={{ backgroundColor: `${data.background_color}` }}
+    >
+      <ParagraphLeft data-aos="fade-in">
+        {parse(data.description.html)}
+      </ParagraphLeft>
+    </Panel>
+    <Panel>
+      <TitleRight data-aos="fade-in">{data.notes_heading.text}</TitleRight>
+      <ParagraphRight data-aos="fade-up" data-aos-delay="300">
+        {parse(data.notes.html)}
+      </ParagraphRight>
+    </Panel>
+  </PanelContainer>
+)
 
-export default ProductDetail;
+export default ProductDetail

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import parse from 'html-react-parser';
-import { COLOR, FONT } from '../constants';
-import { gutter, respondTo } from '../constants/styles';
+import React from 'react'
+import styled from 'styled-components'
+import parse from 'html-react-parser'
+import { COLOR, FONT } from '../constants'
+import { gutter, respondTo } from '../constants/styles'
 
 const PanelContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const PanelContainer = styled.div`
   ${respondTo.md`
     flex-direction: row;
   `}
-`;
+`
 
 const Panel = styled.div`
   display: flex;
@@ -34,10 +34,10 @@ const Panel = styled.div`
     background-repeat: no-repeat;
     ${gutter}
   }
-`;
+`
 
 const Paragraph = styled.p`
-  color: ${COLOR.white}; 
+  color: ${COLOR.white};
   font-size: 2.2rem;
   line-height: 2.4rem;
   font-family: ${FONT.serif};
@@ -46,20 +46,28 @@ const Paragraph = styled.p`
   margin: 2rem 0 0 0;
   text-align: center;
   &.gin {
-    color: ${COLOR.white}; 
-  };
-  &.whiskey {
-    color: ${COLOR.black}; 
+    color: ${COLOR.white};
   }
-`;
+  &.whiskey {
+    color: ${COLOR.black};
+  }
+`
 
 const ProductDualPanel = ({ data, theme }) => (
-    <PanelContainer className='page' style={{ backgroundColor: `${data.article_background_color}` }}>
-      <Panel className='text' >
-        <Paragraph className={`${theme}`}>{parse(data.article_body.html)}</Paragraph>
-      </Panel>
-      <Panel className='photo' style={{backgroundImage: `url(${data.article_image.url})`}} />
-    </PanelContainer>
-);
+  <PanelContainer
+    className="page"
+    style={{ backgroundColor: `${data.article_background_color}` }}
+  >
+    <Panel className="text" data-aos="fade-up">
+      <Paragraph className={`${theme}`}>
+        {parse(data.article_body.html)}
+      </Paragraph>
+    </Panel>
+    <Panel
+      className="photo"
+      style={{ backgroundImage: `url(${data.article_image.url})` }}
+    />
+  </PanelContainer>
+)
 
-export default ProductDualPanel;
+export default ProductDualPanel

@@ -93,12 +93,15 @@ const StorySecondary = ({ className, bgColor, content, index, reverse }) => {
               className="img-fluid"
               src={content?.image?.url}
               alt={content?.image?.alt}
+              data-aos="slide-up"
             />
           </ImageHolder>
         </Panel>
         <Panel>
-          <Title className="left">{content?.content_title?.text}</Title>
-          <Paragraph>
+          <Title className="left" data-aos="fade-in">
+            {content?.content_title?.text}
+          </Title>
+          <Paragraph data-aos="fade-up" data-aos-delay="300">
             <PrismicRichText field={content?.content?.richText} />
           </Paragraph>
         </Panel>

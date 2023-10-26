@@ -48,7 +48,6 @@ const PanelHeader = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding: 6rem 0 3rem 0;
-  
 `
 
 const Heading = styled.div`
@@ -106,20 +105,25 @@ const FeatureArticle = ({ slice }) => {
 
   return (
     <PanelContainer style={{ backgroundColor: background_color }}>
-      <PanelHeader>
+      <PanelHeader data-aos="fade-in">
         <Heading>{article?.heading?.text}</Heading>
         <Title>{article?.title?.text}</Title>
         <Date>{moment(article?.date).format('DD MMMM YYYY')}</Date>
       </PanelHeader>
       <Row>
         <Panel>
-          <Summary>{summary?.text}</Summary>
+          <Summary data-aos="fade-up">{summary?.text}</Summary>
           <ImageHolder>
-            <img className="img-fluid" src={image?.url} alt="alt placeholder" />
+            <img
+              className="img-fluid"
+              src={image?.url}
+              alt="alt placeholder"
+              data-aos="fade-in"
+            />
           </ImageHolder>
         </Panel>
         <Panel>
-          <Content>
+          <Content data-aos="fade-in">
             <PrismicRichText field={content?.richText} />
           </Content>
         </Panel>

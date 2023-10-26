@@ -81,8 +81,11 @@ const ProductFilter = ({ slice }) => {
         backgroundColor: slice.primary.background_color || COLOR.warmwhite,
       }}
     >
-      <Label>{slice?.primary?.label?.text || 'FILTER'}:</Label>
+      <Label data-aos="fade-up">
+        {slice?.primary?.label?.text || 'FILTER'}:
+      </Label>
       <FilterButton
+        data-aos="fade-right"
         data-active={(activeFilter === 'all').toString()}
         onClick={() => handleFilterClick('all')}
       >
@@ -92,6 +95,8 @@ const ProductFilter = ({ slice }) => {
         return (
           <FilterButton
             key={index}
+            data-aos="fade-right"
+            data-aos-delay={index * 200}
             data-active={(item.key === activeFilter).toString()}
             onClick={() => handleFilterClick(item.key)}
           >

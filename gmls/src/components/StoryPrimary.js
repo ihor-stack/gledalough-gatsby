@@ -101,14 +101,17 @@ const StoryPrimary = ({ className, bgColor, content }) => {
       style={{ backgroundColor: `${COLOR[bgColor]}` }}
     >
       <PanelHeader>
-        <Heading>{content?.heading}</Heading>
-        <Title>{content?.title}</Title>
+        <Heading data-aos="fade-in">{content?.heading}</Heading>
+        <Title data-aos="fade-in" data-aos-delay="200">
+          {content?.title}
+        </Title>
       </PanelHeader>
       <Row>
         <Panel>
           {/* <Summary>{content?.overview?.text}</Summary> */}
           <ImageHolder>
             <img
+              data-aos="slide-up"
               className="img-fluid"
               src={content?.image?.url}
               alt={content?.image?.alt}
@@ -116,8 +119,10 @@ const StoryPrimary = ({ className, bgColor, content }) => {
           </ImageHolder>
         </Panel>
         <Panel>
-          <Title className="left">{content?.content_title?.text}</Title>
-          <Paragraph>
+          <Title className="left" data-aos="fade-in">
+            {content?.content_title?.text}
+          </Title>
+          <Paragraph data-aos="fade-up" data-aos-delay="300">
             <PrismicRichText field={content?.content?.richText} />
           </Paragraph>
         </Panel>
